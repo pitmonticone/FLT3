@@ -1,0 +1,87 @@
+\chapter{Bohr sets}
+
+\begin{definition}[Bohr sets]
+\label{bohr-set}
+\lean{BohrSet}
+\leanok
+Let $\nu: \widehat{G} \to \mathbb{R}$. The corresponding Bohr set is defined to be
+\[\mathrm{Bohr}(\nu)=\left\{ x\in G : \abs{1-\gamma(x)}\leq \nu(\gamma)\textrm{ for all }\gamma\in\Gamma\right\}.\]
+The rank of $\nu$, denoted by $\mathrm{rk}(\nu)$, is defined to be the size of the set of those $\gamma\in\widehat{G}$ such that $\nu(\gamma)<2$.
+
+(Basic API facts: Bohr sets are symmetric and contain $0$. Also that, without loss of generality, we can assume $\nu$ takes only values in $\mathbb{R}_{\geq 0}$ - I think it might be easier to have the definition allow arbitrary real values, and then switch to non-negative only in proofs where convenient. Or could have the definition only allow non-negative valued functions in the first place.)
+\end{definition}
+
+\begin{lemma}
+\label{bohr-size}
+\uses{bohr-set}
+\lean{BohrSet.le_card_smul}
+\leanok
+If $\rho\in (0,1)$ and $\nu:\widehat{G}\to \mathbb{R}$ then
+\[\abs{\mathrm{Bohr}(\rho\cdot \nu)}\geq (\rho/4)^{\mathrm{rk}(\nu)}\abs{\mathrm{Bohr}(\nu)}.\]
+\end{lemma}
+\begin{proof}
+There are at most $\lceil 4/\rho\rceil$ many $z_i$ such that if $\lvert 1-w\rvert \leq \nu(\gamma)$ then $\lvert z_i-w\rvert\leq \rho\nu(\gamma)/2$ for some $i$. Let $\Gamma=\{ \gamma : \nu(\gamma) <2\}$ and define a function $f:\mathrm{Bohr}(\nu)\to \lceil 2/\rho\rceil^{\mathrm{rk}(\nu)}$ where for $\gamma\in \Gamma$ we assign the $\gamma$-coordinate of $f(x)$ as whichever $j$ has $\lvert z_j-\gamma(x)\rvert \leq \rho\nu(\gamma)/2$.
+
+By the pigeonhole principle there must exist some $(j_1,\ldots,j_{d})$ such that $f^{-1}(j_1,\ldots,j_d)$ has size at least $(\lceil 2/\rho\rceil)^{-\mathrm{rk}(\nu)}\abs{\mathrm{Bohr}(\nu)}$. Call this set $B'$. It must be non-empty, so fix some $x\in B'$. We claim that $B'-x\subseteq \abs{\mathrm{Bohr}(\rho\cdot \nu)}$, which completes the proof.
+
+Suppose that $z=x+y$ with $x,y\in B'$, and fix some $\gamma\in \Gamma$. By assumption there is some $z_j\in \mathbb{C}$ such that $\lvert z_j-\gamma(x)\rvert \leq \rho \nu(\gamma)/2$ and $\lvert z_j-\gamma(y)\rvert \leq \rho \nu(\gamma)/2$. Then by the triangle inequality,
+\[\lvert 1-\gamma(y-x)\rvert=\lvert \gamma(x)-\gamma(y)\rvert \leq \rho \nu(\gamma)\]
+and so $z=y-x\in \mathrm{Bohr}(\rho\cdot \nu)$.
+\end{proof}
+
+\begin{definition}[Regularity]
+\label{bohr-reg-def}
+\uses{bohr-set}
+\lean{BohrSet.IsRegular}
+\leanok
+We say $\nu:\widehat{G}\to \mathbb{R}$ is regular if, with $d=\mathrm{rk}(\nu)$, for all $\kappa\in\mathbb{R}$ with $\abs{\kappa}\leq 1/100d$ we have
+\[(1-100 d\abs{\kappa})\leq \frac{\abs{\mathrm{Bohr}((1+\kappa)\nu)}}{\abs{\mathrm{Bohr}(\nu)}}\leq(1+ 100 d\abs{\kappa})\]
+\end{definition}
+
+\begin{lemma}
+\label{bohr-regularity}
+\uses{bohr-reg-def}
+\lean{BohrSet.regularity}
+\leanok
+For any $\nu:\widehat{G}\to \mathbb{R}$ there exists $\rho\in[\frac{1}{2},1]$ such that $\rho\cdot \nu$ is regular.
+\end{lemma}
+\begin{proof}
+\uses{bohr-size}
+To do.
+\end{proof}
+
+\begin{lemma}
+\label{reg-conv}
+\uses{bohr-reg-def}
+If $B$ is a regular Bohr set of rank $d$ and $\mu:G\to\bbr_{\geq 0}$ is supported on $B_\rho$, with $\rho \in (0,1)$, then
+\[ \norm{ \mu_B*\mu - \mu_B }_{1} \ll \rho d\norm{\mu}_1. \]
+\end{lemma}
+\begin{proof}
+To do.
+\end{proof}
+
+\begin{lemma}
+\label{bohr-majorise}
+\uses{bohr-reg-def}
+There is a constant $c>0$ such that the following holds.  Let $B$ be a regular Bohr set of rank $d$ and $L\geq 1$ be any integer. If $\nu:G\to\bbr_{\geq 0}$ is supported on $L B_\rho$, where $\rho \leq c/Ld$, and $\norm{\nu}_1=1$, then
+\[\mu_B \leq 2\mu_{B_{1+L\rho}}\ast \nu.\]
+\end{lemma}
+\begin{proof}
+\uses{reg-conv}
+To do.
+\end{proof}
+
+\begin{lemma}
+\label{bourgain-trick}
+\uses{bohr-reg-def}
+There is a constant $c>0$ such that the following holds. Let $B$ be a regular Bohr set of rank $d$, suppose $A\subseteq B$ has density $\alpha$, let $\epsilon>0$, and suppose $B',B''\subseteq B_\rho$ where $\rho\leq c\alpha\epsilon/d$. Then either
+\begin{enumerate}
+\item there is some translate $A'$ of $A$ such that $\abs{A'\cap B'}\geq (1-\epsilon)\alpha\abs{B'}$ and $\abs{A'\cap B''}\geq (1-\epsilon)\alpha \abs{B''}$, or
+\item $\norm{\ind{A}\ast \mu_{B'}}_\infty\geq (1+\epsilon/2)\alpha$, or
+\item $\norm{\ind{A}\ast \mu_{B''}}_\infty \geq (1+\epsilon/2)\alpha$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+\uses{reg-conv}
+To do.
+\end{proof}
