@@ -1,6 +1,12 @@
 # Fermat's Last Theorem for Exponent 3
 
-A formalised proof of Fermat's Last Theorem for exponent 3 in the Lean proof assistant.
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-lightgrey.svg)](https://opensource.org/licenses/Apache-2.0)
+[![CI](https://github.com/pitmonticone/FLT3/actions/workflows/push.yml/badge.svg)](https://github.com/pitmonticone/FLT3/actions/workflows/push.yml)
+[![Documentation: Website](https://img.shields.io/badge/Documentation-Website-blue.svg)](https://pitmonticone.github.io/FLT3/docs/)
+[![Blueprint: Website](https://img.shields.io/badge/Blueprint-Website-red.svg)](https://pitmonticone.github.io/FLT3/blueprint)
+[![Blueprint: Paper](https://img.shields.io/badge/Blueprint-Paper-darkred.svg)](https://pitmonticone.github.io/FLT3/blueprint.pdf)
+
+This repository contains a formalised proof of Fermat's Last Theorem for the exponent 3 using the Lean proof assistant. It provides both the proof files and a blueprint for a web-based documentation, along with an accompanying paper.
 
 ## Build Lean Files
 

@@ -6,29 +6,18 @@
 usemathjax: true
 ---
 
-{% include mathjax.html %}
-
 # Fermat's Last Theorem for Exponent 3
 
-## Introduction
+A formalised proof of Fermat's Last Theorem for exponent 3 in the Lean proof assistant.
 
-[...]
-
-- Sum of cubes equals a cube isn't informative
-- Product of coprimes equals a cube is informative (implies that each factor is a cube)
-- To express $a^3 + b^3$ as a product we need to work in $\mathbb{Z}[e^{\frac{2\pi i}{3}}]$ which is already in Mathlib
-
-$$a^3+b^3 = (a+b)(a^2 - ab + b^2)
-          = (a+b)(a + e^{\frac{2\pi i}{3}} b )(a+ e^{\frac{4\pi i}{3}} b)$$
-
-## Build the Lean files
+## Build Lean Files
 
 To build the Lean files of this project, you need to have a working version of Lean.
 See [the installation instructions](https://leanprover-community.github.io/get_started.html) (under Regular install).
 
 To build the project, run `lake exe cache get` and then `lake build`.
 
-## Build the blueprint
+## Build Blueprint
 
 To build the web version of the blueprint, you need a working LaTeX installation.
 Furthermore, you need some packages:

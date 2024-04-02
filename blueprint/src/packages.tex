@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%% AUTHORSHIP %%%%%%%%%%%%%%
+\usepackage{authblk}   % Helps format author and affiliation information
+
+%%%%%%%%%%%%%%% TEXT %%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}     % Output font encoding for international characters.
+\usepackage[utf8]{inputenc}  % Allows the use of UTF-8 characters in the LaTeX source code.
+%\usepackage[italian]{babel}  % Loads the babel package with Italian localization settings
+\usepackage{lmodern}         % Modern font family for improved readability.
+\usepackage{comment}         % Enable comment environment
+\usepackage{microtype}       % Improve typography by enhancing character protrusion, adjusts kerning, and allowing for font expansion
+\usepackage{lipsum}          % Generate "filler" text in documents for testing or demo
+\usepackage{fancyvrb}        % Enables advanced verbatim text features
+%\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\usepackage{fontspec}
+% \setmathfont{Latin Modern Math}
+% \setmathfont[range=\varnothing]{Asana-Math.otf}
+% \setmathfont[range=\pitchfork]{Asana-Math.otf}
+% \setmathfont[range=\intprod]{Asana-Math.otf}
+% \setmathfont[range=\int]{Latin Modern Math}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\usepackage{relsize}
+
+%%%%%%%%%%%%%%% CODE %%%%%%%%%%%%%%%%%
+\usepackage{listings}
+%\usepackage{minted}
+
+%%%%%%%%%%%%%% LAYOUT %%%%%%%%%%%%%%%%
+\usepackage{parskip}            % Sets space between paragraphs and setting \parindent to 0pt
+\usepackage[a4paper]{geometry}  % Enables customization of page layout and margins
+\usepackage{fancyhdr}           % Allows customization of page headers and footers
+\usepackage{setspace}           % Controls line spacing
+\usepackage{titlesec}           % Package for customizing section and chapter headings
+\usepackage{booktabs}           % Enables better spacing and horizontal rules
+\usepackage{array}              % Enhance column formatting
+
+%%%%%%%%%%%% MATHEMATICS %%%%%%%%%%%%%
+\usepackage{amsmath}   % Provides enhanced math environments and features
+\usepackage{amsfonts}  % Gives access to a variety of mathematical fonts
+\usepackage{amssymb}   % Provides additional mathematical symbols
+\usepackage{amsthm}    % Allows for the definition of theorems, lemmas, and proofs
+\usepackage{mathdots}  % Provides various dot symbols for mathematics.
+\usepackage{mathtools} % Extends the functionality of amsmath package for more math tools.
+\usepackage{expl3}
+\usepackage[unicode,colorlinks=true,linkcolor=blue,urlcolor=magenta, citecolor=blue]{hyperref}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\usepackage{etexcmds}
+\usepackage{thmtools}
+\usepackage{xfrac}
+
+%%%%%%%%%%%%%%% LISTS %%%%%%%%%%%%%%%%
+\usepackage{enumerate} % Allows customization of enumeration and itemize lists
+\usepackage{enumitem}  % Offers control over the formatting of itemized lists.
+
+%%%%%%%%%%% VISUALISATION %%%%%%%%%%%%
+\usepackage[dvipsnames]{xcolor} % Allows the definition and use of colors
+\usepackage{tikz}               % A powerful tool for creating graphics and diagrams
+\usepackage[most]{tcolorbox}    % Enables colored text boxes
+\usepackage{graphicx}           % Supports the inclusion of external images
+\usepackage{caption}            % Customizes captions for figures and tables
+\usepackage{float}              % Improved interface for floating objects like figures and tables
+\definecolor{keywordcolor}{rgb}{0.7, 0.1, 0.1}   % red
+\definecolor{tacticcolor}{rgb}{0.0, 0.1, 0.6}    % blue
+\definecolor{commentcolor}{rgb}{0.4, 0.4, 0.4}   % grey
+\definecolor{symbolcolor}{rgb}{0.0, 0.1, 0.6}    % blue
+\definecolor{sortcolor}{rgb}{0.1, 0.5, 0.1}      % green
+\definecolor{attributecolor}{rgb}{0.7, 0.1, 0.1} % red
+\usepackage{tikz-cd}
+
+%%%%%%%%%%%%%% TABLES %%%%%%%%%%%%%%%%
+\usepackage{tabularx}  % Extends the tabular environment for better table control
+\usepackage{multirow}  % Allows cells in tables to span multiple rows
+
+%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%
+\usepackage{hyperref} % Enables internal & external hyperlinks
+\usepackage[nameinlink, capitalize]{cleveref}
+
+%%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%%
+\usepackage[backend=biber]{biblatex}

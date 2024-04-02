@@ -1,0 +1,108 @@
+% In this file you should put all LaTeX macros to be used
+% both by the pdf version and the web version.
+% This should be most of your macros.
+
+%%%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%
+
+\renewcommand{\bibname}{References} % This line changes the bibliography title to "References"
+
+%%%%%%%%%%%% NOTATIONS %%%%%%%%%%%%
+
+% Links
+\newcommand{\defref}[2]{\hyperref[def:#1]{\textbf{#2}}}
+\newcommand{\axref}[2]{\hyperref[ax:#1]{\textbf{#2}}}
+\newcommand{\thmref}[2]{\hyperref[thm:#1]{\textbf{#2}}}
+\newcommand{\lmmref}[2]{\hyperref[lmm:#1]{\textbf{#2}}}
+\newcommand{\bdefref}[2]{\hyperref[bdef:#1]{\textbf{#2}}}
+\newcommand{\baxref}[2]{\hyperref[bax:#1]{\textbf{#2}}}
+\newcommand{\bthmref}[2]{\hyperref[bthm:#1]{\textbf{#2}}}
+\newcommand{\blmmref}[2]{\hyperref[blmm:#1]{\textbf{#2}}}
+
+% Basics
+\newcommand{\bb}[1]{\mathbb{#1}} % Blackboard bold font
+\newcommand{\cc}[1]{\mathcal{#1}} % Calligraphic font
+\newcommand{\dd}[1]{\mathrm{d}#1} % Differential operator
+
+% Set
+\newcommand{\set}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\setb}[2]{\ensuremath{\left\{#1\mid#2\right\}}}
+%\newcommand{\set}[2]{\ensuremath{\left\{#1:#2\right\}}}
+
+% Functions
+\newcommand{\fun}[3]{\ensuremath{#1:#2\to#3}}
+\newcommand{\id}{\ensuremath{\mathrm{id}}}
+
+% Number sets
+\newcommand{\N}{\ensuremath{\mathbb{N}}} % Natural
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}} % Integer
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}} % Rational
+\newcommand{\R}{\ensuremath{\mathbb{R}}} % Real
+\newcommand{\C}{\ensuremath{\mathbb{C}}} % Complex
+\newcommand{\K}{\ensuremath{\mathbb{K}}} % Generic Field
+\newcommand{\F}{\ensuremath{\mathbb{F}}} % Generic Field
+
+% Mathematical logic
+\newcommand{\imp}{\rightarrow} % Implication
+\newcommand{\biimp}{\leftrightarrow} % Biconditional
+\newcommand{\all}{\forall} % Universal quantifier
+\newcommand{\ex}{\exists} % Existential quantifier
+\newcommand{\sat}{\models} % Satisfies
+\newcommand{\ent}{\vdash} % Entails
+\newcommand{\nent}{\nvdash} % Does not entail
+%\newcommand{\proves}{\vdash} % Proves
+\newcommand{\nproves}{\nvdash} % Does not prove
+\newcommand{\true}{\top} % Tautology
+\newcommand{\false}{\bot} % Contradiction
+
+% Others
+\newcommand{\abs}[1]{\left|#1\right|} % Absolute value
+\newcommand{\avg}[1]{\left\langle#1\right\rangle} % Average value
+\newcommand{\norm}[1]{\left\|#1\right\|} % Norm
+\newcommand{\bra}[1]{\left\langle#1\right|} % Bra notation
+\newcommand{\ket}[1]{\left|#1\right\rangle} % Ket notation
+\newcommand{\braket}[2]{\left\langle#1\mid|#2\right\rangle} % Bra-ket notation
+\newcommand{\expect}[1]{\left\langle#1\right\rangle} % Expectation value
+\newcommand{\op}[1]{\hat{#1}} % Operator notation
+\newcommand{\comm}[2]{\left[#1,#2\right]} % Commutator
+\newcommand{\acomm}[2]{\left\{#1,#2\right\}} % Anticommutator
+\newcommand{\tr}[1]{\mathrm{Tr}\left[#1\right]} % Trace
+\newcommand{\diag}[1]{\mathrm{diag}\left(#1\right)} % Diagonal matrix
+\newcommand{\rank}[1]{\mathrm{rank}\left(#1\right)} % Rank of a matrix
+\newcommand{\erf}[1]{\mathrm{erf}\left(#1\right)} % Error function
+\newcommand{\erfc}[1]{\mathrm{erfc}\left(#1\right)} % Complementary error function
+\newcommand{\sinc}[1]{\mathrm{sinc}\left(#1\right)} % Sinc function
+\newcommand{\sign}[1]{\mathrm{sign}\left(#1\right)} % Sign function
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor} % Floor function
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil} % Ceiling function
+\newcommand{\round}[1]{\left\lfloor#1\right\rceil} % Rounding function
+\newcommand{\argmin}[1]{\mathrm{argmin}\left\{#1\right\}} % Argmin
+\newcommand{\argmax}[1]{\mathrm{argmax}\left\{#1\right\}} % Argmax
+\newcommand{\divides}{\mid}
+\newcommand{\notdivides}{\nmid}
+
+% \newcommand{\ind}[1]{1_{#1}}
+% \newcommand{\bbn}{\mathbb{N}}
+% \newcommand{\bbz}{\mathbb{Z}}
+% \newcommand{\bbr}{\mathbb{R}}
+% \newcommand{\bbf}{\mathbb{F}}
+% \newcommand{\bbq}{\mathbb{Q}}
+% \newcommand{\bbc}{\mathbb{C}}
+% \newcommand{\bbt}{\mathbb{T}}
+% \newcommand*{\bbe}{\mathbb{E}}
+% \newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+% \newcommand{\Abs}[1]{\lvert #1 \rvert}
+% \newcommand{\brac}[1]{\left( #1\right)}
+% \newcommand{\norm}[1]{\lVert #1\rVert}
+% \providecommand{\tup}[1]{{\vec{#1}}}
+% \newcommand{\lo}[1]{\mathcal{L}{#1}}
+% \newcommand{\inn}[1]{\left\langle #1 \right\rangle}
+% \DeclareMathOperator{\rk}{rank}
+
+% \newcommand*{\E}{
+%   \mathop{
+%     \mathchoice{\vcenter{\hbox{\larger[4]$\mathbb{E}$}}}
+%                {\kern0pt\mathbb{E}}
+%                {\kern0pt\mathbb{E}}
+%                {\kern0pt\mathbb{E}}
+%   }\displaylimits
+% }

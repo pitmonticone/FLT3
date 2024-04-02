@@ -1,0 +1,38 @@
+% The main TeX macros that relate your TeX code to your Lean code are:
+%
+% * `\lean` that lists the Lean declaration names corresponding to the surrounding
+%   definition or statement (including namespaces).
+% * `\leanok` which claims the surrounding environment is fully formalized. Here
+%   an environment could be either a definition/statement or a proof.
+% * `\uses` that lists LaTeX labels that are used in the surrounding environment.
+%   This information is used to create the dependency graph. Here
+%   an environment could be either a definition/statement or a proof, depending on
+%   whether the referenced labels are necessary to state the definition/theorem
+%   or only in the proof.
+%
+% The example below show those essential macros in action, assuming the existence of
+% LaTeX labels `def:immersion`, `thm:open_ample` and `lem:open_ample_immersion` and
+% assuming the existence of a Lean declaration `sphere_eversion`.
+%
+% ```latex
+% \begin{theorem}[Smale 1958]
+%   \label{thm:sphere_eversion}
+%   \lean{sphere_eversion}
+%   \leanok
+%   \uses{def:immersion}
+%   There is a homotopy of immersions of $𝕊^2$ into $ℝ^3$ from the inclusion map to
+%   the antipodal map $a : q ↦ -q$.
+% \end{theorem}
+%
+% \begin{proof}
+%   \leanok
+%   \uses{thm:open_ample, lem:open_ample_immersion}
+%   This obviously follows from what we did so far.
+% \end
+% ```
+
+\chapter*{Case 2}
+% \label{chap:case2}
+\addcontentsline{toc}{chapter}{Case 2}
+
+...

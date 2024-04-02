@@ -10,24 +10,43 @@
 % It is otherwise a very minimal preamble (you should probably at least
 % add cleveref and tikz-cd).
 
-\documentclass[a4paper]{report}
+% Set document class
+\documentclass[11pt,a4paper]{report}
+% Import packages
+\input{packages}
+% Import macros
+\input{preamble/common}
+\input{preamble/print}
+% Import author
+\input{author}
 
-\usepackage{geometry}
+% Set hyperref parameters
+\hypersetup{
+    colorlinks=true, % TRUE: colors the text of the links; FALSE: puts a colored box around them
+    linkcolor=NavyBlue, % Sets color of internal links (\ref or \label)
+    urlcolor=NavyBlue, % Sets color of external links
+    citecolor=NavyBlue, % Sets color of citation links (\cite).
+    anchorcolor=NavyBlue % Sets color of anchor text
+}
 
-\usepackage{expl3}
+% Set source for bibliography
+\addbibresource{references.bib}
 
-\usepackage{amssymb, amsthm, mathtools}
-\usepackage[unicode,colorlinks=true,linkcolor=blue,urlcolor=magenta, citecolor=blue]{hyperref}
-
-\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
-
-\input{macros/common}
-\input{macros/print}
-
-\title{Fermat's Last Theorem for Exponent 3}
-\author{Pietro Monticone}
+% Set title and subtitle
+\title{Formalising Fermat's Last Theorem for Exponent 3 in Lean}
+% Set date
+\date{\today}
 
 \begin{document}
+% Add the title
 \maketitle
-\input{content}
+% Add the table of contents
+\tableofcontents
+
+% Add main contents
+\input{main}
+
+% Bibliography
+\nocite{*}
+\printbibliography
 \end{document}

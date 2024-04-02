@@ -4,24 +4,45 @@
 % It is otherwise a very minimal preamble (you should probably at least
 % add cleveref and tikz-cd).
 
+% Set document class
 \documentclass{report}
 
-\usepackage{amssymb, amsthm, amsmath}
+% Import packages
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
 \usepackage{hyperref}
-\usepackage[showmore, dep_graph]{blueprint}
+\usepackage[showmore, dep_graph, coverage, project=../../]{blueprint}
+\usepackage{relsize}
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.svg,.png,.jpg}
+\usepackage[capitalize]{cleveref}
 
+\usepackage{tikz-cd}
+\usepackage{tikz}
 
-\input{macros/common}
-\input{macros/web}
+% Import macros
+\input{preamble/common}
+\input{preamble/web}
+
+% Import author
+\input{author}
 
 \home{https://pitmonticone.github.io/FLT3}
 \github{https://github.com/pitmonticone/FLT3}
 \dochome{https://pitmonticone.github.io/FLT3/docs}
 
+% Set title and subtitle
 \title{Fermat's Last Theorem for Exponent 3}
-\author{Pietro Monticone}
+
+% Set source for bibliography
+\addbibresource{references.bib}
 
 \begin{document}
 \maketitle
-\input{content}
+% Add main contents
+\input{main}
+
+% Bibliography
+\nocite{*}
+\printbibliography
+
 \end{document}
