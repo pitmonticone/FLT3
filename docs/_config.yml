@@ -20,7 +20,7 @@
 
 title: Fermat's Last Theorem for Exponent 3
 #email: your-email@example.com
-description: Formalising the Fermat's Last Theorem for Exponent 3 in the Lean Proof Assistant
+description: Formalising Fermat's Last Theorem for Exponent 3 in the Lean Proof Assistant
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://pitmonticone.github.io/FLT3/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: PietroMonticone
