@@ -1,0 +1,85 @@
+% The main TeX macros that relate your TeX code to your Lean code are:
+%
+% * `\lean` that lists the Lean declaration names corresponding to the surrounding
+%   definition or statement (including namespaces).
+% * `\leanok` which claims the surrounding environment is fully formalized. Here
+%   an environment could be either a definition/statement or a proof.
+% * `\uses` that lists LaTeX labels that are used in the surrounding environment.
+%   This information is used to create the dependency graph. Here
+%   an environment could be either a definition/statement or a proof, depending on
+%   whether the referenced labels are necessary to state the definition/theorem
+%   or only in the proof.
+%
+% The example below show those essential macros in action, assuming the existence of
+% LaTeX labels `def:immersion`, `thm:open_ample` and `lem:open_ample_immersion` and
+% assuming the existence of a Lean declaration `sphere_eversion`.
+%
+% ```latex
+% \begin{theorem}[Smale 1958]
+%   \label{thm:sphere_eversion}
+%   \lean{sphere_eversion}
+%   \leanok
+%   \uses{def:immersion}
+%   There is a homotopy of immersions of $𝕊^2$ into $ℝ^3$ from the inclusion map to
+%   the antipodal map $a : q ↦ -q$.
+% \end{theorem}
+%
+% \begin{proof}
+%   \leanok
+%   \uses{thm:open_ample, lem:open_ample_immersion}
+%   This obviously follows from what we did so far.
+% \end
+% ```
+
+\chapter*{Case 1}
+\label{chap:case1}
+\addcontentsline{toc}{chapter}{Case 1}
+
+
+\begin{lemma}
+  \label{lmm:cube_of_castHom_ne_zero}
+  \lean{cube_of_castHom_ne_zero}
+  \leanok
+  %\uses{}
+  ...
+\end{lemma}
+
+% private lemma cube_of_castHom_ne_zero {n : ZMod 9} :
+%     castHom (show 3 ∣ 9 by norm_num) (ZMod 3) n ≠ 0 → n ^ 3 = 1 ∨ n ^ 3 = 8 := by
+%   revert n; decide
+
+\begin{lemma}
+    \label{lmm:cube_of_not_dvd}
+    \lean{cube_of_not_dvd}
+    \leanok
+    \uses{lmm:cube_of_castHom_ne_zero}
+    ...
+  \end{lemma}
+
+% private lemma cube_of_not_dvd {n : ℤ} (h : ¬ 3 ∣ n) :
+%     (n : ZMod 9) ^ 3 = 1 ∨ (n : ZMod 9) ^ 3 = 8 := by
+%   apply cube_of_castHom_ne_zero
+%   rwa [map_intCast, Ne, ZMod.int_cast_zmod_eq_zero_iff_dvd]
+
+/--
+  Let `a`, `b` and `c` be in `ℤ`.
+  If `¬ 3 ∣ a * b * c`, then `a ^ 3 + b ^ 3 ≠ c ^ 3`.
+-/
+
+\begin{theorem}[Fermat's Last Theorem for 3 (Case 1)]
+    \label{thm:fermatLastTheoremThree_case1}
+    \lean{fermatLastTheoremThree_case1}
+    \leanok
+    \uses{lmm:cube_of_not_dvd}
+    Let \(a\), \(b\) and \(c\) be in \Z. If \(3 \notdivides a \cdot b \cdot c\), then \(a ^ 3 + b ^ 3 \neq c ^ 3\).
+  \end{theorem}
+
+% theorem fermatLastTheoremThree_case1 {a b c : ℤ} (hdvd : ¬ 3 ∣ a * b * c) :
+%     a ^ 3 + b ^ 3 ≠ c ^ 3 := by
+%   simp_rw [Int.prime_three.dvd_mul, not_or] at hdvd
+%   apply mt (congrArg (Int.cast : ℤ → ZMod 9))
+%   simp_rw [Int.cast_add, Int.cast_pow]
+%   rcases cube_of_not_dvd hdvd.1.1 with ha | ha <;>
+%   rcases cube_of_not_dvd hdvd.1.2 with hb | hb <;>
+%   rcases cube_of_not_dvd hdvd.2 with hc | hc <;>
+%   rw [ha, hb, hc] <;> decide
