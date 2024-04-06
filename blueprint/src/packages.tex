@@ -14,16 +14,6 @@
 \usepackage{microtype}       % Improve typography by enhancing character protrusion, adjusts kerning, and allowing for font expansion
 \usepackage{lipsum}          % Generate "filler" text in documents for testing or demo
 \usepackage{fancyvrb}        % Enables advanced verbatim text features
-%\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
-\usepackage{fontspec}
-% \setmathfont{Latin Modern Math}
-% \setmathfont[range=\varnothing]{Asana-Math.otf}
-% \setmathfont[range=\pitchfork]{Asana-Math.otf}
-% \setmathfont[range=\intprod]{Asana-Math.otf}
-% \setmathfont[range=\int]{Latin Modern Math}
-\usepackage{polyglossia}
-\setdefaultlanguage{english}
-\usepackage{relsize}
 
 %%%%%%%%%%%%%%% CODE %%%%%%%%%%%%%%%%%
 \usepackage{listings}
@@ -34,9 +24,10 @@
 \usepackage[a4paper]{geometry}  % Enables customization of page layout and margins
 \usepackage{fancyhdr}           % Allows customization of page headers and footers
 \usepackage{setspace}           % Controls line spacing
-\usepackage{titlesec}           % Package for customizing section and chapter headings
-\usepackage{booktabs}           % Enables better spacing and horizontal rules
-\usepackage{array}              % Enhance column formatting
+\usepackage{titlesec}          % Package for customizing section and chapter headings
+\usepackage{booktabs}      % Enables better spacing and horizontal rules
+\usepackage{array}     % Enhance column formatting
+
 
 %%%%%%%%%%%% MATHEMATICS %%%%%%%%%%%%%
 \usepackage{amsmath}   % Provides enhanced math environments and features
@@ -48,9 +39,6 @@
 \usepackage{expl3}
 \usepackage[unicode,colorlinks=true,linkcolor=blue,urlcolor=magenta, citecolor=blue]{hyperref}
 \usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
-\usepackage{etexcmds}
-\usepackage{thmtools}
-\usepackage{xfrac}
 
 %%%%%%%%%%%%%%% LISTS %%%%%%%%%%%%%%%%
 \usepackage{enumerate} % Allows customization of enumeration and itemize lists
@@ -69,7 +57,6 @@
 \definecolor{symbolcolor}{rgb}{0.0, 0.1, 0.6}    % blue
 \definecolor{sortcolor}{rgb}{0.1, 0.5, 0.1}      % green
 \definecolor{attributecolor}{rgb}{0.7, 0.1, 0.1} % red
-\usepackage{tikz-cd}
 
 %%%%%%%%%%%%%% TABLES %%%%%%%%%%%%%%%%
 \usepackage{tabularx}  % Extends the tabular environment for better table control
@@ -77,7 +64,6 @@
 
 %%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%
 \usepackage{hyperref} % Enables internal & external hyperlinks
-\usepackage[nameinlink, capitalize]{cleveref}
 
 %%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%%
 \usepackage[backend=biber]{biblatex}

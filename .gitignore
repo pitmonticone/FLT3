@@ -12,9 +12,3 @@
 # Python virtual environment 
 /.venv/
 references.md
-blueprint/src/print.toc
-blueprint/src/print.run.xml
-blueprint/src/print.blg
-blueprint/src/print.bcf
-blueprint/src/print.bbl
-blueprint/lean_decls
