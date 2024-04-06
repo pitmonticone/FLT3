@@ -32,49 +32,37 @@
 % ```
 
 \chapter*{Case 1}
-\label{chap:case1}
+% \label{chap:case1}
 \addcontentsline{toc}{chapter}{Case 1}
-
 
 \begin{lemma}
   \label{lmm:cube_of_castHom_ne_zero}
   \lean{cube_of_castHom_ne_zero}
   \leanok
   %\uses{}
-  ...
 \end{lemma}
-
-% private lemma cube_of_castHom_ne_zero {n : ZMod 9} :
-%     castHom (show 3 ∣ 9 by norm_num) (ZMod 3) n ≠ 0 → n ^ 3 = 1 ∨ n ^ 3 = 8 := by
-%   revert n; decide
+\begin{proof}
+  \leanok
+\end{proof}
 
 \begin{lemma}
-    \label{lmm:cube_of_not_dvd}
-    \lean{cube_of_not_dvd}
+  \label{lmm:cube_of_not_dvd}
+  \lean{cube_of_not_dvd}
+  \leanok
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:cube_of_castHom_ne_zero}
+\end{proof}
+
+\begin{theorem}[Fermat's Last Theorem for 3: Case 1]
+    \label{thm:fermatLastTheoremThree_case_1}
+    \lean{fermatLastTheoremThree_case_1}
     \leanok
-    \uses{lmm:cube_of_castHom_ne_zero}
-    ...
-  \end{lemma}
-
-% private lemma cube_of_not_dvd {n : ℤ} (h : ¬ 3 ∣ n) :
-%     (n : ZMod 9) ^ 3 = 1 ∨ (n : ZMod 9) ^ 3 = 8 := by
-%   apply cube_of_castHom_ne_zero
-%   rwa [map_intCast, Ne, ZMod.int_cast_zmod_eq_zero_iff_dvd]
-
-\begin{theorem}[Fermat's Last Theorem for 3 (Case 1)]
-    \label{thm:fermatLastTheoremThree_case1}
-    \lean{fermatLastTheoremThree_case1}
-    \leanok
-    \uses{lmm:cube_of_not_dvd}
-    Let \(a\), \(b\) and \(c\) be in \Z. If \(3 \notdivides a \cdot b \cdot c\), then \(a ^ 3 + b ^ 3 \neq c ^ 3\).
-  \end{theorem}
-
-% theorem fermatLastTheoremThree_case1 {a b c : ℤ} (hdvd : ¬ 3 ∣ a * b * c) :
-%     a ^ 3 + b ^ 3 ≠ c ^ 3 := by
-%   simp_rw [Int.prime_three.dvd_mul, not_or] at hdvd
-%   apply mt (congrArg (Int.cast : ℤ → ZMod 9))
-%   simp_rw [Int.cast_add, Int.cast_pow]
-%   rcases cube_of_not_dvd hdvd.1.1 with ha | ha <;>
-%   rcases cube_of_not_dvd hdvd.1.2 with hb | hb <;>
-%   rcases cube_of_not_dvd hdvd.2 with hc | hc <;>
-%   rw [ha, hb, hc] <;> decide
+    Let \(a, b, c \in \Z\). \\
+    If \(3 \notdivides a \cdot b \cdot c\), then \(a ^ 3 + b ^ 3 \neq c ^ 3\).
+\end{theorem}
+\begin{proof}
+  \leanok
+  \uses{lmm:cube_of_not_dvd}
+\end{proof}
