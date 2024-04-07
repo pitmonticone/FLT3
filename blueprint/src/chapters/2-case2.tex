@@ -71,7 +71,6 @@
     \leanok
 \end{proof}
 
-
 \begin{theorem}
     \label{thm:fermatLastTheoremThree_of_three_dvd_only_c}
     \lean{fermatLastTheoremThree_of_three_dvd_only_c}
@@ -83,5 +82,10 @@
 \end{theorem}
 \begin{proof}
     \leanok
-    \uses{}
+    \uses{
+    thm:fermatLastTheoremThree_case_1,
+    lmm:three_dvd_gcd_of_dvd_a_of_dvd_b,
+    lmm:three_dvd_gcd_of_dvd_a_of_dvd_c,
+    lmm:three_dvd_gcd_of_dvd_b_of_dvd_c
+    }
 \end{proof}
