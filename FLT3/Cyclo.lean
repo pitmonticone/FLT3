@@ -243,7 +243,7 @@ Let `η` be the element in the ring of integers corresponding to `ζ`.
 Let `λ` be the element in the ring of integers corresponding to `ζ - 1`.
 Let `u` be a unit in `(𝓞 K)ˣ`.
 
-Then the cardinality of `𝓞 K ⧸ Ideal.span {λ}` is `3`. -/
+Then `𝓞 K ⧸ Ideal.span {λ}` has cardinality `3`. -/
 lemma card_quot : Fintype.card (𝓞 K ⧸ Ideal.span {λ}) = 3 := by
   rw [← Submodule.cardQuot_apply, ← Ideal.absNorm_apply, Ideal.absNorm_span_singleton]
   simp [norm_lambda hζ]
