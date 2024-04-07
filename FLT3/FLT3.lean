@@ -1050,6 +1050,7 @@ lemma final : S.Y ^ 3 + (S.u₄ * S.Z) ^ 3 = S.u₅ * (λ ^ (S.multiplicity - 1)
   simp only [Finset.mem_insert, Finset.mem_singleton] at simple_kummer
   exact simple_kummer
 
+/--[TODO]-/
 noncomputable
 def _root_.Solution'_final : Solution' where
   a := S.Y
@@ -1066,6 +1067,7 @@ def _root_.Solution'_final : Solution' where
     simpa [h] using S.two_le_multiplicity
   H := final S
 
+/--[TODO]-/
 lemma _root_.Solution'_final_multiplicity :
     (Solution'_final S).multiplicity = S.multiplicity - 1 := by
   refine (multiplicity.unique' (by simp [Solution'_final]) (fun h ↦ S.lambda_not_dvd_X ?_)).symm
@@ -1075,11 +1077,13 @@ lemma _root_.Solution'_final_multiplicity :
     or_false] at hk
   simp [hk]
 
+/--[TODO]-/
 lemma _root_.Solution'_final_multiplicity_lt :
     (Solution'_final S).multiplicity < S.multiplicity := by
   rw [Solution'_final_multiplicity S, Nat.sub_one]
   exact Nat.pred_lt <| by linarith [S.two_le_multiplicity]
 
+/--[TODO]-/
 theorem exists_Solution_multiplicity_lt :
     ∃ (S' : Solution), S'.multiplicity < S.multiplicity := by
   obtain ⟨S', hS'⟩ := exists_Solution_of_Solution' (Solution'_final S)

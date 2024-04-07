@@ -21,23 +21,27 @@ is any primitive `3`-rd root of unity in `K`.
 `u : (𝓞 K)ˣ`, where `K` is a number field such that `IsCyclotomicExtension {3} ℚ K`, if `u` is
 congruent to an integer modulo `3`, then `u = 1` or `u = -1`. This is a special case of the
 so-called *Kummer's lemma*.
-
 -/
 
 open NumberField Units InfinitePlace nonZeroDivisors Polynomial
 
 namespace IsCyclotomicExtension.Rat.Three
 
+/- Let `K` be a number field such that `IsCyclotomicExtension {3} ℚ K`. -/
 variable {K : Type*} [Field K] [NumberField K] [IsCyclotomicExtension {3} ℚ K]
+
+/- Let `ζ` be any primitive `3`-rd root of unity in `K` and `u` be a unit in `(𝓞 K)ˣ`. -/
 variable {ζ : K} (hζ : IsPrimitiveRoot ζ ↑(3 : ℕ+)) (u : (𝓞 K)ˣ)
 
+/-[TODO]-/
 local notation3 "η" => hζ.toInteger
 
+/-[TODO]-/
 local notation3 "λ" => hζ.toInteger - 1
 
-/-- Given a unit `u : (𝓞 K)ˣ`, where `K` is a number field such that
-`IsCyclotomicExtension {3} ℚ K`, then `u ∈ ({1, -1, ζ, -ζ, ζ^2, -ζ^2}`, where `ζ` is any
-primitive `3`-rd root of unity in `K`. -/
+/-- Let `K` be a number field such that `IsCyclotomicExtension {3} ℚ K`. Let `ζ` be any
+primitive `3`-rd root of unity in `K`. Let `u` be a unit in `(𝓞 K)ˣ`.
+Then `u ∈ ({1, -1, ζ, -ζ, ζ^2, -ζ^2}`. -/
 theorem Units.mem : ↑u ∈({1, -1, η, -η, η ^ 2, -η ^ 2} : Set (𝓞 K)) := by
   have hrank : rank K = 0 := by
     dsimp [rank]
@@ -80,6 +84,9 @@ theorem Units.mem : ↑u ∈({1, -1, η, -η, η ^ 2, -η ^ 2} : Set (𝓞 K)) :
     · apply Set.mem_insert_of_mem; apply Set.mem_insert_of_mem; simp [h]
     · apply Set.mem_insert_of_mem; apply Set.mem_insert_of_mem; simp [h]
 
+/-- Let `K` be a number field such that `IsCyclotomicExtension {3} ℚ K`. Let `ζ` be any
+primitive `3`-rd root of unity in `K`. Let `u` be a unit in `(𝓞 K)ˣ`.
+Then for all `n` in `ℤ`, `3` does not divide `ζ - n`. -/
 theorem Units.not_exists_int_three_dvd_sub : ¬(∃ n : ℤ, (3 : 𝓞 K) ∣ (η - n : 𝓞 K)) := by
   intro ⟨n, x, h⟩
   let pB := hζ.integralPowerBasis'
@@ -104,14 +111,17 @@ theorem Units.not_exists_int_three_dvd_sub : ¬(∃ n : ℤ, (3 : 𝓞 K) ∣ (�
   apply hdvd
   exact ⟨_, h⟩
 
+/-- Let `K` be a number field such that `IsCyclotomicExtension {3} ℚ K`. Let `ζ` be any
+primitive `3`-rd root of unity in `K`. Let `λ` be `ζ - 1`. Let `u` be a unit in `(𝓞 K)ˣ`.
+Then `λ ^ 2 = -3 * η`. -/
 lemma lambda_sq : λ ^ 2 = -3 * η :=
   calc λ ^ 2 = η ^ 2 + η + 1 - 3 * η := by ring
   _ = 0 - 3 * η := by ext; simpa using hζ.isRoot_cyclotomic (by decide)
   _ = -3 * η := by ring
 
-/-- Given a unit `u : (𝓞 K)ˣ`, where `K` is a number field such that
-`IsCyclotomicExtension {3} ℚ K`, if `u` is congruent to an integer modulo `λ ^ 2`, then `u = 1` or
-`u = -1`.
+/-- Let `K` be a number field such that `IsCyclotomicExtension {3} ℚ K`. Let `ζ` be any
+primitive `3`-rd root of unity in `K`. Let `λ` be `ζ - 1`. Let `u` be a unit in `(𝓞 K)ˣ`.
+If `u` is congruent to an integer modulo `λ ^ 2`, then `u = 1` or `u = -1`.
 
 This is a special case of the so-called *Kummer's lemma*. -/
 theorem eq_one_or_neg_one_of_unit_of_congruent (hcong : ∃ n : ℤ, λ ^ 2 ∣ (u - n : 𝓞 K)) :
@@ -155,6 +165,7 @@ instance : Fintype (𝓞 K ⧸ Ideal.span {λ}) := by
   simp only [Ideal.span_singleton_eq_bot, sub_eq_zero, ← Subtype.coe_inj] at h
   exact hζ.ne_one (by decide) h
 
+/--[TODO]-/
 lemma norm_lambda : Algebra.norm ℤ λ = 3 := by
   apply (algebraMap ℤ ℚ).injective_int
   have : algebraMap (𝓞 K) K λ = ζ - 1 := by
@@ -164,24 +175,30 @@ lemma norm_lambda : Algebra.norm ℤ λ = 3 := by
     (cyclotomic.irreducible_rat (n := 3) (by decide)) (by decide)]
   simp
 
+/--[TODO]-/
 lemma norm_lambda_prime : Prime (Algebra.norm ℤ λ) := by
   rw [norm_lambda]
   exact Int.prime_three
 
+/--[TODO]-/
 lemma lambda_dvd_three : λ ∣ 3 := by
   suffices λ ∣ (3 : ℤ) by simpa
   rw [← Ideal.norm_dvd_iff, norm_lambda hζ]
   rw [norm_lambda hζ]
   exact Int.prime_three
 
+/--[TODO]-/
 lemma _root_.IsPrimitiveRoot.lambda_prime : Prime λ := hζ.zeta_sub_one_prime'
 
+/--[TODO]-/
 lemma lambda_not_unit : ¬ IsUnit λ := hζ.lambda_prime.not_unit
 
+/--[TODO]-/
 lemma card_quot : Fintype.card (𝓞 K ⧸ Ideal.span {λ}) = 3 := by
   rw [← Submodule.cardQuot_apply, ← Ideal.absNorm_apply, Ideal.absNorm_span_singleton]
   simp [norm_lambda hζ]
 
+/--[TODO]-/
 lemma two_ne_zero : (2 : 𝓞 K ⧸ Ideal.span {λ}) ≠ 0 := by
   suffices 2 ∉ Ideal.span {λ} by
     intro h
@@ -194,6 +211,7 @@ lemma two_ne_zero : (2 : 𝓞 K ⧸ Ideal.span {λ}) ≠ 0 := by
   · rw [norm_lambda hζ]
     exact Int.prime_three
 
+/--[TODO]-/
 lemma lambda_not_dvd_two : ¬ λ ∣ 2 := by
   intro h
   exact two_ne_zero hζ (Ideal.Quotient.eq_zero_iff_mem.2 <| Ideal.mem_span_singleton.2 h)
@@ -207,6 +225,8 @@ attribute [instance 10000] Ring.toAddCommGroup
 attribute [instance 10000] NeZero.one
 
 open Classical Finset in
+
+/--[TODO]-/
 lemma univ_quot : (univ : Finset ((𝓞 K ⧸ Ideal.span {λ}))) = {0, 1, -1} := by
   refine (eq_of_subset_of_card_le (fun _ _ ↦ mem_univ _) ?_).symm
   rw [card_univ, card_quot hζ, card_insert_of_not_mem, card_insert_of_not_mem, card_singleton]
@@ -220,6 +240,7 @@ lemma univ_quot : (univ : Finset ((𝓞 K ⧸ Ideal.span {λ}))) = {0, 1, -1} :=
     · exact zero_ne_one h
     · exact zero_ne_one h.symm
 
+/--[TODO]-/
 lemma dvd_or_dvd_sub_one_or_dvd_add_one (x : 𝓞 K) : λ ∣ x ∨ λ ∣ x - 1 ∨ λ ∣ x + 1 := by
   have := Finset.mem_univ (Ideal.Quotient.mk (Ideal.span {λ}) x)
   rw [univ_quot hζ] at this
@@ -234,25 +255,31 @@ lemma dvd_or_dvd_sub_one_or_dvd_add_one (x : 𝓞 K) : λ ∣ x ∨ λ ∣ x - 1
     refine Ideal.mem_span_singleton.1 <| Ideal.Quotient.eq_zero_iff_mem.1 ?_
     rw [RingHom.map_add, h, RingHom.map_one, add_left_neg]
 
+/--[TODO]-/
 lemma _root_.IsPrimitiveRoot.toInteger_coe : hζ.toInteger.1 = ζ := rfl
 
+/--[TODO]-/
 lemma _root_.IsPrimitiveRoot.toInteger_cube_eq_one : η ^ 3 = 1 := by
   ext
   simp only [SubmonoidClass.coe_pow, OneMemClass.coe_one]
   exact hζ.pow_eq_one
 
+/--[TODO]-/
 lemma _root_.IsPrimitiveRoot.eta_isUnit : IsUnit η := by
   apply isUnit_of_mul_eq_one _ (η ^ 2) (by simp [← pow_succ', hζ.toInteger_cube_eq_one])
 
+/--[TODO]-/
 lemma _root_.IsPrimitiveRoot.toInteger_eval_cyclo : η ^ 2 + η + 1 = 0 := by
   ext; simpa using hζ.isRoot_cyclotomic (by decide)
 
+/--[TODO]-/
 lemma cube_sub_one (x : 𝓞 K) : x ^ 3 - 1 = (x - 1) * (x - η) * (x - η ^ 2) := by
   symm
   calc _ = x ^ 3 - x ^ 2 * (η ^ 2 + η + 1) + x * (η ^ 2 + η + η ^ 3) - η ^ 3 := by ring
   _ = x ^ 3 - x ^ 2 * (η ^ 2 + η + 1) + x * (η ^ 2 + η + 1) - 1 := by rw [hζ.toInteger_cube_eq_one]
   _ = x ^ 3 - 1 := by rw [hζ.toInteger_eval_cyclo]; ring
 
+/--[TODO]-/
 lemma lambda_dvd_mul_sub_one_mul_sub_eta_add_one (x : 𝓞 K) :
     λ ∣ x * (x - 1) * (x - (η + 1)) := by
   rcases dvd_or_dvd_sub_one_or_dvd_add_one hζ x with (h | h | h)
@@ -262,6 +289,7 @@ lemma lambda_dvd_mul_sub_one_mul_sub_eta_add_one (x : 𝓞 K) :
     rw [show x - (η + 1) = x + 1 - (η - 1 + 3) by ring]
     exact dvd_sub h (dvd_add dvd_rfl <| lambda_dvd_three hζ)
 
+/--[TODO]-/
 lemma lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one {x : 𝓞 K} (h : λ ∣ x - 1) :
     λ ^ 4 ∣ x ^ 3 - 1 := by
   obtain ⟨y, hy⟩ := h
@@ -271,6 +299,7 @@ lemma lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one {x : 𝓞 K} (h : λ ∣ x
   rw [this, show λ ^ 4 = λ ^ 3 * λ by ring]
   exact mul_dvd_mul dvd_rfl (lambda_dvd_mul_sub_one_mul_sub_eta_add_one hζ y)
 
+/--[TODO]-/
 lemma lambda_pow_four_dvd_cube_add_one_of_dvd_add_one {x : 𝓞 K} (h : λ ∣ x + 1) :
     λ ^ 4 ∣ x ^ 3 + 1 := by
   replace h : λ ∣ -x - 1 := by
@@ -283,6 +312,7 @@ lemma lambda_pow_four_dvd_cube_add_one_of_dvd_add_one {x : 𝓞 K} (h : λ ∣ x
   rw [mul_neg, ← hy]
   ring
 
+/--[TODO]-/
 lemma lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd {x : 𝓞 K} (h : ¬ λ ∣ x) :
     λ ^ 4 ∣ x ^ 3 - 1 ∨ λ ^ 4 ∣ x ^ 3 + 1 := by
   rcases dvd_or_dvd_sub_one_or_dvd_add_one hζ x with (H | H | H)
