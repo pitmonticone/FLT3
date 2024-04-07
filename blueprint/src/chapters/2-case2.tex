@@ -77,12 +77,13 @@
     \leanok
     %\uses{}
     To prove Fermat's Last Theorem for exponent $n=3$, it suffices to prove that
-    $\forall a, b, c \in \Z$ such that $c \neq 0$ and $3 \notdivides a$ and $3 \notdivides b$ and
-    $3 \divides c$ and $\gcd(a,b)=1$ implies that $a ^ 3 + b ^ 3 \neq c ^ 3$.
+    $\forall a, b, c \in \Z$ if $c \neq 0$ and $3 \notdivides a$ and $3 \notdivides b$ and
+    $3 \divides c$ and $\gcd(a,b)=1$, then $a ^ 3 + b ^ 3 \neq c ^ 3$.
 \end{theorem}
 \begin{proof}
     \leanok
     \uses{
+    %lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime
     thm:fermatLastTheoremThree_case_1,
     lmm:three_dvd_gcd_of_dvd_a_of_dvd_b,
     lmm:three_dvd_gcd_of_dvd_a_of_dvd_c,
