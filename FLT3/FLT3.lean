@@ -27,7 +27,7 @@ open scoped Classical
 
 section misc
 
-/-- Let `a`, `b`, `c` be in `ℕ`. . If `3 ∣ a` and `3 ∣ c` and `a ^ 3 + b ^ 3 = c ^ 3`,
+/-- Let `a`, `b`, `c` be in `ℕ`. If `3 ∣ a` and `3 ∣ c` and `a ^ 3 + b ^ 3 = c ^ 3`,
 then 3 divides the `gcd` of the set `{a, b, c}`. -/
 lemma three_dvd_gcd_of_dvd_a_of_dvd_c {a b c : ℕ} (ha : 3 ∣ a) (hc : 3 ∣ c)
     (hF : a ^ 3 + b ^ 3 = c ^ 3) : 3 ∣ ({a, b, c} : Finset ℕ).gcd id := by
@@ -1050,7 +1050,7 @@ lemma final : S.Y ^ 3 + (S.u₄ * S.Z) ^ 3 = S.u₅ * (λ ^ (S.multiplicity - 1)
   simp only [Finset.mem_insert, Finset.mem_singleton] at simple_kummer
   exact simple_kummer
 
-/--[TODO]-/
+/-- Given `S : Solution`, we can construct a `Solution'_final : Solution'`. -/
 noncomputable
 def _root_.Solution'_final : Solution' where
   a := S.Y

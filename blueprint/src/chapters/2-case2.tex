@@ -35,4 +35,38 @@
 %\label{chap:case2}
 \addcontentsline{toc}{chapter}{Case 2}
 
-...
+\begin{lemma}
+    \label{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b}
+    \lean{three_dvd_gcd_of_dvd_a_of_dvd_b}
+    \leanok
+    %\uses{}
+    Let $a, b, c \in \N$. \\
+    If $3 \divides a$ and $3 \divides b$ and $a ^ 3 + b ^ 3 = c ^ 3$, then $3 \divides \gcd(\set{a, b, c\})$.
+\end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c}
+    \lean{three_dvd_gcd_of_dvd_a_of_dvd_c}
+    \leanok
+    %\uses{}
+    Let $a, b, c \in \N$. \\
+    If $3 \divides a$ and $3 \divides c$ and $a ^ 3 + b ^ 3 = c ^ 3$, then $3 \divides \gcd(\set{a, b, c\})$.
+\end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c}
+    \lean{three_dvd_gcd_of_dvd_b_of_dvd_c}
+    \leanok
+    %\uses{}
+    Let $a, b, c \in \N$. \\
+    If $3 \divides b$ and $3 \divides c$ and $a ^ 3 + b ^ 3 = c ^ 3$, then $3 \divides \gcd(\set{a, b, c\})$.
+\end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
