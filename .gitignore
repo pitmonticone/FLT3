@@ -12,3 +12,5 @@
 # Python virtual environment 
 /.venv/
 references.md
+blueprint/lean_decls
+blueprint/src/web.bbl
