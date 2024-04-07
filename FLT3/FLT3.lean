@@ -1099,7 +1099,7 @@ end eisenstein
 
 end case2
 
-/-- For all `a`, `b`, `c` in `ℕ` such that `a ≠ 0` and `b ≠ 0` and `c ≠ 0`,
+/-- For all `a`, `b`, `c` in `ℕ`, if `a ≠ 0` and `b ≠ 0` and `c ≠ 0`,
 then `a ^ 3 + b ^ 3 ≠ c ^ 3`. -/
 theorem fermatLastTheoremThree : FermatLastTheoremFor 3 := by
   apply FermatLastTheoremForThree_of_FermatLastTheoremThreeGen

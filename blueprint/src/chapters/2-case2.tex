@@ -90,3 +90,35 @@
     lmm:three_dvd_gcd_of_dvd_b_of_dvd_c
     }
 \end{proof}
+
+\begin{proposition}[Generalised Fermat's Last Theorem for $n=3$]
+    \label{prop:FermatLastTheoremForThreeGen}
+    \lean{FermatLastTheoremForThreeGen}
+    \leanok
+    %\uses{}
+    Let $K$ be a number field. \\
+    Let $\cc{O}_K$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\ \\
+    $\forall a, b, c \in \cc{O}_K,\, \forall u \in \cc{O}^\times_K$ if $c \neq 0$
+    and $\lambda \notdivides a$ and $\lambda \notdivides b$ and
+    $\lambda \divides c$ and $\gcd(a,b)=1$, then $a^3 + b^3 \neq u \cdot c^3$.
+\end{proposition}
+
+\begin{lemma}
+    \label{lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen}
+    \lean{FermatLastTheoremForThree_of_FermatLastTheoremThreeGen}
+    \leanok
+    %\uses{}
+    To prove Fermat's Last Theorem for exponent $n=3$,
+    it suffices to prove \ref{prop:FermatLastTheoremForThreeGen}.
+    %\ref{prop:FermatLastTheoremForThreeGen} implies Fermat's Last Theorem for exponent $n=3$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{
+    thm:fermatLastTheoremThree_of_three_dvd_only_c,
+    % lmm:norm_lambda_prime,
+    % lmm:norm_lambda,
+    % lmm:lambda_dvd_three
+    }
+\end{proof}
