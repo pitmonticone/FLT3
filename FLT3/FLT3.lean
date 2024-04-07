@@ -1093,16 +1093,9 @@ theorem exists_Solution_multiplicity_lt :
 
 end Solution
 
-end FermatLastTheoremForThreeGen
-
-end eisenstein
-
-end case2
-
-/-- For all `a`, `b`, `c` in `ℕ`, if `a ≠ 0` and `b ≠ 0` and `c ≠ 0`,
-then `a ^ 3 + b ^ 3 ≠ c ^ 3`. -/
-theorem fermatLastTheoremThree : FermatLastTheoremFor 3 := by
-  apply FermatLastTheoremForThree_of_FermatLastTheoremThreeGen
+/-- For all `a`, `b`, `c` in `𝓞 K`, for all `u` in `(𝓞 K)ˣ`, if `c ≠ 0` and `¬ λ ∣ a` and
+`¬ λ ∣ b` and `λ ∣ c` and `gcd(a,b) = 1`, then `a ^ 3 + b ^ 3 ≠ u * c ^ 3`. -/
+theorem fermatLastTheoremForThreeGen : FermatLastTheoremForThreeGen := by
   intro a b c u hc ha hb hcdvd coprime H
   let S' : Solution' :=
   { a := a
@@ -1119,5 +1112,17 @@ theorem fermatLastTheoremThree : FermatLastTheoremFor 3 := by
   obtain ⟨Smin, hSmin⟩ := S.exists_minimal
   obtain ⟨Sfin, hSfin⟩ := Smin.exists_Solution_multiplicity_lt
   linarith [hSmin Sfin]
+
+end FermatLastTheoremForThreeGen
+
+end eisenstein
+
+end case2
+
+/-- For all `a`, `b`, `c` in `ℕ`, if `a ≠ 0` and `b ≠ 0` and `c ≠ 0`,
+then `a ^ 3 + b ^ 3 ≠ c ^ 3`. -/
+theorem fermatLastTheoremThree : FermatLastTheoremFor 3 := by
+  apply FermatLastTheoremForThree_of_FermatLastTheoremThreeGen
+  exact fermatLastTheoremForThreeGen
 
 --#print axioms fermatLastTheoremThree

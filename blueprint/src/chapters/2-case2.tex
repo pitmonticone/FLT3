@@ -92,38 +92,6 @@
     }
 \end{proof}
 
-\begin{proposition}[Generalised Fermat's Last Theorem for Exponent $3$]
-    \label{prop:FermatLastTheoremForThreeGen}
-    \lean{FermatLastTheoremForThreeGen}
-    \leanok
-    %\uses{}
-    Let $K$ be a number field. \\
-    Let $\cc{O}_K$ be the ring of integers of $K$. \\
-    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\ \\
-    $\forall a, b, c \in \cc{O}_K,\, \forall u \in \cc{O}^\times_K$, if $c \neq 0$
-    and $\lambda \notdivides a$ and $\lambda \notdivides b$ and
-    $\lambda \divides c$ and $\gcd(a,b)=1$, then $a^3 + b^3 \neq u \cdot c^3$.
-\end{proposition}
-
-\begin{lemma}
-    \label{lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen}
-    \lean{FermatLastTheoremForThree_of_FermatLastTheoremThreeGen}
-    \leanok
-    \uses{prop:FermatLastTheoremForThreeGen}
-    To prove \ref{thm:fermatLastTheoremThree},
-    it suffices to prove \ref{prop:FermatLastTheoremForThreeGen}. \\\\
-    Equivalently, \ref{prop:FermatLastTheoremForThreeGen} implies \ref{thm:fermatLastTheoremThree}.
-\end{lemma}
-\begin{proof}
-    \leanok
-    \uses{
-    thm:fermatLastTheoremThree_of_three_dvd_only_c,
-    lmm:norm_lambda_prime,
-    lmm:norm_lambda,
-    lmm:lambda_dvd_three
-    }
-\end{proof}
-
 \begin{definition}[Solution$'$]
     \label{def:Solution'}
     \lean{Solution'}
@@ -133,9 +101,9 @@
     Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
     Let $a, b, c \in \cc{O}_K$ such that $\lambda \notdivides a$,
     $\lambda \notdivides b$, $\lambda \divides c$, $c \neq 0$ and $\gcd(a,b)=1$.\\
-    Let $u \in \cc{O}^\times_K$. \\
-    A $\bold{solution'}$ is a tuple $(a, b, c, u)$ given by a solution to
-    the equation $a^3 + b^3 = u \cdot c^3$.
+    Let $u \in \cc{O}^\times_K$. \\\\
+    A $\boldsymbol{solution'}$ is a tuple $(a, b, c, u)$ given by a solution to
+    the equation $a^3 + b^3 = u \cdot c^3.$
 \end{definition}
 
 \begin{definition}[Solution]
@@ -148,7 +116,45 @@
     Let $a, b, c \in \cc{O}_K$ such that $\lambda \notdivides a$,
     $\lambda \notdivides b$, $\lambda \divides c$, $c \neq 0$, $\gcd(a,b)=1$
     and $\lambda^2 \divides a+b$. \\
-    Let $u \in \cc{O}^\times_K$. \\
-    A $\bold{solution}$ is a tuple $(a, b, c, u)$ given by a solution to
-    the equation $a^3 + b^3 = u \cdot c^3$.
+    Let $u \in \cc{O}^\times_K$. \\\\
+    A $\boldsymbol{solution}$ is a tuple $(a, b, c, u)$ given by a solution to
+    the equation $a^3 + b^3 = u \cdot c^3.$
 \end{definition}
+
+\begin{theorem}[Generalised Fermat's Last Theorem for Exponent $3$]
+    \label{thm:fermatLastTheoremForThreeGen}
+    \lean{fermatLastTheoremForThreeGen}
+    \leanok
+    %\uses{}
+    Let $K$ be a number field. \\
+    Let $\cc{O}_K$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\ \\
+    $\forall a, b, c \in \cc{O}_K,\, \forall u \in \cc{O}^\times_K$, if $c \neq 0$
+    and $\lambda \notdivides a$ and $\lambda \notdivides b$ and
+    $\lambda \divides c$ and $\gcd(a,b)=1$, then $a^3 + b^3 \neq u \cdot c^3$.
+\end{theorem}
+\begin{proof}
+    \leanok
+    \uses{
+
+    }
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen}
+    \lean{FermatLastTheoremForThree_of_FermatLastTheoremThreeGen}
+    \leanok
+    %\uses{thm:fermatLastTheoremForThreeGen}
+    To prove \ref{thm:fermatLastTheoremThree},
+    it suffices to prove \ref{thm:fermatLastTheoremForThreeGen}. \\\\
+    Equivalently, \ref{thm:fermatLastTheoremForThreeGen} implies \ref{thm:fermatLastTheoremThree}.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{
+    thm:fermatLastTheoremThree_of_three_dvd_only_c,
+    lmm:norm_lambda_prime,
+    lmm:norm_lambda,
+    lmm:lambda_dvd_three
+    }
+\end{proof}
