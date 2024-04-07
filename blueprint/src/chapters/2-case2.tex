@@ -124,4 +124,31 @@
     }
 \end{proof}
 
-% section Solution'
+\begin{definition}[Solution$'$]
+    \label{def:Solution'}
+    \lean{Solution'}
+    \leanok
+    Let $K$ be a number field. \\
+    Let $\cc{O}_K$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $a, b, c \in \cc{O}_K$ such that $\lambda \notdivides a$,
+    $\lambda \notdivides b$, $\lambda \divides c$, $c \neq 0$ and $\gcd(a,b)=1$.\\
+    Let $u \in \cc{O}^\times_K$. \\
+    A $\bold{solution'}$ is a tuple $(a, b, c, u)$ given by a solution to
+    the equation $a^3 + b^3 = u \cdot c^3$.
+\end{definition}
+
+\begin{definition}[Solution]
+    \label{def:Solution}
+    \lean{Solution}
+    \leanok
+    Let $K$ be a number field. \\
+    Let $\cc{O}_K$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $a, b, c \in \cc{O}_K$ such that $\lambda \notdivides a$,
+    $\lambda \notdivides b$, $\lambda \divides c$, $c \neq 0$, $\gcd(a,b)=1$
+    and $\lambda^2 \divides a+b$. \\
+    Let $u \in \cc{O}^\times_K$. \\
+    A $\bold{solution}$ is a tuple $(a, b, c, u)$ given by a solution to
+    the equation $a^3 + b^3 = u \cdot c^3$.
+\end{definition}
