@@ -9,7 +9,7 @@ import Mathlib.NumberTheory.Cyclotomic.Rat
 import Mathlib.NumberTheory.NumberField.Units
 
 /-!
-# Third cyclotomic field.
+# Third Cyclotomic Field
 We gather various results about the third cyclotomic field.
 
 ## Main results
