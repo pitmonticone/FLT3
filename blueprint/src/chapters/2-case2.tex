@@ -462,8 +462,127 @@
     lmm:lambda_not_dvd_y}
 \end{proof}
 
+\begin{lemma}
+    \label{lmm:mult_minus_two_plus_one_plus_one}
+    \lean{Solution.mult_minus_two_plus_one_plus_one}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:two_le_multiplicity}
+\end{proof}
 
-%%%%%%%
+\begin{lemma}
+    \label{lmm:x_mul_y_mul_z_eq_u_w_pow_three}
+    \lean{Solution.x_mul_y_mul_z_eq_u_w_pow_three}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:two_le_multiplicity, lmm:lambda_ne_zero, lmm:cube_add_cube_eq_mul,
+    lmm:x_spec, lmm:y_spec, lmm:z_spec, lmm:w_spec}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:span_x_mul_span_y_mul_span_z}
+    \lean{Solution.span_x_mul_span_y_mul_span_z}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:x_eq_unit_mul_cube}
+    \lean{Solution.x_eq_unit_mul_cube}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three, lmm:coprime_x_y, lmm:coprime_x_z}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:y_eq_unit_mul_cube}
+    \lean{Solution.y_eq_unit_mul_cube}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three, lmm:coprime_x_y, lmm:coprime_y_z}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:z_eq_unit_mul_cube}
+    \lean{Solution.z_eq_unit_mul_cube}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three, lmm:coprime_x_z, lmm:coprime_y_z}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:X_ne_zero}
+    \lean{Solution.X_ne_zero}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:u₁_X_spec, lmm:lambda_not_dvd_x}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_dvd_X}
+    \lean{Solution.lambda_not_dvd_X}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_not_dvd_x}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_dvd_Y}
+    \lean{Solution.lambda_not_dvd_Y}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_not_dvd_y}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_dvd_Z}
+    \lean{Solution.lambda_not_dvd_Z}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_not_dvd_z}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:coprime_Y_Z}
+    \lean{Solution.coprime_Y_Z}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_not_dvd_Z, lmm:coprime_y_z}
+\end{proof}
 
 \begin{lemma}
     \label{lmm:formula1}
@@ -473,8 +592,19 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{%lmm:u₁_X_spec, lmm:u₂_Y_spec, lmm:u₃_Z_spec,
+    \uses{lmm:u₁_X_spec, lmm:u₂_Y_spec, lmm:u₃_Z_spec,
     lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_sq_dvd_u_mul_cube}
+    \lean{Solution.lambda_sq_dvd_u_mul_cube}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:two_le_multiplicity}
 \end{proof}
 
 \begin{lemma}
@@ -487,6 +617,26 @@
     \leanok
     \uses{lmm:eta_isUnit, lmm:lambda_ne_zero, lmm:toInteger_cube_eq_one, lmm:two_le_multiplicity,
     lmm:formula1}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_sq_div_lambda_fourth}
+    \lean{Solution.lambda_sq_div_lambda_fourth}
+    \leanok
+\end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_sq_div_new_X_cubed}
+    \lean{Solution.lambda_sq_div_new_X_cubed}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:two_le_multiplicity}
 \end{proof}
 
 \begin{lemma}
