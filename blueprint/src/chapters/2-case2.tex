@@ -202,6 +202,51 @@
     \uses{lmm:Solution1.two_le_multiplicity}
 \end{proof}
 
+\begin{lemma}
+    \label{lmm:cube_add_cube_eq_mul}
+    \lean{cube_add_cube_eq_mul}
+    \leanok
+    \uses{def:Solution1}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_sq_dvd_or_dvd_or_dvd}
+    \lean{lambda_sq_dvd_or_dvd_or_dvd}
+    \leanok
+    \uses{def:Solution1}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_pow_two_dvd_c, lmm:cube_add_cube_eq_mul,
+    lmm:zeta_sub_one_prime1}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:ex_dvd_a_add_b}
+    \lean{ex_dvd_a_add_b}
+    \leanok
+    \uses{def:Solution1}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_sq_dvd_or_dvd_or_dvd, lmm:toInteger_cube_eq_one}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:exists_Solution_of_Solution'}
+    \lean{exists_Solution_of_Solution'}
+    \leanok
+    \uses{def:Solution1, def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:ex_dvd_a_add_b}
+\end{proof}
+
 \begin{theorem}[Generalised Fermat's Last Theorem for Exponent $3$]
     \label{thm:fermatLastTheoremForThreeGen}
     \lean{fermatLastTheoremForThreeGen}
