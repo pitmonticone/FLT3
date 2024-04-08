@@ -414,8 +414,80 @@
     lmm:lambda_not_dvd_w, lmm:lambda_ne_zero}
 \end{proof}
 
+\begin{lemma}
+    \label{lmm:coprime_x_y}
+    \lean{coprime_x_y}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_not_dvd_y, lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b,
+    lmm:lambda_not_dvd_x}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:coprime_x_y}
+    \lean{coprime_x_y}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_not_dvd_y, lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b,
+    lmm:lambda_not_dvd_x}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:coprime_x_z}
+    \lean{coprime_x_z}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_not_dvd_z, lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq__mul_b,
+    lmm:lambda_not_dvd_x}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:coprime_y_z}
+    \lean{coprime_y_z}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_not_dvd_z, lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq__mul_b,
+    lmm:lambda_not_dvd_y}
+\end{proof}
 
 
+
+
+\begin{lemma}
+    \label{lmm:formula1}
+    \lean{formula1}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{%lmm:u₁_X_spec, lmm:u₂_Y_spec, lmm:u₃_Z_spec,
+    lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:formula2}
+    \lean{formula2}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:eta_isUnit, lmm:lambda_ne_zero, lmm:toInteger_cube_eq_one, lmm:two_le_multiplicity,
+    lmm:formula1}
+\end{proof}
 
 \begin{theorem}[Generalised Fermat's Last Theorem for Exponent $3$]
     \label{thm:fermatLastTheoremForThreeGen}
