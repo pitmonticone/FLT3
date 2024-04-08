@@ -514,6 +514,17 @@
     \uses{lmm:formula2, lmm:by_kummer}
 \end{proof}
 
+\begin{theorem}
+    \label{lmm:exists_Solution_multiplicity_lt}
+    \lean{Solution.exists_Solution_multiplicity_lt}
+    \leanok
+    \uses{def:Solution}
+\end{theorem}
+\begin{proof}
+    \leanok
+    %\uses{lmm:exists_Solution_of_Solution1, lmm:Solution1_final_multiplicity_lt}
+\end{proof}
+
 \begin{theorem}[Generalised Fermat's Last Theorem for Exponent $3$]
     \label{thm:fermatLastTheoremForThreeGen}
     \lean{fermatLastTheoremForThreeGen}
@@ -531,8 +542,8 @@
     \uses{
     def:Solution1,
     %lmm:exists_Solution_of_Solution',
-    %lmm:Solution.exists_minimal,
-    %lmm:Solution.exists_Solution_multiplicity_lt
+    %lmm:exists_minimal,
+    lmm:exists_Solution_multiplicity_lt
     }
 \end{proof}
 
