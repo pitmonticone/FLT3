@@ -37,7 +37,7 @@
 
 % Motivation: It's going to be used in the general FLT project
 % – Disclaimer / Acknowledgement with my contributions
-% – Informalisation clear
+% – Informalisation should be clear
 % – Introduction: definitions + theorem statements + proof strategy
 % Porting to Mathlib
 
@@ -88,4 +88,158 @@
 \begin{proof}
     \leanok
     \uses{lmm:norm_lambda}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:zeta_sub_one_prime1}
+    \lean{IsPrimitiveRoot.zeta_sub_one_prime'}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_prime}
+    \lean{IsPrimitiveRoot.lambda_prime}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:zeta_sub_one_prime1}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_unit}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_not_unit}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_prime}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:card_quot}
+    \lean{IsCyclotomicExtension.Rat.Three.card_quot}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:norm_lambda}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:two_ne_zero}
+    \lean{IsCyclotomicExtension.Rat.Three.two_ne_zero}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:norm_lambda}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_dvd_two}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_not_dvd_two}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:two_ne_zero}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:univ_quot}
+    \lean{IsCyclotomicExtension.Rat.Three.univ_quot}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:card_quot}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:dvd_or_dvd_sub_one_or_dvd_add_one}
+    \lean{IsCyclotomicExtension.Rat.Three.dvd_or_dvd_sub_one_or_dvd_add_one}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:univ_quot}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:toInteger_cube_eq_one}
+    \lean{IsPrimitiveRoot.toInteger_cube_eq_one}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:eta_isUnit}
+    \lean{IsPrimitiveRoot.eta_isUnit}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:toInteger_cube_eq_one}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:toInteger_eval_cyclo}
+    \lean{IsPrimitiveRoot.toInteger_eval_cyclo}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    %\uses{}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:cube_sub_one}
+    \lean{IsCyclotomicExtension.Rat.Three.cube_sub_one}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
 \end{proof}
