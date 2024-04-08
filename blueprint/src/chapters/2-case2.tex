@@ -311,6 +311,112 @@
     \uses{lmm:lambda_ne_zero, lmm:toInteger_eval_cyclo}
 \end{proof}
 
+\begin{lemma}
+    \label{lmm:eta_add_one_inv}
+    \lean{eta_add_one_inv}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:toInteger_eval_cyclo}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
+    \lean{associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_prime}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq__mul_b}
+    \lean{associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq__mul_b}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_prime, lmm:eta_add_one_inv, lmm:toInteger_cube_eq_one}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq__mul_b}
+    \lean{associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq__mul_b}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_prime}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_dvd_y}
+    \lean{lambda_not_dvd_y}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_sq_not_a_add_eta_mul_b}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_dvd_z}
+    \lean{lambda_not_dvd_z}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_pow_dvd_a_add_b}
+    \lean{lambda_pow_dvd_a_add_b}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:cube_add_cube_eq_mul, lmm:lambda_prime,
+    lmm:lambda_not_dvd_z, lmm:lambda_not_dvd_y, lmm:two_le_multiplicity,
+    lmm:lambda_ne_zero}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_dvd_w}
+    \lean{lambda_not_dvd_w}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:multiplicity_lambda_c_finite}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_dvd_x}
+    \lean{lambda_not_dvd_x}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_dvd_a_add_eta_mul_b, lmm:lambda_dvd_a_add_eta_sq_mul_b,
+    lmm:cube_add_cube_eq_mul, lmm:two_le_multiplicity, lmm:lambda_prime,
+    lmm:lambda_not_dvd_w, lmm:lambda_ne_zero}
+\end{proof}
+
+
+
+
 \begin{theorem}[Generalised Fermat's Last Theorem for Exponent $3$]
     \label{thm:fermatLastTheoremForThreeGen}
     \lean{fermatLastTheoremForThreeGen}
