@@ -238,13 +238,77 @@
 
 \begin{lemma}
     \label{lmm:exists_Solution_of_Solution'}
-    \lean{exists_Solution_of_Solution'}
+    \lean{exists_Solution_of_Solution1}
     \leanok
     \uses{def:Solution1, def:Solution}
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:ex_dvd_a_add_b}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_ne_zero}
+    \lean{lambda_ne_zero}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_prime}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:a_add_eta_b}
+    \lean{lambda_ne_zero}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_dvd_a_add_eta_mul_b}
+    \lean{lambda_dvd_a_add_eta_mul_b}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:a_add_eta_b}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_dvd_a_add_eta_sq_mul_b}
+    \lean{lambda_dvd_a_add_eta_sq_mul_b}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_sq_not_a_add_eta_mul_b}
+    \lean{lambda_sq_not_a_add_eta_mul_b}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:a_add_eta_b, lmm:lambda_ne_zero}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}
+    \lean{lambda_sq_not_dvd_a_add_eta_sq_mul_b}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_ne_zero, lmm:toInteger_eval_cyclo}
 \end{proof}
 
 \begin{theorem}[Generalised Fermat's Last Theorem for Exponent $3$]
