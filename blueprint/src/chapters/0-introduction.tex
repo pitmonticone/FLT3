@@ -241,5 +241,43 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
+    \uses{lmm:dvd_or_dvd_sub_one_or_dvd_add_one, lmm:lambda_dvd_three}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:cube_sub_one, lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_add_one_of_dvd_add_one}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}
+    \leanok
+    %\uses{}
+    % TODO
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:dvd_or_dvd_sub_one_or_dvd_add_one,
+    lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one,
+    lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one}
 \end{proof}
