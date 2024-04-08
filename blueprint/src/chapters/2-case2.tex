@@ -132,6 +132,76 @@
     \uses{lmm:lambda_not_unit}
 \end{proof}
 
+\begin{lemma}
+    \label{lmm:Solution.exists_minimal}
+    \lean{Solution.exists_minimal}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_not_unit}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:a_cube_b_cube_same_congr}
+    \lean{a_cube_b_cube_same_congr}
+    \leanok
+    \uses{def:Solution1}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd,
+    lmm:lambda_not_dvd_two
+    }
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_pow_four_dvd_c_cube}
+    \lean{lambda_pow_four_dvd_c_cube}
+    \leanok
+    \uses{def:Solution1}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:a_cube_b_cube_same_congr}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_pow_two_dvd_c}
+    \lean{lambda_pow_two_dvd_c}
+    \leanok
+    \uses{def:Solution1}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:multiplicity_lambda_c_finite,
+    lmm:lambda_pow_four_dvd_c_cube,
+    lambda_prime}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:Solution1.two_le_multiplicity}
+    \lean{Solution'.two_le_multiplicity}
+    \leanok
+    \uses{def:Solution1}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_pow_two_dvd_c}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:Solution.two_le_multiplicity}
+    \lean{Solution.two_le_multiplicity}
+    \leanok
+    \uses{def:Solution}
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:Solution1.two_le_multiplicity}
+\end{proof}
+
 \begin{theorem}[Generalised Fermat's Last Theorem for Exponent $3$]
     \label{thm:fermatLastTheoremForThreeGen}
     \lean{fermatLastTheoremForThreeGen}
