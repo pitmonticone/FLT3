@@ -78,7 +78,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:norm_lambda}
     \lean{IsCyclotomicExtension.Rat.Three.norm_lambda}
     \leanok
-    % TODO
+    The norm of $\lambda$ is $3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -88,7 +88,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:norm_lambda_prime}
     \lean{IsCyclotomicExtension.Rat.Three.norm_lambda_prime}
     \leanok
-    % TODO
+    The norm of $\lambda$ is a prime number.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -99,7 +99,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_dvd_three}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_dvd_three}
     \leanok
-    % TODO
+    $$\lambda \divides 3.$$
 \end{lemma}
 \begin{proof}
     \leanok
@@ -120,7 +120,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_prime}
     \lean{IsPrimitiveRoot.lambda_prime}
     \leanok
-    % TODO
+    $\lambda$ is a prime number.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -131,7 +131,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_not_unit}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_not_unit}
     \leanok
-    % TODO
+    $\lambda$ is not a unit.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -142,7 +142,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:card_quot}
     \lean{IsCyclotomicExtension.Rat.Three.card_quot}
     \leanok
-    % TODO
+    % `𝓞 K ⧸ Ideal.span {λ}` has cardinality `3`
 \end{lemma}
 \begin{proof}
     \leanok
@@ -153,7 +153,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:two_ne_zero}
     \lean{IsCyclotomicExtension.Rat.Three.two_ne_zero}
     \leanok
-    % TODO
+    % `2` in `𝓞 K ⧸ Ideal.span {λ}` is not `0`
 \end{lemma}
 \begin{proof}
     \leanok
@@ -164,7 +164,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_not_dvd_two}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_not_dvd_two}
     \leanok
-    % TODO
+    $$\lambda \notdivides 2.$$
 \end{lemma}
 \begin{proof}
     \leanok
@@ -175,7 +175,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:univ_quot}
     \lean{IsCyclotomicExtension.Rat.Three.univ_quot}
     \leanok
-    % TODO
+    The universal finite set is $\set{0, 1, -1}$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -186,7 +186,8 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:dvd_or_dvd_sub_one_or_dvd_add_one}
     \lean{IsCyclotomicExtension.Rat.Three.dvd_or_dvd_sub_one_or_dvd_add_one}
     \leanok
-    % TODO
+    Let $x \in \cc{O}_K$. \\\\
+    $$\lambda \divides x \lor \lambda \divides x-1 \lor \lambda \divides x+1.$$
 \end{lemma}
 \begin{proof}
     \leanok
@@ -197,7 +198,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:toInteger_cube_eq_one}
     \lean{IsPrimitiveRoot.toInteger_cube_eq_one}
     \leanok
-    % TODO
+    $$\eta^3 = 1.$$
 \end{lemma}
 \begin{proof}
     \leanok
@@ -207,7 +208,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:eta_isUnit}
     \lean{IsPrimitiveRoot.eta_isUnit}
     \leanok
-    % TODO
+    $\eta$ is a unit.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -218,7 +219,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:toInteger_eval_cyclo}
     \lean{IsPrimitiveRoot.toInteger_eval_cyclo}
     \leanok
-    % TODO
+    $$\eta^2 + \eta + 1 = 0.$$
 \end{lemma}
 \begin{proof}
     \leanok
@@ -229,7 +230,8 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:cube_sub_one}
     \lean{IsCyclotomicExtension.Rat.Three.cube_sub_one}
     \leanok
-    % TODO
+    Let $x \in \cc{O}_K$. \\\\
+    $$x^3 - 1 = (x - 1) \cdot (x - \eta) \cdot (x - \eta^ 2).$$
 \end{lemma}
 \begin{proof}
     \leanok
@@ -240,7 +242,8 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
     \leanok
-    % TODO
+    Let $x \in \cc{O}_K$. \\\\
+    $$\lambda \divides x \cdot (x - 1) \cdot (x - (\eta + 1)).$$
 \end{lemma}
 \begin{proof}
     \leanok
@@ -251,7 +254,8 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one}
     \leanok
-    % TODO
+    Let $x \in \cc{O}_K$. \\\\
+    If $\lambda\divides x - 1$, then $\lambda^ 4 \divides x^3 - 1$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -262,7 +266,8 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_add_one_of_dvd_add_one}
     \leanok
-    % TODO
+    Let $x \in \cc{O}_K$. \\\\
+    If $\lambda \divides x + 1$, then $\lambda^4 \divides x ^ 3 + 1$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -273,7 +278,9 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}
     \leanok
-    % TODO
+    Let $x \in \cc{O}_K$. \\\\
+    If $\lambda \notdivides x$, then $(\lambda^4 \divides x^3 - 1)
+    \lor (\lambda^4 \divides x ^ 3 + 1)$.
 \end{lemma}
 \begin{proof}
     \leanok
