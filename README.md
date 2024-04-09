@@ -11,7 +11,9 @@ This repository contains a formalised proof of Fermat's Last Theorem for the exp
 ## Build Lean Files
 
 To build the Lean files of this project, you need to have a working version of Lean.
-See [the installation instructions](https://leanprover-community.github.io/get_started.html) (under Regular install).
+For comprehensive guidance on installing Lean,
+see [the installation instructions](https://leanprover-community.github.io/get_started.html)
+under the section titled "Regular install".
 
 To build the project, run `lake exe cache get` and then `lake build`.
 
@@ -39,7 +41,6 @@ lake build
 inv all
 ```
 
-
 ## References
 
 ### Books
@@ -58,5 +59,5 @@ inv all
 
 ### Blog Posts
 
-1. Buzzard. [*Lean in 2024*](https://xenaproject.wordpress.com/2024/01/20/lean-in-2024/)
+1. Buzzard. [*Lean in 2024*](https://xenaproject.wordpress.com/2024/01/20/lean-in-2024/).
 2. Lowry-Duda. [*FLT3 at Lean for the Curious Mathematician 2024*](https://davidlowryduda.com/flt3-at-lftcm2024/).
