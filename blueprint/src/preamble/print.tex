@@ -17,6 +17,19 @@
 % \declaretheorem[sibling=theorem]{definition}
 % \declaretheorem[sibling=theorem]{example}
 
+
+% \newtheoremstyle{name}{spaceabove}{spacebelow}{bodyfont}{indent}{headfont}{headpunctuation}{headspace}{headspec}
+\newtheoremstyle{break} % Name of the style
+  {12pt} % Space above
+  {12pt} % Space below
+  {\normalfont} % Body font
+  {} % Indent amount
+  {\bfseries} % Theorem head font
+  {.} % Punctuation after theorem head
+  {\newline} % Space after theorem head
+  {} % Theorem head spec
+
+\theoremstyle{break} % Applying the style
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{proposition}[theorem]{Proposition}
