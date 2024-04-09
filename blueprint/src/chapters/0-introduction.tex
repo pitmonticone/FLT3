@@ -10,6 +10,14 @@
 % Fermat's Last Theorem (FLT) is a famous problem in number theory. It states that there are no positive integers $a$, $b$, and $c$ such that $a^n + b^n = c^n$ for any integer value of $n$ greater than $2$. The theorem was first conjectured by Pierre de Fermat in 1637 and remained unproven for over 350 years. The first successful proof was given by Andrew Wiles in 1994. The proof is long and complex, and it relies on many different areas of mathematics, including algebraic geometry and modular forms.
 
 
+Let $K$ be a number field (cyclotomic extension $\Q[e^{\frac{2\pi i}{3}}]$). \\
+Let $\cc{O}_K$ be the ring of integers of $K$. \\
+Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+Let $\zeta \in K$ be any primitive $3$-rd root of unity. \\
+Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta \in K$. \\
+Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+Let $u \in \cc{O}^\times_K$.
+
 \begin{lemma}
     \label{lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
     \lean{fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
@@ -21,11 +29,10 @@
 \end{proof}
 
 \begin{theorem}
-    \label{lmm:mem}
+    \label{thm:mem}
     \lean{IsCyclotomicExtension.Rat.Three.Units.mem}
     \leanok
-    %\uses{}
-    % TODO
+    $$u \in \set{1, -1, \zeta, -\zeta, \zeta^2, -\zeta^2}.$$
 \end{theorem}
 \begin{proof}
     \leanok
@@ -36,8 +43,8 @@
     \label{thm:not_exists_int_three_dvd_sub}
     \lean{IsCyclotomicExtension.Rat.Three.Units.not_exists_int_three_dvd_sub}
     \leanok
-    %\uses{}
-    % TODO
+    Let $n \in \Z$. \\ \\
+    Then $3 \notdivides \zeta - n$.
 \end{theorem}
 \begin{proof}
     \leanok
@@ -48,8 +55,7 @@
     \label{lmm:lambda_sq}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_sq}
     \leanok
-    %\uses{}
-    % TODO
+    $$\lambda^2 = -3 \cdot \eta.$$
 \end{lemma}
 \begin{proof}
     \leanok
@@ -60,8 +66,9 @@
     \label{lmm:eq_one_or_neg_one_of_unit_of_congruent}
     \lean{IsCyclotomicExtension.Rat.Three.eq_one_or_neg_one_of_unit_of_congruent}
     \leanok
-    %\uses{}
-    % TODO
+    If $\exists n \in \Z$ such that $\lambda^2 \divides u - n$, then
+    $u = 1 \lor u = -1$. \\
+    This is a special case of the Kummer's Lemma (\Cref{lmm:by_kummer}).
 \end{theorem}
 \begin{proof}
     \leanok
