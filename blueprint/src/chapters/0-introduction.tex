@@ -9,11 +9,10 @@
 % Porting to Mathlib
 % Fermat's Last Theorem (FLT) is a famous problem in number theory. It states that there are no positive integers $a$, $b$, and $c$ such that $a^n + b^n = c^n$ for any integer value of $n$ greater than $2$. The theorem was first conjectured by Pierre de Fermat in 1637 and remained unproven for over 350 years. The first successful proof was given by Andrew Wiles in 1994. The proof is long and complex, and it relies on many different areas of mathematics, including algebraic geometry and modular forms.
 
-
-Let $K$ be a number field (cyclotomic extension $\Q[e^{\frac{2\pi i}{3}}]$). \\
+Let $K$ be the third cyclotomic field / cyclotomic extension $\Q[e^{\frac{2\pi i}{3}}]$. \\% ASK EXPERTS
 Let $\cc{O}_K$ be the ring of integers of $K$. \\
 Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
-Let $\zeta \in K$ be any primitive $3$-rd root of unity. \\
+Let $\zeta \in K$ be any primitive $3$-rd root of unity. \\ % ASK EXPERTS
 Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta \in K$. \\
 Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
 Let $u \in \cc{O}^\times_K$.
@@ -32,7 +31,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{thm:mem}
     \lean{IsCyclotomicExtension.Rat.Three.Units.mem}
     \leanok
-    $$u \in \set{1, -1, \zeta, -\zeta, \zeta^2, -\zeta^2}.$$
+    $u \in \set{1, -1, \zeta, -\zeta, \zeta^2, -\zeta^2}$.
 \end{theorem}
 \begin{proof}
     \leanok
@@ -55,7 +54,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_sq}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_sq}
     \leanok
-    $$\lambda^2 = -3 \cdot \eta.$$
+    $\lambda^2 = -3 \cdot \eta$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -99,7 +98,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_dvd_three}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_dvd_three}
     \leanok
-    $$\lambda \divides 3.$$
+    $\lambda \divides 3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -164,7 +163,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:lambda_not_dvd_two}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_not_dvd_two}
     \leanok
-    $$\lambda \notdivides 2.$$
+    $\lambda \notdivides 2$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -187,7 +186,7 @@ Let $u \in \cc{O}^\times_K$.
     \lean{IsCyclotomicExtension.Rat.Three.dvd_or_dvd_sub_one_or_dvd_add_one}
     \leanok
     Let $x \in \cc{O}_K$. \\\\
-    $$(\lambda \divides x) \lor (\lambda \divides x-1) \lor (\lambda \divides x+1).$$
+    $(\lambda \divides x) \lor (\lambda \divides x-1) \lor (\lambda \divides x+1)$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -198,7 +197,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:toInteger_cube_eq_one}
     \lean{IsPrimitiveRoot.toInteger_cube_eq_one}
     \leanok
-    $$\eta^3 = 1.$$
+    $\eta^3 = 1$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -219,7 +218,7 @@ Let $u \in \cc{O}^\times_K$.
     \label{lmm:toInteger_eval_cyclo}
     \lean{IsPrimitiveRoot.toInteger_eval_cyclo}
     \leanok
-    $$\eta^2 + \eta + 1 = 0.$$
+    $\eta^2 + \eta + 1 = 0$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -231,7 +230,7 @@ Let $u \in \cc{O}^\times_K$.
     \lean{IsCyclotomicExtension.Rat.Three.cube_sub_one}
     \leanok
     Let $x \in \cc{O}_K$. \\\\
-    $$x^3 - 1 = (x - 1) \cdot (x - \eta) \cdot (x - \eta^ 2).$$
+    $x^3 - 1 = (x - 1) \cdot (x - \eta) \cdot (x - \eta^ 2)$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -243,7 +242,7 @@ Let $u \in \cc{O}^\times_K$.
     \lean{IsCyclotomicExtension.Rat.Three.lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
     \leanok
     Let $x \in \cc{O}_K$. \\\\
-    $$\lambda \divides x \cdot (x - 1) \cdot (x - (\eta + 1)).$$
+    $\lambda \divides x \cdot (x - 1) \cdot (x - (\eta + 1))$.
 \end{lemma}
 \begin{proof}
     \leanok
