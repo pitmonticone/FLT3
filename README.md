@@ -30,7 +30,7 @@ git clone git@github.com:plastex/plastex
 pip3 install ./plastex
 git clone git@github.com:PatrickMassot/leanblueprint
 pip3 install ./leanblueprint
-cd sphere-eversion
+cd FLT3
 ```
 
 To actually build the blueprint, run
