@@ -233,7 +233,7 @@ noncomputable
 def Solution.multiplicity := S.toSolution'.multiplicity
 
 /-- We say that `S : Solution` is minimal if for all `S₁ : Solution`, the multiplicity of `λ` in
-`S.c` is less or equal than the multiplicity in `S'.c`. -/
+`S.c` is less or equal than the multiplicity in `S₁.c`. -/
 def Solution.isMinimal : Prop := ∀ (S₁ : Solution), S.multiplicity ≤ S₁.multiplicity
 
 /-- If there is a solution then there is a minimal one. -/
@@ -325,7 +325,7 @@ lemma cube_add_cube_eq_mul :
 
 open PartENat in
 
-/-- Given `S : Solution'`, we have that `λ ^ 2` divides one amongst `S.a + S.b ∨ λ ^ 2`,
+/-- Given `S : Solution'`, we have that `λ ^ 2` divides one amongst `S.a + S.b`,
 `S.a + η * S.b` and `S.a + η ^ 2 * S.b`. -/
 lemma lambda_sq_dvd_or_dvd_or_dvd :
     λ ^ 2 ∣ S.a + S.b ∨ λ ^ 2 ∣ S.a + η * S.b ∨ λ ^ 2 ∣ S.a + η ^ 2 * S.b := by
@@ -352,7 +352,7 @@ lemma lambda_sq_dvd_or_dvd_or_dvd :
     ← h3', ← Nat.cast_add, ← Nat.cast_add, coe_le_coe] at this
   linarith
 
-/-- Given `S : Solution'`, we may assume that `λ ^ 2` divides `S.a + S.b ∨ λ ^ 2` (see also the
+/-- Given `S : Solution'`, we may assume that `λ ^ 2` divides `S.a + S.b` (see also the
 result below). -/
 lemma ex_dvd_a_add_b : ∃ (a' b' : 𝓞 K), a' ^ 3 + b' ^ 3 = S.u * S.c ^ 3 ∧
     IsCoprime a' b' ∧ ¬ λ ∣ a' ∧ ¬ λ ∣ b' ∧ λ ^ 2 ∣ a' + b' := by
@@ -392,9 +392,6 @@ namespace Solution
 
 variable (S : Solution)
 
-/-- Given `S : Solution`, we have that `λ` is non-zero. -/
-lemma lambda_ne_zero : λ ≠ 0 := hζ.lambda_prime.ne_zero -- This should be moved to Cyclo.lean.
-
 /-- Given `S : Solution`, we have that `S.a + η * S.b = (S.a + S.b) + λ * S.b`. -/
 lemma a_add_eta_b : S.a + η * S.b = (S.a + S.b) + λ * S.b := by ring
 
@@ -411,8 +408,8 @@ lemma lambda_dvd_a_add_eta_sq_mul_b : λ ∣ (S.a + η ^ 2 * S.b) := by
 
 /-- Given `S : Solution`, we have that `λ ^ 2` does not divide `S.a + η * S.b`. -/
 lemma lambda_sq_not_a_add_eta_mul_b : ¬ λ ^ 2 ∣ (S.a + η * S.b) := by
-  simp_rw [a_add_eta_b, dvd_add_right S.hab, pow_two, mul_dvd_mul_iff_left lambda_ne_zero, S.hb,
-    not_false_eq_true]
+  simp_rw [a_add_eta_b, dvd_add_right S.hab, pow_two, mul_dvd_mul_iff_left (lambda_ne_zero hζ),
+  S.hb, not_false_eq_true]
 
 /-- Given `S : Solution`, we have that `λ ^ 2` does not divide `S.a + η ^ 2 * S.b`. -/
 lemma lambda_sq_not_dvd_a_add_eta_sq_mul_b : ¬ λ ^ 2 ∣ (S.a + η ^ 2 * S.b) := by
@@ -423,7 +420,8 @@ lemma lambda_sq_not_dvd_a_add_eta_sq_mul_b : ¬ λ ^ 2 ∣ (S.a + η ^ 2 * S.b) 
   rcases S.hab with ⟨k', hk'⟩
   use (k - k') * (-η)
   rw [hk'] at hk
-  rw [show λ ^ 2 * k' - S.b + η ^ 2 * S.b = λ * (S.b * (η +1) + λ * k') by ring, pow_two, mul_assoc] at hk
+  rw [show λ ^ 2 * k' - S.b + η ^ 2 * S.b = λ * (S.b * (η +1) + λ * k') by ring,
+    pow_two, mul_assoc] at hk
   simp only [mul_eq_mul_left_iff, lambda_ne_zero, or_false] at hk
   replace hk := congr_arg (fun x => x * (-η)) hk
   simp only at hk
@@ -569,7 +567,7 @@ lemma lambda_pow_dvd_a_add_b : λ ^ (3 * S.multiplicity - 2) ∣ S.a + S.b := by
     omega
   rw [← hh, pow_succ, pow_succ] at h
   rw [show (S.a + S.b) * (λ * y S) * (λ * z S) = (S.a + S.b) * y S * z S * λ * λ by ring] at h
-  simp only [mul_dvd_mul_iff_right lambda_ne_zero] at h
+  simp only [mul_dvd_mul_iff_right (lambda_ne_zero hζ)] at h
   rwa [show (S.a + S.b) * y S * z S = y S * (z S * (S.a + S.b)) by ring] at h
 
 /-- Given `S : Solution`, we let `S.x` be the element such that
@@ -945,7 +943,7 @@ lemma formula2 : S.Y ^ 3 + S.u₄ * S.Z ^ 3 = S.u₅ * (λ ^ (S.multiplicity - 1
   unfold u₅'
   apply mul_left_cancel₀ S.u₂.isUnit.ne_zero
   apply mul_left_cancel₀ hζ.eta_isUnit.ne_zero
-  apply mul_left_cancel₀ lambda_ne_zero
+  apply mul_left_cancel₀ (lambda_ne_zero hζ)
   have h : ↑(u₂ S) * ↑(u₂ S)⁻¹ = (1 : (𝓞 K)ˣ) := by group
   rw [show λ * (η * (↑(u₂ S) * (Y S ^ 3 + η * ↑(u₃ S) * ↑(u₂ S)⁻¹ * Z S ^ 3)))
            =

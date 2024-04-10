@@ -88,27 +88,43 @@
     satisfying the equation $a^3 + b^3 = u \cdot c^3$.
 \end{definition}
 
-% /-- Given `S' : Solution'`, `S'.multiplicity` is the multiplicity of `λ` in `S'.c`, as a natural
-% number. -/
-% noncomputable
-% def Solution'.multiplicity :=
-%   (_root_.multiplicity (hζ.toInteger - 1) S'.c).get (multiplicity_lambda_c_finite S')
+\begin{definition}[Multiplicity of Solution']
+    \label{def:Solution1_Multiplicity}
+    \lean{Solution'.multiplicity}
+    \leanok
+    \uses{def:Solution1}
+    Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
+    The $\boldsymbol{multiplicity}$ of $S'$ is the largest $n \in \N$ such that
+    $\lambda^n \divides c$.
+\end{definition}
 
-% /-- Given `S : Solution`, `S.multiplicity` is the multiplicity of `λ` in `S.c`, as a natural
-% number. -/
-% noncomputable
-% def Solution.multiplicity := S.toSolution'.multiplicity
+\begin{definition}[Multiplicity of Solution]
+    \label{def:Solution_Multiplicity}
+    \lean{Solution.multiplicity}
+    \leanok
+    \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$. \\\\
+    The $\boldsymbol{multiplicity}$ of $S$ is the largest $n \in \N$ such that
+    $\lambda^n \divides c$.
+\end{definition}
 
-% /-- We say that `S : Solution` is minimal if for all `S₁ : Solution`, the multiplicity of `λ` in
-% `S.c` is less or equal than the multiplicity in `S'.c`. -/
-% def Solution.isMinimal : Prop := ∀ (S₁ : Solution), S.multiplicity ≤ S₁.multiplicity
+\begin{definition}[Minimal Solution]
+    \label{def:Solution_Minimal}
+    \lean{Solution.isMinimal}
+    \leanok
+    \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$. \\\\
+    We say that $S$ is $\boldsymbol{minimal}$ if for all solutions $S_1=(a_1,b_1,c_1,u_1)$,
+    the $multiplicity$ of $S$ is less than or equal to the $multiplicity$ of $S_1$.
+\end{definition}
 
 \begin{lemma}
     \label{lmm:Solution1.multiplicity_lambda_c_finite}
     \lean{Solution'.multiplicity_lambda_c_finite}
     \leanok
     \uses{def:Solution1}
-    % For any `S' : Solution'`, the multiplicity of `λ` in `S'.c` is finite.
+    Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
+    The multiplicity of $S'$ is finite.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -120,12 +136,12 @@
     \label{lmm:exists_minimal}
     \lean{Solution.exists_minimal}
     \leanok
-    \uses{def:Solution}
-    % If there is a solution then there is a minimal one.
+    \uses{def:Solution, def:Solution_Minimal}
+    Let $S$ be a $solution$. \\\\
+    Then there is a minimal solution $S_1$.
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:lambda_not_unit}
 \end{proof}
 
 \begin{lemma}
@@ -133,14 +149,13 @@
     \lean{a_cube_b_cube_same_congr}
     \leanok
     \uses{def:Solution1}
-    % Given `S : Solution'`, then `S.a` and `S.b`
-    % are both congruent to `1` modulo `λ ^ 4` or are both congruent to `-1`.
+    Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
+    Then $a \equiv b \equiv 1 (\mod \lambda^4)$ or $a \equiv b \equiv -1 (\mod \lambda^4)$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd,
-    lmm:lambda_not_dvd_two
-    }
+    lmm:lambda_not_dvd_two}
 \end{proof}
 
 \begin{lemma}
@@ -148,7 +163,8 @@
     \lean{lambda_pow_four_dvd_c_cube}
     \leanok
     \uses{def:Solution1}
-    % Given `S : Solution'`, we have that `λ ^ 4` divides `S.c ^ 3`.
+    Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
+    Then $\lambda^4 \divides c^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -160,7 +176,8 @@
     \lean{lambda_pow_two_dvd_c}
     \leanok
     \uses{def:Solution1}
-    % Given `S : Solution'`, we have that `λ ^ 2` divides `S.c`.
+    Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
+    Then $\lambda^2 \divides c$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -174,7 +191,8 @@
     \lean{Solution'.two_le_multiplicity}
     \leanok
     \uses{def:Solution1}
-    % Given `S : Solution'`, we have that `2 ≤ S.multiplicity`.
+    Let $S'=(a, b, c, u)$ be a $solution'$ with multiplicity $n$.\\\\
+    Then $2 \leq n$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -186,7 +204,8 @@
     \lean{Solution.two_le_multiplicity}
     \leanok
     \uses{def:Solution}
-    % Given `S : Solution`, we have that `2 ≤ S.multiplicity`.
+    Let $S=(a, b, c, u)$ be a $solution$ with multiplicity $n$.\\\\
+    Then $2 \leq n$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -198,7 +217,8 @@
     \lean{cube_add_cube_eq_mul}
     \leanok
     \uses{def:Solution1}
-    % Given `S : Solution'`, the key factorization of `S.a ^ 3 + S.b ^ 3`.
+    Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
+    $a^3 + b^3 = (a + b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 \cdot b)$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -210,8 +230,9 @@
     \lean{lambda_sq_dvd_or_dvd_or_dvd}
     \leanok
     \uses{def:Solution1}
-    % Given `S : Solution'`, we have that `λ ^ 2`
-    % divides one amongst `S.a + S.b ∨ λ ^ 2`, `S.a + η * S.b` and `S.a + η ^ 2 * S.b`.
+    Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
+    $\lambda^2 \divides a + b \lor \lambda^2 \divides a +
+    \eta \cdot b \lor \lambda^2 \divides a + \eta^2 \cdot b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -224,8 +245,8 @@
     \lean{ex_dvd_a_add_b}
     \leanok
     \uses{def:Solution1}
-    % Given `S : Solution'`, we may assume that `λ ^ 2` divides
-    % `S.a + S.b ∨ λ ^ 2` (see also the result below).
+    Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
+    Then $\exists a_1,b_1 \in \cc{O}_k$ such that $S_1=(a_1,b_1,c,u)$ is a $solution$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -237,24 +258,12 @@
     \lean{exists_Solution_of_Solution'}
     \leanok
     \uses{def:Solution1, def:Solution}
-    % Given `S : Solution'`, then there is `S₁ : Solution` such that
-    % `S₁.multiplicity = S.multiplicity`.
+    Let $S$ be a $solution$ with multiplicity $n$.\\\\
+    Then there is a $solution'\text{ }S'$ with multiplicity $n$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:ex_dvd_a_add_b}
-\end{proof}
-
-\begin{lemma}
-    \label{lmm:lambda_ne_zero}
-    \lean{Solution.lambda_ne_zero}
-    \leanok
-    \uses{def:Solution}
-    % Given `S : Solution`, we have that `λ` is non-zero.
-\end{lemma}
-\begin{proof}
-    \leanok
-    \uses{lmm:lambda_prime}
 \end{proof}
 
 \begin{lemma}
