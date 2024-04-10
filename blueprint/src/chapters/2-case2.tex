@@ -73,7 +73,7 @@
     \leanok
     Let $a, b, c \in \cc{O}_K$ such that $c \neq 0$ and $\gcd(a,b)=1$.\\
     Let $\lambda \notdivides a$, $\lambda \notdivides b$ and $\lambda \divides c$. \\\\
-    A $\boldsymbol{solution'}$ is a tuple $(a, b, c, u)$
+    A $\boldsymbol{solution'}$ is a tuple $S'=(a, b, c, u)$
     satisfying the equation $a^3 + b^3 = u \cdot c^3.$
 \end{definition}
 
@@ -84,16 +84,31 @@
     Let $a, b, c \in \cc{O}_K$ such that $c \neq 0$ and $\gcd(a,b)=1$.\\
     Let $\lambda \notdivides a$, $\lambda \notdivides b$, $\lambda \divides c$ and
     $\lambda^2 \divides a+b$. \\\\
-    A $\boldsymbol{solution}$ is a tuple $(a, b, c, u)$
+    A $\boldsymbol{solution}$ is a tuple $S=(a, b, c, u)$
     satisfying the equation $a^3 + b^3 = u \cdot c^3$.
 \end{definition}
+
+% /-- Given `S' : Solution'`, `S'.multiplicity` is the multiplicity of `λ` in `S'.c`, as a natural
+% number. -/
+% noncomputable
+% def Solution'.multiplicity :=
+%   (_root_.multiplicity (hζ.toInteger - 1) S'.c).get (multiplicity_lambda_c_finite S')
+
+% /-- Given `S : Solution`, `S.multiplicity` is the multiplicity of `λ` in `S.c`, as a natural
+% number. -/
+% noncomputable
+% def Solution.multiplicity := S.toSolution'.multiplicity
+
+% /-- We say that `S : Solution` is minimal if for all `S₁ : Solution`, the multiplicity of `λ` in
+% `S.c` is less or equal than the multiplicity in `S'.c`. -/
+% def Solution.isMinimal : Prop := ∀ (S₁ : Solution), S.multiplicity ≤ S₁.multiplicity
 
 \begin{lemma}
     \label{lmm:Solution1.multiplicity_lambda_c_finite}
     \lean{Solution'.multiplicity_lambda_c_finite}
     \leanok
     \uses{def:Solution1}
-    % TODO
+    % For any `S' : Solution'`, the multiplicity of `λ` in `S'.c` is finite.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -106,6 +121,7 @@
     \lean{Solution.exists_minimal}
     \leanok
     \uses{def:Solution}
+    % If there is a solution then there is a minimal one.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -117,6 +133,8 @@
     \lean{a_cube_b_cube_same_congr}
     \leanok
     \uses{def:Solution1}
+    % Given `S : Solution'`, then `S.a` and `S.b`
+    % are both congruent to `1` modulo `λ ^ 4` or are both congruent to `-1`.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -130,6 +148,7 @@
     \lean{lambda_pow_four_dvd_c_cube}
     \leanok
     \uses{def:Solution1}
+    % Given `S : Solution'`, we have that `λ ^ 4` divides `S.c ^ 3`.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -141,6 +160,7 @@
     \lean{lambda_pow_two_dvd_c}
     \leanok
     \uses{def:Solution1}
+    % Given `S : Solution'`, we have that `λ ^ 2` divides `S.c`.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -154,6 +174,7 @@
     \lean{Solution'.two_le_multiplicity}
     \leanok
     \uses{def:Solution1}
+    % Given `S : Solution'`, we have that `2 ≤ S.multiplicity`.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -165,6 +186,7 @@
     \lean{Solution.two_le_multiplicity}
     \leanok
     \uses{def:Solution}
+    % Given `S : Solution`, we have that `2 ≤ S.multiplicity`.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -176,6 +198,7 @@
     \lean{cube_add_cube_eq_mul}
     \leanok
     \uses{def:Solution1}
+    % Given `S : Solution'`, the key factorization of `S.a ^ 3 + S.b ^ 3`.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -187,6 +210,8 @@
     \lean{lambda_sq_dvd_or_dvd_or_dvd}
     \leanok
     \uses{def:Solution1}
+    % Given `S : Solution'`, we have that `λ ^ 2`
+    % divides one amongst `S.a + S.b ∨ λ ^ 2`, `S.a + η * S.b` and `S.a + η ^ 2 * S.b`.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -199,6 +224,8 @@
     \lean{ex_dvd_a_add_b}
     \leanok
     \uses{def:Solution1}
+    % Given `S : Solution'`, we may assume that `λ ^ 2` divides
+    % `S.a + S.b ∨ λ ^ 2` (see also the result below).
 \end{lemma}
 \begin{proof}
     \leanok
@@ -210,6 +237,8 @@
     \lean{exists_Solution_of_Solution'}
     \leanok
     \uses{def:Solution1, def:Solution}
+    % Given `S : Solution'`, then there is `S₁ : Solution` such that
+    % `S₁.multiplicity = S.multiplicity`.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -221,6 +250,7 @@
     \lean{Solution.lambda_ne_zero}
     \leanok
     \uses{def:Solution}
+    % Given `S : Solution`, we have that `λ` is non-zero.
 \end{lemma}
 \begin{proof}
     \leanok
