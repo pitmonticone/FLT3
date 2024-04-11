@@ -691,7 +691,7 @@ lemma mult_minus_two_plus_one_plus_one : 3 * S.multiplicity - 2 + 1 + 1 = 3 * S.
   zify [this]
   ring
 
-open Ideal
+-- open Ideal
 
 /-- Given `S : Solution`, we have that `S.x * S.y * S.z = S.u * S.w ^ 3`. -/
 lemma x_mul_y_mul_z_eq_u_w_pow_three : S.x * S.y * S.z = S.u * S.w ^ 3 := by
@@ -711,17 +711,6 @@ lemma x_mul_y_mul_z_eq_u_w_pow_three : S.x * S.y * S.z = S.u * S.w ^ 3 := by
   simp only [mul_comm 3, pow_mul, ← mul_pow, ← w_spec]
   rw [← S.H, cube_add_cube_eq_mul]
   ring
-
-/-- Given `S : Solution`, we have that `span {S.x} * span {S.y} * span {S.z} = span {S.w} ^ 3`. -/
-lemma span_x_mul_span_y_mul_span_z : span {S.x} * span {S.y} * span {S.z} = span {S.w} ^ 3 := by
-  calc span {S.x} * span {S.y} * span {S.z} = span {S.x * S.y} * span {S.z} := by
-        rw [← Ideal.span_singleton_mul_span_singleton S.x S.y]
-      _ = span {S.x * S.y * S.z} := by
-        rw [← Ideal.span_singleton_mul_span_singleton (S.x * S.y) S.z]
-      _ = span {S.u * S.w ^ 3} := by rw [x_mul_y_mul_z_eq_u_w_pow_three]
-      _ = span {S.w ^ 3} := by
-        rw [Ideal.span_singleton_mul_left_unit S.u.isUnit]
-      _ = _ := by rw [Ideal.span_singleton_pow]
 
 /-- Given `S : Solution`, there exists `u₁` in `(𝓞 K)ˣ` and `X` in `𝓞 K`
 such that  `S.x = u₁ * X ^ 3`. -/
