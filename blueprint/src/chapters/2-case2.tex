@@ -596,8 +596,8 @@
     \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three, lmm:coprime_x_z, lmm:coprime_y_z}
 \end{proof}
 
-\begin{definition}[$u_1,u_2,u_3,X,Y,Z$]
-    \label{def:Solution_u1_u2_u3_X_Y_Z}
+\begin{definition}[$u_1,u_2,u_3,u_4,u_5,X,Y,Z$]
+    \label{def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     %\lean{}
     \leanok
     \uses{def:Solution}
@@ -607,7 +607,9 @@
     We define $u_2 \in \cc{O}^\times_K$ and $Y \in \cc{O}_K$
     such that $y = u_2 \cdot Y^3$.\\
     We define $u_3 \in \cc{O}^\times_K$ and $Z \in \cc{O}_K$
-    such that $z = u_3 \cdot Z^3$.
+    such that $z = u_3 \cdot Z^3$.\\
+    We define $u_4 \in \cc{O}^\times_K$ such that $\eta \cdot u_3 \cdot u_2^{-1}$.\\
+    We define $u_5 \in \cc{O}^\times_K$ such that $-\eta^2 \cdot u_1 \cdot u_2^{-1}$.\\
 \end{definition}
 
 \begin{lemma}
@@ -615,6 +617,8 @@
     \lean{Solution.X_ne_zero}
     \leanok
     \uses{def:Solution}
+    Let $S$ be a $solution$.\\\\
+    Then $X \neq 0$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -626,6 +630,8 @@
     \lean{Solution.lambda_not_dvd_X}
     \leanok
     \uses{def:Solution}
+    Let $S$ be a $solution$.\\\\
+    Then $\lambda \notdivides X$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -637,6 +643,8 @@
     \lean{Solution.lambda_not_dvd_Y}
     \leanok
     \uses{def:Solution}
+    Let $S$ be a $solution$.\\\\
+    Then $\lambda \notdivides Y$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -648,6 +656,8 @@
     \lean{Solution.lambda_not_dvd_Z}
     \leanok
     \uses{def:Solution}
+    Let $S$ be a $solution$.\\\\
+    Then $\lambda \notdivides Z$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -659,6 +669,8 @@
     \lean{Solution.coprime_Y_Z}
     \leanok
     \uses{def:Solution}
+    Let $S$ be a $solution$.\\\\
+    Then $\gcd(Y, Z) = 1$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -670,6 +682,9 @@
     \lean{Solution.formula1}
     \leanok
     \uses{def:Solution}
+    Let $S$ be a $solution$ with multiplicity $n$.\\\\
+    Then $u_1 \cdot X^3 \cdot \lambda^{3n-2}+u_2 \cdot\eta\cdot Y^3\cdot \lambda +
+    u_3\cdot \eta^2 \cdot Z^3\cdot \lambda = 0s$.
 \end{lemma}
 \begin{proof}
     \leanok
