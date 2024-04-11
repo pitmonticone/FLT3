@@ -16,7 +16,7 @@
 \end{lemma}
 \begin{proof}
   \leanok
-  % TODO
+  Case analysis.
 \end{proof}
 
 \begin{lemma}
@@ -31,7 +31,7 @@
 \begin{proof}
   \leanok
   \uses{lmm:cube_of_castHom_ne_zero}
-  % TODO
+  Apply \Cref{lmm:cube_of_castHom_ne_zero}.
 \end{proof}
 
 \begin{theorem}[Fermat's Last Theorem for 3: Case 1]
@@ -45,5 +45,7 @@
 \begin{proof}
   \leanok
   \uses{lmm:cube_of_not_dvd}
-  % TODO
+  Since $3 \notdivides a \cdot b \cdot c$,
+  we have that $3 \notdivides a$, $3 \notdivides b$ and $3 \notdivides c$. \\
+  Apply \Cref{lmm:cube_of_not_dvd} repeatedly and compute each case.
 \end{proof}
