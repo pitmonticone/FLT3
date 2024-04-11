@@ -770,8 +770,6 @@
     \uses{lmm:formula2, lmm:by_kummer}
 \end{proof}
 
-% TODO
-
 \begin{definition}[Final Solution']
     \label{def:Solution1_final}
     \lean{Solution'_final}
@@ -779,14 +777,9 @@
     \uses{def:Solution1, lmm:Solution.two_le_multiplicity,
     lmm:final, lmm:coprime_Y_Z, lmm:lambda_not_dvd_Y, lmm:lambda_not_dvd_Z, lmm:lambda_ne_zero,
     lmm:X_ne_zero}
-    % Let $K$ be a number field. \\
-    % Let $\cc{O}_K$ be the ring of integers of $K$. \\
-    % Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
-    % Let $a, b, c \in \cc{O}_K$ such that $\lambda \notdivides a$,
-    % $\lambda \notdivides b$, $\lambda \divides c$, $c \neq 0$ and $\gcd(a,b)=1$.\\
-    % Let $u \in \cc{O}^\times_K$. \\\\
-    % A $\boldsymbol{solution'}$ is a tuple $(a, b, c, u)$
-    % satisfying the equation $a^3 + b^3 = u \cdot c^3.$
+    Let $S = (a,b,c,u)$ be a $solution$ with multiplicity $n$.\\
+    Let $S_f' = (Y,u_4\cdot Z, \lambda^{n-1}\cdot X, u_5)$.\\\\
+    Then $S_f'$ is a $solution'$.
 \end{definition}
 
 \begin{lemma}
@@ -794,6 +787,8 @@
     \lean{Solution'_final_multiplicity}
     \leanok
     \uses{def:Solution, def:Solution1_final}
+    Let $S$ be a $solution$ with multiplicity $n$.\\\\
+    Then $S_f'$ has multiplicity $n-1$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -806,6 +801,8 @@
     \lean{Solution'_final_multiplicity_lt}
     \leanok
     \uses{def:Solution, def:Solution1_final}
+    Let $S$ be a $solution$ with multiplicity $n$.\\\\
+    Then $S_f'$ has multiplicity $m<n$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -817,6 +814,8 @@
     \lean{Solution.exists_Solution_multiplicity_lt}
     \leanok
     \uses{def:Solution}
+    Let $S$ be a $solution$ with multiplicity $n$.\\\\
+    Then there is a $solution$ with multiplicity $m<n$.
 \end{theorem}
 \begin{proof}
     \leanok
