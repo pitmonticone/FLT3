@@ -608,8 +608,8 @@
     such that $y = u_2 \cdot Y^3$.\\
     We define $u_3 \in \cc{O}^\times_K$ and $Z \in \cc{O}_K$
     such that $z = u_3 \cdot Z^3$.\\
-    We define $u_4 \in \cc{O}^\times_K$ such that $\eta \cdot u_3 \cdot u_2^{-1}$.\\
-    We define $u_5 \in \cc{O}^\times_K$ such that $-\eta^2 \cdot u_1 \cdot u_2^{-1}$.\\
+    We define $u_4 = \eta \cdot u_3 \cdot u_2^{-1}$.\\
+    We define $u_5 = s-\eta^2 \cdot u_1 \cdot u_2^{-1}$.\\
 \end{definition}
 
 \begin{lemma}
@@ -693,10 +693,38 @@
 \end{proof}
 
 \begin{lemma}
+    \label{lmm:u₄_isUnit}
+    \lean{Solution.u₄'_isUnit}
+    \leanok
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $S$ be a $solution$.\\\\
+    Then $u_4$ is a unit.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:eta_isUnit}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:u₅_isUnit}
+    \lean{Solution.u₅'_isUnit}
+    \leanok
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $S$ be a $solution$.\\\\
+    Then $u_5$ is a unit.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:toInteger_cube_eq_one}
+\end{proof}
+
+\begin{lemma}
     \label{lmm:lambda_sq_dvd_u_mul_cube}
     \lean{Solution.lambda_sq_dvd_u_mul_cube}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $S$ be a $solution$ with multiplicity $n$.\\\\
+    Then $\lambda^2 \divides u_5 * (\lambda^(n-1) \cdot X)^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -707,7 +735,9 @@
     \label{lmm:formula2}
     \lean{Solution.formula2}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $S$ be a $solution$ with multiplicity $n$.\\\\
+    Then $Y^3 + u_4 \cdot Z^3 = u_5 \cdot (\lambda^(n-1) \cdot X)^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -719,6 +749,9 @@
     \label{lmm:lambda_sq_div_lambda_fourth}
     \lean{Solution.lambda_sq_div_lambda_fourth}
     \leanok
+    \uses{def:Solution}
+    Let $S$ be a $solution$.\\\\
+    Then $\lambda^2 \divides \lambda^4$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -729,6 +762,8 @@
     \lean{Solution.lambda_sq_div_new_X_cubed}
     \leanok
     \uses{def:Solution}
+    Let $S$ be a $solution$ with multiplicity $n$.\\\\
+    Then $\lambda^2 \divides u_5 \cdot (\lambda^{n - 1} \cdot X)^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -740,6 +775,8 @@
     \lean{Solution.by_kummer}
     \leanok
     \uses{def:Solution}
+    Let $S$ be a $solution$.\\\\
+    Then $u_4 \in \set{-1,1} \subset \cc{O}_K$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -754,11 +791,15 @@
     \lean{Solution.final}
     \leanok
     \uses{def:Solution}
+    Let $S$ be a $solution$ with multiplicity $n$.\\\\
+    Then $Y^3 + (u_4 \cdot Z)^3 = u_5 \cdot (\lambda^{n-1} \cdot X)^3$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:formula2, lmm:by_kummer}
 \end{proof}
+
+% TODO
 
 \begin{definition}[Final Solution']
     \label{def:Solution1_final}
