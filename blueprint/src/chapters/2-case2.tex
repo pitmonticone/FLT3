@@ -9,12 +9,12 @@
     Let $a, b, c \in \N$. \\
     Let $3 \divides a$ and $3 \divides b$. \\
     Let $a ^ 3 + b ^ 3 = c ^ 3$. \\\\
-    Then $3 \divides \gcd(\set{a, b, c})$.
+    Then $3 \divides gcd(a,b,c)$.
 \end{lemma}
 \begin{proof}
     \leanok
     Since $3 \divides a^3 + b^3 = c^3$, then $3 \divides c$. \\
-    Then $3 \divides \gcd(\set{a, b, c})$.
+    Then $3 \divides gcd(a,b,c)$.
 \end{proof}
 
 \begin{lemma}
@@ -25,12 +25,12 @@
     Let $a, b, c \in \N$. \\
     Let $3 \divides a$ and $3 \divides c$. \\
     Let $a ^ 3 + b ^ 3 = c ^ 3$. \\\\
-    Then $3 \divides \gcd(\set{a, b, c})$.
+    Then $3 \divides gcd(a,b,c)$.
 \end{lemma}
 \begin{proof}
     \leanok
     Since $3 \divides c^3 - a^3 = b^3$, then $3 \divides b$. \\
-    Then $3 \divides \gcd(\set{a, b, c})$.
+    Then $3 \divides gcd(a,b,c)$.
 \end{proof}
 
 \begin{lemma}
@@ -40,19 +40,19 @@
     Let $a, b, c \in \N$. \\
     Let $3 \divides b$ and $3 \divides c$. \\
     Let $a ^ 3 + b ^ 3 = c ^ 3$. \\\\
-    Then $3 \divides \gcd(\set{a, b, c})$.
+    Then $3 \divides gcd(a,b,c)$.
 \end{lemma}
 \begin{proof}
     \leanok
     Since $3 \divides c^3 - b^3 = a^3$, then $3 \divides a$. \\
-    Then $3 \divides \gcd(\set{a, b, c})$.
+    Then $3 \divides gcd(a,b,c)$.
 \end{proof}
 
+% Informalise fermatLastTheoremThree_of_three_dvd_only_c from FLT3.lean file.
 \begin{theorem}
     \label{thm:fermatLastTheoremThree_of_three_dvd_only_c}
     \lean{fermatLastTheoremThree_of_three_dvd_only_c}
     \leanok
-    %\uses{}
     To prove \Cref{thm:fermatLastTheoremThree}, it suffices to prove that
     $$\forall a, b, c \in \Z, \text{ if } c \neq 0 \text{ and } 3 \notdivides a \text{ and }
     3 \notdivides b \text{ and } 3 \divides c \text{ and } \gcd(a,b)=1,
@@ -67,7 +67,29 @@
     lmm:three_dvd_gcd_of_dvd_a_of_dvd_c,
     lmm:three_dvd_gcd_of_dvd_b_of_dvd_c
     }
-    % TODO
+    % Assume by contradiction that $\exists a,b,c \in \N \smallsetminus \set{0}$
+    % such that $a^3 + b^3 = c^3$. \\
+    % By \Cref{thm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
+    % we can assume $\gcd(a,b,c)=1$. \\
+    % By \Cref{thm:fermatLastTheoremThree_case_1} we can assume $3 \divides a \cdot b \cdot c$
+    % from which it follows that $3 \divides a \lor 3 \divides b \lor 3 \divides c$.\\
+    % Analysing the three cases:
+    % \begin{itemize}
+    %     \item Case $3 \divides a$. Let $a'=-c$, $b'=b$, $c'=-a$,
+    %     then $a'\neq 0 \land b'\neq 0 \land c' \neq 0$.
+    %     Then $3 \notdivides -c = a'$ since otherwise by \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c}
+    %     we have that $3 \divides gcd(a,b,c)$. Analogously,
+    %     by \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b} $3 \notdivides b = b'$.
+    %     Moreover $3 \divides -a = c'$
+
+
+    %     \item Case $3 \divides b$. then $3 \divides a^3$ and $3 \divides c^3$.
+    %     By \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b} and \Cref{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c},
+    %     we have $3 \divides gcd(a,b,c)$.
+    %     \item Case $3 \divides c$. then $3 \divides a^3$ and $3 \divides b^3$.
+    %     By \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c} and \Cref{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c},
+    %     we have $3 \divides gcd(a,b,c)$.
+    \end{itemize}
 \end{proof}
 
 \begin{definition}[Solution']
