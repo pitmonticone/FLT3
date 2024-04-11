@@ -909,18 +909,18 @@ corresponding to the unit `u₅'`. -/
 noncomputable
 def u₅ := (u₅'_isUnit S).unit
 
-/-- Given `S : Solution`, we have that
-`λ ^ 2` divides `S.u₅ * (λ ^ (S.multiplicity - 1) * S.X) ^ 3`. -/
-lemma lambda_sq_dvd_u_mul_cube : λ ^ 2 ∣ S.u₅ * (λ ^ (S.multiplicity - 1) * S.X) ^ 3 := by
-  use S.u₅ * (λ ^ (3 * S.multiplicity - 5) * S.X ^ 3)
-  have := two_le_multiplicity S
-  rw [mul_comm (λ ^ 2), mul_assoc, mul_assoc]
-  congr 1
-  rw [mul_pow, mul_comm, ← mul_assoc, mul_comm _ (S.X ^ _), mul_assoc]
-  congr 1
-  rw [← pow_add, ← pow_mul]
-  congr 1
-  omega
+-- /-- Given `S : Solution`, we have that
+-- `λ ^ 2` divides `S.u₅ * (λ ^ (S.multiplicity - 1) * S.X) ^ 3`. -/
+-- lemma lambda_sq_dvd_u_mul_cube : λ ^ 2 ∣ S.u₅ * (λ ^ (S.multiplicity - 1) * S.X) ^ 3 := by
+--   use S.u₅ * (λ ^ (3 * S.multiplicity - 5) * S.X ^ 3)
+--   have := two_le_multiplicity S
+--   rw [mul_comm (λ ^ 2), mul_assoc, mul_assoc]
+--   congr 1
+--   rw [mul_pow, mul_comm, ← mul_assoc, mul_comm _ (S.X ^ _), mul_assoc]
+--   congr 1
+--   rw [← pow_add, ← pow_mul]
+--   congr 1
+--   omega
 
 /-- Given `S : Solution`, we have that
 `S.Y ^ 3 + S.u₄ * S.Z ^ 3 = S.u₅ * (λ ^ (S.multiplicity - 1) * S.X) ^ 3`. -/
