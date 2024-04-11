@@ -124,7 +124,7 @@
     \leanok
     \uses{def:Solution1}
     Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
-    The multiplicity of $S'$ is finite.
+    Then the multiplicity of $S'$ is finite.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -218,7 +218,7 @@
     \leanok
     \uses{def:Solution1}
     Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
-    $a^3 + b^3 = (a + b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 \cdot b)$.
+    Then $a^3 + b^3 = (a + b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 \cdot b)$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -231,7 +231,7 @@
     \leanok
     \uses{def:Solution1}
     Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
-    $\lambda^2 \divides a + b \lor \lambda^2 \divides a +
+    Then $\lambda^2 \divides a + b \lor \lambda^2 \divides a +
     \eta \cdot b \lor \lambda^2 \divides a + \eta^2 \cdot b$.
 \end{lemma}
 \begin{proof}
@@ -271,6 +271,8 @@
     \lean{Solution.a_add_eta_b}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\\\
+    Then $a + \eta \cdot b = (a + b) + \lambda \cdot b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -281,6 +283,8 @@
     \lean{Solution.lambda_dvd_a_add_eta_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\\\
+    Then $\lambda \divides a + \eta \cdot b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -292,6 +296,8 @@
     \lean{Solution.lambda_dvd_a_add_eta_sq_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\\\
+    Then $\lambda \divides a + \eta^2 \cdot b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -302,6 +308,8 @@
     \lean{Solution.lambda_sq_not_a_add_eta_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\\\
+    Then $\lambda^2 \notdivides a + \eta \cdot b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -313,6 +321,8 @@
     \lean{Solution.lambda_sq_not_dvd_a_add_eta_sq_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\\\
+    Then $\lambda^2 \notdivides a + \eta^2 \cdot b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -324,6 +334,8 @@
     \lean{Solution.eta_add_one_inv}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\\\
+    Then $(\eta + 1) \cdot (-\eta) = 1$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -335,6 +347,10 @@
     \lean{Solution.associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\
+    Let $p \in \cc{O}_K$ be a prime such that $p \divides a+b$
+    and $p \divides a+\eta \cdot b$.\\\\
+    Then $p$ is associated with $\lambda$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -346,6 +362,10 @@
     \lean{Solution.associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq__mul_b}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\
+    Let $p \in \cc{O}_K$ be a prime such that $p \divides a+b$
+    and $p \divides a+\eta^2 \cdot b$.\\\\
+    Then $p$ is associated with $\lambda$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -357,17 +377,41 @@
     \lean{Solution.associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq__mul_b}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\
+    Let $p \in \cc{O}_K$ be a prime such that $p \divides a+\eta \cdot b$
+    and $p \divides a+\eta^2 \cdot b$.\\\\
+    Then $p$ is associated with $\lambda$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:lambda_prime}
 \end{proof}
 
+\begin{definition}[y]
+    \label{def:Solution_y}
+    \lean{Solution.y}
+    \leanok
+    \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\\\
+    We define $y \in \cc{O}_K$ such that $a + \eta \cdot b = \lambda \cdot y$.
+\end{definition}
+
+\begin{definition}[z]
+    \label{def:Solution_z}
+    \lean{Solution.z}
+    \leanok
+    \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\\\
+    We define $z \in \cc{O}_K$ such that $a + \eta^2 \cdot b = \lambda \cdot z$.
+\end{definition}
+
 \begin{lemma}
     \label{lmm:lambda_not_dvd_y}
     \lean{Solution.lambda_not_dvd_y}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\\\
+    Then $\lambda \notdivides y$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -379,6 +423,8 @@
     \lean{Solution.lambda_not_dvd_z}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$.\\\\
+    Then $\lambda \notdivides z$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -390,6 +436,8 @@
     \lean{Solution.lambda_pow_dvd_a_add_b}
     \leanok
     \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$ with multiplicity $n$.\\\\
+    Then $\lambda^{3\cdot n -2} \divides a + b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -397,6 +445,25 @@
     lmm:lambda_not_dvd_z, lmm:lambda_not_dvd_y, lmm:two_le_multiplicity,
     lmm:lambda_ne_zero}
 \end{proof}
+
+\begin{definition}[x]
+    \label{def:Solution_x}
+    \lean{Solution.x}
+    \leanok
+    \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$ with multiplicity $n$.\\\\
+    We define $x \in \cc{O}_K$ such that $a + b = \lambda^{3\cdot n-2} \cdot x$.
+\end{definition}
+
+\begin{definition}[w]
+    \label{def:Solution_w}
+    \lean{Solution.w}
+    \leanok
+    \uses{def:Solution}
+    Let $S=(a, b, c, u)$ be a $solution$ with multiplicity $n$.\\\\
+    We define $w \in \cc{O}_K$ such that $c = \lambda^n \cdot w$.
+\end{definition}
+
 
 \begin{lemma}
     \label{lmm:lambda_not_dvd_w}
