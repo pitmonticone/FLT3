@@ -691,8 +691,6 @@ lemma mult_minus_two_plus_one_plus_one : 3 * S.multiplicity - 2 + 1 + 1 = 3 * S.
   zify [this]
   ring
 
--- open Ideal
-
 /-- Given `S : Solution`, we have that `S.x * S.y * S.z = S.u * S.w ^ 3`. -/
 lemma x_mul_y_mul_z_eq_u_w_pow_three : S.x * S.y * S.z = S.u * S.w ^ 3 := by
   suffices hh : λ ^ (3 * S.multiplicity - 2) * S.x * λ * S.y * λ * S.z = S.u * λ ^ (3 * S.multiplicity) * S.w ^ 3 by
