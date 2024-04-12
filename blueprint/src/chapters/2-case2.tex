@@ -212,7 +212,7 @@
 \end{proof}
 
 \begin{lemma}
-    \label{lmm:Solution1.two_le_multiplicity}
+    \label{lmm:Solution1_two_le_multiplicity}
     \lean{Solution'.two_le_multiplicity}
     \leanok
     \uses{def:Solution1}
@@ -225,7 +225,7 @@
 \end{proof}
 
 \begin{lemma}
-    \label{lmm:Solution.two_le_multiplicity}
+    \label{lmm:Solution_two_le_multiplicity}
     \lean{Solution.two_le_multiplicity}
     \leanok
     \uses{def:Solution}
@@ -234,7 +234,7 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:Solution1.two_le_multiplicity}
+    \uses{lmm:Solution1_two_le_multiplicity}
 \end{proof}
 
 \begin{lemma}
@@ -461,7 +461,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:cube_add_cube_eq_mul, lmm:lambda_prime,
-    lmm:lambda_not_dvd_z, lmm:lambda_not_dvd_y, lmm:Solution.two_le_multiplicity,
+    lmm:lambda_not_dvd_z, lmm:lambda_not_dvd_y, lmm:Solution_two_le_multiplicity,
     lmm:lambda_ne_zero}
 \end{proof}
 
@@ -489,7 +489,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_dvd_a_add_eta_mul_b, lmm:lambda_dvd_a_add_eta_sq_mul_b,
-    lmm:cube_add_cube_eq_mul, lmm:Solution.two_le_multiplicity, lmm:lambda_prime,
+    lmm:cube_add_cube_eq_mul, lmm:Solution_two_le_multiplicity, lmm:lambda_prime,
     lmm:lambda_not_dvd_w, lmm:lambda_ne_zero}
 \end{proof}
 
@@ -545,7 +545,7 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:Solution.two_le_multiplicity}
+    \uses{lmm:Solution_two_le_multiplicity}
 \end{proof}
 
 \begin{lemma}
@@ -558,7 +558,7 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:Solution.two_le_multiplicity, lmm:lambda_ne_zero, lmm:cube_add_cube_eq_mul,
+    \uses{lmm:Solution_two_le_multiplicity, lmm:lambda_ne_zero, lmm:cube_add_cube_eq_mul,
     lmm:x_spec, lmm:y_spec, lmm:z_spec, lmm:w_spec}
 \end{proof}
 
@@ -738,7 +738,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:eta_isUnit, lmm:lambda_ne_zero, lmm:toInteger_cube_eq_one,
-    lmm:Solution.two_le_multiplicity, lmm:formula1}
+    lmm:Solution_two_le_multiplicity, lmm:formula1}
 \end{proof}
 
 \begin{lemma}
@@ -763,7 +763,7 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:Solution.two_le_multiplicity}
+    \uses{lmm:Solution_two_le_multiplicity}
 \end{proof}
 
 \begin{lemma}[Kummer]
@@ -799,7 +799,7 @@
     \label{def:Solution1_final}
     \lean{Solution'_final}
     \leanok
-    \uses{def:Solution1, lmm:Solution.two_le_multiplicity,
+    \uses{def:Solution1, lmm:Solution_two_le_multiplicity,
     lmm:final, lmm:coprime_Y_Z, lmm:lambda_not_dvd_Y, lmm:lambda_not_dvd_Z, lmm:lambda_ne_zero,
     lmm:X_ne_zero}
     Let $S = (a,b,c,u)$ be a $solution$ with multiplicity $n$.\\
@@ -831,7 +831,7 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:Solution1_final_multiplicity, lmm:Solution.two_le_multiplicity}
+    \uses{lmm:Solution1_final_multiplicity, lmm:Solution_two_le_multiplicity}
 \end{proof}
 
 \begin{theorem}
