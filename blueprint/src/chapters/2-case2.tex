@@ -389,7 +389,10 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_ne_zero, lmm:toInteger_eval_cyclo}
-    % TODO
+    By way of contradiction using \ref{lmm:toInteger_eval_cyclo},
+    if $\lambda^2 \divides a +\eta^2\cdot b = a + b -b + \eta^2 \cdot b$,
+    since $\lambda^2 \divides a+b$, then $\lambda^2 \divides \lambda \cdot b$, from which it follows
+    that $\lambda \divides b$, which is absurd.
 \end{proof}
 
 \begin{lemma}
