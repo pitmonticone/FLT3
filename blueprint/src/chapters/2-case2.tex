@@ -154,7 +154,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_not_unit}
-    % TODO
+    It directly follows from \ref{lmm:lambda_not_unit}.
 \end{proof}
 
 \begin{lemma}
@@ -162,12 +162,12 @@
     \lean{Solution.exists_minimal}
     \leanok
     \uses{def:Solution, def:Solution_Minimal}
-    Let $S$ be a $solution$. \\\\
+    Let $S$ be a $solution$ with multiplicity $n$. \\\\
     Then there is a minimal solution $S_1$.
 \end{lemma}
 \begin{proof}
     \leanok
-    % TODO
+    Straightforward since $n \in \N$ and $\N$ is well-ordered.
 \end{proof}
 
 \begin{lemma}
@@ -176,13 +176,30 @@
     \leanok
     \uses{def:Solution1}
     Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
-    Then $a \equiv b \equiv 1 (\mod \lambda^4)$ or $a \equiv b \equiv -1 (\mod \lambda^4)$.
+    Then $\lambda^4 \divides a^3 - 1 \land \lambda^4 \divides b^3 + 1$ or
+    $\lambda^4 \divides a^3 + 1 \land \lambda^4 \divides b^3 - 1$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd,
     lmm:lambda_not_dvd_two}
-    % TODO
+    Since $\lambda \notdivides a$, then
+    $\lambda^4 \divides a^3 - 1 \lor \lambda^4 \divides a^3 + 1$ by
+    \ref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}. \\
+    Since $\lambda \notdivides b$, then
+    $\lambda^4 \divides b^3 - 1 \lor \lambda^4 \divides b^3 + 1$ by
+    \ref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}. \\
+    We proceed by analysing each case:
+    \begin{itemize}
+        \item Case $\lambda^4 \divides a^3 - 1 \land \lambda^4 \divides b^3 - 1$.
+        Since $\lambda \divides c$ we have that $\lambda divides c^3-(a^3-1)-(b^3-1) = 2$,
+        which is absurd by \ref{lmm:lambda_not_dvd_two}.
+        \item Case $\lambda^4 \divides a^3 + 1 \land \lambda^4 \divides b^3 + 1$.
+        Since $\lambda \divides c$ we have that $\lambda divides (a^3-1)+(b^3-1)-c^3 = 2$,
+        which is absurd by \ref{lmm:lambda_not_dvd_two}.
+        \item Case $\lambda^4 \divides a^3 - 1 \land \lambda^4 \divides b^3 + 1$. Trivial.
+        \item Case $\lambda^4 \divides a^3 + 1 \land \lambda^4 \divides b^3 - 1$. Trivial.
+    \end{itemize}
 \end{proof}
 
 \begin{lemma}
@@ -196,7 +213,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:a_cube_b_cube_same_congr}
-    % TODO
+    Apply \ref{lmm:a_cube_b_cube_same_congr} and then compute each case.
 \end{proof}
 
 \begin{lemma}
@@ -212,7 +229,7 @@
     \uses{lmm:multiplicity_lambda_c_finite,
     lmm:lambda_pow_four_dvd_c_cube,
     lambda_prime}
-    % TODO
+    Trivial applying \ref{lmm:lambda_pow_four_dvd_c_cube}.
 \end{proof}
 
 \begin{lemma}
@@ -226,7 +243,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_pow_two_dvd_c}
-    % TODO
+    It directly follows from \ref{lmm:lambda_pow_two_dvd_c}.
 \end{proof}
 
 \begin{lemma}
@@ -240,7 +257,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:Solution1_two_le_multiplicity}
-    % TODO
+    It directly follows from \ref{lmm:Solution1_two_le_multiplicity}.
 \end{proof}
 
 \begin{lemma}
@@ -254,7 +271,8 @@
 \begin{proof}
     \leanok
     \uses{lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
-    % TODO
+    Straightforward calculation using \ref{lmm:toInteger_cube_eq_one}
+    and \ref{lmm:toInteger_eval_cyclo}.
 \end{proof}
 
 \begin{lemma}
@@ -298,7 +316,8 @@
 \begin{proof}
     \leanok
     \uses{lmm:ex_dvd_a_add_b}
-    % TODO
+    Let $S=(a,b,c,u)$. Let $a', b'$ be the units given by \ref{lmm:ex_dvd_a_add_b}.
+    Then $S'=(a',b',c,u)$ is a $solution'$.
 \end{proof}
 
 \begin{lemma}

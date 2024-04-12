@@ -250,8 +250,8 @@ section Solution'
 
 variable (S : Solution')
 
-/-- Given `S : Solution'`, then `S.a` and `S.b` are both congruent to `1` modulo `λ ^ 4` or are
-both congruent to `-1`.  -/
+/-- Given `S : Solution'`, then `λ ^ 4 ∣ S.a ^ 3 - 1 ∧ λ ^ 4 ∣ S.b ^ 3 + 1` or
+`λ ^ 4 ∣ S.a ^ 3 + 1 ∧ λ ^ 4 ∣ S.b ^ 3 - 1`.  -/
 lemma a_cube_b_cube_same_congr :
     λ ^ 4 ∣ S.a ^ 3 - 1 ∧ λ ^ 4 ∣ S.b ^ 3 + 1 ∨  λ ^ 4 ∣ S.a ^ 3 + 1 ∧ λ ^ 4 ∣ S.b ^ 3 - 1 := by
   obtain ⟨z, hz⟩ := S.hcdvd
@@ -292,11 +292,11 @@ lemma lambda_pow_two_dvd_c : λ ^ 2 ∣ S.c := by
   classical
   have  hm := S.multiplicity_lambda_c_finite
   suffices 2 ≤ (multiplicity ((hζ.toInteger - 1)) S.c).get hm by
-    · obtain ⟨x, hx⟩ := multiplicity.pow_multiplicity_dvd hm
-      refine ⟨λ ^ ((multiplicity ((hζ.toInteger - 1)) S.c).get hm - 2) * x, ?_⟩
-      rw [← mul_assoc, ← pow_add]
-      convert hx using 3
-      simp [this]
+    obtain ⟨x, hx⟩ := multiplicity.pow_multiplicity_dvd hm
+    refine ⟨λ ^ ((multiplicity ((hζ.toInteger - 1)) S.c).get hm - 2) * x, ?_⟩
+    rw [← mul_assoc, ← pow_add]
+    convert hx using 3
+    simp [this]
   have := lambda_pow_four_dvd_c_cube S
   have hm1 :(multiplicity (hζ.toInteger - 1) (S.c ^ 3)).get
     (multiplicity.finite_pow hζ.lambda_prime hm) =
