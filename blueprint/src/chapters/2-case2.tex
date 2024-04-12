@@ -532,7 +532,8 @@
 \begin{proof}
     \leanok
     \uses{lmm:multiplicity_lambda_c_finite}
-    % TODO
+    By way of contradiction, if $\lambda \divides w$, then $\lambda^{n+1} \divides \lambda^n \cdot w
+    = c$ which is absurd by definition of multiplicity.
 \end{proof}
 
 \begin{lemma}
@@ -548,7 +549,13 @@
     \uses{lmm:lambda_dvd_a_add_eta_mul_b, lmm:lambda_dvd_a_add_eta_sq_mul_b,
     lmm:cube_add_cube_eq_mul, lmm:Solution_two_le_multiplicity, lmm:lambda_prime,
     lmm:lambda_not_dvd_w, lmm:lambda_ne_zero}
-    % TODO
+    By way of contradiction, if $\lambda \divides x$, then
+    $\lambda^{3n-1} \divides \lambda^{3n-2} \cdot x = a+b$. Using \ref{lambda_dvd_a_add_eta_mul_b}
+    and \ref{lambda_dvd_a_add_eta_sq_mul_b}, we have that $\lambda^{3n+1} \divides
+    (a+b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 cdot b) = a^3+b^3
+    = u\cdot c^3 = u\cdot \lambda^{3n}\cdot w^3$ and
+
+    which is absurd by definition of multiplicity.
 \end{proof}
 
 \begin{lemma}
