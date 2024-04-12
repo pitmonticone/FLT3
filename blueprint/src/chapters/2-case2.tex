@@ -464,7 +464,7 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
-    We define $x \in \cc{O}_K$ such that $a + b = \lambda^{3\cdot n-2} \cdot x$.\\
+    We define $x \in \cc{O}_K$ such that $a + b = \lambda^{3n-2} \cdot x$.\\
     We define $y \in \cc{O}_K$ such that $a + \eta \cdot b = \lambda \cdot y$.\\
     We define $z \in \cc{O}_K$ such that $a + \eta^2 \cdot b = \lambda \cdot z$.\\
     We define $w \in \cc{O}_K$ such that $c = \lambda^n \cdot w$.
@@ -506,7 +506,7 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$ with multiplicity $n$.\\\\
-    Then $\lambda^{3\cdot n -2} \divides a + b$.
+    Then $\lambda^{3n -2} \divides a + b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -515,9 +515,9 @@
     lmm:lambda_ne_zero}
     By definition of multiplicity $\lambda^n \divides c$. Since $u$ is a unit, then using \ref{lmm:cube_add_cube_eq_mul}
     $\lambda^{3n} \divides u \cdot c^3 = a^3 + b^3
-    = (a+b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 cdot b)
+    = (a+b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 \cdot b)
     = (a+b)\cdot(\lambda\cdot y)\cdot(\lambda\cdot z)$.
-    Then using \ref{lambda_not_dvd_y} and \ref{lambda_not_dvd_z},
+    Then using \ref{lmm:lambda_not_dvd_y} and \ref{lmm:lambda_not_dvd_z},
     $\lambda^{3n-2} \divides a+b$.
 \end{proof}
 
@@ -550,12 +550,12 @@
     lmm:cube_add_cube_eq_mul, lmm:Solution_two_le_multiplicity, lmm:lambda_prime,
     lmm:lambda_not_dvd_w, lmm:lambda_ne_zero}
     By way of contradiction, if $\lambda \divides x$, then
-    $\lambda^{3n-1} \divides \lambda^{3n-2} \cdot x = a+b$. Using \ref{lambda_dvd_a_add_eta_mul_b}
-    and \ref{lambda_dvd_a_add_eta_sq_mul_b}, we have that $\lambda^{3n+1} \divides
+    $\lambda^{3n-1} \divides \lambda^{3n-2} \cdot x = a+b$. Using \ref{lmm:lambda_dvd_a_add_eta_mul_b}
+    and \ref{lmm:lambda_dvd_a_add_eta_sq_mul_b}, we have that $\lambda^{3n+1} \divides
     (a+b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 cdot b) = a^3+b^3
     = u\cdot c^3 = u\cdot \lambda^{3n}\cdot w^3$.
     Then $\lambda \divides w^3$ which implies that $\lambda \divides w$
-    which is absurd by \ref{lambda_not_dvd_w}.
+    which is absurd by \ref{lmm:lambda_not_dvd_w}.
 \end{proof}
 
 \begin{lemma}
