@@ -363,8 +363,8 @@
 \end{proof}
 
 \begin{lemma}
-    \label{lmm:lambda_sq_not_a_add_eta_mul_b}
-    \lean{Solution.lambda_sq_not_a_add_eta_mul_b}
+    \label{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}
+    \lean{Solution.lambda_sq_not_dvd_a_add_eta_mul_b}
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
@@ -480,8 +480,9 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:lambda_sq_not_a_add_eta_mul_b}
-    % TODO
+    \uses{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}
+    By way of contradiction, if $\lambda \divides y$, then $\lambda^2 \divides \lambda \cdot y
+    = a + \eta\cdot b$ which is absurd by \ref{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}.
 \end{proof}
 
 \begin{lemma}
@@ -495,7 +496,8 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}
-    % TODO
+    By way of contradiction, if $\lambda \divides z$, then $\lambda^2 \divides \lambda \cdot z
+    = a + \eta^2\cdot b$ which is absurd by \ref{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}.
 \end{proof}
 
 \begin{lemma}
@@ -511,7 +513,12 @@
     \uses{lmm:cube_add_cube_eq_mul, lmm:lambda_prime,
     lmm:lambda_not_dvd_z, lmm:lambda_not_dvd_y, lmm:Solution_two_le_multiplicity,
     lmm:lambda_ne_zero}
-    % TODO
+    By definition of multiplicity $\lambda^n \divides c$. Since $u$ is a unit, then using \ref{lmm:cube_add_cube_eq_mul}
+    $\lambda^{3n} \divides u \cdot c^3 = a^3 + b^3
+    = (a+b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 cdot b)
+    = (a+b)\cdot(\lambda\cdot y)\cdot(\lambda\cdot z)$.
+    Then using \ref{lambda_not_dvd_y} and \ref{lambda_not_dvd_z},
+    $\lambda^{3n-2} \divides a+b$.
 \end{proof}
 
 \begin{lemma}

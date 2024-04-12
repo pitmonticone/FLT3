@@ -407,7 +407,7 @@ lemma lambda_dvd_a_add_eta_sq_mul_b : λ ∣ (S.a + η ^ 2 * S.b) := by
     ⟨2 * S.b, by ring⟩
 
 /-- Given `S : Solution`, we have that `λ ^ 2` does not divide `S.a + η * S.b`. -/
-lemma lambda_sq_not_a_add_eta_mul_b : ¬ λ ^ 2 ∣ (S.a + η * S.b) := by
+lemma lambda_sq_not_dvd_a_add_eta_mul_b : ¬ λ ^ 2 ∣ (S.a + η * S.b) := by
   simp_rw [a_add_eta_b, dvd_add_right S.hab, pow_two, mul_dvd_mul_iff_left (lambda_ne_zero hζ),
   S.hb, not_false_eq_true]
 
@@ -543,7 +543,7 @@ lemma lambda_not_dvd_y : ¬ λ ∣ S.y := by
   replace h := mul_dvd_mul_left (η - 1) h
   rw [← y_spec] at h
   rw [← pow_two] at h
-  exact lambda_sq_not_a_add_eta_mul_b _ h
+  exact lambda_sq_not_dvd_a_add_eta_mul_b _ h
 
 /-- Given `S : Solution`, `λ` does not divide `S.z`. -/
 lemma lambda_not_dvd_z : ¬ λ ∣ S.z := by
@@ -558,14 +558,13 @@ lemma lambda_pow_dvd_a_add_b : λ ^ (3 * S.multiplicity - 2) ∣ S.a + S.b := by
   have h : λ ^ S.multiplicity ∣ S.c  := multiplicity.pow_multiplicity_dvd _
   replace h := pow_dvd_pow_of_dvd h 3
   replace h : (λ ^ S.multiplicity) ^ 3 ∣ S.u * S.c ^ 3 := by simp [h]
-  rw [← S.H, cube_add_cube_eq_mul, ← pow_mul, mul_comm] at h
-  apply hζ.lambda_prime.pow_dvd_of_dvd_mul_left _ S.lambda_not_dvd_z
-  apply hζ.lambda_prime.pow_dvd_of_dvd_mul_left _ S.lambda_not_dvd_y
-  rw [y_spec, z_spec] at h
   have := S.two_le_multiplicity
   have hh : 3 * S.multiplicity - 2 + 1 + 1 = 3 * S.multiplicity := by
     omega
-  rw [← hh, pow_succ, pow_succ] at h
+  rw [← S.H, cube_add_cube_eq_mul, ← pow_mul,
+    mul_comm, y_spec, z_spec, ← hh, pow_succ, pow_succ] at h
+  apply hζ.lambda_prime.pow_dvd_of_dvd_mul_left _ S.lambda_not_dvd_z
+  apply hζ.lambda_prime.pow_dvd_of_dvd_mul_left _ S.lambda_not_dvd_y
   rw [show (S.a + S.b) * (λ * y S) * (λ * z S) = (S.a + S.b) * y S * z S * λ * λ by ring] at h
   simp only [mul_dvd_mul_iff_right (lambda_ne_zero hζ)] at h
   rwa [show (S.a + S.b) * y S * z S = y S * (z S * (S.a + S.b)) by ring] at h
