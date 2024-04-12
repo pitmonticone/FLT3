@@ -610,9 +610,9 @@ lemma lambda_not_dvd_x : ¬ λ ∣ S.x := by
   have hh : 3 * S.multiplicity - 2 + 1 + 1 = 3 * S.multiplicity := by
     omega
   rw [hh, mul_pow, ← pow_mul, mul_comm _ 3, mul_dvd_mul_iff_left _] at h
-  replace h := Prime.dvd_of_dvd_pow hζ.lambda_prime h
-  exact lambda_not_dvd_w _ h
-  simp [lambda_ne_zero]
+  · replace h := Prime.dvd_of_dvd_pow hζ.lambda_prime h
+    exact lambda_not_dvd_w _ h
+  · simp [lambda_ne_zero]
 
 /-- Given `S : Solution`, we have that `S.x` and `S.y` are coprime. -/
 lemma coprime_x_y : IsCoprime S.x S.y := by
