@@ -330,7 +330,7 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    % TODO
+    Trivial calculation.
 \end{proof}
 
 \begin{lemma}
@@ -344,7 +344,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:a_add_eta_b}
-    % TODO
+    Trivial since $\lambda \divides a+b$.
 \end{proof}
 
 \begin{lemma}
@@ -357,7 +357,9 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    % TODO
+    Since $\lambda \divides a+b$, then
+    $\lambda \divides (a + b) + \lambda^2 \cdot b + 2 \cdot \lambda \cdot b
+    = a + \eta^2 \cdot b$.
 \end{proof}
 
 \begin{lemma}
@@ -371,7 +373,9 @@
 \begin{proof}
     \leanok
     \uses{lmm:a_add_eta_b, lmm:lambda_ne_zero}
-    % TODO
+    By way of contradiction using \ref{lmm:a_add_eta_b}, if $\lambda^2 \divides a +\eta\cdot b = a + b + \lambda \cdot b$,
+    since $\lambda^2 \divides a+b$, then $\lambda^2 \divides \lambda \cdot b$, from which it follows
+    that $\lambda \divides b$, which is absurd.
 \end{proof}
 
 \begin{lemma}
@@ -399,7 +403,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:toInteger_eval_cyclo}
-    % TODO
+    Trivial calculation using \ref{lmm:toInteger_eval_cyclo}.
 \end{proof}
 
 \begin{lemma}
