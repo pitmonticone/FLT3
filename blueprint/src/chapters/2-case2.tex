@@ -368,14 +368,16 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
-    Then $\lambda^2 \notdivides a + \eta  b$.
+    Then $\lambda^2 \notdivides a + \eta b$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:a_add_eta_b, lmm:lambda_ne_zero}
-    By contradiction using \Cref{lmm:a_add_eta_b}, if $\lambda^2 \divides a +\eta b = a + b + \lambda  b$,
-    since $\lambda^2 \divides a+b$, then $\lambda^2 \divides \lambda  b$, from which it follows
-    that $\lambda \divides b$, which is absurd.
+    By contradiction we assume $\lambda^2 \divides a + \eta b$, which implies that
+    $\lambda^2 \divides a + b + \lambda  b$ by \Cref{lmm:a_add_eta_b}.
+    Since $\lambda^2 \divides a+b$, then $\lambda^2 \divides \lambda  b$, which implies that
+    $\lambda \divides b$, which contradicts \Cref{def:Solution} forcing us to conclude that
+    $\lambda^2 \notdivides a + \eta b$.
 \end{proof}
 
 \begin{lemma}
@@ -391,8 +393,8 @@
     \uses{lmm:lambda_ne_zero, lmm:toInteger_eval_cyclo}
     By contradiction using \Cref{lmm:toInteger_eval_cyclo},
     if $\lambda^2 \divides a +\eta^2 b = a + b -b + \eta^2  b$,
-    since $\lambda^2 \divides a+b$, then $\lambda^2 \divides b  (\eta^2 -1)
-    = \lambda  b  (\eta + 1)$. Since $\lambda \notdivides b$, then
+    since $\lambda^2 \divides a+b$, then $\lambda^2 \divides b (\eta^2 -1)
+    = \lambda b (\eta + 1)$. Since $\lambda \notdivides b$, then
     $\lambda \divides \eta+1 = \lambda +2$, then $\lambda \divides 2$ which is absurd.
 \end{proof}
 
