@@ -373,7 +373,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:a_add_eta_b, lmm:lambda_ne_zero}
-    By way of contradiction using \Cref{lmm:a_add_eta_b}, if $\lambda^2 \divides a +\eta b = a + b + \lambda  b$,
+    By contradiction using \Cref{lmm:a_add_eta_b}, if $\lambda^2 \divides a +\eta b = a + b + \lambda  b$,
     since $\lambda^2 \divides a+b$, then $\lambda^2 \divides \lambda  b$, from which it follows
     that $\lambda \divides b$, which is absurd.
 \end{proof}
@@ -389,7 +389,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_ne_zero, lmm:toInteger_eval_cyclo}
-    By way of contradiction using \Cref{lmm:toInteger_eval_cyclo},
+    By contradiction using \Cref{lmm:toInteger_eval_cyclo},
     if $\lambda^2 \divides a +\eta^2 b = a + b -b + \eta^2  b$,
     since $\lambda^2 \divides a+b$, then $\lambda^2 \divides b  (\eta^2 -1)
     = \lambda  b  (\eta + 1)$. Since $\lambda \notdivides b$, then
@@ -481,7 +481,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}
-    By way of contradiction, if $\lambda \divides y$, then $\lambda^2 \divides \lambda  y
+    By contradiction, if $\lambda \divides y$, then $\lambda^2 \divides \lambda  y
     = a + \eta b$ which is absurd by \Cref{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}.
 \end{proof}
 
@@ -496,7 +496,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}
-    By way of contradiction, if $\lambda \divides z$, then $\lambda^2 \divides \lambda  z
+    By contradiction, if $\lambda \divides z$, then $\lambda^2 \divides \lambda  z
     = a + \eta^2 b$ which is absurd by \Cref{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}.
 \end{proof}
 
@@ -532,7 +532,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:multiplicity_lambda_c_finite}
-    By way of contradiction, if $\lambda \divides w$, then $\lambda^{n+1} \divides \lambda^n  w
+    By contradiction, if $\lambda \divides w$, then $\lambda^{n+1} \divides \lambda^n  w
     = c$ which is absurd by definition of multiplicity.
 \end{proof}
 
@@ -549,7 +549,7 @@
     \uses{lmm:lambda_dvd_a_add_eta_mul_b, lmm:lambda_dvd_a_add_eta_sq_mul_b,
     lmm:cube_add_cube_eq_mul, lmm:Solution_two_le_multiplicity, lmm:lambda_prime,
     lmm:lambda_not_dvd_w, lmm:lambda_ne_zero}
-    By way of contradiction, if $\lambda \divides x$, then
+    By contradiction, if $\lambda \divides x$, then
     $\lambda^{3n-1} \divides \lambda^{3n-2}  x = a+b$. Using \Cref{lmm:lambda_dvd_a_add_eta_mul_b}
     and \Cref{lmm:lambda_dvd_a_add_eta_sq_mul_b}, we have that $\lambda^{3n+1} \divides
     (a+b)  (a + \eta  b)  (a + \eta^2 cdot b) = a^3+b^3
@@ -614,7 +614,8 @@
 \begin{proof}
     \leanok
     \uses{lmm:Solution_two_le_multiplicity}
-    It directly follows from \Cref{lmm:Solution_two_le_multiplicity}.
+    It directly follows from \Cref{lmm:Solution_two_le_multiplicity}
+    and calculations using ring properties.
 \end{proof}
 
 \begin{lemma}
@@ -628,7 +629,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:Solution_two_le_multiplicity, lmm:lambda_ne_zero, lmm:cube_add_cube_eq_mul,
-    lmm:x_spec, lmm:y_spec, lmm:z_spec, lmm:w_spec}
+    def:Solution_x_y_z_w}
     % TODO
 \end{proof}
 
@@ -704,8 +705,10 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:u₁_X_spec, lmm:lambda_not_dvd_x}
-    % TODO
+    \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z, lmm:lambda_not_dvd_x}
+    By contradiction we assume that $X = 0$, then $x = 0$ by \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z}.
+    Therefore $\lambda$ trivially divides $x$ (as any number divides zero) which contradicts
+    \Cref{lmm:lambda_not_dvd_x} forcing us to conclude that $X \neq 0$.
 \end{proof}
 
 \begin{lemma}
@@ -718,7 +721,7 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:lambda_not_dvd_x}
+    \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z,, lmm:lambda_not_dvd_x}
     % TODO
 \end{proof}
 
@@ -775,7 +778,7 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:u₁_X_spec, lmm:u₂_Y_spec, lmm:u₃_Z_spec,
+    \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z,
     lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
     % TODO
 \end{proof}
