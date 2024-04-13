@@ -71,7 +71,7 @@
     % such that $a^3 + b^3 = c^3$. \\
     % By \Cref{thm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
     % we can assume $\gcd(a,b,c)=1$. \\
-    % By \Cref{thm:fermatLastTheoremThree_case_1} we can assume $3 \divides a \cdot b \cdot c$
+    % By \Cref{thm:fermatLastTheoremThree_case_1} we can assume $3 \divides a  b  c$
     % from which it follows that $3 \divides a \lor 3 \divides b \lor 3 \divides c$.\\
     % Analysing the three cases:
     % \begin{itemize}
@@ -99,7 +99,7 @@
     Let $a, b, c \in \cc{O}_K$ such that $c \neq 0$ and $\gcd(a,b)=1$.\\
     Let $\lambda \notdivides a$, $\lambda \notdivides b$ and $\lambda \divides c$. \\\\
     A $\boldsymbol{solution'}$ is a tuple $S'=(a, b, c, u)$
-    satisfying the equation $a^3 + b^3 = u \cdot c^3.$
+    satisfying the equation $a^3 + b^3 = u c^3.$
 \end{definition}
 
 \begin{definition}[Solution]
@@ -110,7 +110,7 @@
     Let $\lambda \notdivides a$, $\lambda \notdivides b$, $\lambda \divides c$ and
     $\lambda^2 \divides a+b$. \\\\
     A $\boldsymbol{solution}$ is a tuple $S=(a, b, c, u)$
-    satisfying the equation $a^3 + b^3 = u \cdot c^3$.
+    satisfying the equation $a^3 + b^3 = u c^3$.
 \end{definition}
 
 \begin{definition}[Multiplicity of Solution']
@@ -154,7 +154,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_not_unit}
-    It directly follows from \ref{lmm:lambda_not_unit}.
+    It directly follows from \Cref{lmm:lambda_not_unit}.
 \end{proof}
 
 \begin{lemma}
@@ -185,18 +185,18 @@
     lmm:lambda_not_dvd_two}
     Since $\lambda \notdivides a$, then
     $\lambda^4 \divides a^3 - 1 \lor \lambda^4 \divides a^3 + 1$ by
-    \ref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}. \\
+    \Cref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}. \\
     Since $\lambda \notdivides b$, then
     $\lambda^4 \divides b^3 - 1 \lor \lambda^4 \divides b^3 + 1$ by
-    \ref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}. \\
+    \Cref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}. \\
     We proceed by analysing each case:
     \begin{itemize}
         \item Case $\lambda^4 \divides a^3 - 1 \land \lambda^4 \divides b^3 - 1$.
         Since $\lambda \divides c$ we have that $\lambda \divides c^3-(a^3-1)-(b^3-1) = 2$,
-        which is absurd by \ref{lmm:lambda_not_dvd_two}.
+        which is absurd by \Cref{lmm:lambda_not_dvd_two}.
         \item Case $\lambda^4 \divides a^3 + 1 \land \lambda^4 \divides b^3 + 1$.
         Since $\lambda \divides c$ we have that $\lambda \divides (a^3-1)+(b^3-1)-c^3 = 2$,
-        which is absurd by \ref{lmm:lambda_not_dvd_two}.
+        which is absurd by \Cref{lmm:lambda_not_dvd_two}.
         \item Case $\lambda^4 \divides a^3 - 1 \land \lambda^4 \divides b^3 + 1$. Trivial.
         \item Case $\lambda^4 \divides a^3 + 1 \land \lambda^4 \divides b^3 - 1$. Trivial.
     \end{itemize}
@@ -213,7 +213,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:a_cube_b_cube_same_congr}
-    Apply \ref{lmm:a_cube_b_cube_same_congr} and then compute each case.
+    Apply \Cref{lmm:a_cube_b_cube_same_congr} and then compute each case.
 \end{proof}
 
 \begin{lemma}
@@ -229,7 +229,7 @@
     \uses{lmm:multiplicity_lambda_c_finite,
     lmm:lambda_pow_four_dvd_c_cube,
     lambda_prime}
-    Trivial applying \ref{lmm:lambda_pow_four_dvd_c_cube}.
+    Trivial applying \Cref{lmm:lambda_pow_four_dvd_c_cube}.
 \end{proof}
 
 \begin{lemma}
@@ -243,7 +243,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_pow_two_dvd_c}
-    It directly follows from \ref{lmm:lambda_pow_two_dvd_c}.
+    It directly follows from \Cref{lmm:lambda_pow_two_dvd_c}.
 \end{proof}
 
 \begin{lemma}
@@ -257,7 +257,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:Solution1_two_le_multiplicity}
-    It directly follows from \ref{lmm:Solution1_two_le_multiplicity}.
+    It directly follows from \Cref{lmm:Solution1_two_le_multiplicity}.
 \end{proof}
 
 \begin{lemma}
@@ -266,13 +266,13 @@
     \leanok
     \uses{def:Solution1}
     Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
-    Then $a^3 + b^3 = (a + b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 \cdot b)$.
+    Then $a^3 + b^3 = (a + b) (a + \eta b)  (a + \eta^2 b)$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
-    Straightforward calculation using \ref{lmm:toInteger_cube_eq_one}
-    and \ref{lmm:toInteger_eval_cyclo}.
+    Straightforward calculation using \Cref{lmm:toInteger_cube_eq_one}
+    and \Cref{lmm:toInteger_eval_cyclo}.
 \end{proof}
 
 \begin{lemma}
@@ -282,7 +282,7 @@
     \uses{def:Solution1}
     Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
     Then $\lambda^2 \divides a + b \lor \lambda^2 \divides a +
-    \eta \cdot b \lor \lambda^2 \divides a + \eta^2 \cdot b$.
+    \eta  b \lor \lambda^2 \divides a + \eta^2  b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -316,7 +316,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:ex_dvd_a_add_b}
-    Let $S=(a,b,c,u)$. Let $a', b'$ be the units given by \ref{lmm:ex_dvd_a_add_b}.
+    Let $S=(a,b,c,u)$. Let $a', b'$ be the units given by \Cref{lmm:ex_dvd_a_add_b}.
     Then $S'=(a',b',c,u)$ is a $solution'$.
 \end{proof}
 
@@ -326,7 +326,7 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
-    Then $a + \eta \cdot b = (a + b) + \lambda \cdot b$.
+    Then $a + \eta  b = (a + b) + \lambda  b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -339,7 +339,7 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
-    Then $\lambda \divides a + \eta \cdot b$.
+    Then $\lambda \divides a + \eta  b$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -353,13 +353,13 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
-    Then $\lambda \divides a + \eta^2 \cdot b$.
+    Then $\lambda \divides a + \eta^2  b$.
 \end{lemma}
 \begin{proof}
     \leanok
     Since $\lambda \divides a+b$, then
-    $\lambda \divides (a + b) + \lambda^2 \cdot b + 2 \cdot \lambda \cdot b
-    = a + \eta^2 \cdot b$.
+    $\lambda \divides (a + b) + \lambda^2  b + 2  \lambda  b
+    = a + \eta^2  b$.
 \end{proof}
 
 \begin{lemma}
@@ -368,13 +368,13 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
-    Then $\lambda^2 \notdivides a + \eta \cdot b$.
+    Then $\lambda^2 \notdivides a + \eta  b$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:a_add_eta_b, lmm:lambda_ne_zero}
-    By way of contradiction using \ref{lmm:a_add_eta_b}, if $\lambda^2 \divides a +\eta\cdot b = a + b + \lambda \cdot b$,
-    since $\lambda^2 \divides a+b$, then $\lambda^2 \divides \lambda \cdot b$, from which it follows
+    By way of contradiction using \Cref{lmm:a_add_eta_b}, if $\lambda^2 \divides a +\eta b = a + b + \lambda  b$,
+    since $\lambda^2 \divides a+b$, then $\lambda^2 \divides \lambda  b$, from which it follows
     that $\lambda \divides b$, which is absurd.
 \end{proof}
 
@@ -384,15 +384,15 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
-    Then $\lambda^2 \notdivides a + \eta^2 \cdot b$.
+    Then $\lambda^2 \notdivides a + \eta^2  b$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:lambda_ne_zero, lmm:toInteger_eval_cyclo}
-    By way of contradiction using \ref{lmm:toInteger_eval_cyclo},
-    if $\lambda^2 \divides a +\eta^2\cdot b = a + b -b + \eta^2 \cdot b$,
-    since $\lambda^2 \divides a+b$, then $\lambda^2 \divides b \cdot (\eta^2 -1)
-    = \lambda \cdot b \cdot (\eta + 1)$. Since $\lambda \notdivides b$, then
+    By way of contradiction using \Cref{lmm:toInteger_eval_cyclo},
+    if $\lambda^2 \divides a +\eta^2 b = a + b -b + \eta^2  b$,
+    since $\lambda^2 \divides a+b$, then $\lambda^2 \divides b  (\eta^2 -1)
+    = \lambda  b  (\eta + 1)$. Since $\lambda \notdivides b$, then
     $\lambda \divides \eta+1 = \lambda +2$, then $\lambda \divides 2$ which is absurd.
 \end{proof}
 
@@ -402,12 +402,12 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
-    Then $(\eta + 1) \cdot (-\eta) = 1$.
+    Then $(\eta + 1)  (-\eta) = 1$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:toInteger_eval_cyclo}
-    Trivial calculation using \ref{lmm:toInteger_eval_cyclo}.
+    Trivial calculation using \Cref{lmm:toInteger_eval_cyclo}.
 \end{proof}
 
 \begin{lemma}
@@ -417,7 +417,7 @@
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\
     Let $p \in \cc{O}_K$ be a prime such that $p \divides a+b$
-    and $p \divides a+\eta \cdot b$.\\\\
+    and $p \divides a+\eta  b$.\\\\
     Then $p$ is associated with $\lambda$.
 \end{lemma}
 \begin{proof}
@@ -433,7 +433,7 @@
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\
     Let $p \in \cc{O}_K$ be a prime such that $p \divides a+b$
-    and $p \divides a+\eta^2 \cdot b$.\\\\
+    and $p \divides a+\eta^2  b$.\\\\
     Then $p$ is associated with $\lambda$.
 \end{lemma}
 \begin{proof}
@@ -448,8 +448,8 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\
-    Let $p \in \cc{O}_K$ be a prime such that $p \divides a+\eta \cdot b$
-    and $p \divides a+\eta^2 \cdot b$.\\\\
+    Let $p \in \cc{O}_K$ be a prime such that $p \divides a+\eta  b$
+    and $p \divides a+\eta^2  b$.\\\\
     Then $p$ is associated with $\lambda$.
 \end{lemma}
 \begin{proof}
@@ -464,10 +464,10 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
-    We define $x \in \cc{O}_K$ such that $a + b = \lambda^{3n-2} \cdot x$.\\
-    We define $y \in \cc{O}_K$ such that $a + \eta \cdot b = \lambda \cdot y$.\\
-    We define $z \in \cc{O}_K$ such that $a + \eta^2 \cdot b = \lambda \cdot z$.\\
-    We define $w \in \cc{O}_K$ such that $c = \lambda^n \cdot w$.
+    We define $x \in \cc{O}_K$ such that $a + b = \lambda^{3n-2}  x$.\\
+    We define $y \in \cc{O}_K$ such that $a + \eta  b = \lambda  y$.\\
+    We define $z \in \cc{O}_K$ such that $a + \eta^2  b = \lambda  z$.\\
+    We define $w \in \cc{O}_K$ such that $c = \lambda^n  w$.
 \end{definition}
 
 \begin{lemma}
@@ -481,8 +481,8 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}
-    By way of contradiction, if $\lambda \divides y$, then $\lambda^2 \divides \lambda \cdot y
-    = a + \eta\cdot b$ which is absurd by \ref{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}.
+    By way of contradiction, if $\lambda \divides y$, then $\lambda^2 \divides \lambda  y
+    = a + \eta b$ which is absurd by \Cref{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}.
 \end{proof}
 
 \begin{lemma}
@@ -496,8 +496,8 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}
-    By way of contradiction, if $\lambda \divides z$, then $\lambda^2 \divides \lambda \cdot z
-    = a + \eta^2\cdot b$ which is absurd by \ref{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}.
+    By way of contradiction, if $\lambda \divides z$, then $\lambda^2 \divides \lambda  z
+    = a + \eta^2 b$ which is absurd by \Cref{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}.
 \end{proof}
 
 \begin{lemma}
@@ -513,11 +513,11 @@
     \uses{lmm:cube_add_cube_eq_mul, lmm:lambda_prime,
     lmm:lambda_not_dvd_z, lmm:lambda_not_dvd_y, lmm:Solution_two_le_multiplicity,
     lmm:lambda_ne_zero}
-    By definition of multiplicity $\lambda^n \divides c$. Since $u$ is a unit, then using \ref{lmm:cube_add_cube_eq_mul}
-    $\lambda^{3n} \divides u \cdot c^3 = a^3 + b^3
-    = (a+b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 \cdot b)
-    = (a+b)\cdot(\lambda\cdot y)\cdot(\lambda\cdot z)$.
-    Then using \ref{lmm:lambda_not_dvd_y} and \ref{lmm:lambda_not_dvd_z},
+    By definition of multiplicity $\lambda^n \divides c$. Since $u$ is a unit, then using \Cref{lmm:cube_add_cube_eq_mul}
+    $\lambda^{3n} \divides u  c^3 = a^3 + b^3
+    = (a+b)  (a + \eta  b)  (a + \eta^2  b)
+    = (a+b)(\lambda y)(\lambda z)$.
+    Then using \Cref{lmm:lambda_not_dvd_y} and \Cref{lmm:lambda_not_dvd_z},
     $\lambda^{3n-2} \divides a+b$.
 \end{proof}
 
@@ -532,7 +532,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:multiplicity_lambda_c_finite}
-    By way of contradiction, if $\lambda \divides w$, then $\lambda^{n+1} \divides \lambda^n \cdot w
+    By way of contradiction, if $\lambda \divides w$, then $\lambda^{n+1} \divides \lambda^n  w
     = c$ which is absurd by definition of multiplicity.
 \end{proof}
 
@@ -550,12 +550,12 @@
     lmm:cube_add_cube_eq_mul, lmm:Solution_two_le_multiplicity, lmm:lambda_prime,
     lmm:lambda_not_dvd_w, lmm:lambda_ne_zero}
     By way of contradiction, if $\lambda \divides x$, then
-    $\lambda^{3n-1} \divides \lambda^{3n-2} \cdot x = a+b$. Using \ref{lmm:lambda_dvd_a_add_eta_mul_b}
-    and \ref{lmm:lambda_dvd_a_add_eta_sq_mul_b}, we have that $\lambda^{3n+1} \divides
-    (a+b) \cdot (a + \eta \cdot b) \cdot (a + \eta^2 cdot b) = a^3+b^3
-    = u\cdot c^3 = u\cdot \lambda^{3n}\cdot w^3$.
+    $\lambda^{3n-1} \divides \lambda^{3n-2}  x = a+b$. Using \Cref{lmm:lambda_dvd_a_add_eta_mul_b}
+    and \Cref{lmm:lambda_dvd_a_add_eta_sq_mul_b}, we have that $\lambda^{3n+1} \divides
+    (a+b)  (a + \eta  b)  (a + \eta^2 cdot b) = a^3+b^3
+    = u c^3 = u \lambda^{3n} w^3$.
     Then $\lambda \divides w^3$ which implies that $\lambda \divides w$
-    which is absurd by \ref{lmm:lambda_not_dvd_w}.
+    which is absurd by \Cref{lmm:lambda_not_dvd_w}.
 \end{proof}
 
 \begin{lemma}
@@ -609,7 +609,7 @@
     \leanok
     \uses{def:Solution}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then $3 \cdot n -2+1+1 = 3 \cdot n$.
+    Then $3  n -2+1+1 = 3  n$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -623,7 +623,7 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a,b,c,u)$ be a $solution$.\\\\
-    Then $x \cdot y \cdot z = u \cdot w^3$.
+    Then $x  y  z = u  w^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -639,7 +639,7 @@
     \uses{def:Solution}
     Let $S$ be a $solution$.\\\\
     Then $\exists u_1 \in \cc{O}^\times_K$ and $\exists X \in \cc{O}_K$
-    such that $x = u_1 \cdot X^3$.
+    such that $x = u_1  X^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -654,7 +654,7 @@
     \uses{def:Solution}
     Let $S$ be a $solution$.\\\\
     Then $\exists u_2 \in \cc{O}^\times_K$ and $\exists Y \in \cc{O}_K$
-    such that $y = u_2 \cdot Y^3$.
+    such that $y = u_2  Y^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -669,7 +669,7 @@
     \uses{def:Solution}
     Let $S$ be a $solution$.\\\\
     Then $\exists u_3 \in \cc{O}^\times_K$ and $\exists Z \in \cc{O}_K$
-    such that $z = u_3 \cdot Z^3$.
+    such that $z = u_3  Z^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -685,13 +685,13 @@
     lmm:y_eq_unit_mul_cube, lmm:z_eq_unit_mul_cube}
     Let $S$ be a $solution$.\\\\
     We define $u_1 \in \cc{O}^\times_K$ and $X \in \cc{O}_K$
-    such that $x = u_1 \cdot X^3$.\\
+    such that $x = u_1  X^3$.\\
     We define $u_2 \in \cc{O}^\times_K$ and $Y \in \cc{O}_K$
-    such that $y = u_2 \cdot Y^3$.\\
+    such that $y = u_2  Y^3$.\\
     We define $u_3 \in \cc{O}^\times_K$ and $Z \in \cc{O}_K$
-    such that $z = u_3 \cdot Z^3$.\\
-    We define $u_4 = \eta \cdot u_3 \cdot u_2^{-1}$.\\
-    We define $u_5 = s-\eta^2 \cdot u_1 \cdot u_2^{-1}$.\\
+    such that $z = u_3  Z^3$.\\
+    We define $u_4 = \eta  u_3  u_2^{-1}$.\\
+    We define $u_5 = s-\eta^2  u_1  u_2^{-1}$.\\
 \end{definition}
 
 \begin{lemma}
@@ -770,8 +770,8 @@
     \leanok
     \uses{def:Solution}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then $u_1 \cdot X^3 \cdot \lambda^{3n-2}+u_2 \cdot\eta\cdot Y^3\cdot \lambda +
-    u_3\cdot \eta^2 \cdot Z^3\cdot \lambda = 0$.
+    Then $u_1  X^3  \lambda^{3n-2}+u_2 \eta Y^3 \lambda +
+    u_3 \eta^2  Z^3 \lambda = 0$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -814,7 +814,7 @@
     \leanok
     \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then $Y^3 + u_4 \cdot Z^3 = u_5 \cdot (\lambda^(n-1) \cdot X)^3$.
+    Then $Y^3 + u_4  Z^3 = u_5  (\lambda^(n-1)  X)^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -842,7 +842,7 @@
     \leanok
     \uses{def:Solution}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then $\lambda^2 \divides u_5 \cdot (\lambda^{n - 1} \cdot X)^3$.
+    Then $\lambda^2 \divides u_5  (\lambda^{n - 1}  X)^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -873,7 +873,7 @@
     \leanok
     \uses{def:Solution}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then $Y^3 + (u_4 \cdot Z)^3 = u_5 \cdot (\lambda^{n-1} \cdot X)^3$.
+    Then $Y^3 + (u_4  Z)^3 = u_5  (\lambda^{n-1}  X)^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -889,7 +889,7 @@
     lmm:final, lmm:coprime_Y_Z, lmm:lambda_not_dvd_Y, lmm:lambda_not_dvd_Z, lmm:lambda_ne_zero,
     lmm:X_ne_zero}
     Let $S = (a,b,c,u)$ be a $solution$ with multiplicity $n$.\\
-    Let $S_f' = (Y,u_4\cdot Z, \lambda^{n-1}\cdot X, u_5)$.\\\\
+    Let $S_f' = (Y,u_4 Z, \lambda^{n-1} X, u_5)$.\\\\
     Then $S_f'$ is a $solution'$.
 \end{definition}
 
@@ -942,7 +942,7 @@
     \leanok
     Let $a, b, c \in \cc{O}_K$ such that $c \neq 0$ and $\gcd(a,b)=1$. \\
     Let $\lambda \notdivides a$, $\lambda \notdivides b$ and $\lambda \divides c$. \\\\
-    Then $a^3 + b^3 \neq u \cdot c^3$.
+    Then $a^3 + b^3 \neq u  c^3$.
 \end{theorem}
 \begin{proof}
     \leanok

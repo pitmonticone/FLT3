@@ -39,13 +39,13 @@
     \lean{fermatLastTheoremThree_case_1}
     \leanok
     Let $a, b, c \in \N$. \\
-    Let $3 \notdivides a \cdot b \cdot c$. \\\\
+    Let $3 \notdivides abc$. \\\\
     Then $a ^ 3 + b ^ 3 \neq c ^ 3$.
 \end{theorem}
 \begin{proof}
   \leanok
   \uses{lmm:cube_of_not_dvd}
-  Since $3 \notdivides a \cdot b \cdot c$,
+  Since $3 \notdivides abc$,
   we have that $3 \notdivides a$, $3 \notdivides b$ and $3 \notdivides c$. \\
   Apply \Cref{lmm:cube_of_not_dvd} repeatedly and compute each case.
 \end{proof}
