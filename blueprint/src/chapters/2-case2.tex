@@ -694,7 +694,7 @@
     We define $u_3 \in \cc{O}^\times_K$ and $Z \in \cc{O}_K$
     such that $z = u_3 Z^3$.\\
     We define $u_4 = \eta u_3 u_2^{-1}$.\\
-    We define $u_5 = s-\eta^2 u_1 u_2^{-1}$.\\
+    We define $u_5 = -\eta^2 u_1 u_2^{-1}$.\\
 \end{definition}
 
 \begin{lemma}
@@ -742,7 +742,11 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_not_dvd_y}
-    % TODO
+    By contradiction we assume that $\lambda \divides Y$, then, by the properties of divisibility,
+    $\lambda \divides u_2 Y^3$, which implies, by \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z},
+    that $\lambda \divides y$.
+    However, this contradicts \Cref{lmm:lambda_not_dvd_y}
+    forcing us to conclude that $\lambda \notdivides Y$.
 \end{proof}
 
 \begin{lemma}
@@ -756,7 +760,11 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_not_dvd_z}
-    % TODO
+    By contradiction we assume that $\lambda \divides Z$, then, by the properties of divisibility,
+    $\lambda \divides u_3 Z^3$, which implies, by \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z},
+    that $\lambda \divides z$.
+    However, this contradicts \Cref{lmm:lambda_not_dvd_z}
+    forcing us to conclude that $\lambda \notdivides Z$.
 \end{proof}
 
 \begin{lemma}
@@ -793,14 +801,17 @@
     \label{lmm:u₄_isUnit}
     \lean{Solution.u₄'_isUnit}
     \leanok
-    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    \uses{def:Solution}
     Let $S$ be a $solution$.\\\\
     Then $u_4$ is a unit.
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:eta_isUnit}
-    % TODO
+    \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z, lmm:eta_isUnit}
+    By \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z} $u_4 = \eta u_3 u_2^{-1}$,
+    which is a product of units by \Cref{lmm:eta_isUnit}.
+    Since the product of units is a unit (multiplicative closure),
+    it follows that $u_4$ must also be a unit.
 \end{proof}
 
 \begin{lemma}
@@ -814,7 +825,11 @@
 \begin{proof}
     \leanok
     \uses{lmm:toInteger_cube_eq_one}
-    % TODO
+    By \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z} $u_5 = -\eta^2 u_1 u_2^{-1}$,
+    which is a product of units since $\eta^3 = 1$ by \Cref{lmm:toInteger_cube_eq_one} and
+    $-\eta (-\eta^2) = \eta^3$.
+    Since the product of units is a unit (multiplicative closure),
+    it follows that $u_5$ must also be a unit.
 \end{proof}
 
 \begin{lemma}
@@ -842,7 +857,7 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    % TODO
+    Straightforward application of the definition of divisibility.
 \end{proof}
 
 \begin{lemma}
