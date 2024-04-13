@@ -609,12 +609,12 @@
     \leanok
     \uses{def:Solution}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then $3  n -2+1+1 = 3  n$.
+    Then $3n - 2 + 1 + 1 = 3n$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:Solution_two_le_multiplicity}
-    % TODO
+    It directly follows from \Cref{lmm:Solution_two_le_multiplicity}.
 \end{proof}
 
 \begin{lemma}
@@ -623,7 +623,7 @@
     \leanok
     \uses{def:Solution}
     Let $S=(a,b,c,u)$ be a $solution$.\\\\
-    Then $x  y  z = u  w^3$.
+    Then $x y z = u w^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -639,7 +639,7 @@
     \uses{def:Solution}
     Let $S$ be a $solution$.\\\\
     Then $\exists u_1 \in \cc{O}^\times_K$ and $\exists X \in \cc{O}_K$
-    such that $x = u_1  X^3$.
+    such that $x = u_1 X^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -654,7 +654,7 @@
     \uses{def:Solution}
     Let $S$ be a $solution$.\\\\
     Then $\exists u_2 \in \cc{O}^\times_K$ and $\exists Y \in \cc{O}_K$
-    such that $y = u_2  Y^3$.
+    such that $y = u_2 Y^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -685,13 +685,13 @@
     lmm:y_eq_unit_mul_cube, lmm:z_eq_unit_mul_cube}
     Let $S$ be a $solution$.\\\\
     We define $u_1 \in \cc{O}^\times_K$ and $X \in \cc{O}_K$
-    such that $x = u_1  X^3$.\\
+    such that $x = u_1 X^3$.\\
     We define $u_2 \in \cc{O}^\times_K$ and $Y \in \cc{O}_K$
-    such that $y = u_2  Y^3$.\\
+    such that $y = u_2 Y^3$.\\
     We define $u_3 \in \cc{O}^\times_K$ and $Z \in \cc{O}_K$
-    such that $z = u_3  Z^3$.\\
-    We define $u_4 = \eta  u_3  u_2^{-1}$.\\
-    We define $u_5 = s-\eta^2  u_1  u_2^{-1}$.\\
+    such that $z = u_3 Z^3$.\\
+    We define $u_4 = \eta u_3 u_2^{-1}$.\\
+    We define $u_5 = s-\eta^2 u_1 u_2^{-1}$.\\
 \end{definition}
 
 \begin{lemma}
@@ -770,8 +770,8 @@
     \leanok
     \uses{def:Solution}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then $u_1  X^3  \lambda^{3n-2}+u_2 \eta Y^3 \lambda +
-    u_3 \eta^2  Z^3 \lambda = 0$.
+    Then $u_1 X^3 \lambda^{3n-2}+u_2 \eta Y^3 \lambda +
+    u_3 \eta^2 Z^3 \lambda = 0$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -814,7 +814,7 @@
     \leanok
     \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then $Y^3 + u_4  Z^3 = u_5  (\lambda^(n-1)  X)^3$.
+    Then $Y^3 + u_4 Z^3 = u_5 (\lambda^(n-1) X)^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -842,7 +842,7 @@
     \leanok
     \uses{def:Solution}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then $\lambda^2 \divides u_5  (\lambda^{n - 1}  X)^3$.
+    Then $\lambda^2 \divides u_5 (\lambda^{n - 1} X)^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -873,7 +873,7 @@
     \leanok
     \uses{def:Solution}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then $Y^3 + (u_4  Z)^3 = u_5  (\lambda^{n-1}  X)^3$.
+    Then $Y^3 + (u_4 Z)^3 = u_5 (\lambda^{n-1} X)^3$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -942,7 +942,7 @@
     \leanok
     Let $a, b, c \in \cc{O}_K$ such that $c \neq 0$ and $\gcd(a,b)=1$. \\
     Let $\lambda \notdivides a$, $\lambda \notdivides b$ and $\lambda \divides c$. \\\\
-    Then $a^3 + b^3 \neq u  c^3$.
+    Then $a^3 + b^3 \neq u c^3$.
 \end{theorem}
 \begin{proof}
     \leanok
