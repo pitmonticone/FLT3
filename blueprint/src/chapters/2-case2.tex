@@ -722,7 +722,11 @@
 \begin{proof}
     \leanok
     \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z,, lmm:lambda_not_dvd_x}
-    % TODO
+    By contradiction we assume that $\lambda \divides X$, then, by the properties of divisibility,
+    $\lambda \divides u_1 X^3$, which implies, by \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z},
+    that $\lambda \divides x$.
+    However, this contradicts \Cref{lmm:lambda_not_dvd_x}
+    forcing us to conclude that $\lambda \notdivides X$.
 \end{proof}
 
 \begin{lemma}
