@@ -560,8 +560,8 @@
     and \Cref{lmm:lambda_dvd_a_add_eta_sq_mul_b}, we have that $\lambda^{3n+1} \divides
     (a+b)  (a + \eta  b)  (a + \eta^2 cdot b) = a^3+b^3
     = u c^3 = u \lambda^{3n} w^3$.
-    Then $\lambda \divides w^3$ which implies that $\lambda \divides w$
-    which is absurd by \Cref{lmm:lambda_not_dvd_w}.
+    Then $\lambda \divides w^3$ which implies that $\lambda \divides w$, that
+    contradicts \Cref{lmm:lambda_not_dvd_w} forcing us to conclude $\lambda \notdivides x$.
 \end{proof}
 
 \begin{lemma}
@@ -875,7 +875,8 @@
 \begin{proof}
     \leanok
     \uses{lmm:Solution_two_le_multiplicity}
-    % TODO
+    Using \Cref{lmm:Solution_two_le_multiplicity}, we have that $\lambda^2 \divides
+    \lambda^2 u_5 \lambda^{3n-5} X^3 = u_5 (\lambda^{n - 1} X)^3$.
 \end{proof}
 
 \begin{lemma}[Kummer]
@@ -933,7 +934,11 @@
     \leanok
     \uses{lmm:lambda_not_dvd_X,
     lmm:lambda_ne_zero}
-    % TODO
+    Let $(a',b',c',u') = S_f'$ be the final $solution'$, then
+    $\lambda^{n-1} \divides \lambda^{n-1} X = c'$.
+    By contradiction we assume that $\lambda^n \divides c'$ which implies that $\lambda \divides X$,
+    that contradicts \Cref{lmm:lambda_not_dvd_X} forcing us to conclude
+    that $\lambda^{n} \notdivides c'$. Then $S_f'$ has multiplicity $n-1$.
 \end{proof}
 
 \begin{lemma}
