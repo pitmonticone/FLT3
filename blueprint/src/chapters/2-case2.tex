@@ -373,10 +373,10 @@
 \begin{proof}
     \leanok
     \uses{lmm:a_add_eta_b, lmm:lambda_ne_zero}
-    By contradiction we assume $\lambda^2 \divides a + \eta b$, which implies that
+    By contradiction we assume that $\lambda^2 \divides a + \eta b$, which implies that
     $\lambda^2 \divides a + b + \lambda  b$ by \Cref{lmm:a_add_eta_b}.
     Since $\lambda^2 \divides a+b$, then $\lambda^2 \divides \lambda  b$, which implies that
-    $\lambda \divides b$, which contradicts \Cref{def:Solution} forcing us to conclude that
+    $\lambda \divides b$, that contradicts \Cref{def:Solution} forcing us to conclude that
     $\lambda^2 \notdivides a + \eta b$.
 \end{proof}
 
@@ -391,9 +391,9 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_ne_zero, lmm:toInteger_eval_cyclo}
-    By contradiction using \Cref{lmm:toInteger_eval_cyclo},
-    if $\lambda^2 \divides a +\eta^2 b = a + b -b + \eta^2  b$,
-    since $\lambda^2 \divides a+b$, then $\lambda^2 \divides b (\eta^2 -1)
+    By contradiction using \Cref{lmm:toInteger_eval_cyclo}, we assume
+    $\lambda^2 \divides a +\eta^2 b = a + b -b + \eta^2  b$.
+    Since $\lambda^2 \divides a+b$, then $\lambda^2 \divides b (\eta^2 -1)
     = \lambda b (\eta + 1)$. Since $\lambda \notdivides b$, then
     $\lambda \divides \eta+1 = \lambda +2$, then $\lambda \divides 2$ which is absurd.
 \end{proof}
@@ -483,8 +483,10 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}
-    By contradiction, if $\lambda \divides y$, then $\lambda^2 \divides \lambda  y
-    = a + \eta b$ which is absurd by \Cref{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}.
+    By contradiction we assume that $\lambda \divides y$, which implies that
+    $\lambda^2 \divides \lambda y = a + \eta b$, that contradicts
+    \Cref{lmm:lambda_sq_not_dvd_a_add_eta_mul_b} forcing us to conclude that
+    $\lambda \notdivides y$.
 \end{proof}
 
 \begin{lemma}
@@ -498,8 +500,9 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}
-    By contradiction, if $\lambda \divides z$, then $\lambda^2 \divides \lambda  z
-    = a + \eta^2 b$ which is absurd by \Cref{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}.
+    By contradiction we assume that $\lambda \divides z$, which implies that
+    $\lambda^2 \divides \lambda z = a + \eta^2 b$, that contradicts
+    \Cref{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b} forcing us to conclude $\lambda \notdivides z$.
 \end{proof}
 
 \begin{lemma}
@@ -534,7 +537,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:multiplicity_lambda_c_finite}
-    By contradiction we assume $\lambda \divides w$, which implies
+    By contradiction we assume that $\lambda \divides w$, which implies
     $\lambda^{n+1} \divides \lambda^n  w = c$ that contradicts \Cref{def:Solution_Multiplicity}
     forcing us to conclude that $\lambda \notdivides w$.
 \end{proof}
