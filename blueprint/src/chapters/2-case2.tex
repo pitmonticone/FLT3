@@ -1011,5 +1011,22 @@
     lmm:norm_lambda_prime,
     lmm:norm_lambda,
     lmm:lambda_dvd_three}
-    % TODO
+    Assume that $\forall a, b, c \in \cc{O}_K,\, \forall u \in \cc{O}^\times_K$ such that $c \neq 0$,
+    $\gcd(a,b)=1$, $\lambda \notdivides a$, $\lambda \notdivides b$ and $\lambda \divides c$,
+    it holds that $a^3 + b^3 \neq u c^3$.
+    Let $a, b, c \in \Z$ such that $a\neq 0$, $b\neq 0$ and $c\neq 0$.
+    By \Cref{thm:fermatLastTheoremThree_of_three_dvd_only_c}, we can assume that
+    $\gcd(a,b)=1$, $3 \notdivides a$, $3 \notdivides b$, $3 \divides c$.
+    By contradiction we assume that $a^3 + b^3 = c^3$ and let $u = 1$.
+    \begin{itemize}
+        \item By contradiction we assume that $\lambda \divides a$, which implies that the norm of
+        $\lambda$ divides $a$ by \Cref{lmm:norm_lambda_prime}, which implies that $3 \divides a$ by
+        \Cref{lmm:norm_lambda}, that contradicts the assumption that $3 \notdivides a$ forcing us
+        to conclude that $\lambda \notdivides a$.
+        \item By contradiction we assume that $\lambda \divides b$, which implies that the norm of
+        $\lambda$ divides $b$ by \Cref{lmm:norm_lambda_prime}, which implies that $3 \divides b$ by
+        \Cref{lmm:norm_lambda}, that contradicts the assumption that $3 \notdivides b$ forcing us
+        to conclude that $\lambda \notdivides b$.
+        \item $\lambda \divides 3$ and $3 \divides c$, then $\lambda \divides c$.
+    \end{itemize}
 \end{proof}
