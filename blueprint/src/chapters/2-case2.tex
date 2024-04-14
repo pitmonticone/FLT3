@@ -310,14 +310,14 @@
     \lean{exists_Solution_of_Solution'}
     \leanok
     \uses{def:Solution1, def:Solution}
-    Let $S$ be a $solution$ with multiplicity $n$.\\\\
-    Then there is a $solution'\text{ }S'$ with multiplicity $n$.
+    Let $S'$ be a $solution'$ with multiplicity $n$.\\\\
+    Then there is a $solution\text{ }S$ with multiplicity $n$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:ex_dvd_a_add_b}
-    Let $S=(a,b,c,u)$. Let $a', b'$ be the units given by \Cref{lmm:ex_dvd_a_add_b}.
-    Then $S'=(a',b',c,u)$ is a $solution'$.
+    Let $S'=(a',b',c',u')$. Let $a, b$ be the units given by \Cref{lmm:ex_dvd_a_add_b}.
+    Then $S=(a,b,c',u')$ is a $solution'$ with multiplicity $n$.
 \end{proof}
 
 \begin{lemma}
@@ -952,7 +952,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:Solution1_final_multiplicity, lmm:Solution_two_le_multiplicity}
-    % TODO
+    It directly follows from \Cref{lmm:Solution1_final_multiplicity} since $m = n-1 < n$.
 \end{proof}
 
 \begin{theorem}
@@ -966,14 +966,15 @@
 \begin{proof}
     \leanok
     \uses{lmm:exists_Solution_of_Solution1, lmm:Solution1_final_multiplicity_lt}
-    % TODO
+    It directly follows from \Cref{lmm:Solution1_final_multiplicity} and
+    \Cref{lmm:Solution1_final_multiplicity_lt}.
 \end{proof}
 
 \begin{theorem}[Generalised Fermat's Last Theorem for Exponent $3$]
     \label{thm:fermatLastTheoremForThreeGen}
     \lean{fermatLastTheoremForThreeGen}
     \leanok
-    Let $a, b, c \in \cc{O}_K$ such that $c \neq 0$ and $\gcd(a,b)=1$. \\
+    Let $a, b, c \in \cc{O}_K$ and $u \in \cc{O}^\times_K$ such that $c \neq 0$ and $\gcd(a,b)=1$.\\
     Let $\lambda \notdivides a$, $\lambda \notdivides b$ and $\lambda \divides c$. \\\\
     Then $a^3 + b^3 \neq u c^3$.
 \end{theorem}
@@ -982,7 +983,16 @@
     \uses{lmm:exists_Solution_of_Solution1,
     lmm:exists_minimal,
     lmm:exists_Solution_multiplicity_lt}
-    % TODO
+    By contradiction we assume that there are $a, b, c \in \cc{O}_K$ and $u \in \cc{O}^\times_K$
+    such that $c \neq 0$, $\gcd(a,b)=1$, $\lambda \notdivides a$, $\lambda \notdivides b$,
+    $\lambda \divides c$ and $a^3 + b^3 = u c^3$.
+    Then $S'=(a,b,c,u)$ is a $solution'$, which implies that there is a $solution$ $S$ by
+    \Cref{exists_Solution_of_Solution1}.
+    Then, by \Cref{exists_minimal}, there is a minimal solution $S_0$ with multiplicity $n$.
+    Hence, there is a $solution'$ $S_1'$ with multiplicity $m<n$ by \Cref{exists_Solution_multiplicity_lt},
+    which implies that there is a $solution$ $S_1$  with multiplicity $m$ by \Cref{exists_Solution_of_Solution1}.
+    However, this contradicts the minimality of $S_0$
+    forcing us to conclude that $a^3 + b^3 \neq u c^3$.
 \end{proof}
 
 \begin{lemma}

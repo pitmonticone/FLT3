@@ -1056,11 +1056,11 @@ lemma _root_.Solution'_final_multiplicity_lt :
   exact Nat.pred_lt <| by linarith [S.two_le_multiplicity]
 
 /-- Given `S : Solution`,
-there exists a `S' : Solution` such that `S'.multiplicity < S.multiplicity`. -/
+there exists a `S₁ : Solution` such that `S₁.multiplicity < S.multiplicity`. -/
 theorem exists_Solution_multiplicity_lt :
-    ∃ (S' : Solution), S'.multiplicity < S.multiplicity := by
-  obtain ⟨S', hS'⟩ := exists_Solution_of_Solution' (Solution'_final S)
-  exact ⟨S', hS' ▸ Solution'_final_multiplicity_lt S⟩
+    ∃ (S₁ : Solution), S₁.multiplicity < S.multiplicity := by
+  obtain ⟨S₁, hS₁⟩ := exists_Solution_of_Solution' (Solution'_final S)
+  exact ⟨S₁, hS₁ ▸ Solution'_final_multiplicity_lt S⟩
 
 end Solution
 
