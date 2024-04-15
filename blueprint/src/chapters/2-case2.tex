@@ -575,13 +575,13 @@
     \leanok
     \uses{lmm:lambda_not_dvd_y, lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b,
     lmm:lambda_not_dvd_x}
-    Since $y \neq 0$ by \Cref{lambda_not_dvd_y}, by the properties of PIDs it suffices to prove that
+    Since $y \neq 0$ by \Cref{lmm:lambda_not_dvd_y}, by the properties of PIDs it suffices to prove that
     $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides x$, then $p \notdivides y$.
     Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides x$ and $p \divides y$
     which implies that $p \divdes \lambda^{3n-2} x = a+b$ and $p \divides \lambda y = a + \eta b$.
-    Then by \Cref{associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
+    Then by \Cref{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
     we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides x$
-    that contradicts \Cref{lambda_not_dvd_x} forcing us to conclude that $p \notdivides y$, which,
+    that contradicts \Cref{lmm:lambda_not_dvd_x} forcing us to conclude that $p \notdivides y$, which,
     as stated above, implies that $\gcd(x,y)=1$.
 \end{proof}
 
@@ -597,13 +597,13 @@
     \leanok
     \uses{lmm:lambda_not_dvd_z, lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b,
     lmm:lambda_not_dvd_x}
-    Since $z \neq 0$ by \Cref{lambda_not_dvd_z}, by the properties of PIDs it suffices to prove that
+    Since $z \neq 0$ by \Cref{lmm:lambda_not_dvd_z}, by the properties of PIDs it suffices to prove that
     $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides x$, then $p \notdivides z$.
     Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides x$ and $p \divides z$
     which implies that $p \divdes \lambda^{3n-2} x = a+b$ and $p \divides \lambda z = a + \eta^2 b$.
-    Then by \Cref{associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b}
+    Then by \Cref{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b}
     we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides x$
-    that contradicts \Cref{lambda_not_dvd_x} forcing us to conclude that $p \notdivides z$, which,
+    that contradicts \Cref{lmm:lambda_not_dvd_x} forcing us to conclude that $p \notdivides z$, which,
     as stated above, implies that $\gcd(x,z)=1$.
 \end{proof}
 
@@ -619,13 +619,13 @@
     \leanok
     \uses{lmm:lambda_not_dvd_z, lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b,
     lmm:lambda_not_dvd_y}
-    Since $z \neq 0$ by \Cref{lambda_not_dvd_z}, by the properties of PIDs it suffices to prove that
+    Since $z \neq 0$ by \Cref{lmm:lambda_not_dvd_z}, by the properties of PIDs it suffices to prove that
     $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides y$, then $p \notdivides z$.
     Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides y$ and $p \divides z$
     which implies that $p \divdes \lambda y = a+\eta b$ and $p \divides \lambda z = a + \eta^2 b$.
-    Then by \Cref{associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b}
+    Then by \Cref{lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b}
     we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides y$
-    that contradicts \Cref{lambda_not_dvd_y} forcing us to conclude that $p \notdivides z$, which,
+    that contradicts \Cref{lmm:lambda_not_dvd_y} forcing us to conclude that $p \notdivides z$, which,
     as stated above, implies that $\gcd(y,z)=1$.
 \end{proof}
 
@@ -671,7 +671,11 @@
 \begin{proof}
     \leanok
     \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three, lmm:coprime_x_y, lmm:coprime_x_z}
-    % TODO
+    By the properties of PIDs, it suffices to prove that there exists a $k\in \cc{O}_K$ such that
+    $xk$ is a cube and $\gcd(x,k)=1$.
+    Let $k = yzu^{-1}$, then $xk = x y z u^{-1} = w^3$ by \Cref{lmm:x_mul_y_mul_z_eq_u_w_pow_three}.
+    Moreover, since $\gcd(x,y)=1$ by \Cref{lmm:coprime_x_y} and $\gcd(x,z)=1$ by \Cref{lmm:coprime_x_z},
+    then $\gcd(x,yz)=1$, which implies that $\gcd(x,k)=1$.
 \end{proof}
 
 \begin{lemma}
@@ -686,7 +690,11 @@
 \begin{proof}
     \leanok
     \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three, lmm:coprime_x_y, lmm:coprime_y_z}
-    % TODO
+    By the properties of PIDs, it suffices to prove that there exists a $k\in \cc{O}_K$ such that
+    $yk$ is a cube and $\gcd(y,k)=1$.
+    Let $k = xzu^{-1}$, then $yk = y x z u^{-1} = w^3$ by \Cref{lmm:x_mul_y_mul_z_eq_u_w_pow_three}.
+    Moreover, since $\gcd(x,y)=1$ by \Cref{lmm:coprime_x_y} and $\gcd(y,z)=1$ by \Cref{lmm:coprime_y_z},
+    then $\gcd(y,xz)=1$, which implies that $\gcd(y,k)=1$.
 \end{proof}
 
 \begin{lemma}
@@ -701,7 +709,11 @@
 \begin{proof}
     \leanok
     \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three, lmm:coprime_x_z, lmm:coprime_y_z}
-    % TODO
+    By the properties of PIDs, it suffices to prove that there exists a $k\in \cc{O}_K$ such that
+    $zk$ is a cube and $\gcd(z,k)=1$.
+    Let $k = xyu^{-1}$, then $zk = z x y u^{-1} = w^3$ by \Cref{lmm:x_mul_y_mul_z_eq_u_w_pow_three}.
+    Moreover, since $\gcd(x,z)=1$ by \Cref{lmm:coprime_x_z} and $\gcd(y,z)=1$ by \Cref{lmm:coprime_y_z},
+    then $\gcd(z,xy)=1$, which implies that $\gcd(z,k)=1$.
 \end{proof}
 
 \begin{definition}[$u_1,u_2,u_3,u_4,u_5,X,Y,Z$]
