@@ -428,8 +428,8 @@
 \end{proof}
 
 \begin{lemma}
-    \label{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq__mul_b}
-    \lean{Solution.associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq__mul_b}
+    \label{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b}
+    \lean{Solution.associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b}
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\
@@ -444,8 +444,8 @@
 \end{proof}
 
 \begin{lemma}
-    \label{lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq__mul_b}
-    \lean{Solution.associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq__mul_b}
+    \label{lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b}
+    \lean{Solution.associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b}
     \leanok
     \uses{def:Solution}
     Let $S=(a, b, c, u)$ be a $solution$.\\
@@ -568,14 +568,21 @@
     \lean{Solution.coprime_x_y}
     \leanok
     \uses{def:Solution}
-    Let $S$ be a $solution$.\\\\
-    Then $\gcd(x, y) = 1$.
+    Let $S$ be a $solution$ with multiplicity $n$.\\\\
+    Then $\gcd(x,y) = 1$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:lambda_not_dvd_y, lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b,
     lmm:lambda_not_dvd_x}
-    % TODO
+    Since $y \neq 0$ by \Cref{lambda_not_dvd_y}, by the properties of PIDs it suffices to prove that
+    $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides x$, then $p \notdivides y$.
+    Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides x$ and $p \divides y$
+    which implies that $p \divdes \lambda^{3n-2} x = a+b$ and $p \divides \lambda y = a + \eta b$.
+    Then by \Cref{associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
+    we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides x$
+    that contradicts \Cref{lambda_not_dvd_x} forcing us to conclude that $p \notdivides y$, which,
+    as stated above, implies that $\gcd(x,y)=1$.
 \end{proof}
 
 \begin{lemma}
@@ -584,13 +591,20 @@
     \leanok
     \uses{def:Solution}
     Let $S$ be a $solution$.\\\\
-    Then $\gcd(x, z) = 1$.
+    Then $\gcd(x,z) = 1$.
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:lambda_not_dvd_z, lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq__mul_b,
+    \uses{lmm:lambda_not_dvd_z, lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b,
     lmm:lambda_not_dvd_x}
-    % TODO
+    Since $z \neq 0$ by \Cref{lambda_not_dvd_z}, by the properties of PIDs it suffices to prove that
+    $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides x$, then $p \notdivides z$.
+    Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides x$ and $p \divides z$
+    which implies that $p \divdes \lambda^{3n-2} x = a+b$ and $p \divides \lambda z = a + \eta^2 b$.
+    Then by \Cref{associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b}
+    we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides x$
+    that contradicts \Cref{lambda_not_dvd_x} forcing us to conclude that $p \notdivides z$, which,
+    as stated above, implies that $\gcd(x,z)=1$.
 \end{proof}
 
 \begin{lemma}
@@ -603,9 +617,16 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:lambda_not_dvd_z, lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq__mul_b,
+    \uses{lmm:lambda_not_dvd_z, lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b,
     lmm:lambda_not_dvd_y}
-    % TODO
+    Since $z \neq 0$ by \Cref{lambda_not_dvd_z}, by the properties of PIDs it suffices to prove that
+    $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides y$, then $p \notdivides z$.
+    Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides y$ and $p \divides z$
+    which implies that $p \divdes \lambda y = a+\eta b$ and $p \divides \lambda z = a + \eta^2 b$.
+    Then by \Cref{associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b}
+    we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides y$
+    that contradicts \Cref{lambda_not_dvd_y} forcing us to conclude that $p \notdivides z$, which,
+    as stated above, implies that $\gcd(y,z)=1$.
 \end{proof}
 
 \begin{lemma}

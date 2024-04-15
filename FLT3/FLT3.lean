@@ -463,7 +463,7 @@ lemma associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b {p : 𝓞 K} (hp : Prime 
 
 /-- If `p : 𝓞 K` is a prime that divides both `S.a + S.b` and `S.a + η ^ 2 * S.b`, then `p`
 is associated with `λ`. -/
-lemma associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq__mul_b {p : 𝓞 K} (hp : Prime p)
+lemma associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b {p : 𝓞 K} (hp : Prime p)
   (hpab : p ∣ (S.a + S.b)) (hpaetasqb : p ∣ (S.a + η ^ 2 * S.b)) : Associated p λ := by
   by_cases H : Associated p (η - 1)
   · exact H
@@ -501,7 +501,7 @@ lemma associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq__mul_b {p : 𝓞 K} (hp : Pr
 
 /-- If `p : 𝓞 K` is a prime that divides both `S.a + η * S.b` and `S.a + η ^ 2 * S.b`, then `p`
 is associated with `λ`. -/
-lemma associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq__mul_b {p : 𝓞 K} (hp : Prime p)
+lemma associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b {p : 𝓞 K} (hp : Prime p)
     (hpaetab : p ∣ S.a + η * S.b) (hpaetasqb : p ∣ S.a + η ^ 2 * S.b) : Associated p λ := by
   by_cases p_lam : (p ∣ λ)
   · exact hp.associated_of_dvd hζ.lambda_prime p_lam
@@ -624,9 +624,9 @@ lemma coprime_x_y : IsCoprime S.x S.y := by
   · intro p hp p_dvd_x p_dvd_y
     have aux1 := dvd_mul_of_dvd_right p_dvd_x (λ ^ (3 * S.multiplicity - 2))
     rw [← x_spec] at aux1
-    have aux2 := dvd_mul_of_dvd_right p_dvd_y (η -1)
+    have aux2 := dvd_mul_of_dvd_right p_dvd_y (η - 1)
     rw [← y_spec] at aux2
-    have aux3 : Associated p (η -1) := by
+    have aux3 : Associated p (η - 1) := by
       apply associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b
       exact hp
       exact aux1
@@ -649,8 +649,8 @@ lemma coprime_x_z : IsCoprime S.x S.z := by
     rw [← x_spec] at aux1
     have aux2 := dvd_mul_of_dvd_right p_dvd_z (η - 1)
     rw [← z_spec] at aux2
-    have aux3 : Associated p (η -1) := by
-      apply associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq__mul_b
+    have aux3 : Associated p (η - 1) := by
+      apply associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b
       exact hp
       exact aux1
       exact aux2
@@ -672,8 +672,8 @@ lemma coprime_y_z : IsCoprime S.y S.z := by
     rw [← y_spec] at aux1
     have aux2 := dvd_mul_of_dvd_right p_dvd_z (η - 1)
     rw [← z_spec] at aux2
-    have aux3 : Associated p (η -1) := by
-      apply associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq__mul_b
+    have aux3 : Associated p (η - 1) := by
+      apply associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b
       exact hp
       exact aux1
       exact aux2
