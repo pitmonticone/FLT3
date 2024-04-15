@@ -123,16 +123,18 @@ Let $u \in \cc{O}^\times_K$ be a unit.
     which implies that $\lambda \divides 3$.
 \end{proof}
 
-\begin{lemma}
-    \label{lmm:zeta_sub_one_prime1}
+\begin{theorem}
+    \label{thm:zeta_sub_one_prime1}
     \lean{IsPrimitiveRoot.zeta_sub_one_prime'}
     \leanok
-    % TODO
-\end{lemma}
-\begin{proof}
-    \leanok
-    % TODO
-\end{proof}
+    Let $p \in \N$ be prime. \\\\
+    If $\zeta_p$ is a primitive $p$-th root of unity, then $\zeta_p - 1$ is prime.
+\end{theorem}
+% We will not include the proof of this theorem here.
+% \begin{proof}
+%     \leanok
+%     % TODO
+% \end{proof}
 
 \begin{lemma}
     \label{lmm:lambda_prime}
@@ -142,8 +144,9 @@ Let $u \in \cc{O}^\times_K$ be a unit.
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:zeta_sub_one_prime1}
-    % TODO
+    \uses{thm:zeta_sub_one_prime1}
+    Since $3$ is prime and $\zeta_3$ is a primitive third root of unity, then $\lambda$ is prime
+    by \Cref{thm:zeta_sub_one_prime1}.
 \end{proof}
 
 \begin{lemma}
@@ -155,7 +158,7 @@ Let $u \in \cc{O}^\times_K$ be a unit.
 \begin{proof}
     \leanok
     \uses{lmm:lambda_prime}
-    % TODO
+    It directly follows from \Cref{lmm:lambda_prime} since prime numbers are not zero.
 \end{proof}
 
 \begin{lemma}
@@ -167,7 +170,7 @@ Let $u \in \cc{O}^\times_K$ be a unit.
 \begin{proof}
     \leanok
     \uses{lmm:lambda_prime}
-    % TODO
+    It directly follows from \Cref{lmm:lambda_prime} since prime numbers are not units.
 \end{proof}
 
 \begin{lemma}
@@ -180,7 +183,7 @@ Let $u \in \cc{O}^\times_K$ be a unit.
 \begin{proof}
     \leanok
     \uses{lmm:norm_lambda}
-    % TODO
+    It directly follows from \Cref{lmm:norm_lambda} By the fundamental properties of ideals.
 \end{proof}
 
 \begin{lemma}
