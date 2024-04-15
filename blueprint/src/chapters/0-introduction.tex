@@ -36,6 +36,12 @@ Let $u \in \cc{O}^\times_K$ be a unit.
     \label{thm:mem}
     \lean{IsCyclotomicExtension.Rat.Three.Units.mem}
     \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $u \in \cc{O}^\times_K$ be a unit. \\\\
     Then $u \in \set{1, -1, \eta, -\eta, \eta^2, -\eta^2}$.
 \end{theorem}
@@ -48,7 +54,12 @@ Let $u \in \cc{O}^\times_K$ be a unit.
     \label{thm:not_exists_int_three_dvd_sub}
     \lean{IsCyclotomicExtension.Rat.Three.Units.not_exists_int_three_dvd_sub}
     \leanok
-    Let $n \in \Z$. \\\\
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $n \in \cc{O}_K$. \\\\
     Then $3 \notdivides \eta - n$.
 \end{theorem}
 \begin{proof}
@@ -60,6 +71,12 @@ Let $u \in \cc{O}^\times_K$ be a unit.
     \label{lmm:lambda_sq}
     \lean{IsCyclotomicExtension.Rat.Three.lambda_sq}
     \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\\\
     $\lambda^2 = -3 \eta$.
 \end{lemma}
 \begin{proof}
@@ -75,6 +92,13 @@ Let $u \in \cc{O}^\times_K$ be a unit.
     \label{lmm:eq_one_or_neg_one_of_unit_of_congruent}
     \lean{IsCyclotomicExtension.Rat.Three.eq_one_or_neg_one_of_unit_of_congruent}
     \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\\\
     If $\exists n \in \Z$ such that $\lambda^2 \divides u - n$, then
     $u = 1 \lor u = -1$. \\
     This is a special case of the Kummer's Lemma (\Cref{lmm:by_kummer}).
