@@ -814,7 +814,12 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_not_dvd_Z, lmm:coprime_y_z}
-    % TODO
+    Since $Z \neq 0$ by \Cref{lmm:lambda_not_dvd_Z}, by the properties of PIDs it suffices to prove that
+    $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides Y$, then $p \notdivides Z$.
+    Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides Y$ and $p \divides Z$
+    which implies that $p \divdes u_2 Y^3 = y$ and $p \divides \lambda u_3 Z^3 = z$.
+    But this contradicts \Cref{lmm:coprime_y_z} forcing us to conclude that $p \notdivides Z$, which,
+    as stated above, implies that $\gcd(Y,Z)=1$.
 \end{proof}
 
 \begin{lemma}
