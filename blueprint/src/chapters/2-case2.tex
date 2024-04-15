@@ -48,7 +48,6 @@
     Then $3 \divides gcd(a,b,c)$.
 \end{proof}
 
-% Informalise fermatLastTheoremThree_of_three_dvd_only_c from FLT3.lean file.
 \begin{theorem}
     \label{thm:fermatLastTheoremThree_of_three_dvd_only_c}
     \lean{fermatLastTheoremThree_of_three_dvd_only_c}
@@ -229,7 +228,7 @@
     \uses{lmm:multiplicity_lambda_c_finite,
     lmm:lambda_pow_four_dvd_c_cube,
     lambda_prime}
-    Trivial applying \Cref{lmm:lambda_pow_four_dvd_c_cube}.
+    Apply \Cref{lmm:lambda_pow_four_dvd_c_cube}.
 \end{proof}
 
 \begin{lemma}
