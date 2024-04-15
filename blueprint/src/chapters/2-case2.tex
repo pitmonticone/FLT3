@@ -578,7 +578,7 @@
     Since $y \neq 0$ by \Cref{lmm:lambda_not_dvd_y}, by the properties of PIDs it suffices to prove that
     $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides x$, then $p \notdivides y$.
     Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides x$ and $p \divides y$
-    which implies that $p \divdes \lambda^{3n-2} x = a+b$ and $p \divides \lambda y = a + \eta b$.
+    which implies that $p \divides \lambda^{3n-2} x = a+b$ and $p \divides \lambda y = a + \eta b$.
     Then by \Cref{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
     we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides x$
     that contradicts \Cref{lmm:lambda_not_dvd_x} forcing us to conclude that $p \notdivides y$, which,
@@ -600,7 +600,7 @@
     Since $z \neq 0$ by \Cref{lmm:lambda_not_dvd_z}, by the properties of PIDs it suffices to prove that
     $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides x$, then $p \notdivides z$.
     Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides x$ and $p \divides z$
-    which implies that $p \divdes \lambda^{3n-2} x = a+b$ and $p \divides \lambda z = a + \eta^2 b$.
+    which implies that $p \divides \lambda^{3n-2} x = a+b$ and $p \divides \lambda z = a + \eta^2 b$.
     Then by \Cref{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b}
     we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides x$
     that contradicts \Cref{lmm:lambda_not_dvd_x} forcing us to conclude that $p \notdivides z$, which,
@@ -622,7 +622,7 @@
     Since $z \neq 0$ by \Cref{lmm:lambda_not_dvd_z}, by the properties of PIDs it suffices to prove that
     $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides y$, then $p \notdivides z$.
     Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides y$ and $p \divides z$
-    which implies that $p \divdes \lambda y = a+\eta b$ and $p \divides \lambda z = a + \eta^2 b$.
+    which implies that $p \divides \lambda y = a+\eta b$ and $p \divides \lambda z = a + \eta^2 b$.
     Then by \Cref{lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b}
     we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides y$
     that contradicts \Cref{lmm:lambda_not_dvd_y} forcing us to conclude that $p \notdivides z$, which,
@@ -817,7 +817,7 @@
     Since $Z \neq 0$ by \Cref{lmm:lambda_not_dvd_Z}, by the properties of PIDs it suffices to prove that
     $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides Y$, then $p \notdivides Z$.
     Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides Y$ and $p \divides Z$
-    which implies that $p \divdes u_2 Y^3 = y$ and $p \divides \lambda u_3 Z^3 = z$.
+    which implies that $p \divides u_2 Y^3 = y$ and $p \divides \lambda u_3 Z^3 = z$.
     But this contradicts \Cref{lmm:coprime_y_z} forcing us to conclude that $p \notdivides Z$, which,
     as stated above, implies that $\gcd(Y,Z)=1$.
 \end{proof}
@@ -833,9 +833,16 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z,
+    \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z, def:Solution_x_y_z_w,
     lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
-    % TODO
+    \begin{align*}
+        u_1 X^3 \lambda^{3n-2}+u_2 \eta Y^3 \lambda + u_3 \eta^2 Z^3 \lambda
+        &= x \lambda^{3n-2} + \eta y \lambda + \eta^2 z \lambda \\
+        \text{(by \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z} and \Cref{def:Solution_x_y_z_w})}&= (a+b) + \eta (a+\eta b) + \eta^2 (a+\eta^2 b) \\
+        &= a (1 + \eta + \eta^2) + b (1 + \eta^4 + \eta^2) \\
+        \text{(by \Cref{lmm:toInteger_cube_eq_one})} &= (a+b)(1+\eta+\eta^2)\\
+        \text{(by \Cref{lmm:toInteger_eval_cyclo})} &= (a+b)(0) = 0
+    \end{align*}
 \end{proof}
 
 \begin{lemma}
@@ -885,7 +892,10 @@
     \leanok
     \uses{lmm:eta_isUnit, lmm:lambda_ne_zero, lmm:toInteger_cube_eq_one,
     lmm:Solution_two_le_multiplicity, lmm:formula1}
-    % TODO
+    Using \Cref{lmm:eta_isUnit}, \Cref{lambda_ne_zero}, it suffices to show that
+    $$\lambda \eta u_2 (Y^3 + u_4 Z^3) = \lambda \eta u_2 u_5 (\lambda^(n-1) X)^3$$
+    which can be proved by simple calculations involving \Cref{lmm:toInteger_cube_eq_one},
+    \Cref{lmm:Solution_two_le_multiplicity} and \Cref{formula1}.
 \end{proof}
 
 \begin{lemma}
