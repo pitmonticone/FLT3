@@ -197,7 +197,13 @@ Let $u \in \cc{O}^\times_K$ be a unit.
 \begin{proof}
     \leanok
     \uses{lmm:norm_lambda}
-    % TODO
+    If $2$ were in $I$, then by definition, $\lambda$ would divide $2 \in \cc{O}_K$.
+    Recall from \Cref{lmm:norm_lambda} that the norm of $lambda$ is $3$.
+    If $\lambda$ divided $2$, then by properties of divisibility in number fields,
+    the norm of $\lambda$ would also divide $2$.
+    However, $3$ does not divide $2$, showing a contradiction.
+    Therefore, $\lambda \notdivides 2$, then $2 \notin I$, which implies
+    that $2 \in \mathcal{O}_K / I$ is non-zero.
 \end{proof}
 
 \begin{lemma}
@@ -209,7 +215,9 @@ Let $u \in \cc{O}^\times_K$ be a unit.
 \begin{proof}
     \leanok
     \uses{lmm:two_ne_zero}
-    % TODO
+    By contradiction we assume that $\lambda \divides 2$, that implies that $2 \in I$,
+    from which it follows that $2 = 0$ contradicting \Cref{lmm:two_ne_zero}
+    that claims that $2 \neq 0$. Therefore, $\lambda \notdivides 2$.
 \end{proof}
 
 \begin{lemma}
