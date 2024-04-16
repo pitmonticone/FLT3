@@ -927,7 +927,7 @@
     \label{lmm:lambda_not_dvd_Z}
     \lean{Solution.lambda_not_dvd_Z}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$.\\\\
     Then $\lambda \notdivides Z$.
 \end{lemma}
@@ -945,7 +945,7 @@
     \label{lmm:coprime_Y_Z}
     \lean{Solution.coprime_Y_Z}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$.\\\\
     Then $\gcd(Y, Z) = 1$.
 \end{lemma}
@@ -964,7 +964,7 @@
     \label{lmm:formula1}
     \lean{Solution.formula1}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
     Then $u_1 X^3 \lambda^{3n-2}+u_2 \eta Y^3 \lambda +
     u_3 \eta^2 Z^3 \lambda = 0$.
@@ -989,7 +989,7 @@
     \label{lmm:u₄_isUnit}
     \lean{Solution.u₄'_isUnit}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$.\\\\
     Then $u_4$ is a unit.
 \end{lemma}
@@ -1055,7 +1055,7 @@
     \label{lmm:lambda_sq_div_new_X_cubed}
     \lean{Solution.lambda_sq_div_new_X_cubed}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
     Then $\lambda^2 \divides u_5 (\lambda^{n - 1} X)^3$.
 \end{lemma}
@@ -1070,7 +1070,7 @@
     \label{lmm:by_kummer}
     \lean{Solution.by_kummer}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$.\\\\
     Then $u_4 \in \set{-1,1} \subset \cc{O}_K$.
 \end{lemma}
@@ -1087,7 +1087,7 @@
     \label{lmm:final}
     \lean{Solution.final}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
     Then $Y^3 + (u_4 Z)^3 = u_5 (\lambda^{n-1} X)^3$.
 \end{lemma}
@@ -1101,7 +1101,7 @@
     \label{def:Solution1_final}
     \lean{Solution'_final}
     \leanok
-    \uses{def:Solution1, lmm:Solution_two_le_multiplicity,
+    \uses{def:Solution1, def:Solution_u1_u2_u3_u4_u5_X_Y_Z, lmm:Solution_two_le_multiplicity,
     lmm:final, lmm:coprime_Y_Z, lmm:lambda_not_dvd_Y, lmm:lambda_not_dvd_Z, lmm:lambda_ne_zero,
     lmm:X_ne_zero}
     Let $S = (a,b,c,u)$ be a $solution$ with multiplicity $n$.\\
