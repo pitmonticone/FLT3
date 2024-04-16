@@ -473,7 +473,11 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one}
-    % TODO
+    Let $y\in \cc{O}_K$. \\
+    Let $\lambda \divides x + 1 = - x - 1$, which implies that $- x - 1 = \lambda y$. \\
+    By \Cref{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}, we have that
+    $$\lambda^ 4 \divides (-x)^3 - 1.$$
+    By ring properties we can conclude that $$\lambda^ 4 \divides x^3 + 1.$$
 \end{proof}
 
 \begin{lemma}
@@ -488,12 +492,24 @@
     Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $x \in \cc{O}_K$. \\\\
     If $\lambda \notdivides x$, then $(\lambda^4 \divides x^3 - 1)
-    \lor (\lambda^4 \divides x ^ 3 + 1)$.
+    \lor (\lambda^4 \divides x^3 + 1)$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:dvd_or_dvd_sub_one_or_dvd_add_one,
     lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one,
     lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one}
-    % TODO
+    By \Cref{lmm:dvd_or_dvd_sub_one_or_dvd_add_one}, we have that
+    $$(\lambda \divides x) \lor (\lambda \divides x-1) \lor (\lambda \divides x+1).$$
+    We proceed by analysing each case:
+    \begin{itemize}
+        \item Case $\lambda \divides x$. From trivially contradictory hypotheses we can conclude that
+        $$(\lambda^4 \divides x^3 - 1) \lor (\lambda^4 \divides x^3 + 1).$$
+        \item Case $\lambda \divides x-1$. By \Cref{lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one},
+        we have that $\lambda^ 4 \divides x^3 - 1$, which implies that
+        $$(\lambda^4 \divides x^3 - 1) \lor (\lambda^4 \divides x^3 + 1).$$
+        \item Case $\lambda \divides x+1$. By \Cref{lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one},
+        we have that $\lambda^ 4 \divides x^3 + 1$, which implies that
+        $$(\lambda^4 \divides x^3 - 1) \lor (\lambda^4 \divides x^3 + 1).$$
+    \end{itemize}
 \end{proof}
