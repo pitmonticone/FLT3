@@ -280,14 +280,29 @@
     \leanok
     \uses{def:Solution1}
     Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
-    Then $\lambda^2 \divides a + b \lor \lambda^2 \divides a +
-    \eta  b \lor \lambda^2 \divides a + \eta^2  b$.
+    Then $(\lambda^2 \divides a + b) \lor (\lambda^2 \divides a +
+    \eta b) \lor (\lambda^2 \divides a + \eta^2 b)$.
 \end{lemma}
 \begin{proof}
     \leanok
     \uses{lmm:lambda_pow_two_dvd_c, lmm:cube_add_cube_eq_mul,
-    lmm:zeta_sub_one_prime1}
-    % TODO
+    lmm:lambda_prime}
+    By contradiction we assume that
+    $$(\lambda^2 \notdivides a + b) \land (\lambda^2 \notdivides a +
+    \eta b) \land (\lambda^2 \notdivides a + \eta^2 b).$$
+    Then, by definition, the multiplicity of $\lambda$ in $a + b$, in $a +
+    \eta b$ and in $a + \eta^2 b$ is less than $2$.
+    By properties of divisibility, \Cref{lmm:lambda_pow_two_dvd_c} and \Cref{lmm:cube_add_cube_eq_mul},
+    we have that
+    $$\lambda^6 ∣ u c^3 = a^3 + b^3 = (a + b) (a + \eta b) (a + \eta^2 b).$$
+    Then, the multiplicity of $\lambda$ in $(a + b) (a + \eta b) (a + \eta^2 b)$ is greater than
+    or equal to $6$. \\
+    By \Cref{lmm:lambda_prime} $\lambda$ is prime, so we have that the multiplicity of $\lambda$
+    in $(a + b) (a + \eta b) (a + \eta^2 b)$ is the sum of the multiplicities of $\lambda$ in
+    $a + b$, in $a + \eta b$ and in $a + \eta^2 b$, which is less than $6$.
+    This is a contradiction that forces us to conclude that
+    $$(\lambda^2 \divides a + b) \lor (\lambda^2 \divides a +
+    \eta b) \lor (\lambda^2 \divides a + \eta^2 b).$$
 \end{proof}
 
 \begin{lemma}
@@ -300,8 +315,32 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:lambda_sq_dvd_or_dvd_or_dvd, lmm:toInteger_cube_eq_one}
-    % TODO
+    \uses{lmm:lambda_sq_dvd_or_dvd_or_dvd, lmm:toInteger_cube_eq_one, lmm:eta_isUnit}
+    By \Cref{lmm:lambda_sq_dvd_or_dvd_or_dvd}, we have that
+    $$(\lambda^2 \divides a + b) \lor (\lambda^2 \divides a +
+    \eta b) \lor (\lambda^2 \divides a + \eta^2 b).$$
+    We proceed by analysing each case:
+    \begin{itemize}
+        \item Case $\lambda^2 \divides a + b$. Trivial using $a_1=a$ and $b_1=b$.
+        \item Case $\lambda^2 \divides a + \eta b$. Let $a_1=a$ and $b_1=\eta b$. \\
+        By \Cref{lmm:toInteger_cube_eq_one}, we have that $a^3 + (\eta b)^3 = a^3 + b^3 = u c^3$.\\
+        By properties of coprimes and \Cref{lmm:eta_isUnit}, we have that
+        $\gcd(a,b)=1$ implies that $\gcd(a,\eta b)=1$.\\
+        Since $a_1=a$, we already know that $\lambda \notdivides a = a_1$.\\
+        By contradiction we assume that $\lambda \divides b_1 = \eta b$, which,
+        by \Cref{lmm:toInteger_cube_eq_one}, it implies that $\lambda \divides \eta^2 \eta b = b$
+        that contradicts our assumption, forcing us to conclude that $\lambda \notdivides b_1$.
+        \item Case $\lambda^2 \divides a + \eta^2 b$. Let $a_1=a$ and $b_1=\eta^2 b$. \\
+        By \Cref{lmm:toInteger_cube_eq_one}, we have that $a^3 + (\eta^2 b)^3 = a^3 + b^3 = u c^3$.\\
+        By properties of coprimes and \Cref{lmm:eta_isUnit}, we have that
+        $\gcd(a,b)=1$ implies that $\gcd(a,\eta^2 b)=1$.\\
+        Since $a_1=a$, we already know that $\lambda \notdivides a = a_1$.\\
+        By contradiction we assume that $\lambda \divides b_1 = \eta^2 b$, which,
+        by \Cref{lmm:toInteger_cube_eq_one}, it implies that $\lambda \divides \eta \eta^2 b = b$
+        that contradicts our assumption, forcing us to conclude that $\lambda \notdivides b_1$.
+    \end{itemize}
+    Therefore, we can conclude that
+    $\exists a_1,b_1 \in \cc{O}_k$ such that $S_1=(a_1,b_1,c,u)$ is a $solution$.
 \end{proof}
 
 \begin{lemma}
@@ -928,7 +967,7 @@
     \lambda^2 u_5 \lambda^{3n-5} X^3 = u_5 (\lambda^{n - 1} X)^3$.
 \end{proof}
 
-\begin{lemma}[Kummer]
+\begin{lemma}
     \label{lmm:by_kummer}
     \lean{Solution.by_kummer}
     \leanok
