@@ -225,9 +225,8 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:multiplicity_lambda_c_finite,
-    lmm:lambda_pow_four_dvd_c_cube,
-    lambda_prime}
+    \uses{lmm:Solution1.multiplicity_lambda_c_finite,
+    lmm:lambda_pow_four_dvd_c_cube, lmm:lambda_prime}
     Apply \Cref{lmm:lambda_pow_four_dvd_c_cube}.
 \end{proof}
 
@@ -667,7 +666,7 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:multiplicity_lambda_c_finite}
+    \uses{lmm:Solution1.multiplicity_lambda_c_finite}
     By contradiction we assume that $\lambda \divides w$, which implies
     $\lambda^{n+1} \divides \lambda^n  w = c$ that contradicts \Cref{def:Solution_Multiplicity}
     forcing us to conclude that $\lambda \notdivides w$.
