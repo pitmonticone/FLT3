@@ -69,7 +69,6 @@ Solution.x_eq_unit_mul_cube
 Solution.y_eq_unit_mul_cube
 Solution.z_eq_unit_mul_cube
 Solution.X_ne_zero
-def:Solution_u1_u2_u3_u4_u5_X_Y_Z
 Solution.lambda_not_dvd_X
 Solution.lambda_not_dvd_Y
 Solution.lambda_not_dvd_Z
