@@ -747,9 +747,9 @@
 
 \begin{lemma}
     \label{lmm:coprime_y_z}
-    \lean{Solution.coprime_y_z, def:Solution_x_y_z_w}
+    \lean{Solution.coprime_y_z}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_x_y_z_w}
     Let $S$ be a $solution$.\\\\
     Then $\gcd(y, z) = 1$.
 \end{lemma}
@@ -786,7 +786,7 @@
     \label{lmm:x_mul_y_mul_z_eq_u_w_pow_three}
     \lean{Solution.x_mul_y_mul_z_eq_u_w_pow_three}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_x_y_z_w}
     Let $S=(a,b,c,u)$ be a $solution$.\\\\
     Then $x y z = u w^3$.
 \end{lemma}
@@ -873,7 +873,7 @@
 
 \begin{lemma}
     \label{lmm:X_ne_zero}
-    \lean{Solution.X_ne_zero}
+    \lean{Solution.X_ne_zero, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     \leanok
     \uses{def:Solution}
     Let $S$ be a $solution$.\\\\
@@ -891,7 +891,7 @@
     \label{lmm:lambda_not_dvd_X}
     \lean{Solution.lambda_not_dvd_X}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$.\\\\
     Then $\lambda \notdivides X$.
 \end{lemma}
@@ -909,7 +909,7 @@
     \label{lmm:lambda_not_dvd_Y}
     \lean{Solution.lambda_not_dvd_Y}
     \leanok
-    \uses{def:Solution}
+    \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
     Let $S$ be a $solution$.\\\\
     Then $\lambda \notdivides Y$.
 \end{lemma}
