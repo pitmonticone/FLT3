@@ -250,6 +250,10 @@
     \lean{Solution.two_le_multiplicity}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\
     Let $S=(a, b, c, u)$ be a $solution$ with multiplicity $n$.\\\\
     Then $2 \leq n$.
 \end{lemma}
@@ -264,8 +268,14 @@
     \lean{cube_add_cube_eq_mul}
     \leanok
     \uses{def:Solution1}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\
     Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
-    Then $a^3 + b^3 = (a + b) (a + \eta b)  (a + \eta^2 b)$.
+    Then $a^3 + b^3 = (a + b) (a + \eta b) (a + \eta^2 b)$.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -279,6 +289,13 @@
     \lean{lambda_sq_dvd_or_dvd_or_dvd}
     \leanok
     \uses{def:Solution1}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\
     Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
     Then $(\lambda^2 \divides a + b) \lor (\lambda^2 \divides a +
     \eta b) \lor (\lambda^2 \divides a + \eta^2 b)$.
@@ -310,6 +327,10 @@
     \lean{ex_dvd_a_add_b}
     \leanok
     \uses{def:Solution1}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\\\
     Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
     Then $\exists a_1,b_1 \in \cc{O}_k$ such that $S_1=(a_1,b_1,c,u)$ is a $solution$.
 \end{lemma}
@@ -363,6 +384,12 @@
     \lean{Solution.a_add_eta_b}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
     Then $a + \eta  b = (a + b) + \lambda  b$.
 \end{lemma}
@@ -376,6 +403,13 @@
     \lean{Solution.lambda_dvd_a_add_eta_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
     Then $\lambda \divides a + \eta  b$.
 \end{lemma}
@@ -390,6 +424,13 @@
     \lean{Solution.lambda_dvd_a_add_eta_sq_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
     Then $\lambda \divides a + \eta^2  b$.
 \end{lemma}
@@ -405,6 +446,13 @@
     \lean{Solution.lambda_sq_not_dvd_a_add_eta_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
     Then $\lambda^2 \notdivides a + \eta b$.
 \end{lemma}
@@ -423,6 +471,13 @@
     \lean{Solution.lambda_sq_not_dvd_a_add_eta_sq_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
     Then $\lambda^2 \notdivides a + \eta^2  b$.
 \end{lemma}
@@ -441,6 +496,12 @@
     \lean{Solution.eta_add_one_inv}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\\\
     Let $S=(a, b, c, u)$ be a $solution$.\\\\
     Then $(\eta + 1)  (-\eta) = 1$.
 \end{lemma}
@@ -455,6 +516,13 @@
     \lean{Solution.associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\
     Let $S=(a, b, c, u)$ be a $solution$.\\
     Let $p \in \cc{O}_K$ be a prime such that $p \divides a+b$
     and $p \divides a+\eta  b$.\\\\
@@ -471,6 +539,13 @@
     \lean{Solution.associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\\\
     Let $S=(a, b, c, u)$ be a $solution$.\\
     Let $p \in \cc{O}_K$ be a prime such that $p \divides a+b$
     and $p \divides a+\eta^2  b$.\\\\
@@ -487,8 +562,15 @@
     \lean{Solution.associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\\\
     Let $S=(a, b, c, u)$ be a $solution$.\\
-    Let $p \in \cc{O}_K$ be a prime such that $p \divides a+\eta  b$
+    Let $p \in \cc{O}_K$ be a prime such that $p \divides a+\eta b$
     and $p \divides a+\eta^2  b$.\\\\
     Then $p$ is associated with $\lambda$.
 \end{lemma}
