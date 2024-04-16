@@ -421,14 +421,14 @@
               $\lambda \divides x(x - 1)(x - (\eta + 1))$.
         \item Case $\lambda \divides x-1$. By properties of divisibility
               $\lambda \divides x(x - 1)(x - (\eta + 1))$.
-        \item Case $\lambda \divides x+1$.
+        \item Case $\lambda \divides x+1$.\\
               By properties of divisibility it suffices to prove that
               $$\lambda \divides x - (\eta + 1) = x + 1 - (\eta - 1 + 3).$$
               By definition of $\lambda$, we have that
               $$x + 1 - (\eta - 1 + 3) = x + 1 - (\lambda + 3).$$
-              By properties of divisibility and \Cref{lmm:lambda_dvd_three}, we have that
-              $$\lambda \divides \lambda + 3.$$
-              By properties of divisibility, we can conclude that
+              By properties of divisibility and \Cref{lmm:lambda_dvd_three},
+              $\lambda \divides \lambda + 3$.\\
+              Therefore, by properties of divisibility, we can conclude that
               $$\lambda \divides x(x - 1)(x - (\eta + 1)).$$
     \end{itemize}
 \end{proof}
@@ -449,7 +449,12 @@
 \begin{proof}
     \leanok
     \uses{lmm:cube_sub_one, lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
-    % TODO
+    Let $y\in \cc{O}_K$. \\
+    Let $\lambda \divides x - 1$, which implies that $x - 1 = \lambda y$. \\
+    By ring properties and \Cref{lmm:cube_sub_one}, we have that
+    $$x^3 - 1 = \lambda^3 (y (y - 1) (y - (\eta + 1))).$$
+    By divisibility properties and \Cref{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one},
+    we can conclude that $$\lambda^ 4 \divides x^3 - 1.$$
 \end{proof}
 
 \begin{lemma}
