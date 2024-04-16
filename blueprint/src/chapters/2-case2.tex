@@ -835,13 +835,15 @@
     \leanok
     \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z, def:Solution_x_y_z_w,
     lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
+    Applying \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z}, \Cref{def:Solution_x_y_z_w},
+    \Cref{lmm:toInteger_cube_eq_one} and \Cref{lmm:toInteger_eval_cyclo}, we have
     \begin{align*}
         u_1 X^3 \lambda^{3n-2}+u_2 \eta Y^3 \lambda + u_3 \eta^2 Z^3 \lambda
         &= x \lambda^{3n-2} + \eta y \lambda + \eta^2 z \lambda \\
-        \text{(by \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z} and \Cref{def:Solution_x_y_z_w})}&= (a+b) + \eta (a+\eta b) + \eta^2 (a+\eta^2 b) \\
+        &= (a+b) + \eta (a+\eta b) + \eta^2 (a+\eta^2 b) \\
         &= a (1 + \eta + \eta^2) + b (1 + \eta^4 + \eta^2) \\
-        \text{(by \Cref{lmm:toInteger_cube_eq_one})} &= (a+b)(1+\eta+\eta^2)\\
-        \text{(by \Cref{lmm:toInteger_eval_cyclo})} &= (a+b)(0) = 0
+        &= (a+b)(1+\eta+\eta^2)\\
+        &= (a+b)(0) = 0
     \end{align*}
 \end{proof}
 
