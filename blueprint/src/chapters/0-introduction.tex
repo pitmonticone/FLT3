@@ -334,7 +334,9 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    % TODO
+    Since $\zeta_3 \in K$ is a primitive third root of unity, then $\zeta_3^3 = 1$.
+    Given that $\eta \in \cc{O}_K$ is the element corresponding to $\zeta_3 \in K$, then
+    $\eta^3 = 1$ by the extension of the field properties into the ring of integers.
 \end{proof}
 
 \begin{lemma}
@@ -351,7 +353,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:toInteger_cube_eq_one}
-    % TODO
+    It directly follows from \Cref{lmm:toInteger_cube_eq_one}.
 \end{proof}
 
 \begin{lemma}
@@ -367,8 +369,8 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    %\uses{}
-    % TODO
+    Since $\eta$ corresponds to a root of the equation $x^2 + x + 1 = 0$,
+    then $\eta^2 + \eta + 1 = 0$.
 \end{proof}
 
 \begin{lemma}
@@ -386,7 +388,13 @@
 \begin{proof}
     \leanok
     \uses{lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
-    % TODO
+    Applying \Cref{lmm:toInteger_cube_eq_one} and \Cref{lmm:toInteger_eval_cyclo}, we have
+    \begin{align*}
+        (x - 1)(x - \eta)(x - \eta^ 2)
+        &= x^3 - x^2 (\eta^2 + \eta + 1) + x (\eta^2 + \eta + \eta^3) - \eta^3 \\
+        &= x^3 - x^2 (\eta^2 + \eta + 1) + x (\eta^2 + \eta + 1) - 1 \\
+        &= x^3 - 1.
+    \end{align*}
 \end{proof}
 
 \begin{lemma}
