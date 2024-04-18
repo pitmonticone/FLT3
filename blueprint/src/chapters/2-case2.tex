@@ -549,8 +549,19 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:lambda_prime, lmm:eta_add_one_inv, lmm:toInteger_cube_eq_one}
-    % TODO
+    \uses{lmm:lambda_prime, lmm:toInteger_cube_eq_one, lmm:eta_isUnit}
+    We proceed by analysis each case:
+    \begin{itemize}
+        \item Case $p \divides \lambda$. It directly follows from \Cref{lmm:lambda_prime}.
+        \item Case $p \notdivides \lambda$. \\
+              By hypothesis, we have that $p \divides a+ b$ and $p \divides a+\eta^2 b$.
+              By \Cref{lmm:toInteger_cube_eq_one} and \Cref{lmm:eta_isUnit}, we have that
+              $$p \divides \eta ((a+\eta^2 b) - (a+ b)) = - (\eta^3 - \eta) b = \lambda b,$$
+              which implies that $p \divides b$
+              and we proceed analogously to show that $p \divides a$.\\
+              Therefore $p \divides \gcd(a,b)=1$ which is absurd.
+    \end{itemize}
+    Therefore, we can conclude that $p$ is associated with $\lambda$.
 \end{proof}
 
 \begin{lemma}
