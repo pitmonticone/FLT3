@@ -94,6 +94,7 @@
         The rest of the proof is analogous to the first case using \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c} and
         \Cref{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c}.
     \end{itemize}
+    Therefore, we can conclude that $a^3 + b^3 \neq c^3$.
 \end{proof}
 
 \begin{definition}[Solution']
@@ -518,7 +519,16 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_prime}
-
+    We proceed by analysis each case:
+    \begin{itemize}
+        \item Case $p \divides \lambda$. It directly follows from \Cref{lmm:lambda_prime}.
+        \item Case $p \notdivides \lambda$. \\
+              By hypothesis, we have that $p \divides a+b$ and $p \divides a+\eta b$.
+              Then $p \divides (a+\eta b) - (a+b) = b (\eta-1) = b \lambda$, which implies that
+              $p \divides b$ and we proceed analogously to show that $p \divides a$.\\
+              Therefore $p \divides \gcd(a,b)=1$ which is absurd.
+    \end{itemize}
+    Therefore, we can conclude that $p$ is associated with $\lambda$.
 \end{proof}
 
 \begin{lemma}
@@ -561,8 +571,18 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    \uses{lmm:lambda_prime}
-    % TODO
+    \uses{lmm:lambda_prime, lmm:eta_isUnit}
+    We proceed by analysis each case:
+    \begin{itemize}
+        \item Case $p \divides \lambda$. It directly follows from \Cref{lmm:lambda_prime}.
+        \item Case $p \notdivides \lambda$. \\
+              By hypothesis, we have that $p \divides a+\eta b$ and $p \divides a+\eta^2 b$.
+              Then $p \divides (a+\eta^2 b) - (a+\eta b) = \eta b (\eta-1) = \eta b \lambda$,
+              which, by \Cref{lmm:eta_isUnit}, implies that $p \divides b$
+              and we proceed analogously to show that $p \divides a$.\\
+              Therefore $p \divides \gcd(a,b)=1$ which is absurd.
+    \end{itemize}
+    Therefore, we can conclude that $p$ is associated with $\lambda$.
 \end{proof}
 
 \begin{definition}[$x,y,z,w$]
