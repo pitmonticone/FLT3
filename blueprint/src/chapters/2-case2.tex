@@ -63,30 +63,29 @@
     lmm:three_dvd_gcd_of_dvd_a_of_dvd_b,
     lmm:three_dvd_gcd_of_dvd_a_of_dvd_c,
     lmm:three_dvd_gcd_of_dvd_b_of_dvd_c}
-    % TODO: Add proof
-    % Assume by contradiction that $\exists a,b,c \in \N \smallsetminus \set{0}$
-    % such that $a^3 + b^3 = c^3$. \\
-    % By \Cref{thm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
-    % we can assume $\gcd(a,b,c)=1$. \\
-    % By \Cref{thm:fermatLastTheoremThree_case_1} we can assume $3 \divides a  b  c$
-    % from which it follows that $3 \divides a \lor 3 \divides b \lor 3 \divides c$.\\
-    % Analysing the three cases:
-    % \begin{itemize}
-    %     \item Case $3 \divides a$. Let $a'=-c$, $b'=b$, $c'=-a$,
-    %     then $a'\neq 0 \land b'\neq 0 \land c' \neq 0$.
-    %     Then $3 \notdivides -c = a'$ since otherwise by \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c}
-    %     we have that $3 \divides gcd(a,b,c)$. Analogously,
-    %     by \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b} $3 \notdivides b = b'$.
-    %     Moreover $3 \divides -a = c'$
+    By contradiction we assume that there exist $a,b,c \in \N \smallsetminus \set{0}$
+    such that $a^3 + b^3 = c^3$. \\
+    By \Cref{thm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
+    we can assume $\gcd(a,b,c)=1$. \\
+    By \Cref{thm:fermatLastTheoremThree_case_1} we can assume $3 \divides a b c$
+    from which it follows that $(3 \divides a) \lor 3 (\divides b) \lor (3 \divides c)$.\\
+    We proceed by analysing each case:
+    \begin{itemize}
+        \item Case $3 \divides a$. \\
+        Let $a'=-c$, $b'=b$, $c'=-a$, then $3 \divides c'$ and
+        $$a'\neq 0 \land b'\neq 0 \land c' \neq 0.$$
+        Then $3 \notdivides a'$ since otherwise by \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c}
+        we would have that $3 \divides gcd(a,b,c)=1$. \\
+        Analogously, by \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b} we have that $3 \notdivides b'$.
 
 
-    %     \item Case $3 \divides b$. then $3 \divides a^3$ and $3 \divides c^3$.
-    %     By \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b} and \Cref{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c},
-    %     we have $3 \divides gcd(a,b,c)$.
-    %     \item Case $3 \divides c$. then $3 \divides a^3$ and $3 \divides b^3$.
-    %     By \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c} and \Cref{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c},
-    %     we have $3 \divides gcd(a,b,c)$.
-    %\end{itemize}
+        \item Case $3 \divides b$. then $3 \divides a^3$ and $3 \divides c^3$.
+        By \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b} and \Cref{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c},
+        we have $3 \divides gcd(a,b,c)$.
+        \item Case $3 \divides c$. then $3 \divides a^3$ and $3 \divides b^3$.
+        By \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c} and \Cref{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c},
+        we have $3 \divides gcd(a,b,c)$.
+    \end{itemize}
 \end{proof}
 
 \begin{definition}[Solution']
