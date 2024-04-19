@@ -316,9 +316,9 @@
 \begin{proof}
     \leanok
     \uses{lmm:two_ne_zero}
-    By contradiction we assume that $\lambda \divides 2$, that implies that $2 \in I$,
+    By contradiction we assume that $\lambda \divides 2$, that implies that $2 \in I$
     from which it follows that $2 = 0$ contradicting \Cref{lmm:two_ne_zero}
-    that claims that $2 \neq 0$. Therefore, $\lambda \notdivides 2$.
+    forcing us to conclude that $\lambda \notdivides 2$.
 \end{proof}
 
 \begin{lemma}
@@ -337,11 +337,12 @@
 \begin{proof}
     \leanok
     \uses{lmm:card_quot, lmm:two_ne_zero}
-    It is obvious that $\cc{O}_K / I \supseteq \set{0, 1, -1}$. Moreover, by \Cref{lmm:card_quot},
-    the cardinality of $\cc{O}_K / I$ is $3$, so it suffices to prove that $1,-1$ and $0$ are distinct.\\
+    %It is obvious that $\cc{O}_K / I \supseteq \set{0, 1, -1}$.
+    By \Cref{lmm:card_quot}, the cardinality of $\cc{O}_K / I$ is $3$,
+    so it suffices to prove that $1,-1$ and $0$ are distinct.\\
     We proceed by contradiction analysing each case:
     \begin{itemize}
-        \item Case $1 = -1$. By algebraic properties, $1 = -1$ implies that $2 = 0$,
+        \item Case $1 = -1$. By basic algebraic properties, $1 = -1$ implies that $2 = 0$,
               which contradicts \Cref{lmm:two_ne_zero} forcing us to conclude that $1 \neq -1$.
         \item Case $1 = 0$. Trivial contradiction.
         \item Case $-1 = 0$. It implies that $1 = 0$, which is a contradiction.
@@ -504,11 +505,11 @@
 \begin{proof}
     \leanok
     \uses{lmm:cube_sub_one, lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
-    Let $y\in \cc{O}_K$. \\
-    Let $\lambda \divides x - 1$, which implies that $x - 1 = \lambda y$. \\
+    Let $\lambda \divides x - 1$, which is equivalent to say that
+    $$\exists y\in \cc{O}_K \text{ such that } x - 1 = \lambda y.$$
     By ring properties and \Cref{lmm:cube_sub_one}, we have that
     $$x^3 - 1 = \lambda^3 (y (y - 1) (y - (\eta + 1))).$$
-    By divisibility properties and \Cref{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one},
+    By properties of divisibility and \Cref{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one},
     we can conclude that $$\lambda^ 4 \divides x^3 - 1.$$
 \end{proof}
 
@@ -528,11 +529,11 @@
 \begin{proof}
     \leanok
     \uses{lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one}
-    Let $y\in \cc{O}_K$. \\
-    Let $\lambda \divides x + 1 = - x - 1$, which implies that $- x - 1 = \lambda y$. \\
-    By \Cref{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}, we have that
+    By properties of divisibility, if $\lambda \divides x + 1$
+    then $$\lambda \divides - (x + 1) = (- x) - 1.$$
+    By \Cref{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}, we can deduce that
     $$\lambda^ 4 \divides (-x)^3 - 1.$$
-    By ring properties we can conclude that $$\lambda^ 4 \divides x^3 + 1.$$
+    By divisibility and ring properties we can conclude that $$\lambda^ 4 \divides x^3 + 1.$$
 \end{proof}
 
 \begin{lemma}
