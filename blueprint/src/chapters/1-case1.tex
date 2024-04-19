@@ -16,7 +16,7 @@
 \end{lemma}
 \begin{proof}
   \leanok
-  Analyse case by case.
+  This has already been formalised and included in \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/FLT/Three.html#cube_of_castHom_ne_zero}{Mathlib}.
 \end{proof}
 
 \begin{lemma}
@@ -31,7 +31,7 @@
 \begin{proof}
   \leanok
   \uses{lmm:cube_of_castHom_ne_zero}
-  Apply \Cref{lmm:cube_of_castHom_ne_zero}.
+  By \Cref{lmm:cube_of_castHom_ne_zero}, we can conclude that $\left[n \right]^3 = 1 \lor \left[n \right]^3 = 8$.
 \end{proof}
 
 \begin{theorem}[Fermat's Last Theorem for 3: Case 1]
@@ -45,7 +45,6 @@
 \begin{proof}
   \leanok
   \uses{lmm:cube_of_not_dvd}
-  Since $3 \notdivides abc$,
-  we have that $3 \notdivides a$, $3 \notdivides b$ and $3 \notdivides c$. \\
-  Apply \Cref{lmm:cube_of_not_dvd} repeatedly and compute each case.
+  By hypothesis we know that $3 \notdivides abc$, which implies that $3 \notdivides a$, $3 \notdivides b$ and $3 \notdivides c$. \\
+  It is enough to apply \Cref{lmm:cube_of_not_dvd} repeatedly and compute each case.
 \end{proof}
