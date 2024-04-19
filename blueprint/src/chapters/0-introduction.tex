@@ -47,12 +47,12 @@
     Let $R$ be a commutative semiring, domain and normalised gcd monoid.\\% ASK EXPERTS
     Let $a, b, c \in R$. \\
     Let $n \in \N$. \\\\
-    To prove Fermat's Last Theorem for exponent $n$ in $R$,
+    Then, to prove Fermat's Last Theorem for exponent $n$ in $R$,
     one can assume, without loss of generality, that $\gcd(a,b,c)=1$.
 \end{lemma}
 \begin{proof}
     \leanok
-    See \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/FLT/Basic.html#fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}{Mathlib}.
+    This has already been formalised and included in \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/FLT/Basic.html#fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}{Mathlib}.
 \end{proof}
 
 \begin{theorem}
@@ -104,9 +104,11 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    Since $\lambda = \eta -1$, then $\lambda^2 = (\eta - 1)^2 = \eta^2 - 2\eta + 1$.
+    By definition we have that $\lambda = \eta -1$, which implies that
+    $$\lambda^2 = (\eta - 1)^2 = \eta^2 - 2\eta + 1.$$
     Since $\eta$ corresponds to a root of the equation $x^2 + x + 1 = 0$, then $\eta^2 = -1 - \eta$.
-    Substituting back, we have that $\lambda^2 = (-1 - \eta) - 2\eta + 1 = -3\eta$.
+    Substituting back, we can conclude that
+    $$\lambda^2 = (-1 - \eta) - 2\eta + 1 = -3\eta.$$
 \end{proof}
 
 \begin{theorem}
@@ -182,7 +184,7 @@
     \uses{lmm:norm_lambda}
     By properties of norms and divisibility, if the norm of an element in the ring of integers
     divides a number, then the element itself must divide that number.
-    In our case the norm of $\lambda$ is $3$ by \Cref{lmm:norm_lambda}, that divides $3$,
+    In this case, by \Cref{lmm:norm_lambda} we know that the norm of $\lambda$ is $3$, that divides $3$,
     which implies that $\lambda \divides 3$.
 \end{proof}
 
@@ -195,7 +197,7 @@
 \end{theorem}
 \begin{proof}
     \leanok
-    See \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.zeta_sub_one_prime'}{Mathlib}.
+    This has already been formalised and included in \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.zeta_sub_one_prime'}{Mathlib}.
 \end{proof}
 
 \begin{lemma}
@@ -208,7 +210,7 @@
     Let $\zeta_3 \in K$ be any primitive third root of unity. \\
     Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
     Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\\\
-    Then $\lambda$ is a prime number.
+    Then $\lambda$ is prime.
 \end{lemma}
 \begin{proof}
     \leanok
@@ -289,7 +291,7 @@
 \begin{proof}
     \leanok
     \uses{lmm:norm_lambda}
-    By contradiction we assume that $2 \in I$, then by definition,
+    By contradiction we assume that $2 \in I$, then, by definition,
     $\lambda$ would divide $2 \in \cc{O}_K$.
     Recall from \Cref{lmm:norm_lambda} that the norm of $\lambda$ is $3$.
     If $\lambda$ divided $2$, then by properties of divisibility in number fields,
