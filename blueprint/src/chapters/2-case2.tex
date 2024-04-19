@@ -1158,8 +1158,36 @@
     \uses{lmm:lambda_sq_div_lambda_fourth, lmm:lambda_sq_div_new_X_cubed,
     lmm:eq_one_or_neg_one_of_unit_of_congruent,
     lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd,
-    lmm:lambda_not_dvd_Z, lmm:formula2}
-    % TODO
+    lmm:lambda_not_dvd_Z, lmm:lambda_not_dvd_Y, lmm:formula2}
+    Let $n \in \N$ be the multiplicity of the solution $S$.\\
+    By \Cref{lmm:eq_one_or_neg_one_of_unit_of_congruent}, it suffices to prove that
+    $$\exists m \in \Z \text{ such that } \lambda^2 \divides u_4 - m.$$
+    By \Cref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}
+    and \Cref{lmm:lambda_not_dvd_Y}, we have that
+    $$(\lambda^4 \divides Y^3 - 1) \lor (\lambda^4 \divides Y^3 + 1).$$
+    By \Cref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}
+    and \Cref{lmm:lambda_not_dvd_Z}, we have that
+    $$(\lambda^4 \divides Z^3 - 1) \lor (\lambda^4 \divides Z^3 + 1).$$
+    We proceed by analysing each case:
+    \begin{itemize}
+        \item Case $(\lambda^4 \divides Y^3 - 1) \land (\lambda^4 \divides Z^3 - 1)$. \\
+              Let $m=-1$ and consider the fact that
+              $$u_4 - m = Y^3 + u_4 Z^3 - (Y^3 - 1) - u_4 (Z^3 - 1).$$
+              By \Cref{lmm:formula2}, we have that
+              $$u_4 - m = u_5 (λ^{n-1} X)^3 - (Y^3 - 1) - u_4 (Z^3 - 1).$$
+              Since, by \Cref{lambda_sq_div_new_X_cubed}, we know that
+              $$\lambda^2 \divides u_5 (λ^{n-1} X)^3$$
+              and, by \Cref{lmm:lambda_sq_div_lambda_fourth} and by assumption, we have that
+              $$\lambda^2 \divides Y^3 - 1 \land \lambda^2 \divides Z^3 - 1,$$
+              Then, we can conclude that
+              $$\lambda^2 \divides u_4 - m.$$
+        \item Case $(\lambda^4 \divides Y^3 - 1) \land (\lambda^4 \divides Z^3 + 1)$. \\
+              Let $m=1$ and proceed similarly to the first case.
+        \item Case $(\lambda^4 \divides Y^3 + 1) \land (\lambda^4 \divides Z^3 - 1)$. \\
+              Let $m=1$ and proceed similarly to the first case.
+        \item Case $(\lambda^4 \divides Y^3 + 1) \land (\lambda^4 \divides Z^3 + 1)$. \\
+              Let $m=-1$ and proceed similarly to the first case.
+    \end{itemize}
 \end{proof}
 
 \begin{lemma}

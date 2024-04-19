@@ -960,8 +960,7 @@ lemma by_kummer : ↑S.u₄ ∈ ({1, -1} : Finset (𝓞 K)) := by
   · use -1
     use kX - kY - S.u₄ * kZ
     rw [show λ ^ 2 * (kX - kY - ↑(u₄ S) * kZ) = λ ^ 2 * kX - λ ^ 2 * kY - ↑(u₄ S) * (λ ^ 2 * kZ) by ring]
-    rw [← hkX, ← hkY, ← hkZ]
-    rw [← S.formula2]
+    rw [← hkX, ← hkY, ← hkZ, ← S.formula2]
     ring
   · use 1
     use - kX + kY + S.u₄ * kZ
