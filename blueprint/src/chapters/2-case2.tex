@@ -13,8 +13,8 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    Since $3 \divides a^3 + b^3 = c^3$, then $3 \divides c$.
-    Then $3 \divides \gcd(a,b,c)$.
+    By hypothesis we have that $3 \divides a^3 + b^3 = c^3$, which implies that $3 \divides c$,
+    from which we can conclude that $3 \divides \gcd(a,b,c)$.
 \end{proof}
 
 \begin{lemma}
@@ -28,8 +28,8 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    Since $3 \divides c^3 - a^3 = b^3$, then $3 \divides b$.
-    Then $3 \divides \gcd(a,b,c)$.
+    By hypothesis we have that $3 \divides c^3 - a^3 = b^3$, which implies that $3 \divides b$,
+    from which we can conclude that $3 \divides \gcd(a,b,c)$.
 \end{proof}
 
 \begin{lemma}
@@ -43,8 +43,8 @@
 \end{lemma}
 \begin{proof}
     \leanok
-    Since $3 \divides c^3 - b^3 = a^3$, then $3 \divides a$.
-    Then $3 \divides \gcd(a,b,c)$.
+    By hypothesis we have that $3 \divides c^3 - b^3 = a^3$, which implies that $3 \divides a$,
+    from which we can conclude that $3 \divides \gcd(a,b,c)$.
 \end{proof}
 
 \begin{theorem}
@@ -66,19 +66,19 @@
     lmm:three_dvd_gcd_of_dvd_a_of_dvd_b,
     lmm:three_dvd_gcd_of_dvd_a_of_dvd_c,
     lmm:three_dvd_gcd_of_dvd_b_of_dvd_c}
-    By contradiction we assume that there exist $a,b,c \in \N \smallsetminus \set{0}$
-    such that $a^3 + b^3 = c^3$. \\
+    By contradiction we assume that
+    $$\exists a,b,c \in \N \smallsetminus \set{0} \text{ such that } a^3 + b^3 = c^3.$$
     By \Cref{lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
-    we can assume $\gcd(a,b,c)=1$. \\
-    By \Cref{thm:fermatLastTheoremThree_case_1} we can assume $3 \divides a b c$
-    from which it follows that $(3 \divides a) \lor (3 \divides b) \lor (3 \divides c)$.\\
+    we can assume that $\gcd(a,b,c)=1$. \\
+    By \Cref{thm:fermatLastTheoremThree_case_1} we can assume that $3 \divides a b c$,
+    from which it follows that $$(3 \divides a) \lor (3 \divides b) \lor (3 \divides c).$$
     We proceed by analysing each case:
     \begin{itemize}
         \item Case $3 \divides a$. \\
         Let $a'=-c$, $b'=b$, $c'=-a$, then $3 \divides c'$ and
-        $$a'\neq 0 \land b'\neq 0 \land c' \neq 0.$$
+        $$(a'\neq 0) \land (b'\neq 0) \land (c' \neq 0).$$
         Then $3 \notdivides a'$ since otherwise by \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c}
-        we would have that $3 \divides \gcd(a,b,c)=1$. \\
+        we would have that $3 \divides \gcd(a,b,c)=1$ which is absurd. \\
         Analogously, by \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b} we have that $3 \notdivides b'$.\\
         By contradiction we assume that $\gcd(a',b') \neq 1$ which, by basic divisibility properties,
         implies that there is a prime $p$ such that $p \divides a'$ and $p \divides b'$.
@@ -929,6 +929,12 @@
     \lean{Solution.lambda_not_dvd_X}
     \leanok
     \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $S$ be a $solution$.\\\\
     Then $\lambda \notdivides X$.
 \end{lemma}
@@ -947,6 +953,12 @@
     \lean{Solution.lambda_not_dvd_Y}
     \leanok
     \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $S$ be a $solution$.\\\\
     Then $\lambda \notdivides Y$.
 \end{lemma}
@@ -965,6 +977,12 @@
     \lean{Solution.lambda_not_dvd_Z}
     \leanok
     \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $S$ be a $solution$.\\\\
     Then $\lambda \notdivides Z$.
 \end{lemma}
@@ -1002,6 +1020,12 @@
     \lean{Solution.formula1}
     \leanok
     \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
     Then $u_1 X^3 \lambda^{3n-2}+u_2 \eta Y^3 \lambda +
     u_3 \eta^2 Z^3 \lambda = 0$.
@@ -1062,6 +1086,12 @@
     \lean{Solution.formula2}
     \leanok
     \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
     Then $Y^3 + u_4 Z^3 = u_5 (\lambda^(n-1) X)^3$.
 \end{lemma}
@@ -1080,6 +1110,12 @@
     \lean{Solution.lambda_sq_div_lambda_fourth}
     \leanok
     \uses{def:Solution}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $S$ be a $solution$.\\\\
     Then $\lambda^2 \divides \lambda^4$.
 \end{lemma}
@@ -1093,6 +1129,12 @@
     \lean{Solution.lambda_sq_div_new_X_cubed}
     \leanok
     \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
     Then $\lambda^2 \divides u_5 (\lambda^{n - 1} X)^3$.
 \end{lemma}
@@ -1125,6 +1167,12 @@
     \lean{Solution.final}
     \leanok
     \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $S$ be a $solution$ with multiplicity $n$.\\\\
     Then $Y^3 + (u_4 Z)^3 = u_5 (\lambda^{n-1} X)^3$.
 \end{lemma}
@@ -1141,6 +1189,12 @@
     \uses{def:Solution1, def:Solution_u1_u2_u3_u4_u5_X_Y_Z, lmm:Solution_two_le_multiplicity,
     lmm:final, lmm:coprime_Y_Z, lmm:lambda_not_dvd_Y, lmm:lambda_not_dvd_Z, lmm:lambda_ne_zero,
     lmm:X_ne_zero}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $S = (a,b,c,u)$ be a $solution$ with multiplicity $n$.\\
     Let $S_f' = (Y,u_4 Z, \lambda^{n-1} X, u_5)$.\\\\
     Then $S_f'$ is a $solution'$.
@@ -1158,6 +1212,12 @@
     \leanok
     \uses{lmm:lambda_not_dvd_X,
     lmm:lambda_ne_zero}
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $(a',b',c',u') = S_f'$ be the final $solution'$, then
     $\lambda^{n-1} \divides \lambda^{n-1} X = c'$.
     By contradiction we assume that $\lambda^n \divides c'$ which implies that $\lambda \divides X$,
@@ -1198,6 +1258,12 @@
     \label{thm:fermatLastTheoremForThreeGen}
     \lean{fermatLastTheoremForThreeGen}
     \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $a, b, c \in \cc{O}_K$ and $u \in \cc{O}^\times_K$ such that $c \neq 0$ and $\gcd(a,b)=1$.\\
     Let $\lambda \notdivides a$, $\lambda \notdivides b$ and $\lambda \divides c$. \\\\
     Then $a^3 + b^3 \neq u c^3$.
