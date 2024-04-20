@@ -122,14 +122,39 @@
     Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
     Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
     Let $u \in \cc{O}^\times_K$ be a unit. \\\\
-    If $\exists n \in \Z$ such that $\lambda^2 \divides u - n$, then
+    If $\exists m \in \Z$ such that $\lambda^2 \divides u - m$, then
     $u = 1 \lor u = -1$. \\
     This is a special case of the Kummer's Lemma.
 \end{theorem}
 \begin{proof}
     \leanok
     \uses{thm:not_exists_int_three_dvd_sub, thm:mem, lmm:lambda_sq}
-    % TODO
+    By \Cref{lmm:lambda_sq}, we have that $-3\eta = \lambda^2 \divides u - m$, which implies that
+    $3 \divides u - m$.\\
+    By \Cref{thm:mem}, we know that $u \in \set{1, -1, \eta, -\eta, \eta^2, -\eta^2}$. \\
+    We proceed by analysing each case:
+    \begin{itemize}
+        \item Case $u = 1 \lor u = -1$. This finishes the proof.
+        \item Case $u = \eta$.\\
+              Since $3 \divides u - m$, we have that $3 \divides \eta - m$, which contradicts
+              \Cref{thm:not_exists_int_three_dvd_sub} forcing us to conclude that $u \neq \eta$.
+        \item Case $u = -\eta$.\\
+              Since $3 \divides u - m$, we have that $3 \divides - \eta - m$, then by properties of
+              divisibility $3 \divides \eta + m$, which contradicts
+              \Cref{thm:not_exists_int_three_dvd_sub} forcing us to conclude that $u \neq -\eta$.
+        \item Case $u = \eta^2$.\\
+              Since $3 \divides u - m$, we have that $3 \divides \eta^2 - m$, which contradicts
+              \Cref{thm:not_exists_int_three_dvd_sub} since $\eta^2$ is a third root of unity
+              (see \href{https://pitmonticone.github.io/FLT3/docs/Mathlib/RingTheory/RootsOfUnity/Basic.html#IsPrimitiveRoot.pow_of_coprime}{Mathlib}),
+              forcing us to conclude that $u \neq \eta^2$.
+        \item Case $u = -\eta^2$.\\
+              Since $3 \divides u - m$, we have that $3 \divides - \eta^2 - m$, then by properties of
+              divisibility $3 \divides \eta^2 + m$, which contradicts
+              \Cref{thm:not_exists_int_three_dvd_sub} since $\eta^2$ is a third root of unity
+              (see \href{https://pitmonticone.github.io/FLT3/docs/Mathlib/RingTheory/RootsOfUnity/Basic.html#IsPrimitiveRoot.pow_of_coprime}{Mathlib}),
+              forcing us to conclude that $u \neq -\eta^2$.
+    \end{itemize}
+    Therefore, $u = 1 \lor u = -1$.
 \end{proof}
 
 \begin{lemma}
