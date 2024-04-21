@@ -35,6 +35,13 @@
 % - https://abentkamp.github.io/pubs/finding_mathematical.pdf
 % - https://doi.org/10.1007/978-3-030-79876-5_37
 % - http://dx.doi.org/10.1145/3573105.3575671
+% - https://doi.org/10.1145/3557998
+
+
+
+
+
+
 
 % FERMAT'S LAST THEOREM FOR EXPONENT 3
 
@@ -50,6 +57,13 @@
 % – Third Cyclotomic Field & Preliminary Results
 % – Fermat’s Last Theorem for Exponent 3: Case 1, Case 2, Conclusion
 % – Acknowledgements / Contributions
+
+
+
+
+
+
+
 
 % TO SUBMIT
 % – Authors: Pietro Monticone
@@ -119,7 +133,12 @@
 \end{theorem}
 \begin{proof}
     \leanok
-    % TODO
+    By properties of cyclotomic fields
+    (see \href{https://pitmonticone.github.io/FLT3/docs/Mathlib/NumberTheory/NumberField/Embeddings.html#NumberField.InfinitePlace.card_eq_nrRealPlaces_add_nrComplexPlaces}{this},
+    \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Embeddings.html#IsCyclotomicExtension.Rat.nrRealPlaces_eq_zero}{this},
+    \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Embeddings.html#IsCyclotomicExtension.Rat.nrComplexPlaces_eq_totient_div_two}{this}
+    already included in Mathlib), we know that $\rank{K} = 0$.
+    % TODO: Finish this informal proof.
 \end{proof}
 
 \begin{theorem}
@@ -131,12 +150,27 @@
     Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
     Let $\zeta_3 \in K$ be any primitive third root of unity. \\
     Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
-    Let $n \in \cc{O}_K$. \\\\
-    Then $3 \notdivides \eta - n$.
+    Let $m \in \Z$. \\\\
+    Then $3 \notdivides \eta - m$.
 \end{theorem}
 \begin{proof}
     \leanok
-    % TODO
+    By properties of cyclotomic fields
+    (see \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.integralPowerBasis'}{this},
+    \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.power_basis_int'_dim}{this},
+    \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.integralPowerBasis'_gen}{this}
+    already included in Mathlib),
+    we know that $\set{1,\eta}$ is an integral power basis of $\cc{O}_K$.
+    For every $\xi \in \cc{O}_K$, we define $\pi_1(\xi)$ and $\pi_2(\xi)$ to be the first and second
+    coordinates of $\xi$ with respect to the basis $\set{1,\eta} \in \cc{O}_K$, i.e.
+    $$\xi = \pi_1(\xi) + \pi_2(\xi)\eta.$$
+    By contradiction we assume that
+    $$\exists m \in \Z \text{ such that } 3 \divides \eta - m,$$
+    which implies that
+    $$\exists x \in \cc{O}_K \text{ such that } \eta - m = 3 x.$$
+    By linearity of $\pi_2$,
+    $$\pi_2(\eta) = \pi_2(3x + m) = 3\pi_2(x) + \pi_2(m).$$
+    Since $\pi_2(\eta) = 1$ and $\pi_2(m) = 0$, then we have that $3 \divides 1$, which is a contradiction.
 \end{proof}
 
 \begin{lemma}
