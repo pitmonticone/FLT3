@@ -1,0 +1,1440 @@
+
+\chapter{Fermat's Last Theorem for Exponent 3}
+%\label{chap:flt3}
+%\addcontentsline{toc}{chapter}{Fermat's Last Theorem for Exponent 3}
+
+\section{Case 1}
+
+\begin{lemma}
+  \label{lmm:cube_of_castHom_ne_zero}
+  \lean{cube_of_castHom_ne_zero}
+  \leanok
+  Let $\Z_9$ be the ring of integers modulo $9$. \\
+  Let $\Z_3$ be the ring of integers modulo $3$. \\
+  Let $n \in \Z_9$. \\
+  Let $\phi : \Z_9 \to \Z_3$ be the canonical ring homomorphism. \\
+  Let $\phi(n) \neq 0$. \\ \\
+  Then $n^3=1 \lor n^3=8$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  This has already been formalised and included in \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/FLT/Three.html#cube_of_castHom_ne_zero}{Mathlib}.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:cube_of_not_dvd}
+  \lean{cube_of_not_dvd}
+  \leanok
+  Let $n \in \N$. \\
+  Let $\left[n \right] \in \Z_9$. \\
+  Let $3 \notdivides n$. \\ \\
+  Then $\left[n \right]^3 = 1 \lor \left[n \right]^3 = 8$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:cube_of_castHom_ne_zero}
+  By \Cref{lmm:cube_of_castHom_ne_zero}, we can conclude that $\left[n \right]^3 = 1 \lor \left[n \right]^3 = 8$.
+\end{proof}
+
+\begin{theorem}[Fermat's Last Theorem for 3: Case 1]
+    \label{thm:fermatLastTheoremThree_case_1}
+    \lean{fermatLastTheoremThree_case_1}
+    \leanok
+    Let $a, b, c \in \N$. \\
+    Let $3 \notdivides abc$. \\\\
+    Then $a ^ 3 + b ^ 3 \neq c ^ 3$.
+\end{theorem}
+\begin{proof}
+  \leanok
+  \uses{lmm:cube_of_not_dvd}
+  By hypothesis we know that $3 \notdivides abc$, which implies that $3 \notdivides a$, $3 \notdivides b$ and $3 \notdivides c$. \\
+  It is enough to apply \Cref{lmm:cube_of_not_dvd} repeatedly and compute each case.
+\end{proof}
+
+\section{Case 2}
+
+\begin{lemma}
+  \label{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b}
+  \lean{three_dvd_gcd_of_dvd_a_of_dvd_b}
+  \leanok
+  Let $a, b, c \in \N$. \\
+  Let $3 \divides a$ and $3 \divides b$. \\
+  Let $a ^ 3 + b ^ 3 = c ^ 3$. \\\\
+  Then $3 \divides \gcd(a,b,c)$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  By hypothesis we have that $3 \divides a^3 + b^3 = c^3$, which implies that $3 \divides c$,
+  from which we can conclude that $3 \divides \gcd(a,b,c)$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c}
+  \lean{three_dvd_gcd_of_dvd_a_of_dvd_c}
+  \leanok
+  Let $a, b, c \in \N$. \\
+  Let $3 \divides a$ and $3 \divides c$. \\
+  Let $a ^ 3 + b ^ 3 = c ^ 3$. \\\\
+  Then $3 \divides \gcd(a,b,c)$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  By hypothesis we have that $3 \divides c^3 - a^3 = b^3$, which implies that $3 \divides b$,
+  from which we can conclude that $3 \divides \gcd(a,b,c)$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c}
+  \lean{three_dvd_gcd_of_dvd_b_of_dvd_c}
+  \leanok
+  Let $a, b, c \in \N$. \\
+  Let $3 \divides b$ and $3 \divides c$. \\
+  Let $a ^ 3 + b ^ 3 = c ^ 3$. \\\\
+  Then $3 \divides \gcd(a,b,c)$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  By hypothesis we have that $3 \divides c^3 - b^3 = a^3$, which implies that $3 \divides a$,
+  from which we can conclude that $3 \divides \gcd(a,b,c)$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
+  \lean{fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
+  \leanok
+  Let $R$ be a commutative semiring, domain and normalised gcd monoid.\\% ASK EXPERTS
+  Let $a, b, c \in R$. \\
+  Let $n \in \N$. \\\\
+  Then, to prove Fermat's Last Theorem for exponent $n$ in $R$,
+  one can assume, without loss of generality, that $\gcd(a,b,c)=1$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  This has already been formalised and included in \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/FLT/Basic.html#fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}{Mathlib}.
+\end{proof}
+
+\begin{theorem}
+  \label{thm:fermatLastTheoremThree_of_three_dvd_only_c}
+  \lean{fermatLastTheoremThree_of_three_dvd_only_c}
+  \leanok
+  To prove \Cref{thm:fermatLastTheoremThree}, it suffices to prove that
+  $$\forall a, b, c \in \Z, \text{ if } c \neq 0 \text{ and } 3 \notdivides a \text{ and }
+  3 \notdivides b \text{ and } 3 \divides c \text{ and } \gcd(a,b)=1,
+  \text{ then } a^3 + b^3 \neq c^3.$$
+  Equivalently, $$\forall a, b, c \in \Z, \text{ if } c \neq 0 \text{ and } 3 \notdivides a \text{ and }
+  3 \notdivides b \text{ and } 3 \divides c \text{ and } \gcd(a,b)=1,
+  \text{ then } a^3 + b^3 \neq c^3$$ implies \Cref{thm:fermatLastTheoremThree}.
+\end{theorem}
+\begin{proof}
+  \leanok
+  \uses{lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime,
+  thm:fermatLastTheoremThree_case_1,
+  lmm:three_dvd_gcd_of_dvd_a_of_dvd_b,
+  lmm:three_dvd_gcd_of_dvd_a_of_dvd_c,
+  lmm:three_dvd_gcd_of_dvd_b_of_dvd_c}
+  By contradiction we assume that
+  $$\exists a,b,c \in \N \smallsetminus \set{0} \text{ such that } a^3 + b^3 = c^3.$$
+  By \Cref{lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
+  we can assume that $\gcd(a,b,c)=1$. \\
+  By \Cref{thm:fermatLastTheoremThree_case_1} we can assume that $3 \divides a b c$,
+  from which it follows that $$(3 \divides a) \lor (3 \divides b) \lor (3 \divides c).$$
+  We proceed by analysing each case:
+  \begin{itemize}
+      \item Case $3 \divides a$. \\
+      Let $a'=-c$, $b'=b$, $c'=-a$, then $3 \divides c'$ and
+      $$(a'\neq 0) \land (b'\neq 0) \land (c' \neq 0).$$
+      Then $3 \notdivides a'$ since otherwise by \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c}
+      we would have that $3 \divides \gcd(a,b,c)=1$ which is absurd. \\
+      Analogously, by \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b} we have that $3 \notdivides b'$.\\
+      By contradiction we assume that $\gcd(a',b') \neq 1$ which, by basic divisibility properties,
+      implies that there is a prime $p$ such that $p \divides a'$ and $p \divides b'$.
+      It follows that $p \divides b'^3 + a'^3 = b^3 - c^3 = -a^3$, which implies that $p \divides a$.\\
+      Therefore $p \divides \gcd(a,b,c)=1$ which is absurd. \\
+      Moreover, we have that $a'^3 + b'^3 = -c^3 + b^3 = -a^3 = c'^3$ that contradicts our hypothesis.
+      \item Case $3 \divides b$. \\
+      Let $a'=a$, $b'=-c$, $c'=-b$.\\
+      The rest of the proof is analogous to the first case using \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_b} and
+      \Cref{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c}.
+      \item Case $3 \divides c$.
+      Let $a'=a$, $b'=b$, $c'=c$.\\
+      The rest of the proof is analogous to the first case using \Cref{lmm:three_dvd_gcd_of_dvd_a_of_dvd_c} and
+      \Cref{lmm:three_dvd_gcd_of_dvd_b_of_dvd_c}.
+  \end{itemize}
+  Therefore, we can conclude that $a^3 + b^3 \neq c^3$.
+\end{proof}
+
+\begin{definition}[Solution']
+  \label{def:Solution1}
+  \lean{Solution'}
+  \leanok
+  Let $a, b, c \in \cc{O}_K$ such that $c \neq 0$ and $\gcd(a,b)=1$.\\
+  Let $\lambda \notdivides a$, $\lambda \notdivides b$ and $\lambda \divides c$. \\\\
+  A $\boldsymbol{solution'}$ is a tuple $S'=(a, b, c, u)$
+  satisfying the equation $a^3 + b^3 = u c^3.$
+\end{definition}
+
+\begin{definition}[Solution]
+  \label{def:Solution}
+  \lean{Solution}
+  \leanok
+  Let $a, b, c \in \cc{O}_K$ such that $c \neq 0$ and $\gcd(a,b)=1$.\\
+  Let $\lambda \notdivides a$, $\lambda \notdivides b$, $\lambda \divides c$ and
+  $\lambda^2 \divides a+b$. \\\\
+  A $\boldsymbol{solution}$ is a tuple $S=(a, b, c, u)$
+  satisfying the equation $a^3 + b^3 = u c^3$.
+\end{definition}
+
+\begin{definition}[Multiplicity of Solution']
+  \label{def:Solution1_Multiplicity}
+  \lean{Solution'.multiplicity}
+  \leanok
+  \uses{def:Solution1}
+  Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
+  The $\boldsymbol{multiplicity}$ of $S'$ is the largest $n \in \N$ such that
+  $\lambda^n \divides c$.
+\end{definition}
+
+\begin{definition}[Multiplicity of Solution]
+  \label{def:Solution_Multiplicity}
+  \lean{Solution.multiplicity}
+  \leanok
+  \uses{def:Solution}
+  Let $S=(a, b, c, u)$ be a $solution$. \\\\
+  The $\boldsymbol{multiplicity}$ of $S$ is the largest $n \in \N$ such that
+  $\lambda^n \divides c$.
+\end{definition}
+
+\begin{definition}[Minimal Solution]
+  \label{def:Solution_Minimal}
+  \lean{Solution.isMinimal}
+  \leanok
+  \uses{def:Solution}
+  Let $S=(a, b, c, u)$ be a $solution$. \\\\
+  We say that $S$ is $\boldsymbol{minimal}$ if for all solutions $S_1=(a_1,b_1,c_1,u_1)$,
+  the $multiplicity$ of $S$ is less than or equal to the $multiplicity$ of $S_1$.
+\end{definition}
+
+\begin{lemma}
+  \label{lmm:multiplicity_lambda_c_finite}
+  \lean{Solution'.multiplicity_lambda_c_finite}
+  \leanok
+  \uses{def:Solution1}
+  Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
+  Then the multiplicity of $S'$ is finite.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_not_unit}
+  It directly follows from \Cref{lmm:lambda_not_unit}.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:exists_minimal}
+  \lean{Solution.exists_minimal}
+  \leanok
+  \uses{def:Solution, def:Solution_Minimal}
+  Let $S$ be a $solution$ with multiplicity $n$. \\\\
+  Then there is a minimal solution $S_1$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  Straightforward since $n \in \N$ and $\N$ is well-ordered.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:a_cube_b_cube_same_congr}
+  \lean{a_cube_b_cube_same_congr}
+  \leanok
+  \uses{def:Solution1}
+  Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
+  Then $\lambda^4 \divides a^3 - 1 \land \lambda^4 \divides b^3 + 1$ or
+  $\lambda^4 \divides a^3 + 1 \land \lambda^4 \divides b^3 - 1$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd,
+  lmm:lambda_not_dvd_two}
+  Since $\lambda \notdivides a$, then
+  $\lambda^4 \divides a^3 - 1 \lor \lambda^4 \divides a^3 + 1$ by
+  \Cref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}.
+  Since $\lambda \notdivides b$, then
+  $\lambda^4 \divides b^3 - 1 \lor \lambda^4 \divides b^3 + 1$ by
+  \Cref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}.
+  We proceed by analysing each case:
+  \begin{itemize}
+      \item Case $\lambda^4 \divides a^3 - 1 \land \lambda^4 \divides b^3 - 1$.
+      Since $\lambda \divides c$ we have that $\lambda \divides c^3-(a^3-1)-(b^3-1) = 2$,
+      which is absurd by \Cref{lmm:lambda_not_dvd_two}.
+      \item Case $\lambda^4 \divides a^3 + 1 \land \lambda^4 \divides b^3 + 1$.
+      Since $\lambda \divides c$ we have that $\lambda \divides (a^3-1)+(b^3-1)-c^3 = 2$,
+      which is absurd by \Cref{lmm:lambda_not_dvd_two}.
+      \item Case $\lambda^4 \divides a^3 - 1 \land \lambda^4 \divides b^3 + 1$. Trivial.
+      \item Case $\lambda^4 \divides a^3 + 1 \land \lambda^4 \divides b^3 - 1$. Trivial.
+  \end{itemize}
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_pow_four_dvd_c_cube}
+  \lean{lambda_pow_four_dvd_c_cube}
+  \leanok
+  \uses{def:Solution1}
+  Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
+  Then $\lambda^4 \divides c^3$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:a_cube_b_cube_same_congr}
+  Apply \Cref{lmm:a_cube_b_cube_same_congr} and then compute each case.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_pow_two_dvd_c}
+  \lean{lambda_pow_two_dvd_c}
+  \leanok
+  \uses{def:Solution1}
+  Let $S'=(a, b, c, u)$ be a $solution'$. \\\\
+  Then $\lambda^2 \divides c$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:multiplicity_lambda_c_finite,
+  lmm:lambda_pow_four_dvd_c_cube, lmm:lambda_prime}
+  Apply \Cref{lmm:lambda_pow_four_dvd_c_cube}.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:Solution1_two_le_multiplicity}
+  \lean{Solution'.two_le_multiplicity}
+  \leanok
+  \uses{def:Solution1}
+  Let $S'=(a, b, c, u)$ be a $solution'$ with multiplicity $n$.\\\\
+  Then $2 \leq n$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_pow_two_dvd_c}
+  It directly follows from \Cref{lmm:lambda_pow_two_dvd_c}.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:Solution_two_le_multiplicity}
+  \lean{Solution.two_le_multiplicity}
+  \leanok
+  \uses{def:Solution}
+  Let $S=(a, b, c, u)$ be a $solution$ with multiplicity $n$.\\\\
+  Then $2 \leq n$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:Solution1_two_le_multiplicity}
+  It directly follows from \Cref{lmm:Solution1_two_le_multiplicity}.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:cube_add_cube_eq_mul}
+  \lean{cube_add_cube_eq_mul}
+  \leanok
+  \uses{def:Solution1}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
+  Then $a^3 + b^3 = (a + b) (a + \eta b) (a + \eta^2 b)$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
+  Straightforward calculation using \Cref{lmm:toInteger_cube_eq_one}
+  and \Cref{lmm:toInteger_eval_cyclo}.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_sq_dvd_or_dvd_or_dvd}
+  \lean{lambda_sq_dvd_or_dvd_or_dvd}
+  \leanok
+  \uses{def:Solution1}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
+  Then $(\lambda^2 \divides a + b) \lor (\lambda^2 \divides a +
+  \eta b) \lor (\lambda^2 \divides a + \eta^2 b)$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_pow_two_dvd_c, lmm:cube_add_cube_eq_mul,
+  lmm:lambda_prime}
+  By contradiction we assume that
+  $$(\lambda^2 \notdivides a + b) \land (\lambda^2 \notdivides a +
+  \eta b) \land (\lambda^2 \notdivides a + \eta^2 b).$$
+  Then, by definition, the multiplicity of $\lambda$ in $a + b$, in $a +
+  \eta b$ and in $a + \eta^2 b$ is less than $2$.
+  By properties of divisibility, \Cref{lmm:lambda_pow_two_dvd_c} and \Cref{lmm:cube_add_cube_eq_mul},
+  we have that
+  $$\lambda^6 ∣ u c^3 = a^3 + b^3 = (a + b) (a + \eta b) (a + \eta^2 b).$$
+  Then, the multiplicity of $\lambda$ in $(a + b) (a + \eta b) (a + \eta^2 b)$ is greater than
+  or equal to $6$. \\
+  By \Cref{lmm:lambda_prime} $\lambda$ is prime, so we have that the multiplicity of $\lambda$
+  in $(a + b) (a + \eta b) (a + \eta^2 b)$ is the sum of the multiplicities of $\lambda$ in
+  $a + b$, in $a + \eta b$ and in $a + \eta^2 b$, which is less than $6$.
+  This is a contradiction that forces us to conclude that
+  $$(\lambda^2 \divides a + b) \lor (\lambda^2 \divides a +
+  \eta b) \lor (\lambda^2 \divides a + \eta^2 b).$$
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:ex_dvd_a_add_b}
+  \lean{ex_dvd_a_add_b}
+  \leanok
+  \uses{def:Solution1}
+  Let $S'=(a, b, c, u)$ be a $solution'$.\\\\
+  Then $\exists a_1,b_1 \in \cc{O}_k$ such that $S_1=(a_1,b_1,c,u)$ is a $solution$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_sq_dvd_or_dvd_or_dvd, lmm:toInteger_cube_eq_one, lmm:eta_isUnit}
+  By \Cref{lmm:lambda_sq_dvd_or_dvd_or_dvd}, we have that
+  $$(\lambda^2 \divides a + b) \lor (\lambda^2 \divides a +
+  \eta b) \lor (\lambda^2 \divides a + \eta^2 b).$$
+  We proceed by analysing each case:
+  \begin{itemize}
+      \item Case $\lambda^2 \divides a + b$. Trivial using $a_1=a$ and $b_1=b$.
+      \item Case $\lambda^2 \divides a + \eta b$. Let $a_1=a$ and $b_1=\eta b$. \\
+      By \Cref{lmm:toInteger_cube_eq_one}, we have that $a^3 + (\eta b)^3 = a^3 + b^3 = u c^3$.\\
+      By properties of coprimes and \Cref{lmm:eta_isUnit}, we have that
+      $\gcd(a,b)=1$ implies that $\gcd(a,\eta b)=1$.\\
+      Since $a_1=a$, we already know that $\lambda \notdivides a = a_1$.\\
+      By contradiction we assume that $\lambda \divides b_1 = \eta b$, which,
+      by \Cref{lmm:toInteger_cube_eq_one}, it implies that $\lambda \divides \eta^2 \eta b = b$
+      that contradicts our assumption, forcing us to conclude that $\lambda \notdivides b_1$.
+      \item Case $\lambda^2 \divides a + \eta^2 b$. Let $a_1=a$ and $b_1=\eta^2 b$. \\
+      By \Cref{lmm:toInteger_cube_eq_one}, we have that $a^3 + (\eta^2 b)^3 = a^3 + b^3 = u c^3$.\\
+      By properties of coprimes and \Cref{lmm:eta_isUnit}, we have that
+      $\gcd(a,b)=1$ implies that $\gcd(a,\eta^2 b)=1$.\\
+      Since $a_1=a$, we already know that $\lambda \notdivides a = a_1$.\\
+      By contradiction we assume that $\lambda \divides b_1 = \eta^2 b$, which,
+      by \Cref{lmm:toInteger_cube_eq_one}, it implies that $\lambda \divides \eta \eta^2 b = b$
+      that contradicts our assumption, forcing us to conclude that $\lambda \notdivides b_1$.
+  \end{itemize}
+  Therefore, we can conclude that
+  $\exists a_1,b_1 \in \cc{O}_k$ such that $S_1=(a_1,b_1,c,u)$ is a $solution$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:exists_Solution_of_Solution1}
+  \lean{exists_Solution_of_Solution'}
+  \leanok
+  \uses{def:Solution1, def:Solution}
+  Let $S'$ be a $solution'$ with multiplicity $n$.\\\\
+  Then there is a $solution\text{ }S$ with multiplicity $n$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:ex_dvd_a_add_b}
+  Let $S'=(a',b',c',u')$. Let $a, b$ be the units given by \Cref{lmm:ex_dvd_a_add_b}.
+  Then $S=(a,b,c',u')$ is a $solution'$ with multiplicity $n$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:a_add_eta_b}
+  \lean{Solution.a_add_eta_b}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $S=(a, b, c, u)$ be a $solution$.\\\\
+  Then $a + \eta  b = (a + b) + \lambda  b$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  Trivial calculation.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_dvd_a_add_eta_mul_b}
+  \lean{Solution.lambda_dvd_a_add_eta_mul_b}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S=(a, b, c, u)$ be a $solution$.\\\\
+  Then $\lambda \divides a + \eta  b$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:a_add_eta_b}
+  Trivial since $\lambda \divides a+b$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_dvd_a_add_eta_sq_mul_b}
+  \lean{Solution.lambda_dvd_a_add_eta_sq_mul_b}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S=(a, b, c, u)$ be a $solution$.\\\\
+  Then $\lambda \divides a + \eta^2  b$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  Since $\lambda \divides a+b$, then
+  $\lambda \divides (a + b) + \lambda^2  b + 2  \lambda  b
+  = a + \eta^2  b$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}
+  \lean{Solution.lambda_sq_not_dvd_a_add_eta_mul_b}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S=(a, b, c, u)$ be a $solution$.\\\\
+  Then $\lambda^2 \notdivides a + \eta b$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:a_add_eta_b, lmm:lambda_ne_zero}
+  By contradiction we assume that $\lambda^2 \divides a + \eta b$, which implies that
+  $\lambda^2 \divides a + b + \lambda  b$ by \Cref{lmm:a_add_eta_b}.
+  Since $\lambda^2 \divides a+b$, then $\lambda^2 \divides \lambda  b$, which implies that
+  $\lambda \divides b$, that contradicts \Cref{def:Solution} forcing us to conclude that
+  $\lambda^2 \notdivides a + \eta b$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}
+  \lean{Solution.lambda_sq_not_dvd_a_add_eta_sq_mul_b}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S=(a, b, c, u)$ be a $solution$.\\\\
+  Then $\lambda^2 \notdivides a + \eta^2  b$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_ne_zero, lmm:toInteger_eval_cyclo}
+  By contradiction using \Cref{lmm:toInteger_eval_cyclo}, we assume
+  $\lambda^2 \divides a +\eta^2 b = a + b -b + \eta^2  b$.
+  Since $\lambda^2 \divides a+b$, then $\lambda^2 \divides b (\eta^2 -1)
+  = \lambda b (\eta + 1)$. Since $\lambda \notdivides b$, then
+  $\lambda \divides \eta+1 = \lambda +2$, then $\lambda \divides 2$ which is absurd.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:eta_add_one_inv}
+  \lean{Solution.eta_add_one_inv}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $S=(a, b, c, u)$ be a $solution$.\\\\
+  Then $(\eta + 1)  (-\eta) = 1$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:toInteger_eval_cyclo}
+  Trivial calculation using \Cref{lmm:toInteger_eval_cyclo}.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
+  \lean{Solution.associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S=(a, b, c, u)$ be a $solution$.\\
+  Let $p \in \cc{O}_K$ be a prime such that $p \divides a+b$
+  and $p \divides a+\eta  b$.\\\\
+  Then $p$ is associated with $\lambda$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_prime}
+  We proceed by analysis each case:
+  \begin{itemize}
+      \item Case $p \divides \lambda$. It directly follows from \Cref{lmm:lambda_prime}.
+      \item Case $p \notdivides \lambda$. \\
+            By hypothesis, we have that $p \divides a+b$ and $p \divides a+\eta b$.
+            Then $p \divides (a+\eta b) - (a+b) = b (\eta-1) = b \lambda$, which implies that
+            $p \divides b$ and we proceed analogously to show that $p \divides a$.\\
+            Therefore $p \divides \gcd(a,b)=1$ which is absurd.
+  \end{itemize}
+  Therefore, we can conclude that $p$ is associated with $\lambda$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b}
+  \lean{Solution.associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S=(a, b, c, u)$ be a $solution$.\\
+  Let $p \in \cc{O}_K$ be a prime such that $p \divides a+b$
+  and $p \divides a+\eta^2  b$.\\\\
+  Then $p$ is associated with $\lambda$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_prime, lmm:toInteger_cube_eq_one, lmm:eta_isUnit}
+  We proceed by analysis each case:
+  \begin{itemize}
+      \item Case $p \divides \lambda$. It directly follows from \Cref{lmm:lambda_prime}.
+      \item Case $p \notdivides \lambda$. \\
+            By hypothesis, we have that $p \divides a+ b$ and $p \divides a+\eta^2 b$.
+            By \Cref{lmm:toInteger_cube_eq_one} and \Cref{lmm:eta_isUnit}, we have that
+            $$p \divides \eta ((a+\eta^2 b) - (a+ b)) = - (\eta^3 - \eta) b = \lambda b,$$
+            which implies that $p \divides b$
+            and we proceed analogously to show that $p \divides a$.\\
+            Therefore $p \divides \gcd(a,b)=1$ which is absurd.
+  \end{itemize}
+  Therefore, we can conclude that $p$ is associated with $\lambda$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b}
+  \lean{Solution.associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S=(a, b, c, u)$ be a $solution$.\\
+  Let $p \in \cc{O}_K$ be a prime such that $p \divides a+\eta b$
+  and $p \divides a+\eta^2  b$.\\\\
+  Then $p$ is associated with $\lambda$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_prime, lmm:eta_isUnit}
+  We proceed by analysis each case:
+  \begin{itemize}
+      \item Case $p \divides \lambda$. It directly follows from \Cref{lmm:lambda_prime}.
+      \item Case $p \notdivides \lambda$. \\
+            By hypothesis, we have that $p \divides a+\eta b$ and $p \divides a+\eta^2 b$.
+            Then $p \divides (a+\eta^2 b) - (a+\eta b) = \eta b (\eta-1) = \eta b \lambda$,
+            which, by \Cref{lmm:eta_isUnit}, implies that $p \divides b$
+            and we proceed analogously to show that $p \divides a$.\\
+            Therefore $p \divides \gcd(a,b)=1$ which is absurd.
+  \end{itemize}
+  Therefore, we can conclude that $p$ is associated with $\lambda$.
+\end{proof}
+
+\begin{definition}[$x,y,z,w$]
+  \label{def:Solution_x_y_z_w}
+  %\lean{}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S=(a, b, c, u)$ be a $solution$.\\\\
+  We define $x \in \cc{O}_K$ such that $a + b = \lambda^{3n-2}  x$.\\
+  We define $y \in \cc{O}_K$ such that $a + \eta  b = \lambda  y$.\\
+  We define $z \in \cc{O}_K$ such that $a + \eta^2  b = \lambda  z$.\\
+  We define $w \in \cc{O}_K$ such that $c = \lambda^n  w$.
+\end{definition}
+
+\begin{lemma}
+  \label{lmm:lambda_not_dvd_y}
+  \lean{Solution.lambda_not_dvd_y}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$.\\\\
+  Then $\lambda \notdivides y$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_sq_not_dvd_a_add_eta_mul_b}
+  By contradiction we assume that $\lambda \divides y$, which implies that
+  $\lambda^2 \divides \lambda y = a + \eta b$, that contradicts
+  \Cref{lmm:lambda_sq_not_dvd_a_add_eta_mul_b} forcing us to conclude that
+  $\lambda \notdivides y$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_not_dvd_z}
+  \lean{Solution.lambda_not_dvd_z}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$.\\\\
+  Then $\lambda \notdivides z$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b}
+  By contradiction we assume that $\lambda \divides z$, which implies that
+  $\lambda^2 \divides \lambda z = a + \eta^2 b$, that contradicts
+  \Cref{lmm:lambda_sq_not_dvd_a_add_eta_sq_mul_b} forcing us to conclude $\lambda \notdivides z$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_pow_dvd_a_add_b}
+  \lean{Solution.lambda_pow_dvd_a_add_b}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S=(a, b, c, u)$ be a $solution$ with multiplicity $n$.\\\\
+  Then $\lambda^{3n -2} \divides a + b$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:cube_add_cube_eq_mul, lmm:lambda_prime,
+  lmm:lambda_not_dvd_z, lmm:lambda_not_dvd_y, lmm:Solution_two_le_multiplicity,
+  lmm:lambda_ne_zero}
+  By \Cref{def:Solution_Multiplicity} we have that $\lambda^n \divides c$.
+  Since $u$ is a unit, then by \Cref{lmm:cube_add_cube_eq_mul} we have that
+  $$\lambda^{3n} \divides u  c^3 = a^3 + b^3 = (a+b)(a + \eta b)(a + \eta^2 b)
+  = (a+b)(\lambda y)(\lambda z).$$
+  Then applying \Cref{lmm:lambda_not_dvd_y} and \Cref{lmm:lambda_not_dvd_z}, we can conclude
+  that $\lambda^{3n-2} \divides a+b$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_not_dvd_w}
+  \lean{Solution.lambda_not_dvd_w}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$.\\\\
+  Then $\lambda \notdivides w$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:multiplicity_lambda_c_finite}
+  By contradiction we assume that $\lambda \divides w$, which implies
+  $\lambda^{n+1} \divides \lambda^n  w = c$ that contradicts \Cref{def:Solution_Multiplicity}
+  forcing us to conclude that $\lambda \notdivides w$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_not_dvd_x}
+  \lean{Solution.lambda_not_dvd_x}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$.\\\\
+  Then $\lambda \notdivides x$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_dvd_a_add_eta_mul_b, lmm:lambda_dvd_a_add_eta_sq_mul_b,
+  lmm:cube_add_cube_eq_mul, lmm:Solution_two_le_multiplicity, lmm:lambda_prime,
+  lmm:lambda_not_dvd_w, lmm:lambda_ne_zero}
+  By contradiction, if $\lambda \divides x$, then
+  $\lambda^{3n-1} \divides \lambda^{3n-2}  x = a+b$. Using \Cref{lmm:lambda_dvd_a_add_eta_mul_b}
+  and \Cref{lmm:lambda_dvd_a_add_eta_sq_mul_b}, we have that $\lambda^{3n+1} \divides
+  (a+b)  (a + \eta  b)  (a + \eta^2 cdot b) = a^3+b^3
+  = u c^3 = u \lambda^{3n} w^3$.
+  Then $\lambda \divides w^3$ which implies that $\lambda \divides w$, that
+  contradicts \Cref{lmm:lambda_not_dvd_w} forcing us to conclude $\lambda \notdivides x$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:coprime_x_y}
+  \lean{Solution.coprime_x_y}
+  \leanok
+  \uses{def:Solution, def:Solution_x_y_z_w}
+  Let $S$ be a $solution$ with multiplicity $n$.\\\\
+  Then $\gcd(x,y) = 1$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_not_dvd_y, lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b,
+  lmm:lambda_not_dvd_x}
+  Since $y \neq 0$ by \Cref{lmm:lambda_not_dvd_y}, by the properties of PIDs it suffices to prove that
+  $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides x$, then $p \notdivides y$.
+  Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides x$ and $p \divides y$
+  which implies that $p \divides \lambda^{3n-2} x = a+b$ and $p \divides \lambda y = a + \eta b$.
+  Then by \Cref{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_mul_b}
+  we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides x$
+  that contradicts \Cref{lmm:lambda_not_dvd_x} forcing us to conclude that $p \notdivides y$, which,
+  as stated above, implies that $\gcd(x,y)=1$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:coprime_x_z}
+  \lean{Solution.coprime_x_z}
+  \leanok
+  \uses{def:Solution, def:Solution_x_y_z_w}
+  Let $S$ be a $solution$.\\\\
+  Then $\gcd(x,z) = 1$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_not_dvd_z, lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b,
+  lmm:lambda_not_dvd_x}
+  Since $z \neq 0$ by \Cref{lmm:lambda_not_dvd_z}, by the properties of PIDs it suffices to prove that
+  $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides x$, then $p \notdivides z$.
+  Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides x$ and $p \divides z$
+  which implies that $p \divides \lambda^{3n-2} x = a+b$ and $p \divides \lambda z = a + \eta^2 b$.
+  Then by \Cref{lmm:associated_of_dvd_a_add_b_of_dvd_a_add_eta_sq_mul_b}
+  we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides x$
+  that contradicts \Cref{lmm:lambda_not_dvd_x} forcing us to conclude that $p \notdivides z$, which,
+  as stated above, implies that $\gcd(x,z)=1$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:coprime_y_z}
+  \lean{Solution.coprime_y_z}
+  \leanok
+  \uses{def:Solution, def:Solution_x_y_z_w}
+  Let $S$ be a $solution$.\\\\
+  Then $\gcd(y, z) = 1$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_not_dvd_z, lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b,
+  lmm:lambda_not_dvd_y}
+  Since $z \neq 0$ by \Cref{lmm:lambda_not_dvd_z}, by the properties of PIDs it suffices to prove that
+  $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides y$, then $p \notdivides z$.
+  Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides y$ and $p \divides z$
+  which implies that $p \divides \lambda y = a+\eta b$ and $p \divides \lambda z = a + \eta^2 b$.
+  Then by \Cref{lmm:associated_of_dvd_a_add_eta_mul_b_of_dvd_a_add_eta_sq_mul_b}
+  we have that $p$ is associated with $\lambda$, which implies that $\lambda \divides y$
+  that contradicts \Cref{lmm:lambda_not_dvd_y} forcing us to conclude that $p \notdivides z$, which,
+  as stated above, implies that $\gcd(y,z)=1$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:mult_minus_two_plus_one_plus_one}
+  \lean{Solution.mult_minus_two_plus_one_plus_one}
+  \leanok
+  \uses{def:Solution}
+  Let $S$ be a $solution$ with multiplicity $n$.\\\\
+  Then $3n - 2 + 1 + 1 = 3n$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:Solution_two_le_multiplicity}
+  It directly follows from \Cref{lmm:Solution_two_le_multiplicity}
+  and calculations using ring properties.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:x_mul_y_mul_z_eq_u_w_pow_three}
+  \lean{Solution.x_mul_y_mul_z_eq_u_w_pow_three}
+  \leanok
+  \uses{def:Solution, def:Solution_x_y_z_w}
+  Let $S=(a,b,c,u)$ be a $solution$.\\\\
+  Then $x y z = u w^3$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:Solution_two_le_multiplicity, lmm:lambda_ne_zero, lmm:cube_add_cube_eq_mul,
+  def:Solution_x_y_z_w}
+  It directly follows from \Cref{def:Solution_x_y_z_w}, \Cref{lmm:cube_add_cube_eq_mul},
+  \Cref{lmm:lambda_ne_zero}, \Cref{lmm:Solution_two_le_multiplicity} and
+  calculations using ring properties.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:x_eq_unit_mul_cube}
+  \lean{Solution.x_eq_unit_mul_cube}
+  \leanok
+  \uses{def:Solution}
+  Let $S$ be a $solution$.\\\\
+  Then $\exists u_1 \in \cc{O}^\times_K$ and $\exists X \in \cc{O}_K$
+  such that $x = u_1 X^3$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three, lmm:coprime_x_y, lmm:coprime_x_z}
+  By the properties of PIDs, it suffices to prove that there exists a $k\in \cc{O}_K$ such that
+  $xk$ is a cube and $\gcd(x,k)=1$.
+  Let $k = yzu^{-1}$, then $xk = x y z u^{-1} = w^3$ by \Cref{lmm:x_mul_y_mul_z_eq_u_w_pow_three}.
+  Moreover, since $\gcd(x,y)=1$ by \Cref{lmm:coprime_x_y} and $\gcd(x,z)=1$ by \Cref{lmm:coprime_x_z},
+  then $\gcd(x,yz)=1$, which implies that $\gcd(x,k)=1$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:y_eq_unit_mul_cube}
+  \lean{Solution.y_eq_unit_mul_cube}
+  \leanok
+  \uses{def:Solution}
+  Let $S$ be a $solution$.\\\\
+  Then $\exists u_2 \in \cc{O}^\times_K$ and $\exists Y \in \cc{O}_K$
+  such that $y = u_2 Y^3$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three, lmm:coprime_x_y, lmm:coprime_y_z}
+  By the properties of PIDs, it suffices to prove that there exists a $k\in \cc{O}_K$ such that
+  $yk$ is a cube and $\gcd(y,k)=1$.
+  Let $k = xzu^{-1}$, then $yk = y x z u^{-1} = w^3$ by \Cref{lmm:x_mul_y_mul_z_eq_u_w_pow_three}.
+  Moreover, since $\gcd(x,y)=1$ by \Cref{lmm:coprime_x_y} and $\gcd(y,z)=1$ by \Cref{lmm:coprime_y_z},
+  then $\gcd(y,xz)=1$, which implies that $\gcd(y,k)=1$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:z_eq_unit_mul_cube}
+  \lean{Solution.z_eq_unit_mul_cube}
+  \leanok
+  \uses{def:Solution}
+  Let $S$ be a $solution$.\\\\
+  Then $\exists u_3 \in \cc{O}^\times_K$ and $\exists Z \in \cc{O}_K$
+  such that $z = u_3  Z^3$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:x_mul_y_mul_z_eq_u_w_pow_three, lmm:coprime_x_z, lmm:coprime_y_z}
+  By the properties of PIDs, it suffices to prove that there exists a $k\in \cc{O}_K$ such that
+  $zk$ is a cube and $\gcd(z,k)=1$.
+  Let $k = xyu^{-1}$, then $zk = z x y u^{-1} = w^3$ by \Cref{lmm:x_mul_y_mul_z_eq_u_w_pow_three}.
+  Moreover, since $\gcd(x,z)=1$ by \Cref{lmm:coprime_x_z} and $\gcd(y,z)=1$ by \Cref{lmm:coprime_y_z},
+  then $\gcd(z,xy)=1$, which implies that $\gcd(z,k)=1$.
+\end{proof}
+
+\begin{definition}[$u_1,u_2,u_3,u_4,u_5,X,Y,Z$]
+  \label{def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  %\lean{}
+  \leanok
+  \uses{def:Solution, lmm:x_eq_unit_mul_cube,
+  lmm:y_eq_unit_mul_cube, lmm:z_eq_unit_mul_cube}
+  Let $S$ be a $solution$.\\\\
+  We define $u_1 \in \cc{O}^\times_K$ and $X \in \cc{O}_K$
+  such that $x = u_1 X^3$.\\
+  We define $u_2 \in \cc{O}^\times_K$ and $Y \in \cc{O}_K$
+  such that $y = u_2 Y^3$.\\
+  We define $u_3 \in \cc{O}^\times_K$ and $Z \in \cc{O}_K$
+  such that $z = u_3 Z^3$.\\
+  We define $u_4 = \eta u_3 u_2^{-1}$.\\
+  We define $u_5 = -\eta^2 u_1 u_2^{-1}$.\\
+\end{definition}
+
+\begin{lemma}
+  \label{lmm:X_ne_zero}
+  \lean{Solution.X_ne_zero}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $S$ be a $solution$.\\\\
+  Then $X \neq 0$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z, lmm:lambda_not_dvd_x}
+  By contradiction we assume that $X = 0$, then $x = 0$ by \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z}.
+  Therefore $\lambda$ trivially divides $x$ (as any number divides zero) which contradicts
+  \Cref{lmm:lambda_not_dvd_x} forcing us to conclude that $X \neq 0$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_not_dvd_X}
+  \lean{Solution.lambda_not_dvd_X}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$.\\\\
+  Then $\lambda \notdivides X$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z,, lmm:lambda_not_dvd_x}
+  By contradiction we assume that $\lambda \divides X$, then, by the properties of divisibility,
+  $\lambda \divides u_1 X^3$, which implies, by \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z},
+  that $\lambda \divides x$.
+  However, this contradicts \Cref{lmm:lambda_not_dvd_x}
+  forcing us to conclude that $\lambda \notdivides X$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_not_dvd_Y}
+  \lean{Solution.lambda_not_dvd_Y}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$.\\\\
+  Then $\lambda \notdivides Y$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_not_dvd_y}
+  By contradiction we assume that $\lambda \divides Y$, then, by the properties of divisibility,
+  $\lambda \divides u_2 Y^3$, which implies, by \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z},
+  that $\lambda \divides y$.
+  However, this contradicts \Cref{lmm:lambda_not_dvd_y}
+  forcing us to conclude that $\lambda \notdivides Y$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_not_dvd_Z}
+  \lean{Solution.lambda_not_dvd_Z}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$.\\\\
+  Then $\lambda \notdivides Z$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_not_dvd_z}
+  By contradiction we assume that $\lambda \divides Z$, then, by the properties of divisibility,
+  $\lambda \divides u_3 Z^3$, which implies, by \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z},
+  that $\lambda \divides z$.
+  However, this contradicts \Cref{lmm:lambda_not_dvd_z}
+  forcing us to conclude that $\lambda \notdivides Z$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:coprime_Y_Z}
+  \lean{Solution.coprime_Y_Z}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $S$ be a $solution$.\\\\
+  Then $\gcd(Y, Z) = 1$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_not_dvd_Z, lmm:coprime_y_z}
+  Since $Z \neq 0$ by \Cref{lmm:lambda_not_dvd_Z}, by the properties of PIDs it suffices to prove that
+  $\forall p \in \cc{O}_K$ if $p$ is prime and $p \divides Y$, then $p \notdivides Z$.
+  Let $p \in \cc{O}_K$ be prime and suppose by contradiction that $p \divides Y$ and $p \divides Z$
+  which implies that $p \divides u_2 Y^3 = y$ and $p \divides \lambda u_3 Z^3 = z$.
+  But this contradicts \Cref{lmm:coprime_y_z} forcing us to conclude that $p \notdivides Z$, which,
+  as stated above, implies that $\gcd(Y,Z)=1$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:formula1}
+  \lean{Solution.formula1}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$ with multiplicity $n$.\\\\
+  Then $u_1 X^3 \lambda^{3n-2}+u_2 \eta Y^3 \lambda +
+  u_3 \eta^2 Z^3 \lambda = 0$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z, def:Solution_x_y_z_w,
+  lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
+  Applying \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z}, \Cref{def:Solution_x_y_z_w},
+  \Cref{lmm:toInteger_cube_eq_one} and \Cref{lmm:toInteger_eval_cyclo}, we have
+  \begin{align*}
+      u_1 X^3 \lambda^{3n-2}+u_2 \eta Y^3 \lambda + u_3 \eta^2 Z^3 \lambda
+      &= x \lambda^{3n-2} + \eta y \lambda + \eta^2 z \lambda \\
+      &= (a+b) + \eta (a+\eta b) + \eta^2 (a+\eta^2 b) \\
+      &= a (1 + \eta + \eta^2) + b (1 + \eta^4 + \eta^2) \\
+      &= (a+b)(1+\eta+\eta^2)\\
+      &= (a+b)0 = 0
+  \end{align*}
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:u₄_isUnit}
+  \lean{Solution.u₄'_isUnit}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $S$ be a $solution$.\\\\
+  Then $u_4$ is a unit.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{def:Solution_u1_u2_u3_u4_u5_X_Y_Z, lmm:eta_isUnit}
+  By \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z} $u_4 = \eta u_3 u_2^{-1}$,
+  which is a product of units by \Cref{lmm:eta_isUnit}.
+  Since the product of units is a unit (multiplicative closure),
+  it follows that $u_4$ must also be a unit.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:u₅_isUnit}
+  \lean{Solution.u₅'_isUnit}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $S$ be a $solution$.\\\\
+  Then $u_5$ is a unit.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:toInteger_cube_eq_one}
+  By \Cref{def:Solution_u1_u2_u3_u4_u5_X_Y_Z} $u_5 = -\eta^2 u_1 u_2^{-1}$,
+  which is a product of units since $\eta^3 = 1$ by \Cref{lmm:toInteger_cube_eq_one} and
+  $-\eta (-\eta^2) = \eta^3$.
+  Since the product of units is a unit (multiplicative closure),
+  it follows that $u_5$ must also be a unit.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:formula2}
+  \lean{Solution.formula2}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$ with multiplicity $n$.\\\\
+  Then $Y^3 + u_4 Z^3 = u_5 (\lambda^(n-1) X)^3$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:eta_isUnit, lmm:lambda_ne_zero, lmm:toInteger_cube_eq_one,
+  lmm:Solution_two_le_multiplicity, lmm:formula1}
+  Using \Cref{lmm:eta_isUnit}, \Cref{lmm:lambda_ne_zero}, it suffices to show that
+  $$\lambda \eta u_2 (Y^3 + u_4 Z^3) = \lambda \eta u_2 u_5 (\lambda^(n-1) X)^3$$
+  which can be proved by simple calculations involving \Cref{lmm:toInteger_cube_eq_one},
+  \Cref{lmm:Solution_two_le_multiplicity} and \Cref{lmm:formula1}.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_sq_div_lambda_fourth}
+  \lean{Solution.lambda_sq_div_lambda_fourth}
+  \leanok
+  \uses{def:Solution}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$.\\\\
+  Then $\lambda^2 \divides \lambda^4$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  Straightforward application of the definition of divisibility.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:lambda_sq_div_new_X_cubed}
+  \lean{Solution.lambda_sq_div_new_X_cubed}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$ with multiplicity $n$.\\\\
+  Then $\lambda^2 \divides u_5 (\lambda^{n - 1} X)^3$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:Solution_two_le_multiplicity}
+  Using \Cref{lmm:Solution_two_le_multiplicity}, we have that $\lambda^2 \divides
+  \lambda^2 u_5 \lambda^{3n-5} X^3 = u_5 (\lambda^{n - 1} X)^3$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:by_kummer}
+  \lean{Solution.by_kummer}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $S$ be a $solution$.\\\\
+  Then $u_4 \in \set{-1,1} \subset \cc{O}_K$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_sq_div_lambda_fourth, lmm:lambda_sq_div_new_X_cubed,
+  lmm:eq_one_or_neg_one_of_unit_of_congruent,
+  lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd,
+  lmm:lambda_not_dvd_Z, lmm:lambda_not_dvd_Y, lmm:formula2}
+  Let $n \in \N$ be the multiplicity of the solution $S$.\\
+  By \Cref{lmm:eq_one_or_neg_one_of_unit_of_congruent}, it suffices to prove that
+  $$\exists m \in \Z \text{ such that } \lambda^2 \divides u_4 - m.$$
+  By \Cref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}
+  and \Cref{lmm:lambda_not_dvd_Y}, we have that
+  $$(\lambda^4 \divides Y^3 - 1) \lor (\lambda^4 \divides Y^3 + 1).$$
+  By \Cref{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}
+  and \Cref{lmm:lambda_not_dvd_Z}, we have that
+  $$(\lambda^4 \divides Z^3 - 1) \lor (\lambda^4 \divides Z^3 + 1).$$
+  We proceed by analysing each case:
+  \begin{itemize}
+      \item Case $(\lambda^4 \divides Y^3 - 1) \land (\lambda^4 \divides Z^3 - 1)$. \\
+            Let $m=-1$ and consider the fact that
+            $$u_4 - m = Y^3 + u_4 Z^3 - (Y^3 - 1) - u_4 (Z^3 - 1).$$
+            By \Cref{lmm:formula2}, we have that
+            $$u_4 - m = u_5 (λ^{n-1} X)^3 - (Y^3 - 1) - u_4 (Z^3 - 1).$$
+            Since, by \Cref{lmm:lambda_sq_div_new_X_cubed}, we know that
+            $$\lambda^2 \divides u_5 (λ^{n-1} X)^3$$
+            and, by \Cref{lmm:lambda_sq_div_lambda_fourth} and by assumption, we have that
+            $$\lambda^2 \divides Y^3 - 1 \land \lambda^2 \divides Z^3 - 1,$$
+            Then, we can conclude that
+            $$\lambda^2 \divides u_4 - m.$$
+      \item Case $(\lambda^4 \divides Y^3 - 1) \land (\lambda^4 \divides Z^3 + 1)$. \\
+            Let $m=1$ and proceed similarly to the first case.
+      \item Case $(\lambda^4 \divides Y^3 + 1) \land (\lambda^4 \divides Z^3 - 1)$. \\
+            Let $m=1$ and proceed similarly to the first case.
+      \item Case $(\lambda^4 \divides Y^3 + 1) \land (\lambda^4 \divides Z^3 + 1)$. \\
+            Let $m=-1$ and proceed similarly to the first case.
+  \end{itemize}
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:final}
+  \lean{Solution.final}
+  \leanok
+  \uses{def:Solution, def:Solution_u1_u2_u3_u4_u5_X_Y_Z}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S$ be a $solution$ with multiplicity $n$.\\\\
+  Then $Y^3 + (u_4 Z)^3 = u_5 (\lambda^{n-1} X)^3$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:formula2, lmm:by_kummer}
+  By \Cref{lmm:by_kummer}, we have that $u_4 \in \set{-1,1}$, which implies that $u_4^2 = 1$.\\
+  Therefore, by \Cref{lmm:formula2}, we can conclude that
+  $$Y^3 + (u_4 Z)^3 = u_5 (\lambda^{n-1} X)^3.$$
+\end{proof}
+
+\begin{definition}[Final Solution']
+  \label{def:Solution1_final}
+  \lean{Solution'_final}
+  \leanok
+  \uses{def:Solution1, def:Solution_u1_u2_u3_u4_u5_X_Y_Z, lmm:Solution_two_le_multiplicity,
+  lmm:final, lmm:coprime_Y_Z, lmm:lambda_not_dvd_Y, lmm:lambda_not_dvd_Z, lmm:lambda_ne_zero,
+  lmm:X_ne_zero}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $S = (a,b,c,u)$ be a $solution$ with multiplicity $n$.\\
+  Let $S_f' = (Y,u_4 Z, \lambda^{n-1} X, u_5)$.\\\\
+  Then $S_f'$ is a $solution'$.
+\end{definition}
+
+\begin{lemma}
+  \label{lmm:Solution1_final_multiplicity}
+  \lean{Solution'_final_multiplicity}
+  \leanok
+  \uses{def:Solution, def:Solution1_final}
+  Let $S$ be a $solution$ with multiplicity $n$.\\\\
+  Then $S_f'$ has multiplicity $n-1$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:lambda_not_dvd_X,
+  lmm:lambda_ne_zero}
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $(a',b',c',u') = S_f'$ be the final $solution'$, then
+  $\lambda^{n-1} \divides \lambda^{n-1} X = c'$.
+  By contradiction we assume that $\lambda^n \divides c'$ which implies that $\lambda \divides X$,
+  that contradicts \Cref{lmm:lambda_not_dvd_X} forcing us to conclude
+  that $\lambda^{n} \notdivides c'$. Then $S_f'$ has multiplicity $n-1$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:Solution1_final_multiplicity_lt}
+  \lean{Solution'_final_multiplicity_lt}
+  \leanok
+  \uses{def:Solution, def:Solution1_final}
+  Let $S$ be a $solution$ with multiplicity $n$.\\\\
+  Then $S_f'$ has multiplicity $m<n$.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{lmm:Solution1_final_multiplicity, lmm:Solution_two_le_multiplicity}
+  It directly follows from \Cref{lmm:Solution1_final_multiplicity} since $m = n-1 < n$.
+\end{proof}
+
+\begin{theorem}
+  \label{lmm:exists_Solution_multiplicity_lt}
+  \lean{Solution.exists_Solution_multiplicity_lt}
+  \leanok
+  \uses{def:Solution}
+  Let $S$ be a $solution$ with multiplicity $n$.\\\\
+  Then there is a $solution$ with multiplicity $m<n$.
+\end{theorem}
+\begin{proof}
+  \leanok
+  \uses{lmm:exists_Solution_of_Solution1, lmm:Solution1_final_multiplicity_lt}
+  It directly follows from \Cref{lmm:Solution1_final_multiplicity} and
+  \Cref{lmm:Solution1_final_multiplicity_lt}.
+\end{proof}
+
+\begin{theorem}[Generalised Fermat's Last Theorem for Exponent $3$]
+  \label{thm:fermatLastTheoremForThreeGen}
+  \lean{fermatLastTheoremForThreeGen}
+  \leanok
+  Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+  Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+  Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+  Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+  Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+  Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+  Let $a, b, c \in \cc{O}_K$ and $u \in \cc{O}^\times_K$ such that $c \neq 0$ and $\gcd(a,b)=1$.\\
+  Let $\lambda \notdivides a$, $\lambda \notdivides b$ and $\lambda \divides c$. \\\\
+  Then $a^3 + b^3 \neq u c^3$.
+\end{theorem}
+\begin{proof}
+  \leanok
+  \uses{lmm:exists_Solution_of_Solution1,
+  lmm:exists_minimal,
+  lmm:exists_Solution_multiplicity_lt}
+  By contradiction we assume that there are $a, b, c \in \cc{O}_K$ and $u \in \cc{O}^\times_K$
+  such that $c \neq 0$, $\gcd(a,b)=1$, $\lambda \notdivides a$, $\lambda \notdivides b$,
+  $\lambda \divides c$ and $a^3 + b^3 = u c^3$.
+  Then $S'=(a,b,c,u)$ is a $solution'$, which implies that there is a $solution$ $S$ by
+  \Cref{lmm:exists_Solution_of_Solution1}.
+  Then, by \Cref{lmm:exists_minimal}, there is a minimal solution $S_0$ with multiplicity $n$.
+  Hence, there is a $solution'$ $S_1'$ with multiplicity $m<n$ by \Cref{lmm:exists_Solution_multiplicity_lt},
+  which implies that there is a $solution$ $S_1$  with multiplicity $m$ by \Cref{lmm:exists_Solution_of_Solution1}.
+  However, this contradicts the minimality of $S_0$
+  forcing us to conclude that $a^3 + b^3 \neq u c^3$.
+\end{proof}
+
+\begin{lemma}
+  \label{lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen}
+  \lean{FermatLastTheoremForThree_of_FermatLastTheoremThreeGen}
+  \leanok
+  To prove \Cref{thm:fermatLastTheoremThree},
+  it suffices to prove \Cref{thm:fermatLastTheoremForThreeGen}. \\
+  Equivalently, \Cref{thm:fermatLastTheoremForThreeGen} implies
+  \Cref{thm:fermatLastTheoremThree}.
+\end{lemma}
+\begin{proof}
+  \leanok
+  \uses{
+  thm:fermatLastTheoremThree_of_three_dvd_only_c,
+  lmm:norm_lambda_prime,
+  lmm:norm_lambda,
+  lmm:lambda_dvd_three}
+  Assume that $\forall a, b, c \in \cc{O}_K,\, \forall u \in \cc{O}^\times_K$ such that $c \neq 0$,
+  $\gcd(a,b)=1$, $\lambda \notdivides a$, $\lambda \notdivides b$ and $\lambda \divides c$,
+  it holds that $a^3 + b^3 \neq u c^3$.
+  Let $a, b, c \in \Z$ such that $a\neq 0$, $b\neq 0$ and $c\neq 0$.
+  By \Cref{thm:fermatLastTheoremThree_of_three_dvd_only_c}, we can assume that
+  $\gcd(a,b)=1$, $3 \notdivides a$, $3 \notdivides b$, $3 \divides c$.
+  By contradiction we assume that $a^3 + b^3 = c^3$ and let $u = 1$.
+  \begin{itemize}
+      \item By contradiction we assume that $\lambda \divides a$, which implies that the norm of
+      $\lambda$ divides $a$ by \Cref{lmm:norm_lambda_prime}, which implies that $3 \divides a$ by
+      \Cref{lmm:norm_lambda}, that contradicts the assumption that $3 \notdivides a$ forcing us
+      to conclude that $\lambda \notdivides a$.
+      \item By contradiction we assume that $\lambda \divides b$, which implies that the norm of
+      $\lambda$ divides $b$ by \Cref{lmm:norm_lambda_prime}, which implies that $3 \divides b$ by
+      \Cref{lmm:norm_lambda}, that contradicts the assumption that $3 \notdivides b$ forcing us
+      to conclude that $\lambda \notdivides b$.
+      \item $\lambda \divides 3$ by \Cref{lmm:lambda_dvd_three} and $3 \divides c$,
+      then $\lambda \divides c$.
+  \end{itemize}
+  By our first assumption $a^3 + b^3 \neq u c^3 = 1 c^3 = c^3 = a^3 + b^3$ which is absurd.
+\end{proof}
+
+\section{Conclusion}
+% A FEW CONCLUDING WORDS / REMARKS
+
+\begin{theorem}[Fermat's Last Theorem for Exponent $3$]
+    \label{thm:fermatLastTheoremThree}
+    \lean{fermatLastTheoremThree}
+    \leanok
+    Let $a, b, c \in \N$. \\
+    Let $a \neq 0$, $b \neq 0$ and $c \neq 0$. \\\\
+    Then $a^3 + b^3 \neq c^3$.
+\end{theorem}
+\begin{proof}
+    \leanok
+    \uses{
+    lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen,
+    thm:fermatLastTheoremForThreeGen}
+    Apply \Cref{lmm:FermatLastTheoremForThree_of_FermatLastTheoremThreeGen}
+    and \Cref{thm:fermatLastTheoremForThreeGen}.
+\end{proof}

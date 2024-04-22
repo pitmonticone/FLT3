@@ -1,0 +1,569 @@
+\chapter{The Third Cyclotomic Field}
+%\label{chap:cyclo}
+%\addcontentsline{toc}{chapter}{The Third Cyclotomic Field}
+
+\begin{theorem}
+    \label{thm:mem}
+    \lean{IsCyclotomicExtension.Rat.Three.Units.mem}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\\\
+    Then $u \in \set{1, -1, \eta, -\eta, \eta^2, -\eta^2}$.
+\end{theorem}
+\begin{proof}
+    \leanok
+    By properties of cyclotomic fields
+    (see \href{https://pitmonticone.github.io/FLT3/docs/Mathlib/NumberTheory/NumberField/Embeddings.html#NumberField.InfinitePlace.card_eq_nrRealPlaces_add_nrComplexPlaces}{this lemma},
+    \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Embeddings.html#IsCyclotomicExtension.Rat.nrRealPlaces_eq_zero}{this lemma}
+    and \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Embeddings.html#IsCyclotomicExtension.Rat.nrComplexPlaces_eq_totient_div_two}{this lemma}
+    which have already been formalised and included in Mathlib), we know that $\rank{K} = 0$.
+    ... [TODO] ...
+    % TODO: Finish this informal proof.
+\end{proof}
+
+\begin{theorem}
+    \label{thm:not_exists_int_three_dvd_sub}
+    \lean{IsCyclotomicExtension.Rat.Three.Units.not_exists_int_three_dvd_sub}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $m \in \Z$. \\\\
+    Then $3 \notdivides \eta - m$.
+\end{theorem}
+\begin{proof}
+    \leanok
+    By properties of cyclotomic fields
+    (see \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.integralPowerBasis'}{this lemma},
+    \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.power_basis_int'_dim}{this lemma}
+    and \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.integralPowerBasis'_gen}{this lemma}
+    which have already been formalised and included in Mathlib),
+    we know that $\set{1,\eta}$ is an integral power basis of $\cc{O}_K$.
+    For every $\xi \in \cc{O}_K$, we define $\pi_1(\xi)$ and $\pi_2(\xi)$ to be the first and second
+    coordinates of $\xi$ with respect to the basis $\set{1,\eta} \in \cc{O}_K$, i.e.
+    $$\xi = \pi_1(\xi) + \pi_2(\xi)\eta.$$
+    By contradiction we assume that
+    $$\exists m \in \Z \text{ such that } 3 \divides \eta - m,$$
+    which implies that
+    $$\exists x \in \cc{O}_K \text{ such that } \eta - m = 3 x.$$
+    By linearity of $\pi_2$,
+    $$\pi_2(\eta) = \pi_2(3x + m) = 3\pi_2(x) + \pi_2(m).$$
+    Since $\pi_2(\eta) = 1$ and $\pi_2(m) = 0$, then we have that $3 \divides 1$, which is a contradiction.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_sq}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_sq}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\\\
+    Then $\lambda^2 = -3 \eta$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    By definition we have that $\lambda = \eta -1$, which implies that
+    $$\lambda^2 = (\eta - 1)^2 = \eta^2 - 2\eta + 1.$$
+    Since $\eta$ corresponds to a root of the equation $x^2 + x + 1 = 0$, then $\eta^2 = -1 - \eta$.
+    Substituting back, we can conclude that
+    $$\lambda^2 = (-1 - \eta) - 2\eta + 1 = -3\eta.$$
+\end{proof}
+
+\begin{theorem}
+    \label{lmm:eq_one_or_neg_one_of_unit_of_congruent}
+    \lean{IsCyclotomicExtension.Rat.Three.eq_one_or_neg_one_of_unit_of_congruent}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $u \in \cc{O}^\times_K$ be a unit. \\\\
+    If $\exists m \in \Z$ such that $\lambda^2 \divides u - m$, then
+    $u = 1 \lor u = -1$. \\
+    This is a special case of the Kummer's Lemma.
+\end{theorem}
+\begin{proof}
+    \leanok
+    \uses{thm:not_exists_int_three_dvd_sub, thm:mem, lmm:lambda_sq}
+    By \Cref{lmm:lambda_sq}, we have that $-3\eta = \lambda^2 \divides u - m$, which implies that
+    $3 \divides u - m$.\\
+    By \Cref{thm:mem}, we know that $u \in \set{1, -1, \eta, -\eta, \eta^2, -\eta^2}$. \\
+    We proceed by analysing each case:
+    \begin{itemize}
+        \item Case $u = 1 \lor u = -1$. This finishes the proof.
+        \item Case $u = \eta$.\\
+              Since $3 \divides u - m$, we have that $3 \divides \eta - m$, which contradicts
+              \Cref{thm:not_exists_int_three_dvd_sub} forcing us to conclude that $u \neq \eta$.
+        \item Case $u = -\eta$.\\
+              Since $3 \divides u - m$, we have that $3 \divides - \eta - m$, then by properties of
+              divisibility $3 \divides \eta + m$, which contradicts
+              \Cref{thm:not_exists_int_three_dvd_sub} forcing us to conclude that $u \neq -\eta$.
+        \item Case $u = \eta^2$.\\
+              Since $3 \divides u - m$, we have that $3 \divides \eta^2 - m$, which contradicts
+              \Cref{thm:not_exists_int_three_dvd_sub} since $\eta^2$ is a third root of unity
+              (see \href{https://pitmonticone.github.io/FLT3/docs/Mathlib/RingTheory/RootsOfUnity/Basic.html#IsPrimitiveRoot.pow_of_coprime}{Mathlib}),
+              forcing us to conclude that $u \neq \eta^2$.
+        \item Case $u = -\eta^2$.\\
+              Since $3 \divides u - m$, we have that $3 \divides - \eta^2 - m$, then by properties of
+              divisibility $3 \divides \eta^2 + m$, which contradicts
+              \Cref{thm:not_exists_int_three_dvd_sub} since $\eta^2$ is a third root of unity
+              (see \href{https://pitmonticone.github.io/FLT3/docs/Mathlib/RingTheory/RootsOfUnity/Basic.html#IsPrimitiveRoot.pow_of_coprime}{Mathlib}),
+              forcing us to conclude that $u \neq -\eta^2$.
+    \end{itemize}
+    Therefore, $u = 1 \lor u = -1$.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:norm_lambda}
+    \lean{IsCyclotomicExtension.Rat.Three.norm_lambda}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\\\
+    Then the norm of $\lambda$ is $3$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    Since the third cyclotomic polynomial over $\Q$ is irreducible, then the norm of $\lambda$ is $3$
+    by properties of primitive roots (see
+    \href{https://pitmonticone.github.io/FLT3/docs/Mathlib/NumberTheory/Cyclotomic/PrimitiveRoots.html#IsPrimitiveRoot.sub_one_norm_prime}{this lemma}
+    that has already been formalised and included in Mathlib).
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:norm_lambda_prime}
+    \lean{IsCyclotomicExtension.Rat.Three.norm_lambda_prime}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\\\
+    Then the norm of $\lambda$ is a prime number.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:norm_lambda}
+    It directly follows from \Cref{lmm:norm_lambda} since $3$ is a prime number.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_dvd_three}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_dvd_three}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\\\
+    Then $\lambda \divides 3$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:norm_lambda}
+    By properties of norms and divisibility, if the norm of an element in the ring of integers
+    divides a number, then the element itself must divide that number.
+    In this case, by \Cref{lmm:norm_lambda} we know that the norm of $\lambda$ is $3$, that divides $3$,
+    which implies that $\lambda \divides 3$.
+\end{proof}
+
+\begin{theorem}
+    \label{thm:zeta_sub_one_prime1}
+    \lean{IsPrimitiveRoot.zeta_sub_one_prime'}
+    \leanok
+    Let $p \in \N$ be prime. \\\\
+    If $\zeta_p$ is a primitive $p$-th root of unity, then $\zeta_p - 1$ is prime.
+\end{theorem}
+\begin{proof}
+    \leanok
+    This has already been formalised and included in \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.zeta_sub_one_prime'}{Mathlib}.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_prime}
+    \lean{IsPrimitiveRoot.lambda_prime}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\\\
+    Then $\lambda$ is prime.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{thm:zeta_sub_one_prime1}
+    Since $3$ is prime and $\zeta_3$ is a primitive third root of unity, then $\lambda$ is prime
+    by \Cref{thm:zeta_sub_one_prime1}.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_ne_zero}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_ne_zero}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\\\
+    Then $\lambda \neq 0$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_prime}
+    It directly follows from \Cref{lmm:lambda_prime} since zero is not prime.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_unit}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_not_unit}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\\\
+    Then $\lambda$ is not a unit.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_prime}
+    It directly follows from \Cref{lmm:lambda_prime} since prime numbers are not units.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:card_quot}
+    \lean{IsCyclotomicExtension.Rat.Three.card_quot}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $I$ be the ideal generated by $\lambda$. \\\\
+    Then $\cc{O}_K / I$ has cardinality $3$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:norm_lambda}
+    It directly follows from \Cref{lmm:norm_lambda} by the fundamental properties of ideals.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:two_ne_zero}
+    \lean{IsCyclotomicExtension.Rat.Three.two_ne_zero}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $I$ be the ideal generated by $\lambda$. \\
+    Let $2 \in \cc{O}_K ⧸ I$. \\\\
+    Then $2 \neq 0$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:norm_lambda}
+    By contradiction we assume that $2 \in I$, then, by definition,
+    $\lambda$ would divide $2 \in \cc{O}_K$.
+    Recall from \Cref{lmm:norm_lambda} that the norm of $\lambda$ is $3$.
+    If $\lambda$ divided $2$, then by properties of divisibility in number fields,
+    the norm of $\lambda$ would also divide $2$.
+    However $3 \notdivides 2$ showing a contradiction.
+    Therefore, $\lambda \notdivides 2$, then $2 \notin I$, which implies
+    that $2 \in \mathcal{O}_K / I$ is non-zero.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_not_dvd_two}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_not_dvd_two}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\\\
+    Then $\lambda \notdivides 2$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:two_ne_zero}
+    By contradiction we assume that $\lambda \divides 2$, that implies that $2 \in I$
+    from which it follows that $2 = 0$ contradicting \Cref{lmm:two_ne_zero}
+    forcing us to conclude that $\lambda \notdivides 2$.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:univ_quot}
+    \lean{IsCyclotomicExtension.Rat.Three.univ_quot}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $I$ be the ideal generated by $\lambda$. \\\\
+    Then $\cc{O}_K / I = \set{0, 1, -1}$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:card_quot, lmm:two_ne_zero}
+    %It is obvious that $\cc{O}_K / I \supseteq \set{0, 1, -1}$.
+    By \Cref{lmm:card_quot}, the cardinality of $\cc{O}_K / I$ is $3$,
+    so it suffices to prove that $1,-1$ and $0$ are distinct.\\
+    We proceed by contradiction analysing each case:
+    \begin{itemize}
+        \item Case $1 = -1$. By basic algebraic properties, $1 = -1$ implies that $2 = 0$,
+              which contradicts \Cref{lmm:two_ne_zero} forcing us to conclude that $1 \neq -1$.
+        \item Case $1 = 0$. Trivial contradiction.
+        \item Case $-1 = 0$. It implies that $1 = 0$, which is a contradiction.
+    \end{itemize}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:dvd_or_dvd_sub_one_or_dvd_add_one}
+    \lean{IsCyclotomicExtension.Rat.Three.dvd_or_dvd_sub_one_or_dvd_add_one}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $x \in \cc{O}_K$. \\\\
+    Then $(\lambda \divides x) \lor (\lambda \divides x-1) \lor (\lambda \divides x+1)$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:univ_quot}
+    Let $I$ be the ideal generated by $\lambda$. Let $\pi : \cc{O}_K \to \cc{O}_K / I$.\\
+    By \Cref{lmm:univ_quot}, we have that $\pi(x) \in \cc{O}_K / I = \set{0, 1, -1}$.\\
+    We proceed by analysing each case:
+    \begin{itemize}
+        \item Case $\pi(x) = 0$. By properties of ideals, $\lambda \divides x$.
+        \item Case $\pi(x) = 1$. Then $0=\pi(x)-1=\pi(x-1)$, which, by properties of ideals,
+        implies that $\lambda \divides x-1$.
+        \item Case $\pi(x) = -1$. Then $0=\pi(x)+1=\pi(x+1)$, which, by properties of ideals,
+        implies that $\lambda \divides x+1$.
+    \end{itemize}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:toInteger_cube_eq_one}
+    \lean{IsPrimitiveRoot.toInteger_cube_eq_one}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\\\
+    Then $\eta^3 = 1$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    Since $\zeta_3 \in K$ is a primitive third root of unity, then $\zeta_3^3 = 1$.
+    Given that $\eta \in \cc{O}_K$ is the element corresponding to $\zeta_3 \in K$, then
+    $\eta^3 = 1$ by the extension of the field properties into the ring of integers.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:eta_isUnit}
+    \lean{IsPrimitiveRoot.eta_isUnit}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\\\
+    Then $\eta$ is a unit.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:toInteger_cube_eq_one}
+    It directly follows from \Cref{lmm:toInteger_cube_eq_one}.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:toInteger_eval_cyclo}
+    \lean{IsPrimitiveRoot.toInteger_eval_cyclo}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\\\
+    Then $\eta^2 + \eta + 1 = 0$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    Since $\eta$ corresponds to a root of the equation $x^2 + x + 1 = 0$,
+    then $\eta^2 + \eta + 1 = 0$.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:cube_sub_one}
+    \lean{IsCyclotomicExtension.Rat.Three.cube_sub_one}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $x \in \cc{O}_K$. \\\\
+    Then $x^3 - 1 = (x - 1)(x - \eta)(x - \eta^ 2)$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:toInteger_cube_eq_one, lmm:toInteger_eval_cyclo}
+    Applying \Cref{lmm:toInteger_cube_eq_one} and \Cref{lmm:toInteger_eval_cyclo}, we have that
+    \begin{align*}
+        (x - 1)(x - \eta)(x - \eta^ 2)
+        &= x^3 - x^2 (\eta^2 + \eta + 1) + x (\eta^2 + \eta + \eta^3) - \eta^3 \\
+        &= x^3 - x^2 (\eta^2 + \eta + 1) + x (\eta^2 + \eta + 1) - 1 \\
+        &= x^3 - 1.
+    \end{align*}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $x \in \cc{O}_K$. \\\\
+    Then $\lambda \divides x(x - 1)(x - (\eta + 1))$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:dvd_or_dvd_sub_one_or_dvd_add_one, lmm:lambda_dvd_three}
+    By \Cref{lmm:dvd_or_dvd_sub_one_or_dvd_add_one}, we have that
+    $$(\lambda \divides x) \lor (\lambda \divides x-1) \lor (\lambda \divides x+1).$$
+    We proceed by analysing each case:
+    \begin{itemize}
+        \item Case $\lambda \divides x$. \\
+              By properties of divisibility, we have that
+              $\lambda \divides x(x - 1)(x - (\eta + 1))$.
+        \item Case $\lambda \divides x-1$. \\
+              By properties of divisibility, we have that
+              $\lambda \divides x(x - 1)(x - (\eta + 1))$.
+        \item Case $\lambda \divides x+1$.\\
+              By properties of divisibility, it suffices to prove that
+              $$\lambda \divides x - (\eta + 1) = x + 1 - (\eta - 1 + 3).$$
+              By definition of $\lambda$, we have that
+              $$x + 1 - (\eta - 1 + 3) = x + 1 - (\lambda + 3).$$
+              By properties of divisibility and \Cref{lmm:lambda_dvd_three}, we can deduce that
+              $\lambda \divides \lambda + 3$.\\
+              Therefore, by properties of divisibility, we can conclude that
+              $$\lambda \divides x(x - 1)(x - (\eta + 1)).$$
+    \end{itemize}
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $x \in \cc{O}_K$. \\\\
+    If $\lambda\divides x - 1$, then $\lambda^ 4 \divides x^3 - 1$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:cube_sub_one, lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}
+    Let $\lambda \divides x - 1$, which is equivalent to say that
+    $$\exists y\in \cc{O}_K \text{ such that } x - 1 = \lambda y.$$
+    By ring properties and \Cref{lmm:cube_sub_one}, we have that
+    $$x^3 - 1 = \lambda^3 (y (y - 1) (y - (\eta + 1))).$$
+    By properties of divisibility and \Cref{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one},
+    we can conclude that $$\lambda^ 4 \divides x^3 - 1.$$
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_add_one_of_dvd_add_one}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $x \in \cc{O}_K$. \\\\
+    If $\lambda \divides x + 1$, then $\lambda^4 \divides x ^ 3 + 1$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one}
+    By properties of divisibility, if $\lambda \divides x + 1$
+    then $$\lambda \divides - (x + 1) = (- x) - 1.$$
+    By \Cref{lmm:lambda_dvd_mul_sub_one_mul_sub_eta_add_one}, we can deduce that
+    $$\lambda^ 4 \divides (-x)^3 - 1.$$
+    By divisibility and ring properties we can conclude that $$\lambda^ 4 \divides x^3 + 1.$$
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}
+    \lean{IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd}
+    \leanok
+    Let $K = \Q(\zeta_3)$ be the third cyclotomic field. \\
+    Let $\cc{O}_K = \Z[\zeta_3]$ be the ring of integers of $K$. \\
+    Let $\cc{O}^\times_K$ be the group of units of $\cc{O}_K$. \\
+    Let $\zeta_3 \in K$ be any primitive third root of unity. \\
+    Let $\eta \in \cc{O}_K$ be the element corresponding to $\zeta_3 \in K$. \\
+    Let $\lambda \in \cc{O}_K$ be such that $\lambda = \eta -1$. \\
+    Let $x \in \cc{O}_K$. \\\\
+    If $\lambda \notdivides x$, then $(\lambda^4 \divides x^3 - 1)
+    \lor (\lambda^4 \divides x^3 + 1)$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    \uses{lmm:dvd_or_dvd_sub_one_or_dvd_add_one,
+    lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one,
+    lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one}
+    By \Cref{lmm:dvd_or_dvd_sub_one_or_dvd_add_one}, we have that
+    $$(\lambda \divides x) \lor (\lambda \divides x-1) \lor (\lambda \divides x+1).$$
+    We proceed by analysing each case:
+    \begin{itemize}
+        \item Case $\lambda \divides x$. From trivially contradictory hypotheses we can conclude that
+        $$(\lambda^4 \divides x^3 - 1) \lor (\lambda^4 \divides x^3 + 1).$$
+        \item Case $\lambda \divides x-1$. By \Cref{lmm:lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one},
+        we have that $\lambda^ 4 \divides x^3 - 1$, which implies that
+        $$(\lambda^4 \divides x^3 - 1) \lor (\lambda^4 \divides x^3 + 1).$$
+        \item Case $\lambda \divides x+1$. By \Cref{lmm:lambda_pow_four_dvd_cube_add_one_of_dvd_add_one},
+        we have that $\lambda^ 4 \divides x^3 + 1$, which implies that
+        $$(\lambda^4 \divides x^3 - 1) \lor (\lambda^4 \divides x^3 + 1).$$
+    \end{itemize}
+\end{proof}
