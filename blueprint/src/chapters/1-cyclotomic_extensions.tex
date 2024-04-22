@@ -1,9 +1,16 @@
-\chapter{Cyclotomic Extensions}
+\chapter{Third Cyclotomic Extensions}
+%\chapter{Third Cyclotomic Extensions}
 %\chapter{Cyclotomic Fields and Rings}
 %\chapter{Third Cyclotomic Fields and Rings}
 %\chapter{Cyclotomic Extensions of Fields and Rings}
 %\label{chap:cyclo}
 %\addcontentsline{toc}{chapter}{The Third Cyclotomic Field}
+
+% INSERT BASIC DEFINITIONS
+% - Number field
+% - Cyclotomic extension of a field
+% - Cyclotomic extension of a ring
+% - Group of units
 
 \begin{theorem}
     \label{thm:mem}
@@ -20,13 +27,22 @@
 \end{theorem}
 \begin{proof}
     \leanok
-    By properties of cyclotomic fields
+    Let $\cc{F}$ be the fundamental system of $K$. \\
+    By properties of cyclotomic fields, we know that $\rank{K} = 0$
     (see \href{https://pitmonticone.github.io/FLT3/docs/Mathlib/NumberTheory/NumberField/Embeddings.html#NumberField.InfinitePlace.card_eq_nrRealPlaces_add_nrComplexPlaces}{this lemma},
     \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Embeddings.html#IsCyclotomicExtension.Rat.nrRealPlaces_eq_zero}{this lemma}
     and \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Embeddings.html#IsCyclotomicExtension.Rat.nrComplexPlaces_eq_totient_div_two}{this lemma}
-    which have already been formalised and included in Mathlib), we know that $\rank{K} = 0$.
-    ... [TODO] ...
-    % TODO: Finish this informal proof.
+    which have already been formalised and included in Mathlib).
+    By the Dirichlet Unit Theorem (see \href{https://pitmonticone.github.io/FLT3/docs/Mathlib/NumberTheory/NumberField/Units.html#NumberField.Units.exist_unique_eq_mul_prod}{Mathlib}),
+    we know that
+    $$\exists x \in K \text{ with finite order, such that } u = x \prod_{v\in\cc{F}} v,$$
+    but since $\rank{K} = 0$, then $\cc{F} = \emptyset$, which implies that $u = x$.\\
+    Since $u = x$ has finite order, by properties of primitive roots
+    (see \href{https://pitmonticone.github.io/FLT3/docs/Mathlib/NumberTheory/Cyclotomic/PrimitiveRoots.html#IsPrimitiveRoot.exists_pow_or_neg_mul_pow_of_isOfFinOrder}{this lemma}
+    that has already been formalised and included in Mathlib), we can deduce that
+    $$\exists r < 3 \text{ such that } u = \eta^r \lor u = -\eta^r.$$
+    Therefore, we can conclude
+    $$u \in \setb{\pm \eta^r}{r \in \set{0,1,2}} = \set{1, -1, \eta, -\eta, \eta^2, -\eta^2}.$$
 \end{proof}
 
 \begin{theorem}
@@ -43,12 +59,11 @@
 \end{theorem}
 \begin{proof}
     \leanok
-    By properties of cyclotomic fields
+    By properties of cyclotomic fields, we know that $\set{1,\eta}$ is an integral power basis of $\cc{O}_K$
     (see \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.integralPowerBasis'}{this lemma},
     \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.power_basis_int'_dim}{this lemma}
     and \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.integralPowerBasis'_gen}{this lemma}
-    which have already been formalised and included in Mathlib),
-    we know that $\set{1,\eta}$ is an integral power basis of $\cc{O}_K$.
+    which have already been formalised and included in Mathlib).\\
     For every $\xi \in \cc{O}_K$, we define $\pi_1(\xi)$ and $\pi_2(\xi)$ to be the first and second
     coordinates of $\xi$ with respect to the basis $\set{1,\eta} \in \cc{O}_K$, i.e.
     $$\xi = \pi_1(\xi) + \pi_2(\xi)\eta.$$
