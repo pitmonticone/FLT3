@@ -1,4 +1,3 @@
-fermatLastTheoremWith_of_fermatLastTheoremWith_coprime
 IsCyclotomicExtension.Rat.Three.Units.mem
 IsCyclotomicExtension.Rat.Three.Units.not_exists_int_three_dvd_sub
 IsCyclotomicExtension.Rat.Three.lambda_sq
@@ -29,6 +28,7 @@ fermatLastTheoremThree_case_1
 three_dvd_gcd_of_dvd_a_of_dvd_b
 three_dvd_gcd_of_dvd_a_of_dvd_c
 three_dvd_gcd_of_dvd_b_of_dvd_c
+fermatLastTheoremWith_of_fermatLastTheoremWith_coprime
 fermatLastTheoremThree_of_three_dvd_only_c
 Solution'
 Solution

@@ -28,6 +28,15 @@
 %%\author{Riccardo Brasca, Sanyam Gupta, Omar Haddad, David Lowry-Duda,
 %% Lorenzo Luccioli, \textbf{Pietro Monticone}, Alexis Saurin, Florent Schaffhauser}
 
+% Set hyperref parameters
+\hypersetup{
+    colorlinks=true, % TRUE: colors the text of the links; FALSE: puts a colored box around them
+    linkcolor=NavyBlue, % Sets color of internal links (\ref or \label)
+    urlcolor=NavyBlue, % Sets color of external links
+    citecolor=NavyBlue, % Sets color of citation links (\cite).
+    anchorcolor=NavyBlue % Sets color of anchor text
+}
+
 \home{https://pitmonticone.github.io/FLT3}
 \github{https://github.com/pitmonticone/FLT3}
 \dochome{https://pitmonticone.github.io/FLT3/docs}
@@ -36,7 +45,7 @@
 \title{Fermat's Last Theorem for Exponent 3}
 
 % Set source for bibliography
-% \addbibresource{references.bib}
+\addbibresource{references.bib}
 
 \begin{document}
 \maketitle
@@ -44,7 +53,7 @@
 \input{main}
 
 % Bibliography
-% \nocite{*}
-% \printbibliography[title=References]
-% \addcontentsline{toc}{chapter}{References}
+\nocite{*}
+\printbibliography[title=References]
+\addcontentsline{toc}{chapter}{References}
 \end{document}
