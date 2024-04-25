@@ -2,54 +2,34 @@
 %\label{chap:preliminaries}
 %\addcontentsline{toc}{chapter}{Preliminaries}
 
-% \section{Notation}
+\section{Notation}
 
-% \begin{center}
-%     \begin{tabular}{>{\centering}m{1.5cm} m{6cm} m{6cm}}
-%     \toprule
-%     \textbf{Syntax} & \textbf{Semantics} & \textbf{Notes} \\
-%     \midrule
-%     \(\lnot\) & Logical negation & \\
-%     \(\top\)  & Logical truth / Tautology & \\
-%     \(\bot\)  & Logical falsehood / Contradiction & \\
-%     \(\land\) & Logical conjunction & \\
-%     \(\lor\) & Logical inclusive disjunction & \\
-%     \(\veebar\) & Logical exclusive disjunction & Mainly used in mathematical logic\\
-%     \(\oplus\) & Logical exclusive disjunction & Mainly used in computer science\\
-%     \(\rightarrow\) &  & \\
-%     \(\Rightarrow\) &  & \\
-%     \(\leftrightarrow\) &  & \\
-%     \(\Leftrightarrow\) &  & \\
-%     \(\iff\) &  & \\
-%     \(:=\) & Definition & Definiendum \(:=\) Definiens\\
-%     \(:\Leftrightarrow\) & Definition by logical equivalence & Definiendum \(:\Leftrightarrow\) Definiens\\
-%     \(:\iff\) & Definition by logical equivalence & Definiendum \(:\iff\) Definiens\\
-%     \(\vdash\) &  & \(x\vdash y\) means \(x\text{ proves }y\) \\
-%     \(\vDash\) &  & \(x\vDash y\) means \(x\text{ models }y\) \\
-%     \(\because\) & Logical justification  & \(p\because h\) means \(p\text{ because }h\) \\
-%     \(\therefore\) & Logical consequence & \(p\therefore q\) means \(p\text{ therefore }q\) \\
-%     \(\forall\) & Universal quantification & \\
-%     \(\exists\) & Existential quantification & \\
-%     \(\exists!\) & Unique existential quantification & \\
-%     \(\{\ldots\}\) & Unordered collection & \\
-%     \((\ldots)\) & Ordered collection & \\
-%     \N & Set of natural numbers & \\
-%     \Z & Set of integer numbers & \\
-%     \Q & Set of rational numbers & \\
-%     \R & Set of real numbers & \\
-%     \C & Set of complex numbers & \\
-%     \K & Generic field & \\
-%     \F & Generic field & \\
-%     \bottomrule
-%     \end{tabular}
-% \end{center}
-
-% \section{Basic Definitions}
+\begin{center}
+    \begin{tabular}{>{\centering}m{1.5cm} m{6cm}}
+    \toprule
+    \textbf{Syntax} & \multicolumn{1}{c}{\textbf{Semantics}} \\
+    \midrule
+    \(\lnot\) & Logical negation \\
+    \(\top\)  & Logical truth / Tautology \\
+    \(\bot\)  & Logical falsehood / Contradiction \\
+    \(\land\) & Logical conjunction \\
+    \(\lor\) & Logical inclusive disjunction \\
+    \(:=\)   & Definition \\
+    \(\forall\) & Universal quantification \\
+    \(\exists\) & Existential quantification \\
+    \(\exists!\) & Unique existential quantification \\
+    \N & Set of natural numbers \\
+    \Z & Set of integer numbers \\
+    \Q & Set of rational numbers \\
+    \R & Set of real numbers \\
+    \C & Set of complex numbers \\
+    \bottomrule
+    \end{tabular}
+\end{center}
 
 
-% NOTATION?
+\section{Definitions}
 
-% INSERT BASIC DEFINITIONS
 % - Number field
 % - Cyclotomic extension of a field
 % - Cyclotomic extension of a ring
@@ -68,3 +48,32 @@
 % \begin{definition}[Number Field]
 %     \label{def:number_field}
 % \end{definition}
+
+\section{Results}
+
+\begin{theorem}
+    \label{thm:zeta_sub_one_prime1}
+    \lean{IsPrimitiveRoot.zeta_sub_one_prime'}
+    \leanok
+    Let $p \in \N$ be prime. \\\\
+    If $\zeta_p$ is a primitive $p$-th root of unity, then $\zeta_p - 1$ is prime.
+\end{theorem}
+\begin{proof}
+    \leanok
+    This has already been formalised and included in \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/Cyclotomic/Rat.html#IsPrimitiveRoot.zeta_sub_one_prime'}{Mathlib}.
+\end{proof}
+
+\begin{lemma}
+    \label{lmm:fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
+    \lean{fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}
+    \leanok
+    Let $R$ be a commutative semiring, domain and normalised gcd monoid.\\% ASK EXPERTS
+    Let $a, b, c \in R$. \\
+    Let $n \in \N$. \\\\
+    Then, to prove Fermat's Last Theorem for exponent $n$ in $R$,
+    one can assume, without loss of generality, that $\gcd(a,b,c)=1$.
+  \end{lemma}
+  \begin{proof}
+    \leanok
+    This has already been formalised and included in \href{https://pitmonticone.github.io/FLT3/docs/FLT3/Mathlib/NumberTheory/FLT/Basic.html#fermatLastTheoremWith_of_fermatLastTheoremWith_coprime}{Mathlib}.
+  \end{proof}
