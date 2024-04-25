@@ -43,7 +43,7 @@ lake build
 inv all
 ```
 
-## References
+## Main References
 
 1. Hindry. [*Arithmetics*](http://dx.doi.org/10.1007/978-1-4471-2131-2).
 2. Avigad and Massot. [*Mathematics in Lean*](https://leanprover-community.github.io/mathematics_in_lean/).
