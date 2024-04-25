@@ -39,16 +39,18 @@
     \label{def:monoid}
     Let \(X\) be a non-empty set.\\
     Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
-    A \textbf{monoid} is a pair \(\cc{M}:= (X, \circ)\) satisfying:
+    A \textit{monoid} is a pair \(\cc{M}:= (X, \circ)\) satisfying:
     \begin{enumerate}
         \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
         \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
     \end{enumerate}
 \end{definition}
+
 \begin{definition}[Commutative Monoid]
+    \label{def:commutative_monoid}
     Let \(X\) be a non-empty set.\\
     Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
-    A \textbf{commutative monoid} is a pair \(\cc{M}_a:= (X, \circ)\) satisfying:
+    A \textit{commutative monoid} is a pair \(\cc{M}_a:= (X, \circ)\) satisfying:
     \begin{enumerate}
         \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
         \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
@@ -58,6 +60,26 @@
 
 \begin{definition}[Group]
     \label{def:group}
+    Let \(X\) be a non-empty set.\\
+    Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
+    A \textit{group} is a pair \(\cc{G}:= (X, \circ)\) satisfying:
+    \begin{enumerate}
+        \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
+        \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
+        \item [\textbf{(I)}] \(\forall x \in X,\ \exists x'\in X: x\circ x' = x'\circ x = e\)
+    \end{enumerate}
+\end{definition}
+\begin{definition}[Commutative Group]
+    \label{def:commutative_group}
+    Let \(X\) be a non-empty \bdefref{set}{set}.\\
+    Let \(\circ: X\times X \to X\) be an \bdefref{internal-composition-law}{internal composition law} on \(X\). \\\\
+    A \textit{commutative group} is a pair \(\cc{G}_a:= (X, \circ)\) satisfying:
+    \begin{enumerate}
+        \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
+        \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
+        \item [\textbf{(I)}] \(\forall x \in X,\ \exists x'\in X: x\circ x' = x'\circ x = e\)
+        \item [\textbf{(C)}] \(\forall x,y\in X,\ x\circ y = y\circ x\)
+    \end{enumerate}
 \end{definition}
 
 \begin{definition}[Semiring]
