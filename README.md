@@ -4,6 +4,7 @@
 [![CI](https://github.com/pitmonticone/FLT3/actions/workflows/push.yml/badge.svg)](https://github.com/pitmonticone/FLT3/actions/workflows/push.yml)
 [![Documentation: Website](https://img.shields.io/badge/Documentation-Website-blue.svg)](https://pitmonticone.github.io/FLT3/docs/)
 [![Blueprint: Website](https://img.shields.io/badge/Blueprint-Website-red.svg)](https://pitmonticone.github.io/FLT3/blueprint)
+[![Blueprint: Dependency Graph](https://img.shields.io/badge/Blueprint-Dependency_Graph-red.svg)](https://pitmonticone.github.io/FLT3/blueprint/dep_graph_document.html)
 [![Blueprint: Paper](https://img.shields.io/badge/Blueprint-Paper-darkred.svg)](https://pitmonticone.github.io/FLT3/blueprint.pdf)
 
 This repository contains a formalised proof of Fermat's Last Theorem for the exponent 3 using the Lean proof assistant. It provides both the proof files and a blueprint for a web-based documentation, along with an accompanying paper.
