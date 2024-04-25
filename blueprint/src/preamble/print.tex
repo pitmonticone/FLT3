@@ -19,7 +19,9 @@
 
 
 % \newtheoremstyle{name}{spaceabove}{spacebelow}{bodyfont}{indent}{headfont}{headpunctuation}{headspace}{headspec}
-\newtheoremstyle{break} % Name of the style
+
+% THEOREM STYLE
+\newtheoremstyle{theorem-break} % Name of the style
   {12pt} % Space above
   {12pt} % Space below
   {\itshape} % Body font: change to \normalfont for upright text
@@ -29,10 +31,20 @@
   {\newline} % Space after theorem head
   {} % Theorem head spec
 
+% DEFINITION STYLE
+\newtheoremstyle{definition-break} % Name of the style
+  {12pt} % Space above
+  {12pt} % Space below
+  {\normalfont} % Body font: change to \normalfont for upright text
+  {} % Indent amount
+  {\bfseries} % Theorem head font
+  {.} % Punctuation after theorem head
+  {\newline} % Space after theorem head
+  {} % Theorem head spec
+
 %\theoremstyle{definition} % Applying the style
-\theoremstyle{break}
+\theoremstyle{definition-break}
 \newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{definition}[theorem]{Definition}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{sublemma}[theorem]{Sub-lemma}
@@ -41,6 +53,9 @@
 \newtheorem{example}[theorem]{Example}
 % Ensure theorems are numbered within unnumbered chapters
 % \counterwithin{theorem}{chapter}
+%\theoremstyle{definition-break}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}[theorem]{Axiom}
 
 % Dummy macros that make sense only for web version.
 \newcommand{\lean}[1]{}

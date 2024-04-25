@@ -31,27 +31,76 @@
     \end{tabular}
 \end{center}
 
+\newpage
 
 \section{Definitions}
 
-% - Number field
-% - Cyclotomic extension of a field
-% - Cyclotomic extension of a ring
-% - Group of units
-% - Fundamental system
+\begin{definition}[Monoid]
+    \label{def:monoid}
+    Let \(X\) be a non-empty set.\\
+    Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
+    A \textbf{monoid} is a pair \(\cc{M}:= (X, \circ)\) satisfying:
+    \begin{enumerate}
+        \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
+        \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
+    \end{enumerate}
+\end{definition}
+\begin{definition}[Commutative / Abelian Monoid]
+    Let \(X\) be a non-empty set.\\
+    Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
+    A \textbf{commutative} or \textbf{abelian monoid} is a pair \(\cc{M}_a:= (X, \circ)\) satisfying:
+    \begin{enumerate}
+        \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
+        \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
+        \item [\textbf{(C)}] \(\forall x,y\in X,\ x\circ y = y\circ x\)
+    \end{enumerate}
+\end{definition}
 
-% \begin{definition}[Group]
-%     \label{def:number_field}
-% \end{definition}
-% \begin{definition}[Ring]
-%     \label{def:number_field}
-% \end{definition}
-% \begin{definition}[Field]
-%     \label{def:number_field}
-% \end{definition}
-% \begin{definition}[Number Field]
-%     \label{def:number_field}
-% \end{definition}
+\begin{definition}[Group]
+    \label{def:group}
+\end{definition}
+
+\begin{definition}[Semiring]
+    \label{def:semiring}
+\end{definition}
+
+\begin{definition}[Commutative Semiring]
+    \label{def:commutative_semiring}
+\end{definition}
+
+\begin{definition}[Ring]
+    \label{def:ring}
+\end{definition}
+
+\begin{definition}[Field]
+    \label{def:field}
+\end{definition}
+\begin{definition}[Algebraic Number Field / Number Field]
+    \label{def:number_field}
+\end{definition}
+
+\begin{definition}[Fundamental System]
+    \label{def:fundamental_system}
+\end{definition}
+
+\begin{definition}[Unit]
+    \label{def:primitive_element}
+\end{definition}
+\begin{definition}[Primitive Root of Unity]
+    \label{def:primitive_root_of_unity}
+\end{definition}
+
+\begin{definition}[Cyclotomic Polynomial]
+    \label{def:cyclotomic_polynomial}
+\end{definition}
+\begin{definition}[Cyclotomic Extension of a Ring / Cyclotomic Ring]
+    \label{def:cyclotomic_extension_field}
+\end{definition}
+\begin{definition}[Cyclotomic Extension of a Fiel / Cyclotomic Field]
+    \label{def:cyclotomic_extension_field}
+\end{definition}
+
+
 
 \section{Results}
 
