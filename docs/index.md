@@ -8,7 +8,7 @@ usemathjax: true
 
 # Fermat's Last Theorem for Exponent 3
 
-A formalised proof of Fermat's Last Theorem for exponent 3 in the Lean proof assistant.
+This project formalises Fermat's Last Theorem for the exponent 3 using the Lean 4 interactive proof assistant.
 
 ## Build Lean Files
 

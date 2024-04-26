@@ -7,7 +7,8 @@
 [![Blueprint: Dependency Graph](https://img.shields.io/badge/Blueprint-Dependency_Graph-red.svg)](https://pitmonticone.github.io/FLT3/blueprint/dep_graph_document.html)
 [![Blueprint: Paper](https://img.shields.io/badge/Blueprint-Paper-darkred.svg)](https://pitmonticone.github.io/FLT3/blueprint.pdf)
 
-This repository contains a formalised proof of Fermat's Last Theorem for the exponent 3 using the Lean proof assistant. It provides both the proof files and a blueprint for a web-based documentation, along with an accompanying paper.
+This repository contains a formalised proof of Fermat's Last Theorem for the exponent 3 using the Lean 4 interactive proof assistant.
+It provides both the proof files and a blueprint for a web-based documentation, along with an accompanying paper.
 
 ## Build Lean Files
 
