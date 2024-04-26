@@ -53,7 +53,7 @@ $\zeta_n$ & Primitive $n$-th root of unity \\
     \label{def:commutative_monoid}
     Let \(X\) be a non-empty set.\\
     Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
-    A \textit{commutative monoid} is a pair \(\cc{M}_a:= (X, \circ)\) satisfying:
+    A \textit{commutative monoid} is a pair \(\cc{M}_c:= (X, \circ)\) satisfying:
     \begin{enumerate}
         \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
         \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
@@ -91,7 +91,7 @@ $\zeta_n$ & Primitive $n$-th root of unity \\
     \label{def:commutative_group}
     Let \(X\) be a non-empty set.\\
     Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
-    A \textit{commutative group} is a pair \(\cc{G}_a:= (X, \circ)\) satisfying:
+    A \textit{commutative group} is a pair \(\cc{G}_c:= (X, \circ)\) satisfying:
     \begin{enumerate}
         \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
         \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
@@ -156,7 +156,7 @@ $\zeta_n$ & Primitive $n$-th root of unity \\
     Let \(X\) be a non-empty set. \\
     Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
     Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
-    A \textit{commutative ring} is a triple \(\cc{R}:= (X, +, \cdot)\) satisfying:
+    A \textit{commutative ring} is a triple \(\cc{R}_c:= (X, +, \cdot)\) satisfying:
     \begin{enumerate}
         \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
         \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
@@ -172,6 +172,42 @@ $\zeta_n$ & Primitive $n$-th root of unity \\
 
 \begin{definition-pre}[Domain]
     \label{def:domain}
+    Let \(X\) be a non-empty set. \\
+    Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
+    Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
+    A \textit{domain} is a triple \(\cc{D}:= (X, +, \cdot)\) satisfying:
+    \begin{enumerate}
+        \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
+        \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
+        \item [\textbf{(N1)}] \(\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x\)
+        \item [\textbf{(I1)}] \(\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0\)
+        \item [\textbf{(A2)}] \(\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z\)
+        \item [\textbf{(N2)}] \(\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x\)
+        \item [\textbf{(D1)}] \(\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z\)
+        \item [\textbf{(D2)}] \(\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z\)
+        \item [\textbf{(Z2)}] \(\forall x,y \in X,\ x\cdot y = 0 \Rightarrow x=0 \lor y=0\)
+    \end{enumerate}
+\end{definition-pre}
+
+\begin{definition-pre}[Commutative Domain]
+    \label{def:commutative_domain}
+    \label{def:domain}
+    Let \(X\) be a non-empty set. \\
+    Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
+    Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
+    A \textit{commutative} or \textit{integral domain} is a triple \(\cc{D}_c:= (X, +, \cdot)\) satisfying:
+    \begin{enumerate}
+        \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
+        \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
+        \item [\textbf{(N1)}] \(\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x\)
+        \item [\textbf{(I1)}] \(\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0\)
+        \item [\textbf{(A2)}] \(\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z\)
+        \item [\textbf{(C2)}] \(\forall x,y\in X,\ x\cdot y = y\cdot x\)
+        \item [\textbf{(N2)}] \(\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x\)
+        \item [\textbf{(D1)}] \(\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z\)
+        \item [\textbf{(D2)}] \(\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z\)
+        \item [\textbf{(Z2)}] \(\forall x,y \in X,\ x\cdot y = 0 \Rightarrow x=0 \lor y=0\)
+    \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[Field]
@@ -197,7 +233,7 @@ $\zeta_n$ & Primitive $n$-th root of unity \\
     Let \(X\) be a non-empty set. \\
     Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
     Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
-    A \textit{commutative field} is a triple \(\bb{F}:= (X, +, \cdot)\) satisfying:
+    A \textit{commutative field} is a triple \(\bb{F}_c:= (X, +, \cdot)\) satisfying:
     \begin{enumerate}
         \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
         \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
