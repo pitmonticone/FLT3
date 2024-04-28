@@ -22,7 +22,9 @@ $\N$ & Set of natural numbers \\
 $\Z$ & Set of integer numbers \\
 $\Z_n$ & Set of integers modulo $n$ \\
 $\Q$ & Set of rational numbers \\
-$\bb{F}$ & Generic field \\
+$\F$ or $\K$ & Generic field \\
+$X/Y$ & Field extension \\
+$[Y:X]$ & Degree of field extension \\
 $\times$ & Cartesian product \\
 $[n]$ & Equivalence class of $n$ \\
 $\divides$ & Divisibility relation \\
@@ -39,212 +41,262 @@ $\zeta_n$ & Primitive $n$-th root of unity \\
 
 \begin{definition-pre}[Monoid]
     \label{def:monoid}
-    Let \(X\) be a non-empty set.\\
-    Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
-    A \textit{monoid} is a pair \(\cc{M}:= (X, \circ)\) satisfying:
+    Let $X$ be a non-empty set.\\
+    Let $\circ: X\times X \to X$ be an internal composition law on $X$. \\\\
+    A \textit{monoid} is a pair $\cc{M}:= (X, \circ)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
-        \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
+        \item [\textbf{(A)}] $\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z$
+        \item [\textbf{(N)}] $\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x$
     \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[Commutative Monoid]
     \label{def:commutative_monoid}
-    Let \(X\) be a non-empty set.\\
-    Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
-    A \textit{commutative monoid} is a pair \(\cc{M}_c:= (X, \circ)\) satisfying:
+    Let $X$ be a non-empty set.\\
+    Let $\circ: X\times X \to X$ be an internal composition law on $X$. \\\\
+    A \textit{commutative monoid} is a pair $\cc{M}_c:= (X, \circ)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
-        \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
-        \item [\textbf{(C)}] \(\forall x,y\in X,\ x\circ y = y\circ x\)
+        \item [\textbf{(A)}] $\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z$
+        \item [\textbf{(N)}] $\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x$
+        \item [\textbf{(C)}] $\forall x,y\in X,\ x\circ y = y\circ x$
     \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[GCD Monoid]
     \label{def:gcd_monoid}
-    Let \(X\) be a non-empty set.\\
-    Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
-    A \textit{gcd monoid} is a pair \(\cc{M}_{\gcd}:= (X, \circ)\) satisfying:
+    Let $X$ be a non-empty set.\\
+    Let $\circ: X\times X \to X$ be an internal composition law on $X$. \\\\
+    A \textit{gcd monoid} is a pair $\cc{M}_{\gcd}:= (X, \circ)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
-        \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
-        \item [\textbf{(C)}] \(\forall x,y\in X,\ x\circ y = y\circ x\)
-        \item [\textbf{(G)}] \(\forall x,y\in X,\ \exists d \in X : (d\divides x) \land (d\divides y)
-                             \land \left(\forall c \in X,\ c\divides x \land c\divides y \Rightarrow c\divides d\right)\)
+        \item [\textbf{(A)}] $\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z$
+        \item [\textbf{(N)}] $\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x$
+        \item [\textbf{(C)}] $\forall x,y\in X,\ x\circ y = y\circ x$
+        \item [\textbf{(G)}] $\forall x,y\in X,\ \exists d \in X : (d\divides x) \land (d\divides y)
+                             \land \left(\forall c \in X,\ c\divides x \land c\divides y \Rightarrow c\divides d\right)$
     \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[Group]
     \label{def:group}
-    Let \(X\) be a non-empty set.\\
-    Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
-    A \textit{group} is a pair \(\cc{G}:= (X, \circ)\) satisfying:
+    Let $X$ be a non-empty set.\\
+    Let $\circ: X\times X \to X$ be an internal composition law on $X$. \\\\
+    A \textit{group} is a pair $\cc{G}:= (X, \circ)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
-        \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
-        \item [\textbf{(I)}] \(\forall x \in X,\ \exists x'\in X: x\circ x' = x'\circ x = e\)
+        \item [\textbf{(A)}] $\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z$
+        \item [\textbf{(N)}] $\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x$
+        \item [\textbf{(I)}] $\forall x \in X,\ \exists x'\in X: x\circ x' = x'\circ x = e$
     \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[Commutative Group]
     \label{def:commutative_group}
-    Let \(X\) be a non-empty set.\\
-    Let \(\circ: X\times X \to X\) be an internal composition law on \(X\). \\\\
-    A \textit{commutative group} is a pair \(\cc{G}_c:= (X, \circ)\) satisfying:
+    Let $X$ be a non-empty set.\\
+    Let $\circ: X\times X \to X$ be an internal composition law on $X$. \\\\
+    A \textit{commutative group} is a pair $\cc{G}_c:= (X, \circ)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A)}] \(\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z\)
-        \item [\textbf{(N)}] \(\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x\)
-        \item [\textbf{(I)}] \(\forall x \in X,\ \exists x'\in X: x\circ x' = x'\circ x = e\)
-        \item [\textbf{(C)}] \(\forall x,y\in X,\ x\circ y = y\circ x\)
+        \item [\textbf{(A)}] $\forall x,y,z\in X,\ (x\circ y)\circ z= x\circ (y\circ z) = x\circ y \circ z$
+        \item [\textbf{(N)}] $\exists e \in X : \forall x \in X,\ x\circ e = e \circ x = x$
+        \item [\textbf{(I)}] $\forall x \in X,\ \exists x'\in X: x\circ x' = x'\circ x = e$
+        \item [\textbf{(C)}] $\forall x,y\in X,\ x\circ y = y\circ x$
     \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[Semiring]
     \label{def:semiring}
-    Let \(X\) be a non-empty set. \\
-    Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
-    Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
-    A \textit{semiring} is a triple \(\cc{S}:= (X, +, \cdot)\) satisfying:
+    Let $X$ be a non-empty set. \\
+    Let $+: X\times X \to X$ be an additive internal composition law on $X$. \\
+    Let $\cdot: X\times X \to X$ be a multiplicative internal composition law on $X$. \\\\
+    A \textit{semiring} is a triple $\cc{S}:= (X, +, \cdot)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
-        \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
-        \item [\textbf{(N1)}] \(\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x\)
-        \item [\textbf{(A2)}] \(\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z\)
-        \item [\textbf{(N2)}] \(\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x\)
-        \item [\textbf{(D1)}] \(\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z\)
-        \item [\textbf{(D2)}] \(\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z\)
+        \item [\textbf{(A1)}] $\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z$
+        \item [\textbf{(C1)}] $\forall x,y\in X,\ x+y = y+x$
+        \item [\textbf{(N1)}] $\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x$
+        \item [\textbf{(A2)}] $\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z$
+        \item [\textbf{(N2)}] $\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x$
+        \item [\textbf{(D1)}] $\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z$
+        \item [\textbf{(D2)}] $\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z$
     \end{enumerate}
 \end{definition-pre}
 \begin{definition-pre}[Commutative Semiring]
     \label{def:commutative_semiring}
-    Let \(X\) be a non-empty set. \\
-    Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
-    Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
-    A \textit{commutative semiring} is a triple \(\cc{S}_c:= (X, +, \cdot)\) satisfying:
+    Let $X$ be a non-empty set. \\
+    Let $+: X\times X \to X$ be an additive internal composition law on $X$. \\
+    Let $\cdot: X\times X \to X$ be a multiplicative internal composition law on $X$. \\\\
+    A \textit{commutative semiring} is a triple $\cc{S}_c:= (X, +, \cdot)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
-        \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
-        \item [\textbf{(N1)}] \(\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x\)
-        \item [\textbf{(A2)}] \(\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z\)
-        \item [\textbf{(C2)}] \(\forall x,y\in X,\ x\cdot y = y\cdot x\)
-        \item [\textbf{(N2)}] \(\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x\)
-        \item [\textbf{(D1)}] \(\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z\)
-        \item [\textbf{(D2)}] \(\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z\)
+        \item [\textbf{(A1)}] $\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z$
+        \item [\textbf{(C1)}] $\forall x,y\in X,\ x+y = y+x$
+        \item [\textbf{(N1)}] $\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x$
+        \item [\textbf{(A2)}] $\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z$
+        \item [\textbf{(C2)}] $\forall x,y\in X,\ x\cdot y = y\cdot x$
+        \item [\textbf{(N2)}] $\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x$
+        \item [\textbf{(D1)}] $\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z$
+        \item [\textbf{(D2)}] $\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z$
     \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[Ring]
     \label{def:ring}
-    Let \(X\) be a non-empty set. \\
-    Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
-    Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
-    A \textit{ring} is a triple \(\cc{R}:= (X, +, \cdot)\) satisfying:
+    Let $X$ be a non-empty set. \\
+    Let $+: X\times X \to X$ be an additive internal composition law on $X$. \\
+    Let $\cdot: X\times X \to X$ be a multiplicative internal composition law on $X$. \\\\
+    A \textit{ring} is a triple $\cc{R}:= (X, +, \cdot)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
-        \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
-        \item [\textbf{(N1)}] \(\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x\)
-        \item [\textbf{(I1)}] \(\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0\)
-        \item [\textbf{(A2)}] \(\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z\)
-        \item [\textbf{(N2)}] \(\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x\)
-        \item [\textbf{(D1)}] \(\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z\)
-        \item [\textbf{(D2)}] \(\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z\)
+        \item [\textbf{(A1)}] $\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z$
+        \item [\textbf{(C1)}] $\forall x,y\in X,\ x+y = y+x$
+        \item [\textbf{(N1)}] $\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x$
+        \item [\textbf{(I1)}] $\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0$
+        \item [\textbf{(A2)}] $\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z$
+        \item [\textbf{(N2)}] $\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x$
+        \item [\textbf{(D1)}] $\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z$
+        \item [\textbf{(D2)}] $\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z$
     \end{enumerate}
 \end{definition-pre}
 \begin{definition-pre}[Commutative Ring]
     \label{def:commutative_ring}
-    Let \(X\) be a non-empty set. \\
-    Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
-    Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
-    A \textit{commutative ring} is a triple \(\cc{R}_c:= (X, +, \cdot)\) satisfying:
+    Let $X$ be a non-empty set. \\
+    Let $+: X\times X \to X$ be an additive internal composition law on $X$. \\
+    Let $\cdot: X\times X \to X$ be a multiplicative internal composition law on $X$. \\\\
+    A \textit{commutative ring} is a triple $\cc{R}_c:= (X, +, \cdot)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
-        \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
-        \item [\textbf{(N1)}] \(\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x\)
-        \item [\textbf{(I1)}] \(\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0\)
-        \item [\textbf{(A2)}] \(\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z\)
-        \item [\textbf{(C2)}] \(\forall x,y\in X,\ x\cdot y = y\cdot x\)
-        \item [\textbf{(N2)}] \(\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x\)
-        \item [\textbf{(D1)}] \(\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z\)
-        \item [\textbf{(D2)}] \(\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z\)
+        \item [\textbf{(A1)}] $\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z$
+        \item [\textbf{(C1)}] $\forall x,y\in X,\ x+y = y+x$
+        \item [\textbf{(N1)}] $\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x$
+        \item [\textbf{(I1)}] $\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0$
+        \item [\textbf{(A2)}] $\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z$
+        \item [\textbf{(C2)}] $\forall x,y\in X,\ x\cdot y = y\cdot x$
+        \item [\textbf{(N2)}] $\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x$
+        \item [\textbf{(D1)}] $\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z$
+        \item [\textbf{(D2)}] $\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z$
     \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[Domain]
     \label{def:domain}
-    Let \(X\) be a non-empty set. \\
-    Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
-    Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
-    A \textit{domain} is a triple \(\cc{D}:= (X, +, \cdot)\) satisfying:
+    Let $X$ be a non-empty set. \\
+    Let $+: X\times X \to X$ be an additive internal composition law on $X$. \\
+    Let $\cdot: X\times X \to X$ be a multiplicative internal composition law on $X$. \\\\
+    A \textit{domain} is a triple $\cc{D}:= (X, +, \cdot)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
-        \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
-        \item [\textbf{(N1)}] \(\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x\)
-        \item [\textbf{(I1)}] \(\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0\)
-        \item [\textbf{(A2)}] \(\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z\)
-        \item [\textbf{(N2)}] \(\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x\)
-        \item [\textbf{(D1)}] \(\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z\)
-        \item [\textbf{(D2)}] \(\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z\)
-        \item [\textbf{(Z2)}] \(\forall x,y \in X,\ x\cdot y = 0 \Rightarrow x=0 \lor y=0\)
+        \item [\textbf{(A1)}] $\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z$
+        \item [\textbf{(C1)}] $\forall x,y\in X,\ x+y = y+x$
+        \item [\textbf{(N1)}] $\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x$
+        \item [\textbf{(I1)}] $\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0$
+        \item [\textbf{(A2)}] $\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z$
+        \item [\textbf{(N2)}] $\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x$
+        \item [\textbf{(D1)}] $\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z$
+        \item [\textbf{(D2)}] $\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z$
+        \item [\textbf{(Z2)}] $\forall x,y \in X,\ x\cdot y = 0 \Rightarrow x=0 \lor y=0$
     \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[Commutative Domain]
     \label{def:commutative_domain}
-    Let \(X\) be a non-empty set. \\
-    Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
-    Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
-    A \textit{commutative} or \textit{integral domain} is a triple \(\cc{D}_c:= (X, +, \cdot)\) satisfying:
+    Let $X$ be a non-empty set. \\
+    Let $+: X\times X \to X$ be an additive internal composition law on $X$. \\
+    Let $\cdot: X\times X \to X$ be a multiplicative internal composition law on $X$. \\\\
+    A \textit{commutative} or \textit{integral domain} is a triple $\cc{D}_c:= (X, +, \cdot)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
-        \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
-        \item [\textbf{(N1)}] \(\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x\)
-        \item [\textbf{(I1)}] \(\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0\)
-        \item [\textbf{(A2)}] \(\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z\)
-        \item [\textbf{(C2)}] \(\forall x,y\in X,\ x\cdot y = y\cdot x\)
-        \item [\textbf{(N2)}] \(\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x\)
-        \item [\textbf{(D1)}] \(\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z\)
-        \item [\textbf{(D2)}] \(\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z\)
-        \item [\textbf{(Z2)}] \(\forall x,y \in X,\ x\cdot y = 0 \Rightarrow x=0 \lor y=0\)
+        \item [\textbf{(A1)}] $\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z$
+        \item [\textbf{(C1)}] $\forall x,y\in X,\ x+y = y+x$
+        \item [\textbf{(N1)}] $\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x$
+        \item [\textbf{(I1)}] $\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0$
+        \item [\textbf{(A2)}] $\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z$
+        \item [\textbf{(C2)}] $\forall x,y\in X,\ x\cdot y = y\cdot x$
+        \item [\textbf{(N2)}] $\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x$
+        \item [\textbf{(D1)}] $\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z$
+        \item [\textbf{(D2)}] $\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z$
+        \item [\textbf{(Z2)}] $\forall x,y \in X,\ x\cdot y = 0 \Rightarrow x=0 \lor y=0$
     \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[Field]
     \label{def:field}
-    Let \(X\) be a non-empty set. \\
-    Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
-    Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
-    A \textit{field} is a triple \(\bb{F}:= (X, +, \cdot)\) satisfying:
+    Let $X$ be a non-empty set. \\
+    Let $+: X\times X \to X$ be an additive internal composition law on $X$. \\
+    Let $\cdot: X\times X \to X$ be a multiplicative internal composition law on $X$. \\\\
+    A \textit{field} is a triple $\bb{F}:= (X, +, \cdot)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
-        \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
-        \item [\textbf{(N1)}] \(\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x\)
-        \item [\textbf{(I1)}] \(\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0\)
-        \item [\textbf{(A2)}] \(\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z\)
-        \item [\textbf{(N2)}] \(\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x\)
-        \item [\textbf{(I2)}] \(\forall x \in X,\ \exists x^{-1}\in X: x\cdot x^{-1} = x^{-1}\cdot x = 1\)
-        \item [\textbf{(D1)}] \(\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z\)
-        \item [\textbf{(D2)}] \(\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z\)
+        \item [\textbf{(A1)}] $\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z$
+        \item [\textbf{(C1)}] $\forall x,y\in X,\ x+y = y+x$
+        \item [\textbf{(N1)}] $\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x$
+        \item [\textbf{(I1)}] $\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0$
+        \item [\textbf{(A2)}] $\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z$
+        \item [\textbf{(N2)}] $\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x$
+        \item [\textbf{(I2)}] $\forall x \in X,\ \exists x^{-1}\in X: x\cdot x^{-1} = x^{-1}\cdot x = 1$
+        \item [\textbf{(D1)}] $\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z$
+        \item [\textbf{(D2)}] $\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z$
     \end{enumerate}
 \end{definition-pre}
 
 \begin{definition-pre}[Commutative Field]
     \label{def:commutative_field}
-    Let \(X\) be a non-empty set. \\
-    Let \(+: X\times X \to X\) be an additive internal composition law on \(X\). \\
-    Let \(\cdot: X\times X \to X\) be a multiplicative internal composition law on \(X\). \\\\
-    A \textit{commutative field} is a triple \(\bb{F}_c:= (X, +, \cdot)\) satisfying:
+    Let $X$ be a non-empty set. \\
+    Let $+: X\times X \to X$ be an additive internal composition law on $X$. \\
+    Let $\cdot: X\times X \to X$ be a multiplicative internal composition law on $X$. \\\\
+    A \textit{commutative field} is a triple $\bb{F}_c:= (X, +, \cdot)$ satisfying:
     \begin{enumerate}
-        \item [\textbf{(A1)}] \(\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z\)
-        \item [\textbf{(C1)}] \(\forall x,y\in X,\ x+y = y+x\)
-        \item [\textbf{(N1)}] \(\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x\)
-        \item [\textbf{(I1)}] \(\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0\)
-        \item [\textbf{(A2)}] \(\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z\)
-        \item [\textbf{(C2)}] \(\forall x,y\in X,\ x\cdot y = y\cdot x\)
-        \item [\textbf{(N2)}] \(\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x\)
-        \item [\textbf{(I2)}] \(\forall x \in X,\ \exists x^{-1}\in X: x\cdot x^{-1} = x^{-1}\cdot x = 1\)
-        \item [\textbf{(D1)}] \(\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z\)
-        \item [\textbf{(D2)}] \(\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z\)
+        \item [\textbf{(A1)}] $\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z$
+        \item [\textbf{(C1)}] $\forall x,y\in X,\ x+y = y+x$
+        \item [\textbf{(N1)}] $\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x$
+        \item [\textbf{(I1)}] $\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0$
+        \item [\textbf{(A2)}] $\forall x,y,z\in X,\ (x\cdot y)\cdot z= x\cdot(y\cdot z) = x\cdot y\cdot z$
+        \item [\textbf{(C2)}] $\forall x,y\in X,\ x\cdot y = y\cdot x$
+        \item [\textbf{(N2)}] $\exists 1 \in X : \forall x \in X,\ x\cdot1 = 1\cdot x = x$
+        \item [\textbf{(I2)}] $\forall x \in X,\ \exists x^{-1}\in X: x\cdot x^{-1} = x^{-1}\cdot x = 1$
+        \item [\textbf{(D1)}] $\forall x,y,z \in X,\ x\cdot(y+z)=x\cdot y+x\cdot z$
+        \item [\textbf{(D2)}] $\forall x,y,z \in X,\ (x+y)\cdot z=x\cdot z+y\cdot z$
     \end{enumerate}
+\end{definition-pre}
+
+\begin{definition-pre}{Vector Space}
+    Let $X$ be a non-empty set. \\
+    Let $(\K,+,\cdot)$ be a field. \\
+    Let $+: X\times X \to X$ be an additive internal composition law on $X$. \\
+    Let $\cdot: \K\times X \to X$ be a multiplicative external composition law on $X$. \\\\
+    A \K-\textbf{vector space} or \K-\textbf{linear space} is a triple $\cc{V}:= (X, +, \cdot)_{\K}$ satisfying:
+    \begin{enumerate}
+        \item [\textbf{(A)}] $\forall x,y,z\in X,\ (x+y)+z= x+(y+z) = x+y+z$
+        \item [\textbf{(C)}] $\forall x,y\in X,\ x+y = y+x$
+        \item [\textbf{(N)}] $\exists 0 \in X : \forall x \in X,\ x+0 = 0+x = x$
+        \item [\textbf{(I)}] $\forall x \in X,\ \exists (-x)\in X: x+(-x) = (-x)+x = 0$
+        \item [\textbf{(P)}] $\forall x \in X,\ \forall k,\ell \in \K,\ k\cdot_X(\ell\cdot_X x)= (k\cdot_{\K}\ell)\cdot_X x$
+        \item [\textbf{(U)}] $\exists 1 \in \K : \forall x \in X,\ 1\cdot x = x$
+        \item [\textbf{(D1)}] $\forall x,y \in X,\ \forall k\in \K,\ k\cdot(x+_Xy)=k\cdot x+_Xk\cdot y$
+        \item [\textbf{(D2)}] $\forall k,\ell \in \K,\ \forall x\in X,\ (k+_\K\ell)\cdot x=k\cdot x+_X\ell\cdot x$
+    \end{enumerate}
+\end{definition-pre}
+
+\begin{definition-pre}[Field Extension]
+    \label{def:field_extension}
+    Let $(X, +, \cdot)$ be a field. \\
+    Let $(Y, +, \cdot)$ be a field such that $Y \subseteq X$. \\\\
+    A \textit{field extension} is the pair $X/Y$ such that the operations of $Y$
+    are those of $X$ restricted to $Y$.
+\end{definition-pre}
+
+\begin{definition-pre}[Degree of Field Extension]
+    \label{def:degree_field_extension}
+    Let $(X, +, \cdot)$ be a field. \\
+    Let $(Y, +, \cdot)$ be a field such that $Y \subseteq X$. \\
+    Let $X/Y$ be a field extension. \\\\
+    The \textit{degree} of $X/Y$ is the dimension of $X$ as a vector space over $Y$.
+\end{definition-pre}
+
+\begin{definition-pre}[Extension Field]
+    \label{def:extension_field}
+    Let $(X, +, \cdot)$ be a field. \\
+    Let $(Y, +, \cdot)$ be a field such that $Y \subseteq X$. \\
+    Let $X/Y$ be a field extension. \\\\
+    The field $X$ is said to be an \textit{extension field} of $Y$.
+\end{definition-pre}
+
+\begin{definition-pre}[Subfield]
+    \label{def:subfield}
+    Let $(X, +, \cdot)$ be a field. \\
+    Let $(Y, +, \cdot)$ be a field such that $Y \subseteq X$. \\
+    Let $X/Y$ be a field extension. \\\\
+    The field $Y$ is said to be an \textit{subfield} of $X$.
 \end{definition-pre}
 
 \begin{definition-pre}[Algebraic Number Field / Number Field]
