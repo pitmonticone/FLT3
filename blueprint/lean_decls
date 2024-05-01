@@ -1,3 +1,6 @@
+IsPrimitiveRoot.zeta_sub_one_prime'
+fermatLastTheoremWith_of_fermatLastTheoremWith_coprime
+cube_of_castHom_ne_zero
 IsCyclotomicExtension.Rat.Three.Units.mem
 IsCyclotomicExtension.Rat.Three.Units.not_exists_int_three_dvd_sub
 IsCyclotomicExtension.Rat.Three.lambda_sq
@@ -5,7 +8,6 @@ IsCyclotomicExtension.Rat.Three.eq_one_or_neg_one_of_unit_of_congruent
 IsCyclotomicExtension.Rat.Three.norm_lambda
 IsCyclotomicExtension.Rat.Three.norm_lambda_prime
 IsCyclotomicExtension.Rat.Three.lambda_dvd_three
-IsPrimitiveRoot.zeta_sub_one_prime'
 IsPrimitiveRoot.lambda_prime
 IsCyclotomicExtension.Rat.Three.lambda_ne_zero
 IsCyclotomicExtension.Rat.Three.lambda_not_unit
@@ -22,13 +24,11 @@ IsCyclotomicExtension.Rat.Three.lambda_dvd_mul_sub_one_mul_sub_eta_add_one
 IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_sub_one_of_dvd_sub_one
 IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_add_one_of_dvd_add_one
 IsCyclotomicExtension.Rat.Three.lambda_pow_four_dvd_cube_sub_one_or_add_one_of_lambda_not_dvd
-cube_of_castHom_ne_zero
 cube_of_not_dvd
 fermatLastTheoremThree_case_1
 three_dvd_gcd_of_dvd_a_of_dvd_b
 three_dvd_gcd_of_dvd_a_of_dvd_c
 three_dvd_gcd_of_dvd_b_of_dvd_c
-fermatLastTheoremWith_of_fermatLastTheoremWith_coprime
 fermatLastTheoremThree_of_three_dvd_only_c
 Solution'
 Solution
