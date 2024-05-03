@@ -13,10 +13,7 @@
 # After v4.3.0-rc2 lake stores its files here:
 /.lake/
 
-# Python virtual environment 
-/.venv/
-
-# Lean blueprint 
+# Lean blueprint
 /blueprint/lean_decls
 /blueprint/src/web.bbl
 
