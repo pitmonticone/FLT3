@@ -18,5 +18,5 @@
 /blueprint/src/web.bbl
 
 # Temporary markdown files
-references.md
-structure.md
+/tmp-references.md
+/tmp-structure.md
