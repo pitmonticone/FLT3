@@ -17,6 +17,6 @@
 /blueprint/lean_decls
 /blueprint/src/web.bbl
 
-# Temporary files
-## references.md
-## structure.md
+# Temporary markdown files
+references.md
+structure.md
