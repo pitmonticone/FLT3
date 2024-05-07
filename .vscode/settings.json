@@ -11,7 +11,6 @@
         "build": true,
         "FLT3.lean": true,
         "html": true,
-        "lake-manifest.json": true,
         "lake-packages": true,
         "lakefile.lean": true,
         "lean-tactics.tex": true,
