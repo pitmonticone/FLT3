@@ -34,13 +34,19 @@ jobs:
           fetch-depth: 0
 
       - name: Install elan
-        run: curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --default-toolchain none
+        run: curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --default-toolchain leanprover/lean4:4.7.0 #4.5.0
+
+      - name: Update docgen4
+        run: ~/.elan/bin/lake -R -Kenv=dev update «doc-gen4»
+
+      - name: Update checkdecls
+        run: ~/.elan/bin/lake update checkdecls
 
       - name: Get cache
-        run: ~/.elan/bin/lake exe cache get || true
+        run: ~/.elan/bin/lake -R -Kenv=dev exe cache get || true
 
       - name: Build project
-        run: ~/.elan/bin/lake build FLT3
+        run: ~/.elan/bin/lake -R -Kenv=dev build FLT3
 
       - name: Cache mathlib docs
         uses: actions/cache@v3
@@ -60,11 +66,11 @@ jobs:
       - name: Build documentation
         run: ~/.elan/bin/lake -R -Kenv=dev build FLT3:docs
 
-      - name: Build blueprint
+      - name: Build blueprint and copy to `docs/blueprint`
         uses: xu-cheng/texlive-action@v2
         with:
           docker_image: ghcr.io/xu-cheng/texlive-full:20231201
-          run: |
+          run: | # "mkdir docs" before "cp blueprint/print/print.pdf docs/blueprint.pdf"
             apk update
             apk add --update make py3-pip git pkgconfig graphviz graphviz-dev gcc musl-dev
             git config --global --add safe.directory $GITHUB_WORKSPACE
@@ -75,7 +81,6 @@ jobs:
             pip install pygraphviz --global-option=build_ext --global-option="-L/usr/lib/graphviz/" --global-option="-R/usr/lib/graphviz/"
             pip install leanblueprint
             leanblueprint pdf
-            mkdir -p docs
             cp blueprint/print/print.pdf docs/blueprint.pdf
             leanblueprint web
             cp -r blueprint/web docs/blueprint
@@ -99,11 +104,6 @@ jobs:
       - name: Bundle website
         working-directory: docs
         run: JEKYLL_ENV=production bundle exec jekyll build
-
-      - name: Upload docs & blueprint artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: docs/
 
       - name: Upload docs & blueprint artifact
         uses: actions/upload-pages-artifact@v1
