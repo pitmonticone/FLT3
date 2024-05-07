@@ -109,5 +109,5 @@
    "inputRev": "main",
    "inherited": false,
    "configFile": "lakefile.lean"}],
- "name": "FLT",
+ "name": "FLT3",
  "lakeDir": ".lake"}
