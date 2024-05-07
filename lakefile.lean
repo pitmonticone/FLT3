@@ -34,7 +34,8 @@ lean_lib «FLT3» where
   weakLeanArgs := weakLeanArgs
   -- add any library configuration options here
 
-require checkdecls from git "https://github.com/PatrickMassot/checkdecls.git"
+require checkdecls from git
+  "https://github.com/PatrickMassot/checkdecls" @ "4b0563aa6f8b648fc516eb616f54ad47045ae035"
 
 meta if get_config? env = some "dev" then
 require «doc-gen4» from git
