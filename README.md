@@ -52,6 +52,5 @@ inv all
 5. Velleman. [*How To Prove It With Lean*](https://djvelleman.github.io/HTPIwL/).
 6. Christiansen. [*Functional Programming in Lean*](https://lean-lang.org/functional_programming_in_lean/).
 7. De Moura and Ullrich. [*The Lean 4 Theorem Prover and Programming Language*](https://doi.org/10.1007/978-3-030-79876-5_37).
-8. Limperg and From. [*Aesop: White-Box Best-First Proof Search for Lean*](http://dx.doi.org/10.1145/3573105.3575671).
-9. Buzzard. [*Lean in 2024*](https://xenaproject.wordpress.com/2024/01/20/lean-in-2024/).
-10. Lowry-Duda. [*FLT3 at Lean for the Curious Mathematician 2024*](https://davidlowryduda.com/flt3-at-lftcm2024/).
+8. Buzzard. [*The Fermat's Last Theorem Project*](https://leanprover-community.github.io/blog/posts/FLT-announcement/).
+9. Lowry-Duda. [*FLT3 at Lean for the Curious Mathematician 2024*](https://davidlowryduda.com/flt3-at-lftcm2024/).
