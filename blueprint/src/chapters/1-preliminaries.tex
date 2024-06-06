@@ -172,6 +172,37 @@ $\zeta_n$ & Primitive $n$-th root of unity \\
     \end{enumerate}
 \end{definition-pre}
 
+\begin{definition-pre}[Left Ideal]
+    \label{def:left_ideal}
+    Let $(X, +, \cdot)$ be a ring. \\\\
+    A \textit{left ideal} is a subset $I \subseteq X$ satisfying:
+    \begin{enumerate}
+        \item [\textbf{(SG)}] $(I, +)$ is a subgroup of $(X, +)$
+        \item [\textbf{(L)}] $\forall i\in I,\ \forall x\in X,\ x\cdot i\in I$
+    \end{enumerate}
+\end{definition-pre}
+
+\begin{definition-pre}[Right Ideal]
+    \label{def:right_ideal}
+    Let $(X, +, \cdot)$ be a ring. \\\\
+    A \textit{right ideal} is a subset $I \subseteq X$ satisfying:
+    \begin{enumerate}
+        \item [\textbf{(SG)}] $(I, +)$ is a subgroup of $(X, +)$
+        \item [\textbf{(R)}] $\forall i\in I,\ \forall x\in X,\ i\cdot x\in I$
+    \end{enumerate}
+\end{definition-pre}
+
+\begin{definition-pre}[Ideal]
+    \label{def:ideal}
+    Let $(X, +, \cdot)$ be a ring. \\\\
+    An \textit{ideal} or \textit{two-sided ideal} is a subset $I \subseteq X$ satisfying:
+    \begin{enumerate}
+        \item [\textbf{(SG)}] $(I, +)$ is a subgroup of $(X, +)$
+        \item [\textbf{(L)}] $\forall i\in I,\ \forall x\in X,\ x\cdot i\in I$
+        \item [\textbf{(R)}] $\forall i\in I,\ \forall x\in X,\ i\cdot x\in I$
+    \end{enumerate}
+\end{definition-pre}
+
 \begin{definition-pre}[Domain]
     \label{def:domain}
     Let $X$ be a non-empty set. \\
@@ -250,6 +281,17 @@ $\zeta_n$ & Primitive $n$-th root of unity \\
     \end{enumerate}
 \end{definition-pre}
 
+\begin{definition-pre}[Fundamental System of Field]
+	\label{def:fundamental_system}
+    Let $(X, +, \cdot)$ be a field endowed with a topology $\mathcal{T}$. \\
+    Let $I \subseteq \N$ be an index set. \\\\
+    A \textit{fundamental system} of $X$ is a collection \( \mathcal{U} = \{ U_i \}_{i \in I} \) of open sets in \( X \) such that:
+	\begin{enumerate}
+		\item $\forall i \in I,\ 0 \in U_i$.
+		\item $\forall V \ni 0,\ \exists i \in I : U_i \subseteq V$.
+	\end{enumerate}
+\end{definition-pre}
+
 \begin{definition-pre}[Vector Space]
     \label{def:vector_space}
     Let $X$ be a non-empty set. \\
@@ -291,7 +333,7 @@ commutative ring, domain, or similar algebraic structures when the context unamb
 \begin{definition-pre}[Algebraic Field Extension]
     \label{def:algebraic_field_extension}
     Let $(X, +, \cdot)$ be a field. \\
-    Let $(Y, +, \cdot)$ be a field such that $Y \subseteq X$. \\
+    Let $(Y, +, \cdot)$ be a field such that $Y \subseteq X$. \\\\
     An \textit{algebraic field extension} is the field extension $X/Y$ such that its degree $[Y:X]$
     is finite.
 \end{definition-pre}
@@ -320,26 +362,37 @@ commutative ring, domain, or similar algebraic structures when the context unamb
     The extension field $X$ is said to be a \textit{number field} or an \textit{algebraic number field}.
 \end{definition-pre}
 
-% \begin{definition-pre}[Fundamental System]
-%     \label{def:fundamental_system}
-% \end{definition-pre}
+\begin{definition-pre}[Root of Unity]
+    \label{def:primitive_root_of_unity}
+    Let $n \in \N_{+}$. \\\\
+    A \textit{$n$-th root of unity} is an element $\zeta \in \C$ such that  $\zeta^n = 1$.
+\end{definition-pre}
 
-% \begin{definition-pre}[Unit]
-%     \label{def:unit}
-% \end{definition-pre}
-% \begin{definition-pre}[Primitive Root of Unity]
-%     \label{def:primitive_root_of_unity}
-% \end{definition-pre}
+\begin{definition-pre}[Primitive Root of Unity]
+    \label{def:primitive_root_of_unity}
+    Let $n \in \N_{+}$. \\\\
+    A \textit{primitive $n$-th root of unity} is an element $\zeta \in \C$ satisfying:
+    \begin{enumerate}
+        \item $\zeta^n = 1$.
+        \item $\forall k \in \N_{+},\ k < n \implies \zeta^k \neq 1$.
+    \end{enumerate}
+\end{definition-pre}
 
-% \begin{definition-pre}[Cyclotomic Polynomial]
-%     \label{def:cyclotomic_polynomial}
-% \end{definition-pre}
-% \begin{definition-pre}[Cyclotomic Extension of a Ring / Cyclotomic Ring]
-%     \label{def:cyclotomic_extension_ring}
-% \end{definition-pre}
-% \begin{definition-pre}[Cyclotomic Extension of a Fiel / Cyclotomic Field]
-%     \label{def:cyclotomic_extension_field}
-% \end{definition-pre}
+\begin{definition-pre}[Cyclotomic Polynomial]
+    \label{def:cyclotomic_polynomial}
+    Let $n \in \N_{+}$. \\
+    Let $\zeta \in \C$ be a primitive $n$-th root of unity. \\\\
+    The \textit{$n$-th cyclotomic polynomial} is the unique monic polynomial with integer coefficients whose roots are the primitive $n$-th roots of unity:
+    $$ \Phi_n(x) = \prod_{\substack{1 \leq k \leq n \\ \gcd(k, n) = 1}} \left( x - \zeta^k \right)$$
+\end{definition-pre}
+
+\begin{definition-pre}[Cyclotomic Extension Field]
+    \label{def:cyclotomic_extension_field}
+    Let $n \in \N_{+}$. \\
+    Let $\zeta_n \in \C$ be a primitive $n$-th root of unity. \\
+    Let $X$ be a field. \\\\
+    The \textit{$n$-th cyclotomic extension field} or \textit{$n$-th cyclotomic field} is a field $X(\zeta_n)$ obtained by adjoining $\zeta_n$ to $X$.
+\end{definition-pre}
 
 \section{Results}
 %\addcontentsline{toc}{section}{Results}
