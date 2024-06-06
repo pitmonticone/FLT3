@@ -17,5 +17,8 @@
 /blueprint/lean_decls
 /blueprint/src/web.bbl
 
+# LaTeX files
+/blueprint/src/chapters/0-introduction.tex
+
 # Temporary files
 /tmp
