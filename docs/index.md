@@ -42,16 +42,3 @@ lake exe cache get
 lake build
 inv all
 ```
-
-## Main References
-
-1. Hindry. [*Arithmetics*](http://dx.doi.org/10.1007/978-1-4471-2131-2).
-2. Avigad and Massot. [*Mathematics in Lean*](https://leanprover-community.github.io/mathematics_in_lean/).
-3. Avigad et al. [*Theorem Proving in Lean 4*](https://leanprover.github.io/theorem_proving_in_lean4/).
-4. Macbeth. [*The Mechanics of Proof*](https://hrmacbeth.github.io/math2001/).
-5. Velleman. [*How To Prove It With Lean*](https://djvelleman.github.io/HTPIwL/).
-6. Christiansen. [*Functional Programming in Lean*](https://lean-lang.org/functional_programming_in_lean/).
-7. De Moura and Ullrich. [*The Lean 4 Theorem Prover and Programming Language*](https://doi.org/10.1007/978-3-030-79876-5_37).
-8. Limperg and From. [*Aesop: White-Box Best-First Proof Search for Lean*](http://dx.doi.org/10.1145/3573105.3575671).
-9. Buzzard. [*Lean in 2024*](https://xenaproject.wordpress.com/2024/01/20/lean-in-2024/).
-10. Lowry-Duda. [*FLT3 at Lean for the Curious Mathematician 2024*](https://davidlowryduda.com/flt3-at-lftcm2024/).
