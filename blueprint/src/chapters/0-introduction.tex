@@ -1,0 +1,161 @@
+\chapter*{Introduction}
+% \label{chap:introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+Fermat's Last Theorem (FLT) is one of the most renowned results in the history of mathematics.
+Originally conjectured by Pierre de Fermat in 1637, the theorem asserts that there are no three
+positive integers $a$, $b$, and $c$ that can satisfy the equation $a^n + b^n = c^n$ for any
+integer value of $n$ greater than $2$. This deceptively simple statement eluded proof for over
+350 years until it was finally proven by Andrew Wiles in 1994 using sophisticated methods from
+algebraic geometry and number theory.
+
+This paper serves as the blueprint for the project aimed at formalising FLT for the specific case of
+exponent $3$ using the Lean 4 proof assistant.
+The project consists in the formalisation of all necessary definitions, lemmas, and theorems leading up to
+and including the proof of FLT for $n = 3$. This process involves translating natural, informal mathematical arguments
+into the formal language of Lean, rigorously verifying each step for correctness and leveraging
+an extensive library of formalised mathematics called Mathlib,
+which will be described in more detail later.
+
+The \textbf{source code} necessary to understand and verify the formal proofs of this project is contained
+in my GitHub repository available at \url{https://github.com/pitmonticone/FLT3}. It is being integrated into
+Mathlib and imported as a dependency in the broader FLT formalisation project led by Kevin Buzzard and Richard Taylor \cite{FLT}.
+
+For detailed and comprehensive \textbf{documentation} of the code, please refer to the documentation website at \url{https://pitmonticone.github.io/FLT3/docs/}.
+
+The \textbf{blueprint website}, which includes a detailed roadmap of the steps taken to formalise the proof,
+can be accessed at \url{https://pitmonticone.github.io/FLT3/blueprint}.
+
+To view the \textbf{dependency graph} of the blueprint, which visually represents the logical dependencies
+between definitions and theorems, visit \url{https://pitmonticone.github.io/FLT3/blueprint/dep_graph_document.html}.
+
+Lastly, a public version of this \textbf{blueprint paper} is available at \url{https://pitmonticone.github.io/FLT3/blueprint.pdf}.
+
+\section{What is Formalisation of Mathematics?}
+
+Formalisation of mathematics is the process of encoding mathematical concepts, statements, and proofs
+in a formal language that can be interpreted and verified by a computer.
+This contrasts with traditional mathematical writing, which often relies on a combination of formal
+symbols and natural language \cite{Bourbaki2004} \cite{Avigad2023}.
+
+Formalisation aims to eliminate ambiguity and ensure absolute rigor by using logical and computational
+techniques to validate claims articulated with extreme precision \cite{Avigad2014} \cite{Avigad2018} \cite{Avigad2024}.
+Every proof step must be justified by referring to prior definitions and theorems, tracing all the way
+back to fundamental axioms and deduction rules.
+
+As we know, the highest standard for justifying a mathematical statement is to provide a proof and modern
+mathematical logic have shown that most, if not all, conventional
+proof methods can be distilled into a limited set of axioms and inference rules within various
+foundational formal systems \cite{Avigad2022}. This reduction allows computers to assist human mathematicians in two significant ways:
+
+\begin{itemize}
+    \item \textbf{Interactive Theorem Proving:} Verifying the validity of proposed proofs by checking each logical step,
+    as demonstrated in this project. The strict syntactic and semantic rules of formal systems allow
+    computers to check the correctness of proofs automatically, ensuring that no logical errors are present.
+    \item \textbf{Automated Theorem Proving:} Aiding in the discovery of proofs by establishing the validity
+    of first-order formulas (e.g. satisfiability solvers), by adopting clever search methods (e.g. satisfiability modulo theories)
+    and by carrying out mathematical computations (e.g. computer algebra systems).
+\end{itemize}
+
+At the current stage, formalising a proof requires significant mathematical insight and is not a purely mechanical process.
+This endeavor is central to the field of formalised mathematics, a rapidly growing discipline now acknowledged
+as a distinct area of study.
+
+\section{Why Formalise Mathematics?}
+
+Formalising mathematics offers several significant benefits \cite{Massot2021}, such as:
+
+\begin{itemize}
+    \item \textbf{Certainty:} Formal proofs provide a higher level of certainty by rigorously verifying each logical step through computer checks, reducing the possibility of human error.
+    \item \textbf{Consistency:} Formal systems ensure all results are internally consistent, preventing subtle errors from informal reasoning and ensuring coherence across different mathematical domains.
+    \item \textbf{Clarity:} Formal proofs help clarify complex arguments by making all steps explicit and precise, improving communication and understanding of mathematical results.
+    \item \textbf{Generalisation:} Formalised mathematics makes it much easier to generalise results, as the precise definitions and proofs can be systematically extended to broader contexts.
+    \item \textbf{Reusability:} Formalised mathematics can be reused across various proofs and projects, building a repository of verified knowledge that can be easily accessed and applied.
+    \item \textbf{Collaboration:} Formalised mathematics supports better collaboration among mathematicians by providing precise, unambiguous statements and facilitating easier delegation and verification of tasks.
+    \item \textbf{Education:} The process of formalisation aids in teaching and learning by providing clear, detailed examples of rigorous reasoning and logical structure.
+    \item \textbf{Research:} Formal methods assist in discovering new results and verifying complex proofs, particularly those involving extensive computation or intricate logical structures.
+    \item \textbf{Peer Review:} The use of formal methods in peer review raises the standards of verification, making it easier to identify errors and increasing confidence in the validity of published results.
+\end{itemize}
+
+These benefits collectively contribute to the advancement of mathematical theory and practice,
+making formalisation an invaluable tool in modern mathematical research and teaching.
+
+\section{What is a Proof Assistant?}
+
+Proof assistants, also known as interactive theorem provers (ITPs), are sophisticated software tools
+designed to aid mathematicians in developing formal proofs. They provide an environment where users
+can write definitions, statements, and proofs in a specialized language, with the computer checking
+each step for correctness and providing instant feedback on every line.
+
+Proof assistants combine automation with human guidance. They can automate routine tasks such as checking
+the validity of logical steps and applying known theorems, but they require human input for more complex
+reasoning and creative problem-solving.
+
+Examples of popular proof assistants include \href{https://coq.inria.fr}{Coq}, \href{https://isabelle.in.tum.de}{Isabelle},
+and \href{https://lean-lang.org}{Lean}. Each has its strengths and focuses, but all share the goal of
+making rigorous, computer-verified mathematics a practical reality.
+
+\newpage
+\section{What is Lean?}
+
+Lean is an open-source, general-purpose functional programming language and proof assistant
+based on a version of dependent type theory known as the \textit{Calculus of Inductive Constructions} \cite{Carneiro2019} and
+developed by Leonardo de Moura and Sebastian Ullrich, originally as part of Microsoft Research \cite{Moura2021}.
+
+It is designed to facilitate both programming and formal verification, making it a versatile tool
+for mathematicians and computer scientists, and distinguishes itself with its small inference kernel,
+strong automation, and the availability of independent proof checkers which provide additional guarantees.
+
+Lean's dependently-typed system allows for highly expressive and precise definitions, which is crucial
+for both programming and the formalisation of complex mathematical concepts.
+This feature enables Lean to handle a wide range of applications, from software development to advanced mathematical proofs.
+
+One of Lean's most powerful features is its sophisticated metaprogramming framework \cite{Ebner2017}.
+This framework allows users to extend the language by writing custom proof tactics, which can automate
+repetitive and complex parts of the theorem proving process.
+These tactics enable users to streamline their proof development, making the formalisation process
+more efficient and less error-prone.
+
+The metaprogramming capabilities of Lean are not limited to proof tactics.
+Users can also develop new language constructs, define custom syntactic sugar,
+and implement domain-specific optimizations. This flexibility makes Lean an adaptable tool that can
+evolve to meet the needs of various formal verification tasks.
+
+In addition to its technical capabilities, Lean benefits from a strong and active community of users and contributors.
+This community continuously expands Lean's libraries and tools, ensuring that the system remains up-to-date with
+the latest developments in both mathematics and computer science.
+The collaborative nature of the Lean ecosystem fosters innovation and supports the development of
+high-quality formalisations.
+
+Overall, Lean's combination of a robust type system, advanced metaprogramming features, and a supportive
+community makes it a powerful and flexible platform for both programming and formal verification.
+
+\newpage
+\section{What is Mathlib?}
+
+Mathlib is the main library of formalised mathematics written in Lean \cite{Mathlib2020}.
+It is a collaborative project that contains formalisations of a wide range of mathematical concepts,
+from basic definitions to advanced theorems.
+
+Key aspects of Mathlib include:
+\begin{itemize}
+    \item \textbf{Coverage:} Mathlib covers many areas of mathematics, including algebra, analysis, topology, and number theory.
+    \item \textbf{Collaboration:} Mathlib is developed by a community of hundreds of mathematicians and computer scientists, ensuring that it is continually expanding and improving \cite{vanDoorn2020}.
+    \item \textbf{Quality:} All formalisations in Mathlib are rigorously checked by Lean.
+    \item \textbf{Accessibility:} Mathlib is open-source and freely available, making it accessible to anyone interested in formalising mathematics.
+    \item \textbf{Blueprints:} The Mathlib community uses blueprints to outline the steps needed to formalise complex results, providing a roadmap for contributors.
+\end{itemize}
+
+% \section{Personal Contributions}
+
+% My personal contributions to this collaborative project include:
+
+% \begin{itemize}
+%     \item \textbf{Source Code:} I have written approximately 20\% of the \href{https://github.com/pitmonticone/FLT3}{source code} of the project.
+%     \item \textbf{Code Documentation:} I have written the entire \href{https://pitmonticone.github.io/FLT3/docs/}{documentation} of the code.
+%     \item \textbf{Blueprint Website:} I have developed the entire \href{https://pitmonticone.github.io/FLT3/blueprint}{blueprint website} including the \href{https://pitmonticone.github.io/FLT3/blueprint/dep_graph_document.html}{dependency graph}.
+%     \item \textbf{Blueprint Paper:} I have authored the entire \href{https://pitmonticone.github.io/FLT3/blueprint.pdf}{blueprint paper}.
+% \end{itemize}
+
+% For more details about my contributions, please visit the \href{https://github.com/pitmonticone/FLT3/graphs/contributors}{contributors page}
+% and the \href{https://github.com/pitmonticone/FLT3/commits/master/?author=pitmonticone}{commit history} of the project.
